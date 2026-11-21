@@ -1,0 +1,446 @@
+[
+  {
+    "source": "assets/CRT_TV_VHS_fbx_gltx_blend_textures/GLTF/CRTTV.gltf",
+    "destination": "resources/art_samples/crt/CRTTV.gltf",
+    "sha256": "9a2629967ddbedd43a514a0998e1623e4a0a8cbe69456c0b684682a837daaf5e",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/OFFICE/OFFICE/desks/desk1_weathered.glb",
+    "destination": "resources/art_samples/office/desk1_weathered.glb",
+    "sha256": "07b4cb9dbf8af8d392403d191e1f1d3071815ee0e7f12631096be14f88c51a45",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/psx-first-person-arms-free-game-assets/arms_rig.glb",
+    "destination": "resources/art_samples/arms/arms_rig.glb",
+    "sha256": "407d6be3cfee18d8d47318d307a6e759f94ed3a1c27e2ab30dd860862b94172b",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/HomeVideo_Font_0_9/TrueType (.ttf)/HomeVideo-Regular.ttf",
+    "destination": "resources/art_samples/font/HomeVideo-Regular.ttf",
+    "sha256": "5df883cc59c438d983461d65aae323d6ae61dbcb396ae884314b401672c30c1c",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/HomeVideo_Font_0_9/License.txt",
+    "destination": "resources/art_samples/font/License.txt",
+    "sha256": "f4e7f373b9b996950337e8d41a4a2939c2d90b7725e9baf3d5084a22717ad328",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Models/IndustrialHorror_PS_like.fbx",
+    "destination": "resources/art_samples/industrial/Models/IndustrialHorror_PS_like.fbx",
+    "sha256": "f17fc1dbb8a569f74f7f8d8b0f0b027417ce8f477564ba5999605151a89ca232",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Asphalt_1-4.png",
+    "destination": "resources/art_samples/industrial/textures/Asphalt_1-4.png",
+    "sha256": "d66a0446d63da2b894528f5634a25074af3be37ef8e176f370b3e256a795ad50",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Asphalt_1-4_n.png",
+    "destination": "resources/art_samples/industrial/textures/Asphalt_1-4_n.png",
+    "sha256": "d7bbbdd04ae522193c5bade988db8fa44b1f63fefaad5ac767bf799122552ab9",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Bags.png",
+    "destination": "resources/art_samples/industrial/textures/Bags.png",
+    "sha256": "feb60277da140be4c99facd87f569075d46bca0d42c75094751abcb497fa222e",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Bags_n.png",
+    "destination": "resources/art_samples/industrial/textures/Bags_n.png",
+    "sha256": "923eb2378cc7e8175950c7bbb1d7ebd23b65cb47a82c1c7a361fb7c1cffade77",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Barrel_1.png",
+    "destination": "resources/art_samples/industrial/textures/Barrel_1.png",
+    "sha256": "0a4c6207060877519be9344be613d0ebe4021d40cb3460826774bfa5a4775f8b",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Barrel_1_n.png",
+    "destination": "resources/art_samples/industrial/textures/Barrel_1_n.png",
+    "sha256": "0e1db60a2f0e5861046d05fb762c04ab389000a530125da3042ca288c5b522b3",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Barrel_2.png",
+    "destination": "resources/art_samples/industrial/textures/Barrel_2.png",
+    "sha256": "270f89c784e3c2b40f6243eccbc4e117eb32965a10eb70a7e76686d3a0dd8921",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Barrel_2_n.png",
+    "destination": "resources/art_samples/industrial/textures/Barrel_2_n.png",
+    "sha256": "2d215163c38643b6828d9498aa38a12e03a3de6d79a4271ff3dac9ded6e361fc",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Barrel_3.png",
+    "destination": "resources/art_samples/industrial/textures/Barrel_3.png",
+    "sha256": "5b7532f900ac45194b7df9956d1b56a0f7f69d6eee2f428664468549395f3b9f",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Barrel_3_n.png",
+    "destination": "resources/art_samples/industrial/textures/Barrel_3_n.png",
+    "sha256": "e5121eb6a3b3149dc87b825169400f304e7f1e14748a89865724fef5a8c4a053",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Box_wood.png",
+    "destination": "resources/art_samples/industrial/textures/Box_wood.png",
+    "sha256": "2a993c6eeb2b9db47f175a6faf7b7494d545a1874a2f7533a79bb49857630061",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Box_wood_n.png",
+    "destination": "resources/art_samples/industrial/textures/Box_wood_n.png",
+    "sha256": "e4815e95705df9d09d987d0b77a6b00d05b0649c6a58809bba62db521441a5ae",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Bridges.png",
+    "destination": "resources/art_samples/industrial/textures/Bridges.png",
+    "sha256": "47b325d641ee007908b1e535bf83383fdde02f117e6421b49c0d2b6776be676b",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Bridges_n.png",
+    "destination": "resources/art_samples/industrial/textures/Bridges_n.png",
+    "sha256": "c760c9781043d875f7ebd2cd5ac0973ed2d435b8ed749165e973a9b9898d97f0",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_1.png",
+    "destination": "resources/art_samples/industrial/textures/Building_1.png",
+    "sha256": "753dc2b58357f9b77749c9143a4840f2cb961b372506d9411d7df92954440500",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_13.png",
+    "destination": "resources/art_samples/industrial/textures/Building_13.png",
+    "sha256": "a801c8f984f8437a432ac0c5017b166621e114d4ff1e97516a2c346fd71780e9",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_13_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_13_n.png",
+    "sha256": "9fc7486bab0b3884352f3e6f7688cc5f3398d35d438837a9d489a51218497125",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_1_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_1_n.png",
+    "sha256": "04767c95eb0685e02ebcc38d5919c7c65b1c4df29576d95ffdf2f47ef5aaf70d",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_2.png",
+    "destination": "resources/art_samples/industrial/textures/Building_2.png",
+    "sha256": "311f6eef9fcf92da3242e3fec74873a0caba8cc9f8b6a08a6b376f4498fd7e20",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_2_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_2_n.png",
+    "sha256": "bfe806890e0a73fc9b2b80e1d530d587075b8ab3451d4530d5ffc751765c4cd0",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_3.png",
+    "destination": "resources/art_samples/industrial/textures/Building_3.png",
+    "sha256": "1af40b95bcfab9ce5373be842596a7617811dd31cb2cad42c32d85e1c23ac9c6",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_3_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_3_n.png",
+    "sha256": "7e285e31907f1556fde51b82819d658211e0db42af2b9b15d49bb643489256e0",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_4.png",
+    "destination": "resources/art_samples/industrial/textures/Building_4.png",
+    "sha256": "d675667207ee5c80e67f00264d9f786fbbb794017ab0e10d9385a366cb994600",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_4_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_4_n.png",
+    "sha256": "f64764f4147fd84c829cacc66ac795e64d94cd17c638cbc84de5da6dae9fec30",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_5.png",
+    "destination": "resources/art_samples/industrial/textures/Building_5.png",
+    "sha256": "65d204d0080d5e953e883168f666d9155133c00fd4c772cd5b5377675e4bb6f3",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_5_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_5_n.png",
+    "sha256": "6bafdd03c141a2d255cb4b583fb6098824a78cf3657ae247696ee3d7f5775c40",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_6.png",
+    "destination": "resources/art_samples/industrial/textures/Building_6.png",
+    "sha256": "4fc3703cfc2b903380dde50d84b036611e910ca2ac692b55305f580683df4ee3",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_6_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_6_n.png",
+    "sha256": "98c05712bb0a87b754f82779527d1ae305941c7cef342e120dd7101f3571298b",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_7.png",
+    "destination": "resources/art_samples/industrial/textures/Building_7.png",
+    "sha256": "7bf06cfd408b52fa90a6e9e86ea5b5383fb20f24c6ec879096fa0b4f5d147a2a",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Building_7_n.png",
+    "destination": "resources/art_samples/industrial/textures/Building_7_n.png",
+    "sha256": "b5108a6513ac7af5f59be2ff51eeeea666617df07b8e01c41c737dcf6cff8a91",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_1.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_1.png",
+    "sha256": "c743d00a968c088f11dd99a4daa2a299784b0ccf753ecb999dc4365e77b2024b",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_1_n.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_1_n.png",
+    "sha256": "378c35c3703429cc216adbd75d153d8a36f00e6cad248e1169fb323025e8ed92",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_2.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_2.png",
+    "sha256": "8cd338208d6301fcdd33e7985f74185cb4056e9b647a18213d383ee417fbd3b4",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_2_n.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_2_n.png",
+    "sha256": "69f7247132c7109ea54a579be458fa08794522951cd0cb3a813c2d856e93fa4c",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_3.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_3.png",
+    "sha256": "f85f2898c4e786691e81ee546dfa1f81e6281b3d3f1725b5d690fddca78120bb",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_3_n.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_3_n.png",
+    "sha256": "2633c83e1f5b5c66326ad6e91fe09792e6567dda76f1757d8168826870faac60",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_4.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_4.png",
+    "sha256": "790e7abacf276468f06c24931c915079e36e97f2c1347a9997383661b210f4b6",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cargo_4_n.png",
+    "destination": "resources/art_samples/industrial/textures/Cargo_4_n.png",
+    "sha256": "98f29db7cc4103e81825aa1b6103848385653fba385e3ee6080ac7d3e37b237e",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Concrete.png",
+    "destination": "resources/art_samples/industrial/textures/Concrete.png",
+    "sha256": "64ba7a61db8c0fb28f3d70c1866179f786c48985b600b4277f12ef39a9cdaac9",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Concrete_n.png",
+    "destination": "resources/art_samples/industrial/textures/Concrete_n.png",
+    "sha256": "d4b7127ef5f5f63599686c5c6946e9be3da879fefd5aee5320b8b43fec868926",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cooling_tower.png",
+    "destination": "resources/art_samples/industrial/textures/Cooling_tower.png",
+    "sha256": "a5d848cac7a64ed244b3b3d2c9ada49f72ad0ace30982005a0199eff276e2a2f",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Cooling_tower_n.png",
+    "destination": "resources/art_samples/industrial/textures/Cooling_tower_n.png",
+    "sha256": "c03bbc4ffcf8cc1c57a7663100ff384e69b5a8fdbdb3c2de2e18ee91a2762abe",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Fence.png",
+    "destination": "resources/art_samples/industrial/textures/Fence.png",
+    "sha256": "bd5b2669a959ca7af9a4137be73087882162c6c22254671927a6dd9d5e0baef4",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Fence_n.png",
+    "destination": "resources/art_samples/industrial/textures/Fence_n.png",
+    "sha256": "3f714b6fcbed14d115b22222b254962e8fa4baf901c796ab7f896e001ec0d53a",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Generator.png",
+    "destination": "resources/art_samples/industrial/textures/Generator.png",
+    "sha256": "a467f5f332fa0988e5d0dfc4ed57a4293351c8c989686e247883c8ff1b0e0aa8",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Generator_n.png",
+    "destination": "resources/art_samples/industrial/textures/Generator_n.png",
+    "sha256": "665e0576e661eb9da2fd6fe760122d3fffa9e775e0de02dd072e04104b72ec80",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Liquid_reservoir_1.png",
+    "destination": "resources/art_samples/industrial/textures/Liquid_reservoir_1.png",
+    "sha256": "83b13b50cd25fb4958376cc6f6c44692cbb93e9e4aebb54890e9bd6482879cfe",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Liquid_reservoir_1_n.png",
+    "destination": "resources/art_samples/industrial/textures/Liquid_reservoir_1_n.png",
+    "sha256": "b3fab59a6f1e8f31675de5fd824296f73309da43f2726446da9e5a420a12d662",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Liquid_reservoir_2.png",
+    "destination": "resources/art_samples/industrial/textures/Liquid_reservoir_2.png",
+    "sha256": "f2df10bffa4c74804987b0fd5c7c8340e722fd339a287e662ba594e7fc3e5554",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Liquid_reservoir_2_n.png",
+    "destination": "resources/art_samples/industrial/textures/Liquid_reservoir_2_n.png",
+    "sha256": "4a67cdad3d084826038d8292d945d6b374e614ccedcc1985a3ccb97da30b9a29",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Metal_cabinet_1.png",
+    "destination": "resources/art_samples/industrial/textures/Metal_cabinet_1.png",
+    "sha256": "de61c49cc42c17d979b1cdb502ce0a3a7a7fd96d56e26e6b75c2466982039e30",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Metal_cabinet_1_n.png",
+    "destination": "resources/art_samples/industrial/textures/Metal_cabinet_1_n.png",
+    "sha256": "246b9cae6964dbe7bca90e2416b86203750c9c8651c7080e6b0bdb70960ee36b",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Metal_cabinet_2.png",
+    "destination": "resources/art_samples/industrial/textures/Metal_cabinet_2.png",
+    "sha256": "716b3c340829ab06153ed37d6491e6abcf7c7e131412a6ae9ef5d507f01851c5",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Metal_cabinet_2_n.png",
+    "destination": "resources/art_samples/industrial/textures/Metal_cabinet_2_n.png",
+    "sha256": "429844073517ad1c4936800cb0004d55662fbd136eaedc0a6e2225714d17f0c0",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Palet.png",
+    "destination": "resources/art_samples/industrial/textures/Palet.png",
+    "sha256": "ba5bdf6dd20e20efe63627d9c45ddcfbf0d0984b5475a793b90ff89ce0c08c93",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Palet_n.png",
+    "destination": "resources/art_samples/industrial/textures/Palet_n.png",
+    "sha256": "e795163d2edc3beca40ed903b675749bec8c707b0b7a47a7a7e1e0cd18c8f4d2",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Pipes.png",
+    "destination": "resources/art_samples/industrial/textures/Pipes.png",
+    "sha256": "81487b05bbc429558501ee8ed35c54d963acb5a5d61b8160d00b90a0ac4ae637",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Pipes_n.png",
+    "destination": "resources/art_samples/industrial/textures/Pipes_n.png",
+    "sha256": "126c93bb65648b0cacc77a2e2168141996d48ed50fe1b39326881e543b1879d0",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Road.png",
+    "destination": "resources/art_samples/industrial/textures/Road.png",
+    "sha256": "2246e39e4db4f5882c2101edddf7bf78cc78c1a6c54ab35828237576714eabda",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Roadblock.png",
+    "destination": "resources/art_samples/industrial/textures/Roadblock.png",
+    "sha256": "9b6e1dae481e6e507ee17500b33f0b76650674f51ddadcbec2d7848be7565c05",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Roadblock_n.png",
+    "destination": "resources/art_samples/industrial/textures/Roadblock_n.png",
+    "sha256": "b9368061e7d8b3d8204dd1c08d83b6a797a1082d62b0aeec68a9a79129f01eb2",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Road_n.png",
+    "destination": "resources/art_samples/industrial/textures/Road_n.png",
+    "sha256": "052a5122dafea1f118c4a2a2f0f2d35a8e5f3fb344aa61fda76a8ad4f954b287",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Ventilation_1.png",
+    "destination": "resources/art_samples/industrial/textures/Ventilation_1.png",
+    "sha256": "7ea45ddc74a41283d6f87b458a0354352552fdbea15a551fec3d89308798ae86",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Ventilation_1_n.png",
+    "destination": "resources/art_samples/industrial/textures/Ventilation_1_n.png",
+    "sha256": "bcab48d5363a95f4a79f093b7980209bfd6bd8707f614500495639ae66cbecbb",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Ventilation_2.png",
+    "destination": "resources/art_samples/industrial/textures/Ventilation_2.png",
+    "sha256": "b4a206b26a3d55dc8fa065f90a4e5e8725c94a33114fc5045f73f0cda5b28233",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Ventilation_2_n.png",
+    "destination": "resources/art_samples/industrial/textures/Ventilation_2_n.png",
+    "sha256": "77ebd3a5fda99f50cfeac130aeac8466bf82f8a9a135ac5bafc50ddf8c97703d",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Wall.png",
+    "destination": "resources/art_samples/industrial/textures/Wall.png",
+    "sha256": "abdc34d24a59057a1f3e6e575e7f67fd5c64525ba0d63f7ba073dff997e02e5d",
+    "modification": "None; curated single import copy"
+  },
+  {
+    "source": "assets/Industrial_exterior_v1 (1)/Industrial_exterior_v2/Textures/Wall_n.png",
+    "destination": "resources/art_samples/industrial/textures/Wall_n.png",
+    "sha256": "5bef7e71498bbf03a95d5deeddb2d1ab854cf83b3a045e4e8f2268d6848abc06",
+    "modification": "None; curated single import copy"
+  }
+]

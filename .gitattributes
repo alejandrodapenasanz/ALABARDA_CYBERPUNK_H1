@@ -1,0 +1,2 @@
+# Preserve exact source bytes for integrity manifests on Windows.
+* -text

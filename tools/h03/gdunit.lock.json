@@ -1,0 +1,8 @@
+{
+  "version": "6.2.3",
+  "url": "https://codeload.github.com/godot-gdunit-labs/gdUnit4/zip/refs/tags/v6.2.3",
+  "sha256": "8fb1a298af110be6d73067af66132bf036049deb6d5929d4a16756e18d2228bb",
+  "license": "MIT",
+  "source": "https://github.com/godot-gdunit-labs/gdUnit4/tree/v6.2.3",
+  "compatibility": "Upstream lists 4.7/4.7.1; verify 4.7.2 locally before integration"
+}

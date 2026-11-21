@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BalanceProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/config/balance_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+schema_version = 1
+rules = {
+"player_max_hp": 100.0,
+"energy_max": 150.0,
+"ultimate_activation_min": 100.0,
+"dead_eye_world_scale": 0.5
+}
+values = {
+"walk_speed_mps": 8.5, "sprint_speed_mps": 12.5, "dash_speed_mps": 22.0,
+"dash_duration_seconds": 0.16, "dash_cooldown_seconds": 1.0,
+"extraction_energy_per_second": 20.0, "extraction_max_energy_per_target": 60.0,
+"extraction_damage_multiplier": 0.5, "heal_hp_per_second": 25.0,
+"heal_energy_per_second": 25.0, "ultimate_duration_at_100_seconds": 6.0,
+"ultimate_duration_at_150_seconds": 10.0,
+"katana_damage": 35.0, "pistol_suppressed_damage": 30.0, "pistol_magazine": 12.0,
+"rifle_suppressed_damage": 90.0, "rifle_magazine": 5.0, "chainsword_damage": 60.0,
+"revolver_damage": 75.0, "revolver_magazine": 6.0,
+"shotgun_pellet_damage": 12.0, "shotgun_pellets_per_barrel": 8.0,
+"shotgun_magazine_shells": 2.0, "enemy_squishy_hp": 60.0, "enemy_ranged_hp": 80.0,
+"enemy_tank_hp": 150.0, "enemy_tank_armor": 100.0
+}
