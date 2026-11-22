@@ -93,6 +93,7 @@ def main():
         run('integrity', [sys.executable, '-X', 'utf8', 'tools/h03/verify_integrity.py'])
         if args.graphics:
             run('graphics', [godot, '--path', str(ROOT), '--rendering-method', 'gl_compatibility', '--resolution', '1280x720', '--position', '30,30', '--script', 'res://tests/h03/graphics_probe.gd', '--', '--output=' + str(out / 'graphics').replace('\\', '/')], 180)
+            run('readability', [godot, '--path', str(ROOT), '--rendering-method', 'gl_compatibility', '--resolution', '1280x720', '--position', '30,30', '--script', 'res://tests/h03/readability_probe.gd', '--', '--output=' + str(out / 'readability').replace('\\', '/')], 180)
     status = 'PASS' if all(r['status'] == 'PASS' for r in results) else 'FAIL'
     summary = dict(status=status, results=results, limitations=['H1 mouse capture/click E2E NOT_RUN in headless.', 'Human visual and gameplay acceptance PENDING_APPROVAL.'])
     (out / 'summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')

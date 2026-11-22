@@ -5,6 +5,7 @@ const CRT = preload("res://resources/art_samples/crt/CRTTV.gltf")
 const DESK = preload("res://resources/art_samples/office/desk1_weathered.glb")
 const ARMS = preload("res://resources/art_samples/arms/arms_rig.glb")
 const INDUSTRIAL = preload("res://resources/art_samples/industrial/Models/IndustrialHorror_PS_like.fbx")
+const LOCAL_VIEWMODEL = "res://resources/local_experiments/malorian/Malorian.fbx"
 
 var materials: Array[BaseMaterial3D] = []
 var camera: Camera3D
@@ -13,6 +14,8 @@ var key_light: DirectionalLight3D
 var point_lights: Array[OmniLight3D] = []
 var arms_animation: AnimationPlayer
 var sample_nodes: Array[Node3D] = []
+var viewmodel_name := "Arma abstracta / muestra pública"
+var viewmodel: Node3D
 
 func _ready() -> void:
     var world_environment := WorldEnvironment.new()
@@ -39,7 +42,6 @@ func _ready() -> void:
     for index in range(3):
         var x := -3.8 + index * 3.8
         box(self, Vector3(x, 1.7, -4.0), Vector3(2.1, 1.1, 0.12), [concrete, office, metal][index])
-        caption(["01 / HORMIGÓN", "02 / OFICINA", "03 / METAL"][index], Vector3(x, 2.48, -3.85))
     var desk := DESK.instantiate() as Node3D
     desk.name = "OfficeSample"
     desk.position = Vector3(-3.2, 0, -1.5)
@@ -50,7 +52,6 @@ func _ready() -> void:
     crt.position = Vector3(-3.2, 0.9, -1.5)
     add_child(crt)
     sample_nodes.append(crt)
-    caption("CRT / TERMINAL", Vector3(-3.2, 1.94, -1.6))
     # Extraer solo dos meshes del FBX; el catálogo completo no se instancia en la sala.
     var industrial_source := INDUSTRIAL.instantiate()
     for spec in [["Barrel_1", Vector3(2.8, 0.04, -2.4)], ["Ventilation_1", Vector3(4.6, 0.04, -3.1)]]:
@@ -67,7 +68,6 @@ func _ready() -> void:
     box(self, Vector3(3.7, 1.3, -2.65), Vector3(1.15, 0.16, 0.12), metal)
     for index in range(3):
         box(self, Vector3(2.95 + index * 0.7, 0.25, -2.4), Vector3(0.58, 0.45, 0.4), material(Color("8b8053"), 0.15, 0.9, true))
-    caption("CAJAS / MUESTRA PROPIA", Vector3(3.7, 1.95, -2.6), 0.004)
     # Silueta humana angular para leer amenaza en luz tenue; sin enemigo ni daño.
     var silhouette := Node3D.new()
     silhouette.name = "SilhouetteFixture"
@@ -80,7 +80,6 @@ func _ready() -> void:
         box(silhouette, Vector3(x, 0.45, 0), Vector3(0.2, 0.9, 0.23), suit)
         box(silhouette, Vector3(x * 2.4, 1.2, 0), Vector3(0.18, 0.7, 0.22), suit)
     box(silhouette, Vector3(0, 1.76, 0.151), Vector3(0.23, 0.05, 0.02), emissive(Color("e5ae5a")))
-    caption("!  AMENAZA SIMULADA", Vector3(0.2, 2.35, -1.2), 0.004, Color("ffb66a"))
     for spec in [[Vector3(-3.1, 2.4, -0.6), Color("76b8ac")], [Vector3(3.4, 2.8, -1.6), Color("dba979")]]:
         var light := OmniLight3D.new()
         light.position = spec[0]
@@ -100,21 +99,32 @@ func _ready() -> void:
     arms.scale = Vector3.ONE * 0.7
     add_child(arms)
     box(self, Vector3(-1.4, 0.25, 0.1), Vector3(1.2, 0.5, 0.7), dark)
-    caption("RIG FPS / MUESTRA", Vector3(-1.4, 1.75, 0.1))
     sample_nodes.append(arms)
     arms_animation = arms.find_child("AnimationPlayer", true, false) as AnimationPlayer
     if arms_animation:
         arms_animation.play("guard_idle")
         arms_animation.seek(0.1, true)
         arms_animation.pause()
-    # Diseño abstracto propio; no deriva de la Malorian y no dispara.
+    # Muestra opcional local; la publicación conserva el sustituto propio.
     var gun := Node3D.new()
-    gun.name = "FPSPlaceholder"
-    gun.position = Vector3(0.30, -0.22, -0.65)
+    gun.name = "FPSReference"
+    gun.position = Vector3(0.25, -0.19, -0.70)
     camera.add_child(gun)
-    box(gun, Vector3.ZERO, Vector3(0.16, 0.13, 0.44), dark)
-    box(gun, Vector3(0, -0.12, 0.12), Vector3(0.13, 0.26, 0.13), metal)
-    box(gun, Vector3(0, 0.08, -0.04), Vector3(0.025, 0.02, 0.09), emissive(Color("b8d9b2")))
+    viewmodel = gun
+    if not _load_local_viewmodel(gun):
+        gun.scale = Vector3.ONE * 0.7
+        box(gun, Vector3.ZERO, Vector3(0.16, 0.13, 0.44), dark)
+        box(gun, Vector3(0, -0.12, 0.12), Vector3(0.13, 0.26, 0.13), metal)
+        box(gun, Vector3(0, 0.08, -0.04), Vector3(0.025, 0.02, 0.09), emissive(Color("b8d9b2")))
+    for mesh in gun.find_children("*", "MeshInstance3D", true, false):
+        mesh.layers = 2
+        mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+    var viewmodel_light := OmniLight3D.new()
+    viewmodel_light.position = Vector3(-0.2, 0.2, -0.3)
+    viewmodel_light.light_energy = 0.25
+    viewmodel_light.omni_range = 2.0
+    viewmodel_light.light_cull_mask = 2
+    camera.add_child(viewmodel_light)
     collect_materials(self)
     set_camera(0)
     set_lighting(false)
@@ -151,15 +161,30 @@ func box(parent: Node3D, pos: Vector3, dimensions: Vector3, surface: Material) -
     parent.add_child(instance)
     return instance
 
-func caption(text: String, pos: Vector3, pixel_size := 0.004, color := Color("c4d4d4")) -> void:
-    var label := Label3D.new()
-    label.text = text
-    label.position = pos
-    label.font_size = 34
-    label.pixel_size = pixel_size
-    label.modulate = color
-    label.no_depth_test = false
-    add_child(label)
+func _load_local_viewmodel(gun: Node3D) -> bool:
+    if not ResourceLoader.exists(LOCAL_VIEWMODEL):
+        return false
+    var packed := load(LOCAL_VIEWMODEL) as PackedScene
+    if packed == null:
+        return false
+    var source := packed.instantiate()
+    var original := source.find_child("Malorian", true, false) as MeshInstance3D
+    var texture_path := LOCAL_VIEWMODEL.get_base_dir().path_join("Textures/Malorian_Base.png")
+    if original == null or not ResourceLoader.exists(texture_path):
+        source.free()
+        return false
+    var mesh := original.duplicate() as MeshInstance3D
+    var bounds := mesh.transform * mesh.get_aabb()
+    mesh.position -= bounds.get_center()
+    var surface := material(Color.WHITE, 0.15, 0.8)
+    surface.albedo_texture = load(texture_path) as Texture2D
+    mesh.material_override = surface
+    gun.add_child(mesh)
+    gun.scale = Vector3.ONE * (0.50 / bounds.size.z)
+    gun.rotation_degrees.y = 170.0
+    source.free()
+    viewmodel_name = "Malorian / prueba local"
+    return true
 
 func collect_materials(node: Node) -> void:
     if node is MeshInstance3D:
@@ -199,7 +224,8 @@ func set_fog(enabled: bool) -> void:
     environment.fog_light_color = Color("293d43")
 
 func set_camera(index: int) -> void:
-    var positions := [Vector3(6.8, 3.5, 7.2), Vector3(-3.1, 1.65, 0.8), Vector3(0.2, 1.6, 3.5), Vector3(-1.4, 1.45, 1.55)]
-    var targets := [Vector3(0, 1.2, -1.4), Vector3(-3.2, 1.3, -1.5), Vector3(0.2, 1.4, -1.2), Vector3(-1.4, 1.17, 0.1)]
+    var positions := [Vector3(0, 2.0, 3.5), Vector3(-3.0, 1.55, 1.25), Vector3(0.2, 1.6, 3.5), Vector3(-1.4, 1.45, 1.55)]
+    var targets := [Vector3(0, 1.25, -1.8), Vector3(-3.2, 1.2, -1.5), Vector3(0.2, 1.4, -1.2), Vector3(-1.4, 1.17, 0.1)]
     camera.position = positions[index]
+    camera.fov = 55.0 if index == 0 else 65.0
     camera.look_at(targets[index])

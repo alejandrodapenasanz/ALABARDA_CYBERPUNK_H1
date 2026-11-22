@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6hod48y6xtjn"
-path="res://.godot/imported/CRTTV_CRTTV_Metalness-CRTTV_Roughness.png-4d371d4588391e090e5a3c7ee8591645.ctex"
+path.s3tc="res://.godot/imported/CRTTV_CRTTV_Metalness-CRTTV_Roughness.png-4d371d4588391e090e5a3c7ee8591645.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "a7c8fb4bfa04e400077e4995a99e854c"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://resources/art_samples/crt/CRTTV_CRTTV_Metalness-CRTTV_Roughness.png"
-dest_files=["res://.godot/imported/CRTTV_CRTTV_Metalness-CRTTV_Roughness.png-4d371d4588391e090e5a3c7ee8591645.ctex"]
+dest_files=["res://.godot/imported/CRTTV_CRTTV_Metalness-CRTTV_Roughness.png-4d371d4588391e090e5a3c7ee8591645.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

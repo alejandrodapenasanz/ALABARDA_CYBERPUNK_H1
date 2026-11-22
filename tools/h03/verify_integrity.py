@@ -32,11 +32,15 @@ def main():
                 errors.append('Original changed/missing: ' + name)
             preserved += 1
     count = 0
+    absent_local_samples = []
     for folder in ('scenes', 'scripts', 'resources'):
         for path in (ROOT / folder).rglob('*'):
             if path.suffix not in ('.gd', '.tscn', '.tres', '.gdshader'):
                 continue
             for ref in re.findall(r'res://[^"\s\)]+', path.read_text(encoding='utf-8')):
+                if ref.startswith('res://resources/local_experiments/') and not (ROOT / ref[6:]).is_file():
+                    absent_local_samples.append(ref)
+                    continue
                 if not (ROOT / ref[6:]).is_file():
                     errors.append(f'Missing dependency: {path.relative_to(ROOT)} -> {ref}')
                 if ref.startswith('res://assets/'):
@@ -46,7 +50,13 @@ def main():
         path = ROOT / record['destination']
         if not path.is_file() or hashlib.file_digest(path.open('rb'), 'sha256').hexdigest() != record['sha256']:
             errors.append('Sample changed without manifest: ' + record['destination'])
-    print(json.dumps(dict(scope=scope, checked=preserved, external_changes=external, runtime_references=count, errors=errors), ensure_ascii=False, indent=2))
+    local_manifest = ROOT / 'resources/local_experiments/malorian/manifest.json'
+    if local_manifest.exists():
+        for record in json.loads(local_manifest.read_text(encoding='utf-8')):
+            path = ROOT / record['destination']
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
+                errors.append('Local sample changed: ' + record['destination'])
+    print(json.dumps(dict(scope=scope, checked=preserved, external_changes=external, runtime_references=count, absent_optional_local_samples=absent_local_samples, errors=errors), ensure_ascii=False, indent=2))
     return 1 if errors else 0
 
 

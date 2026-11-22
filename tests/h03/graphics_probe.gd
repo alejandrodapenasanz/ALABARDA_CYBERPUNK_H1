@@ -62,6 +62,7 @@ func _run() -> void:
         report.runs.append({"variant": variant, "config": lab.capture_config(), "mean_ms": average, "p50_ms": sorted[int(SAMPLE_FRAMES * 0.5)], "p95_ms": sorted[int(SAMPLE_FRAMES * 0.95)], "p99_ms": sorted[int(SAMPLE_FRAMES * 0.99)], "draw_calls": draw_calls, "primitives": primitives, "samples_ms": timings})
         print("GRAPHICS ", variant, " mean_ms=", average)
     # Comparación de texto nativa en tamaño menor; el HUD no se reduce con el viewport 3D.
+    lab.comparison_panel.visible = true
     for output_size in [Vector2i(1280, 720), Vector2i(960, 540)]:
         DisplayServer.window_set_size(output_size)
         lab.options = base.duplicate()

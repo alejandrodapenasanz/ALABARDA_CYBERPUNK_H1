@@ -11,6 +11,7 @@ Validado con **Godot 4.7.2.stable.official.ed1daf0bf**, edición estándar, GL C
 - **F5:** prototipo H1, escena `scenes/main.tscn`.
 - **Laboratorio:** abrir `scenes/art_reference/modern_psx_lab.tscn` y pulsar **F6**.
 - **T/L/R/X/S/G:** filtro, iluminación, resolución 3D, retro, sombras, niebla.
+- **B:** comparación retro A/B, izquierda sin efecto y derecha con efecto; slider de intensidad. Los controles están fuera de la escena, la cámara general es frontal y **F** despliega las fuentes sin tapar el 3D. Reset inicia con luz neutra.
 - **1–4:** cámara general, CRT, silueta, rig de brazos. **A:** animación; **M:** movimiento de cámara; **F:** panel tipográfico; **0:** restaurar; **Esc:** salir.
 
 El laboratorio muestra CRT, escritorio, barril/ventilación, brazos con 52 huesos/18 clips y fuente HomeVideo. El arma abstracta y las cajas son primitivas propias. No implementa combate ni nuevos sistemas. El perfil `resources/balance/provisional.tres` tampoco altera el balance de H1.
@@ -26,7 +27,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_tests.ps1
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_tests.ps1 -Graphics
 ```
 
-El runner crea una carpeta nueva en `docs/evidence/h03/`, con logs, JUnit, comandos y `summary.json`. Salida global 0 = PASS, 1 = FAIL, 2 = falta motor. Comprueba importación, ocho tests de balance, cinco de integración, arranque H1, 34 regresiones y recursos. El control negativo falla deliberadamente con salida **100**; el runner exige exactamente ese fallo y después informa `negative_control verification: PASS`. Captura/clic físico H1: NOT_RUN en headless. La revisión humana sigue pendiente.
+El runner crea una carpeta nueva en `docs/evidence/h03/`, con logs, JUnit, comandos y `summary.json`. Salida global 0 = PASS, 1 = FAIL, 2 = falta motor. Comprueba importación, ocho tests de balance, ocho de integración, arranque H1, 34 regresiones y recursos. Con -Graphics comprueba también legibilidad técnica mediante rectángulos de UI y diferencias reales de píxeles. El control negativo falla deliberadamente con salida **100**; el runner exige exactamente ese fallo y después informa `negative_control verification: PASS`. Captura/clic físico H1: NOT_RUN en headless. La revisión humana sigue pendiente.
 
 La integridad de esta copia comprueba seis archivos base H1, dependencias y hashes de muestras. No afirma disponer de los 908 archivos originales/históricos comprobados en el workspace privado. Para reinstalar exactamente el framework: `python tools/h03/install_gdunit.py` (requiere red; no sobrescribe archivos distintos).
 
