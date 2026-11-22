@@ -1,10 +1,12 @@
 # Registro público — muestras H03
 
+**Cierre 2026-11-22:** creador aprueba H03; HomeVideo A-003 VISUALLY_APPROVED para legibilidad/preferencia en el contexto probado (D-020). Animación A-008 confirmada manualmente en cámara 4 con A. Perfil D-019 aprobado. No aprobación de modelos finales ni ampliación de licencias. Los estados pendientes de las inspecciones iniciales son antecedentes.
+
 Actualización 2026-11-22: el creador prueba localmente su Malorian bajo la licencia CC0 del archivo y permiso de uso/modificación del autor; el modelo y texturas siguen excluidos de esta copia pública. El código conserva fallback propio. A-011/A-012 actualizados: cámara frontal, interfaz fuera del 3D, retro regulable y split A/B; aprobación artística pendiente. No nuevos assets distribuidos.
 
 Metadatos .import actualizados por la detección 3D de Godot: mipmaps, compresión VRAM S3TC y normal map CRT. La suite se ejecutó con esos ajustes; fuentes PNG/GLB/FBX conservadas por hash, sin edición ni cambio de resolución.
 
-Consulta de procedencia/licencia: 2026-11-21. Todas las muestras son **EXPERIMENTALES**, técnicamente cargadas en Godot 4.7.2; aprobación visual pendiente. No son assets finales. [Manifiesto SHA-256](../resources/art_samples/manifest.json) y [atribuciones](../THIRD_PARTY_NOTICES.md). Las rutas `source` del manifiesto identifican originales del archivo local del creador, no dependencias necesarias para ejecutar esta copia.
+Consulta de procedencia/licencia: 2026-11-21. Todas las muestras son **EXPERIMENTALES**, técnicamente cargadas en Godot 4.7.2; A-003 cuenta además con aprobación visual limitada al contexto H03. No son selección final de assets. [Manifiesto SHA-256](../resources/art_samples/manifest.json) y [atribuciones](../THIRD_PARTY_NOTICES.md). Las rutas `source` del manifiesto identifican originales del archivo local del creador, no dependencias necesarias para ejecutar esta copia.
 
 | ID | Autor / origen | Licencia | Ruta incluida / comprobación |
 |---|---|---|---|

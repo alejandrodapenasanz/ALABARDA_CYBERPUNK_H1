@@ -1,5 +1,7 @@
 # Referencia artística H03
 
+**H03 aprobado por el creador el 2026-11-22.** D-020: HomeVideo preferida y legible en la muestra del laboratorio; referencia de terminales, sin sustitución global de HUD ni aceptación de cualquier tamaño futuro. Confirmada animación del rig con A. Perfil D-019 vigente. El resultado experimental permite cerrar H03; los estados pendientes de los antecedentes siguientes no describen el cierre actual.
+
 **D-019 APROBADA · 2026-11-22:** perfil seleccionado por el creador: nearest+mips, luz atmosférica, 1280×720, retro apagado, sombras activadas, niebla apagada. Intensidad 70% almacenada pero inactiva. Es la referencia vigente, revisable por decisión futura, y sustituye el reset neutro de diagnóstico descrito en la corrección anterior. No constituye selección de assets finales ni validación de otras pruebas no mencionadas.
 
 Corrección 2026-11-22: feedback humano detectó solapes y retro imperceptible. La UI ahora ocupa un panel lateral, las fuentes una zona desplegable propia y las cámaras muestran título/leyenda fuera del 3D. General frontal más próxima, luz neutra al reset para comparar. X activa retro, B compara izquierda sin/derecha con; slider 0–100%. Se retiraron rótulos 3D que se superponían. Parámetros de prueba, pendientes de aprobación humana.

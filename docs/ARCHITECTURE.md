@@ -1,5 +1,7 @@
 # Arquitectura ejecutable H03
 
+**H03 CERRADO / APROBADO POR CREADOR · 2026-11-22.** Suite técnica PASS y pruebas humanas H1/HomeVideo/rig confirmadas. Cierre exclusivamente documental, sin cambiar runtime/tests. Perfil D-019 vigente, preferencia tipográfica D-020 registrada; H04 no iniciado.
+
 Perfil vigente D-019 (2026-11-22): inicio/reset atmosférico, nearest+mips, 1280×720, sombras sí, retro/niebla no; intensidad 0.70 inactiva. Aprobado por el creador, revisable. DEFAULT_OPTIONS se comparte entre inicio y reset; se conserva la luz neutra como comparación opcional. Los registros iniciales inferiores son anteriores a esta selección.
 
 Revisión 2026-11-22: panel lateral de controles, leyendas externas y fuentes desplegables fuera del rectángulo 3D. Render fijo 1280×720/640×360 presentado con aspecto 16:9. Retro regulable y split B, solo 3D; shader 15 pasos/scanline 0.10/mezcla 0.70 de prueba. 8 tests de integración; -Graphics añade readability_probe.gd con comparaciones de píxeles y comprobación de solapes. Carga opcional de Malorian suministrada en la instalación local del creador; carpeta resources/local_experiments excluida de Git y empaquetado. Esta publicación se prueba sin ella y usa arma abstracta. No funcionalidad de arma ni cambio de H1.

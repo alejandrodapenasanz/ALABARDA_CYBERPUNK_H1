@@ -1,5 +1,17 @@
 # Validación pública H03
 
+## Cierre aprobado · 2026-11-22
+
+**H03 CERRADO / PASS, aprobado por el creador.** Tras seleccionar D-019, confirma expresamente H1 (movimiento, ratón/disparo, cinco blancos y R) y laboratorio (HomeVideo legible y preferida, brazos con A en cámara 4), y solicita cerrar/publicar. Se registra PASS manual declarado, separado del caso físico NOT_RUN del backend headless. No se reescriben resultados de pruebas anteriores ni se inventan logs manuales.
+
+Base técnica: run_06_selected_profile completo PASS/exit 0, 8 unitarias/8 integración, H1 34 PASS/0 FAIL/1 NOT_RUN, fallo esperado detectado, importación/arranque/recursos/gráficos/legibilidad PASS. Integración e integridad de esta copia pública también PASS. Este commit de cierre cambia documentación/estados; el runtime y los tests conservan los bytes de la versión probada. Comprobación de integridad/enlaces realizada; no se declara nueva ejecución completa del motor por un cierre documental.
+
+HomeVideo preferida en contexto probado (D-020); perfil visual vigente y revisable. Modelos siguen experimentales; export Windows, Blender, otros equipos y sesiones largas mantienen NOT_RUN fuera del alcance exigido. H04 no iniciado ni autorizado.
+
+## Historial anterior al cierre
+
+Los estados de aprobación pendiente inferiores describen su fecha de ejecución; quedan sustituidos por la aprobación explícita anterior.
+
 2026-11-22, D-019: el creador confirma mediante captura su elección visual actual y revisable: nearest+mips, atmósfera, 1280×720, retro off, sombras on, niebla off. APROBADO ese perfil, no aprobación global inferida de pruebas no mencionadas. Inicio y reset ajustados a la selección; el resto del comportamiento y assets de prueba se conservan.
 
 Tras aplicar D-019, suite local run_06_selected_profile con gráficos PASS global/exit 0: 8 unitarias, 8 integración, 34 comprobaciones H1 y un caso físico NOT_RUN; negativo esperado detectado, importación/integridad/gráficos/legibilidad PASS. Se conserva el mismo shader y recursos; cambió la iluminación predeterminada.
