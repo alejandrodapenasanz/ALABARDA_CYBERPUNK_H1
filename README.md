@@ -1,5 +1,7 @@
 # ALABARDA STUDIOS — Cyberpunk FPS
 
+**Perfil visual aprobado por el creador (D-019, 2026-11-22):** nearest+mips, luz atmosférica, 3D 1280×720, retro desactivado, sombras sí y niebla no. Inicio y tecla 0 reproducen esta elección, vigente y revisable en el futuro. El 70% de intensidad no tiene efecto con retro apagado; los assets siguen siendo de prueba.
+
 Prototipo Godot para Windows. H1 jugable y laboratorio H03 de pruebas, balance provisional y comparación Modern PSX / Retro Industrial Cyberpunk. **H03 implementado; aprobación artística/manual pendiente del creador. H04 no iniciado.**
 
 Los assets incluidos son exclusivamente muestras de prueba: no representan la selección final del juego. Esta publicación contiene el código ejecutable, tests y una selección redistribuible de recursos. El archivo documental privado, los originales completos y los logs locales no forman parte de esta copia pública.
@@ -11,7 +13,7 @@ Validado con **Godot 4.7.2.stable.official.ed1daf0bf**, edición estándar, GL C
 - **F5:** prototipo H1, escena `scenes/main.tscn`.
 - **Laboratorio:** abrir `scenes/art_reference/modern_psx_lab.tscn` y pulsar **F6**.
 - **T/L/R/X/S/G:** filtro, iluminación, resolución 3D, retro, sombras, niebla.
-- **B:** comparación retro A/B, izquierda sin efecto y derecha con efecto; slider de intensidad. Los controles están fuera de la escena, la cámara general es frontal y **F** despliega las fuentes sin tapar el 3D. Reset inicia con luz neutra.
+- **B:** comparación retro A/B, izquierda sin efecto y derecha con efecto; slider de intensidad. Los controles están fuera de la escena, la cámara general es frontal y **F** despliega las fuentes sin tapar el 3D. Reset inicia con luz atmosférica aprobada.
 - **1–4:** cámara general, CRT, silueta, rig de brazos. **A:** animación; **M:** movimiento de cámara; **F:** panel tipográfico; **0:** restaurar; **Esc:** salir.
 
 El laboratorio muestra CRT, escritorio, barril/ventilación, brazos con 52 huesos/18 clips y fuente HomeVideo. El arma abstracta y las cajas son primitivas propias. No implementa combate ni nuevos sistemas. El perfil `resources/balance/provisional.tres` tampoco altera el balance de H1.

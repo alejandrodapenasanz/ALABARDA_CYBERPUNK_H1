@@ -1,5 +1,11 @@
 # Validación pública H03
 
+2026-11-22, D-019: el creador confirma mediante captura su elección visual actual y revisable: nearest+mips, atmósfera, 1280×720, retro off, sombras on, niebla off. APROBADO ese perfil, no aprobación global inferida de pruebas no mencionadas. Inicio y reset ajustados a la selección; el resto del comportamiento y assets de prueba se conservan.
+
+Tras aplicar D-019, suite local run_06_selected_profile con gráficos PASS global/exit 0: 8 unitarias, 8 integración, 34 comprobaciones H1 y un caso físico NOT_RUN; negativo esperado detectado, importación/integridad/gráficos/legibilidad PASS. Se conserva el mismo shader y recursos; cambió la iluminación predeterminada.
+
+Copia pública con ese cambio: integración repetida, 8 tests PASS sin fallos/errores/skips, exit 0; integridad pública PASS/exit 0. No se repite toda la suite pública para esta selección de un valor inicial; la suite completa local sí se ejecutó.
+
 Corrección 2026-11-22 validada localmente: 8 unitarias + 8 integración PASS, H1 34 PASS/0 FAIL/1 NOT_RUN; importación, arranque, integridad, gráficos y nuevo probe de legibilidad PASS. Retro a intensidad cero no cambia píxeles; a 0.70 produce diferencia media de 4.839/255 en región de prueba local. Controles/panel tipográfico sin invadir el rectángulo 3D a 1280×720 y 960×540. No equivale a aprobación artística. La nueva serie breve de rendimiento tiene una meseta de 8.333 ms en varias variantes, sin control del foco de ventana; no se usa para comparar costes ni afirmar mejoras. Los datos inferiores corresponden a la entrega inicial del 2026-11-21.
 
 La copia pública corregida también se ejecutó sin Malorian ni originales locales: suite public_readability con -Graphics PASS global/exit 0; ocho tests unitarios y ocho de integración, fallback propio, 34 comprobaciones H1, control negativo esperado, importación/integridad y ambos probes gráficos PASS. La prueba de píxeles exige cambio visible técnicamente y retorno exacto a intensidad cero. Evidencias locales del creador; el runner permite reproducirlas.

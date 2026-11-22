@@ -10,7 +10,7 @@ const CAMERA_HINTS := [
     "Amenaza simulada · Revisar silueta y contraste · Sin IA ni combate",
     "Rig de referencia · A cambia de animación · No es el brazo cyborg final"
 ]
-const DEFAULT_OPTIONS := {"nearest": true, "atmospheric": false, "half_resolution": false, "retro": false, "shadows": true, "fog": false}
+const DEFAULT_OPTIONS := {"nearest": true, "atmospheric": true, "half_resolution": false, "retro": false, "shadows": true, "fog": false}
 var viewport: SubViewport
 var world: Node3D
 var display: TextureRect

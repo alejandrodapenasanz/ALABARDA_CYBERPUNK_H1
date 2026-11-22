@@ -38,7 +38,7 @@ func test_optional_settings_are_reversible() -> void:
         elif key == "fog":
             assert_bool(lab.world.environment.fog_enabled).is_equal(not original)
         elif key == "atmospheric":
-            assert_float(lab.world.environment.ambient_light_energy).is_equal_approx(0.24, 0.00001)
+            assert_float(lab.world.environment.ambient_light_energy).is_equal_approx(0.65, 0.00001)
         lab.toggle(key)
     assert_dict(lab.capture_config()).is_equal(before)
     lab.free()
@@ -104,6 +104,8 @@ func test_retro_comparison_and_reset() -> void:
     assert_bool(lab.split_preview).is_false()
     assert_bool(lab.options.retro).is_false()
     assert_int(lab.camera_index).is_equal(0)
+    assert_dict(lab.options).is_equal({"nearest": true, "atmospheric": true, "half_resolution": false, "retro": false, "shadows": true, "fog": false})
+    assert_float(lab.retro_intensity).is_equal_approx(0.7, 0.00001)
     lab.free()
 
 func test_local_viewmodel_and_public_fallback() -> void:
