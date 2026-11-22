@@ -1,0 +1,69 @@
+{
+  "blender": "4.5.3 LTS",
+  "units": "metres",
+  "axis": "glTF Y-up",
+  "source_script": "tools/h04/build_kit.py",
+  "assets": [
+    {
+      "name": "service_cabinet",
+      "destination": "resources/art_kit/service_cabinet.glb",
+      "source": "art_sources/h04/service_cabinet.blend",
+      "source_sha256": "cb532cae6e34867efa92b604fae727308bec10ed6c4d728e2854913c7df831f3",
+      "sha256": "a40cd5fae461fd3b7c058fd5033fdc8e15cfbc5fc23941246f5fda46fad92c58",
+      "triangles": 248,
+      "dimensions_blender_m": [
+        1.100000023841858,
+        0.6050000190734863,
+        2.0
+      ],
+      "uv_layers": 1,
+      "materials": [
+        "h04_paint",
+        "h04_dark",
+        "h04_edge",
+        "h04_ochre"
+      ],
+      "provenance": "Original H04; build_kit.py"
+    },
+    {
+      "name": "wall_panel",
+      "destination": "resources/art_kit/wall_panel.glb",
+      "source": "art_sources/h04/wall_panel.blend",
+      "source_sha256": "5281fe7efc7e9751c79d07f7d35062e321963bc945dd013582659efa051eb09f",
+      "sha256": "f9ab59b88f228f64b38325cee76140d073501aae35b105a0bbbea4ade99d8ffe",
+      "triangles": 104,
+      "dimensions_blender_m": [
+        2.0,
+        0.2800000011920929,
+        3.0
+      ],
+      "uv_layers": 1,
+      "materials": [
+        "h04_paint",
+        "h04_edge",
+        "h04_dark"
+      ],
+      "provenance": "Original H04; build_kit.py"
+    },
+    {
+      "name": "transit_case",
+      "destination": "resources/art_kit/transit_case.glb",
+      "source": "art_sources/h04/transit_case.blend",
+      "source_sha256": "05ecd4d837c38522c6a6656d5dedde00442fa3fe6d91177e8a1606a7a413eda6",
+      "sha256": "15cbb08f1783c3770dbd2b1b595f7ecbb9ab8a0d9f89d95fa2bfaccd09256ad5",
+      "triangles": 124,
+      "dimensions_blender_m": [
+        0.7099999785423279,
+        0.5325000286102295,
+        0.49000000953674316
+      ],
+      "uv_layers": 1,
+      "materials": [
+        "h04_ochre",
+        "h04_dark",
+        "h04_edge"
+      ],
+      "provenance": "Original H04; build_kit.py"
+    }
+  ]
+}

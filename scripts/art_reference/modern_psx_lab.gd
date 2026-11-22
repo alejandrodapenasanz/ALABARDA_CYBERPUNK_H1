@@ -5,7 +5,7 @@ const HOME_VIDEO = preload("res://resources/art_samples/font/HomeVideo-Regular.t
 const RETRO = preload("res://resources/shaders/subtle_retro.gdshader")
 const CAMERA_NAMES := ["1 · General", "2 · CRT / oficina", "3 · Silueta", "4 · Rig de brazos"]
 const CAMERA_HINTS := [
-    "Izquierda: CRT y oficina · Centro: rig y silueta · Derecha: industria y cajas",
+    "Taller / sector 04 · CRT y oficina · Silueta · Kit industrial",
     "CRT y escritorio · Comparar textura, desgaste y lectura en luz neutra/tenue",
     "Amenaza simulada · Revisar silueta y contraste · Sin IA ni combate",
     "Rig de referencia · A cambia de animación · No es el brazo cyborg final"
@@ -31,6 +31,7 @@ var elapsed := 0.0
 var animation_index := 0
 var split_preview := false
 var retro_intensity := 0.7
+var alarm_preview := false
 
 func _ready() -> void:
     viewport = SubViewport.new()
@@ -65,8 +66,8 @@ func _build_ui() -> void:
     controls.size_flags_horizontal = Control.SIZE_EXPAND_FILL
     controls.add_theme_constant_override("separation", 8)
     scroll.add_child(controls)
-    controls.add_child(_label("ALABARDA / H03", 23, Color("d9e7dc")))
-    controls.add_child(_label("Laboratorio Modern PSX", 16))
+    controls.add_child(_label("ALABARDA / H04", 23, Color("d9e7dc")))
+    controls.add_child(_label("Taller · Modern PSX", 16))
     controls.add_child(HSeparator.new())
     var cameras := GridContainer.new()
     cameras.columns = 2
@@ -77,7 +78,7 @@ func _build_ui() -> void:
     controls.add_child(HSeparator.new())
     for key in ["nearest", "atmospheric", "half_resolution", "retro", "shadows", "fog"]:
         var option: String = key
-        var button := _button("", func(): toggle(option))
+        var button := _button("", func(): cycle_lighting() if option == "atmospheric" else toggle(option))
         option_buttons[key] = button
         controls.add_child(button)
     controls.add_child(_button("B · Comparar retro A/B", toggle_split))
@@ -179,6 +180,8 @@ func _label(text: String, font_size: int, color := Color("b6c8cc")) -> Label:
 
 func toggle(key: String) -> void:
     options[key] = not options[key]
+    if key == "atmospheric":
+        alarm_preview = false
     if key == "retro":
         split_preview = false
     apply_options()
@@ -199,6 +202,8 @@ func toggle_fonts() -> void:
 func apply_options() -> void:
     world.set_filter(options.nearest)
     world.set_lighting(options.atmospheric)
+    if alarm_preview:
+        world.set_alarm_lighting()
     world.set_shadows(options.shadows)
     world.set_fog(options.fog)
     effect.set_shader_parameter("enabled", options.retro)
@@ -206,7 +211,7 @@ func apply_options() -> void:
     effect.set_shader_parameter("split_preview", split_preview)
     viewport.size = Vector2i(640, 360) if options.half_resolution else Vector2i(1280, 720)
     option_buttons.nearest.text = "T · " + ("Nearest + mips" if options.nearest else "Linear + mips")
-    option_buttons.atmospheric.text = "L · Luz " + ("atmosférica" if options.atmospheric else "neutra")
+    option_buttons.atmospheric.text = "L · Luz " + ("alarma / muestra" if alarm_preview else ("atmosférica" if options.atmospheric else "neutra"))
     option_buttons.half_resolution.text = "R · 3D " + str(viewport.size)
     option_buttons.retro.text = "X · Retro " + ("ACTIVADO" if options.retro else "DESACTIVADO")
     option_buttons.shadows.text = "S · Sombras " + ("sí" if options.shadows else "no")
@@ -235,6 +240,7 @@ func animate_arms() -> void:
 
 func reset_view() -> void:
     options = DEFAULT_OPTIONS.duplicate()
+    alarm_preview = false
     split_preview = false
     retro_intensity = 0.7
     intensity_slider.set_value_no_signal(retro_intensity)
@@ -251,7 +257,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
         return
     var keys := {KEY_T: "nearest", KEY_L: "atmospheric", KEY_R: "half_resolution", KEY_X: "retro", KEY_S: "shadows", KEY_G: "fog"}
     if keys.has(event.keycode):
-        toggle(keys[event.keycode])
+        if event.keycode == KEY_L:
+            cycle_lighting()
+        else:
+            toggle(keys[event.keycode])
     elif event.keycode in [KEY_1, KEY_2, KEY_3, KEY_4]:
         set_camera(event.keycode - KEY_1)
     elif event.keycode == KEY_B:
@@ -274,4 +283,15 @@ func _process(delta: float) -> void:
         world.camera.position.x += sin(elapsed * 0.8) * 0.35
 
 func capture_config() -> Dictionary:
-    return {"options": options.duplicate(), "camera": str(world.camera.transform), "viewport": str(viewport.size), "output": str(get_viewport_rect().size), "materials": world.materials.size(), "mesh_instances": world.find_children("*", "MeshInstance3D", true, false).size(), "retro_intensity": retro_intensity, "split_preview": split_preview, "viewmodel": world.viewmodel_name}
+    return {"options": options.duplicate(), "camera": str(world.camera.transform), "viewport": str(viewport.size), "output": str(get_viewport_rect().size), "materials": world.materials.size(), "mesh_instances": world.find_children("*", "MeshInstance3D", true, false).size(), "retro_intensity": retro_intensity, "split_preview": split_preview, "viewmodel": world.viewmodel_name, "lighting_condition": "alarm" if alarm_preview else ("atmospheric" if options.atmospheric else "neutral")}
+
+func cycle_lighting() -> void:
+    # Atmosférica → neutra → alarma estática → atmosférica.
+    if alarm_preview:
+        alarm_preview = false
+        options.atmospheric = true
+    elif options.atmospheric:
+        options.atmospheric = false
+    else:
+        alarm_preview = true
+    apply_options()

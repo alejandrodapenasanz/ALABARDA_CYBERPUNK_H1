@@ -1,4 +1,6 @@
-# Third-party notices — H03 experimental samples
+# Third-party notices — H03/H04 experimental samples
+
+H04 reuses these samples. Source model/texture/font bytes remain unchanged. Runtime instance changes: roughness floor 0.78, metallic ceiling 0.3, moderate desk/barrel tint, placement and material filtering. HomeVideo is additionally rendered on two physical signs. Original service cabinet, wall panel and transit case in resources/art_kit were authored for this project with Blender; they contain no third-party geometry or images. Blender 4.5.3 is an external authoring tool, not distributed with the project.
 
 - GdUnit4 6.2.3 — Copyright (c) 2023 Mike Schulze; MIT. Full notice: [LICENSE](addons/gdUnit4/LICENSE). Source: https://github.com/godot-gdunit-labs/gdUnit4/tree/v6.2.3 . Unmodified development dependency.
 - PSX Industrial Environment Asset Pack (local Industrial_exterior_v2) — godgoldfear. Source: https://godgoldfear.itch.io/psx-industrial-environment-asset-pack . [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Original models/textures unchanged; selected instance scaled and positioned in the H03 lab, material filtering adjusted at runtime. Attribution retained for distribution of these samples.

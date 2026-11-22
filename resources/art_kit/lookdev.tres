@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/art_reference/lookdev_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+floor_color = Color(0.32549, 0.341176, 0.317647, 1)
+wall_color = Color(0.207843, 0.298039, 0.313725, 1)
+metal_color = Color(0.454902, 0.505882, 0.482353, 1)
+dark_color = Color(0.086275, 0.121569, 0.141176, 1)
+warm_color = Color(0.686275, 0.529412, 0.286275, 1)
+ambient_neutral = 0.65
+ambient_atmospheric = 0.24
+ambient_alarm = 0.28
+key_neutral = 1.0
+key_atmospheric = 0.38
+key_alarm = 0.45
+local_energy = 1.8
+local_range = 6.5
+camera_positions = PackedVector3Array(0, 2.05, 4, -3, 1.55, 1.25, 0.2, 1.6, 3.5, -1.4, 1.45, 1.55)
+camera_targets = PackedVector3Array(0, 1.4, -1.8, -3.2, 1.2, -1.5, 0.2, 1.4, -1.2, -1.4, 1.17, 0.1)

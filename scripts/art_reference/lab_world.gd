@@ -1,6 +1,8 @@
 extends Node3D
 ## Composición experimental. No colisiones, IA ni interacciones de gameplay.
 
+const Room = preload("res://scripts/art_reference/lookdev_room.gd")
+const PROFILE = preload("res://resources/art_kit/lookdev.tres")
 const CRT = preload("res://resources/art_samples/crt/CRTTV.gltf")
 const DESK = preload("res://resources/art_samples/office/desk1_weathered.glb")
 const ARMS = preload("res://resources/art_samples/arms/arms_rig.glb")
@@ -29,64 +31,9 @@ func _ready() -> void:
     key_light = DirectionalLight3D.new()
     key_light.rotation_degrees = Vector3(-55, -28, 0)
     add_child(key_light)
-    var concrete := material(Color("515755"), 0.0, 0.95, true)
-    var metal := material(Color("66747b"), 0.7, 0.62, true)
-    var dark := material(Color("242d32"), 0.25, 0.8)
-    var office := material(Color("87735b"), 0.0, 0.9, true)
-    box(self, Vector3(0, -0.15, 0), Vector3(12, 0.3, 10), concrete)
-    box(self, Vector3(0, 2.0, -4.2), Vector3(12, 4.0, 0.25), dark)
-    for x in [-5.7, -2.0, 2.0, 5.7]:
-        box(self, Vector3(x, 2.0, -4.0), Vector3(0.12, 4, 0.16), metal)
-    for x in [-4.3, 0.0, 4.3]:
-        box(self, Vector3(x, 3.6, -3.9), Vector3(2.0, 0.05, 0.06), emissive(Color("c9dbbd")))
-    for index in range(3):
-        var x := -3.8 + index * 3.8
-        box(self, Vector3(x, 1.7, -4.0), Vector3(2.1, 1.1, 0.12), [concrete, office, metal][index])
-    var desk := DESK.instantiate() as Node3D
-    desk.name = "OfficeSample"
-    desk.position = Vector3(-3.2, 0, -1.5)
-    add_child(desk)
-    sample_nodes.append(desk)
-    var crt := CRT.instantiate() as Node3D
-    crt.name = "CRTSample"
-    crt.position = Vector3(-3.2, 0.9, -1.5)
-    add_child(crt)
-    sample_nodes.append(crt)
-    # Extraer solo dos meshes del FBX; el catálogo completo no se instancia en la sala.
-    var industrial_source := INDUSTRIAL.instantiate()
-    for spec in [["Barrel_1", Vector3(2.8, 0.04, -2.4)], ["Ventilation_1", Vector3(4.6, 0.04, -3.1)]]:
-        var source := industrial_source.find_child(spec[0], true, false) as Node3D
-        if source:
-            var sample := source.duplicate() as Node3D
-            sample.transform = Transform3D.IDENTITY
-            sample.position = spec[1]
-            add_child(sample)
-            sample_nodes.append(sample)
-    industrial_source.free()
-    # Pared de prueba y cajas ambientales propias: la licencia PSXAmmoBoxes sigue bloqueada.
-    box(self, Vector3(3.7, 1.2, -2.8), Vector3(2.4, 1.2, 0.12), dark)
-    box(self, Vector3(3.7, 1.3, -2.65), Vector3(1.15, 0.16, 0.12), metal)
-    for index in range(3):
-        box(self, Vector3(2.95 + index * 0.7, 0.25, -2.4), Vector3(0.58, 0.45, 0.4), material(Color("8b8053"), 0.15, 0.9, true))
-    # Silueta humana angular para leer amenaza en luz tenue; sin enemigo ni daño.
-    var silhouette := Node3D.new()
-    silhouette.name = "SilhouetteFixture"
-    silhouette.position = Vector3(0.2, 0, -1.2)
-    add_child(silhouette)
-    var suit := material(Color("6b7274"), 0.1, 0.85)
-    box(silhouette, Vector3(0, 1.2, 0), Vector3(0.52, 0.67, 0.28), suit)
-    box(silhouette, Vector3(0, 1.74, 0), Vector3(0.30, 0.32, 0.29), suit)
-    for x in [-0.17, 0.17]:
-        box(silhouette, Vector3(x, 0.45, 0), Vector3(0.2, 0.9, 0.23), suit)
-        box(silhouette, Vector3(x * 2.4, 1.2, 0), Vector3(0.18, 0.7, 0.22), suit)
-    box(silhouette, Vector3(0, 1.76, 0.151), Vector3(0.23, 0.05, 0.02), emissive(Color("e5ae5a")))
-    for spec in [[Vector3(-3.1, 2.4, -0.6), Color("76b8ac")], [Vector3(3.4, 2.8, -1.6), Color("dba979")]]:
-        var light := OmniLight3D.new()
-        light.position = spec[0]
-        light.light_color = spec[1]
-        light.omni_range = 6.5
-        add_child(light)
-        point_lights.append(light)
+    Room.populate(self)
+    var dark := material(PROFILE.dark_color, 0.25, 0.8)
+    var metal := material(PROFILE.metal_color, 0.5, 0.75)
     camera = Camera3D.new()
     camera.name = "ReferenceCamera"
     camera.fov = 65.0
@@ -126,6 +73,7 @@ func _ready() -> void:
     viewmodel_light.light_cull_mask = 2
     camera.add_child(viewmodel_light)
     collect_materials(self)
+    _harmonize_samples()
     set_camera(0)
     set_lighting(false)
 
@@ -138,9 +86,9 @@ func material(tint: Color, metallic: float, roughness: float, textured := false)
         var pixels := Image.create(64, 64, false, Image.FORMAT_RGB8)
         for y in range(64):
             for x in range(64):
-                var tone := 0.72 + float((x * 17 + y * 31) % 13) / 60.0
-                if x % 32 == 0 or y % 32 == 0:
-                    tone = 0.43
+                var tone := 0.88 + float((x * 17 + y * 31) % 13) / 150.0
+                if y % 32 == 0:
+                    tone = 0.74
                 pixels.set_pixel(x, y, Color(tone, tone, tone))
         pixels.generate_mipmaps()
         result.albedo_texture = ImageTexture.create_from_image(pixels)
@@ -205,13 +153,20 @@ func collect_materials(node: Node) -> void:
 
 func set_filter(nearest: bool) -> void:
     for surface in materials:
-        surface.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS if nearest else BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+        # Texto de viewport sin mipmaps: conservar trazos al reducirlo en pantalla.
+        if surface.albedo_texture is ViewportTexture:
+            surface.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR
+        else:
+            surface.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS if nearest else BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 func set_lighting(atmospheric: bool) -> void:
-    environment.ambient_light_energy = 0.24 if atmospheric else 0.65
-    key_light.light_energy = 0.38 if atmospheric else 1.0
-    for light in point_lights:
-        light.light_energy = 1.8 if atmospheric else 0.0
+    environment.ambient_light_color = Color("9aafba")
+    environment.ambient_light_energy = PROFILE.ambient_atmospheric if atmospheric else PROFILE.ambient_neutral
+    key_light.light_energy = PROFILE.key_atmospheric if atmospheric else PROFILE.key_neutral
+    for index in range(point_lights.size()):
+        var light := point_lights[index]
+        light.light_color = Color("76b8ac") if index == 0 else Color("dba979")
+        light.light_energy = PROFILE.local_energy if atmospheric else 0.0
 
 func set_shadows(enabled: bool) -> void:
     key_light.shadow_enabled = enabled
@@ -224,8 +179,36 @@ func set_fog(enabled: bool) -> void:
     environment.fog_light_color = Color("293d43")
 
 func set_camera(index: int) -> void:
-    var positions := [Vector3(0, 2.0, 3.5), Vector3(-3.0, 1.55, 1.25), Vector3(0.2, 1.6, 3.5), Vector3(-1.4, 1.45, 1.55)]
-    var targets := [Vector3(0, 1.25, -1.8), Vector3(-3.2, 1.2, -1.5), Vector3(0.2, 1.4, -1.2), Vector3(-1.4, 1.17, 0.1)]
-    camera.position = positions[index]
+    camera.position = PROFILE.camera_positions[index]
     camera.fov = 55.0 if index == 0 else 65.0
-    camera.look_at(targets[index])
+    camera.look_at(PROFILE.camera_targets[index])
+
+func set_alarm_lighting() -> void:
+    # Condición de inspección estática: no activa un sistema de alarmas.
+    environment.ambient_light_energy = PROFILE.ambient_alarm
+    key_light.light_energy = PROFILE.key_alarm
+    point_lights[0].light_color = Color("d87660")
+    point_lights[1].light_color = Color("9eb3b9")
+    for light in point_lights:
+        light.light_energy = PROFILE.local_energy
+
+func _harmonize_samples() -> void:
+    var wear := material(Color.WHITE, 0, 1, true).albedo_texture
+    for prop in get_children():
+        if prop.has_meta("h04_kit"):
+            for mesh in prop.find_children("*", "MeshInstance3D", true, false):
+                for index in range(mesh.mesh.get_surface_count()):
+                    var surface := mesh.get_active_material(index) as BaseMaterial3D
+                    if surface:
+                        surface.albedo_texture = wear
+    for sample in sample_nodes:
+        for mesh in sample.find_children("*", "MeshInstance3D", true, false) + ([sample] if sample is MeshInstance3D else []):
+            for index in range(mesh.mesh.get_surface_count()):
+                var surface := mesh.get_active_material(index) as BaseMaterial3D
+                if surface:
+                    surface.roughness = maxf(surface.roughness, 0.78)
+                    surface.metallic = minf(surface.metallic, 0.3)
+                    if sample.name == "OfficeSample":
+                        surface.albedo_color = Color("b2b3a6")
+                    elif str(sample.name).begins_with("Barrel"):
+                        surface.albedo_color = Color("a6aa94")
