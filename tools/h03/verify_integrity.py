@@ -8,6 +8,17 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def main():
+    # Full development transfers retain historical evidence, but optional local
+    # assets and the original PC's index are not part of their portable scope.
+    portable = ROOT / 'tools/pipeline/checkout_manifest.json'
+    if portable.is_file():
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('portable_integrity', ROOT / 'tools/pipeline/verify_checkout.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        result = module.check(ROOT, runtime_only=True)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0 if result['status'] == 'PASS' else 1
     baseline = ROOT / 'docs/evidence/h03/before.json'
     scope = 'local-originals-and-history'
     external = {}

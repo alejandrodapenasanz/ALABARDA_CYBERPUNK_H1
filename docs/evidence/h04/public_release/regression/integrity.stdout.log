@@ -1,0 +1,10 @@
+{
+  "scope": "public-h1-baseline-only",
+  "checked": 6,
+  "external_changes": {},
+  "runtime_references": 20,
+  "absent_optional_local_samples": [
+    "res://resources/local_experiments/malorian/Malorian.fbx"
+  ],
+  "errors": []
+}

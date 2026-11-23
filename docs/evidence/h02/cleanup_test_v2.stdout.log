@@ -1,0 +1,7 @@
+MIGRATION v2 moved_or_deduplicated=22 removed_aliases=8 changes=30
+MIGRATION v2 moved_or_deduplicated=0 removed_aliases=0 changes=0
+PASS consolidación completa; 23 prompts; cero (1); repetición 0 cambios
+PASS 48 originales Markdown conservados byte a byte
+PASS rechazo de edición ajena sin escrituras parciales
+PASS colisión de prompts rechazada sin perder versiones
+RESULT passed=4 failed=0

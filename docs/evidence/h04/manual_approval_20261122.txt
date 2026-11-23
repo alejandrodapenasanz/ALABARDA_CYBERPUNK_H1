@@ -1,0 +1,18 @@
+Fecha: 2026-11-22 · Europe/Madrid
+
+Pregunta anterior del creador:
+Queda algo por hacer en ho4? tengo que decidit algo por mi parte?
+
+Se explicó que solo faltaba revisión manual: aspecto/materiales/colores/props;
+legibilidad de silueta y HomeVideo con las tres luces; cámaras 1–4, animación A
+y reset 0; comprobación breve H1 con movimiento, disparo y R. La aprobación
+corresponde a una referencia experimental y no convierte los assets en finales.
+Se indicó que con su confirmación se cerraría H04 y publicaría en GitHub.
+
+Respuesta literal del creador:
+Si, todo me cuadra
+
+Resultado registrado: aprobación manual conjunta y cierre H04 autorizados.
+No se inventan capturas, logs de entrada, equipos ni tamaños de ventana
+adicionales. El NOT_RUN físico del backend headless conserva su resultado;
+la aceptación humana se registra separadamente.

@@ -1,0 +1,23 @@
+Info: Saved as "service_cabinet.blend"
+INFO Draco mesh compression is available, use library at C:\dev\tools\blender-4.5.3-windows-x64\4.5\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+15:21:01 | INFO: Starting glTF 2.0 export
+15:21:01 | INFO: Extracting primitive: Cube.001
+15:21:01 | INFO: Primitives created: 4
+15:21:01 | INFO: Finished glTF 2.0 export in 0.019500255584716797 s
+
+Info: Saved as "wall_panel.blend"
+15:21:01 | INFO: Starting glTF 2.0 export
+15:21:01 | INFO: Extracting primitive: Cube.011
+15:21:01 | INFO: Primitives created: 3
+15:21:01 | INFO: Finished glTF 2.0 export in 0.007524967193603516 s
+
+Info: Saved as "transit_case.blend"
+15:21:01 | INFO: Starting glTF 2.0 export
+15:21:01 | INFO: Extracting primitive: Cube.017
+15:21:01 | INFO: Primitives created: 3
+15:21:01 | INFO: Finished glTF 2.0 export in 0.007519245147705078 s
+
+H04_KIT_EXPORTED [{"name": "service_cabinet", "destination": "resources/art_kit/service_cabinet.glb", "source": "art_sources/h04/service_cabinet.blend", "source_sha256": "78c2ec656962656361d99d99548aa5eb6e4e56f5ead04912887cacc47128833f", "sha256": "a40cd5fae461fd3b7c058fd5033fdc8e15cfbc5fc23941246f5fda46fad92c58", "triangles": 248, "dimensions_blender_m": [1.100000023841858, 0.6050000190734863, 2.0], "uv_layers": 1, "materials": ["h04_paint", "h04_dark", "h04_edge", "h04_ochre"], "provenance": "Original H04; build_kit.py"}, {"name": "wall_panel", "destination": "resources/art_kit/wall_panel.glb", "source": "art_sources/h04/wall_panel.blend", "source_sha256": "d2e5a82249eb7428472d96a10a73b39442931cdf410aa0b6b33c2b6f06efec34", "sha256": "f9ab59b88f228f64b38325cee76140d073501aae35b105a0bbbea4ade99d8ffe", "triangles": 104, "dimensions_blender_m": [2.0, 0.2800000011920929, 3.0], "uv_layers": 1, "materials": ["h04_paint", "h04_edge", "h04_dark"], "provenance": "Original H04; build_kit.py"}, {"name": "transit_case", "destination": "resources/art_kit/transit_case.glb", "source": "art_sources/h04/transit_case.blend", "source_sha256": "09bf989fee88b06cb73a9f0ea5bd590ab37d2bb5fb8ea675566c49022b60f720", "sha256": "15cbb08f1783c3770dbd2b1b595f7ecbb9ab8a0d9f89d95fa2bfaccd09256ad5", "triangles": 124, "dimensions_blender_m": [0.7099999785423279, 0.5325000286102295, 0.49000000953674316], "uv_layers": 1, "materials": ["h04_ochre", "h04_dark", "h04_edge"], "provenance": "Original H04; build_kit.py"}]
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:33:33)
+
+Blender quit

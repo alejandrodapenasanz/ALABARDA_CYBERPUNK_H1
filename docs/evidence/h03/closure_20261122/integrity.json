@@ -1,0 +1,14 @@
+{
+  "label": "integrity",
+  "date": "2026-11-22T15:10:07.331017+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "C:\\Users\\aleja\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "tools/h03/verify_integrity.py"
+  ],
+  "powershell": "& 'C:\\Users\\aleja\\AppData\\Local\\Programs\\Python\\Python313\\python.exe' 'tools/h03/verify_integrity.py'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

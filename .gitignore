@@ -1,6 +1,10 @@
 .godot/
 __pycache__/
 *.pyc
-docs/evidence/
-reports/
 /resources/local_experiments/
+/.venv/
+/venv/
+/reports/
+/assets/Malorian/
+/assets/PSXAmmoBoxes/
+/assets/PSX Electronics Asset Pack/

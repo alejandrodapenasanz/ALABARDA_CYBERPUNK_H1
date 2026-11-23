@@ -1,0 +1,20 @@
+{
+  "label": "regression",
+  "date": "2026-11-23T07:13:40.566384+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_GITHUB_SYNC",
+  "argv": [
+    "C:\\Users\\aleja\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "-X",
+    "utf8",
+    "tools/h03/run_tests.py",
+    "--godot",
+    "C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+    "--output",
+    "C:\\dev\\ALABARDA_CYBERPUNK_H1\\docs\\evidence\\github_transfer_20261123\\headless\\regression"
+  ],
+  "powershell": "& 'C:\\Users\\aleja\\AppData\\Local\\Programs\\Python\\Python313\\python.exe' '-X' 'utf8' 'tools/h03/run_tests.py' '--godot' 'C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe' '--output' 'C:\\dev\\ALABARDA_CYBERPUNK_H1\\docs\\evidence\\github_transfer_20261123\\headless\\regression'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

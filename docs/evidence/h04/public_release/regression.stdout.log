@@ -1,0 +1,12 @@
+version: PASS exit=0
+import: PASS exit=0
+unit: PASS exit=0
+integration: PASS exit=0
+negative_control: FAIL exit=100
+negative_control verification: PASS
+startup: PASS exit=0
+h1_regression: PASS exit=0
+integrity: PASS exit=0
+graphics: PASS exit=0
+readability: PASS exit=0
+PASS: C:\dev\ALABARDA_CYBERPUNK_H1\docs\evidence\h04\public_release\regression\summary.json

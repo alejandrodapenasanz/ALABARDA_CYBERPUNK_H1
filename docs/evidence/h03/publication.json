@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-21",
+  "repository": "https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1",
+  "visibility": "PUBLIC",
+  "branch": "main",
+  "commit": "9153287449f1521b864ad7818d19a8b9914b6c51",
+  "publish_checkout": "C:/dev/ALABARDA_CYBERPUNK_H03_PUBLIC",
+  "files_committed": 719,
+  "push_exit_code": 0,
+  "remote_head_matches": true,
+  "public_fresh_suite": "PASS",
+  "public_fresh_suite_exit_code": 0,
+  "clone_integrity": "PASS",
+  "clone_integrity_exit_code": 0,
+  "clone_worktree_clean": true,
+  "original_workspace_index_preserved": true,
+  "included": ["H1/H03 runtime code", "tests", "pinned MIT GdUnit4", "curated licensed experimental assets", "portable public documentation", "third-party notices"],
+  "excluded": ["raw original asset collection", "Malorian", "PSXAmmoBoxes", "private documentary history", "conversation requests", "logs with personal paths", "credentials", "Godot cache"],
+  "commands": [
+    "gh repo create ALABARDA_CYBERPUNK_H1 --public --description <project description> --source C:/dev/ALABARDA_CYBERPUNK_H03_PUBLIC --remote origin --push",
+    "gh repo view alejandrodapenasanz/ALABARDA_CYBERPUNK_H1 --json nameWithOwner,url,visibility,defaultBranchRef",
+    "git ls-remote origin refs/heads/main",
+    "git clone --quiet --depth 1 https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1.git C:/dev/ALABARDA_CYBERPUNK_H1/.godot/h03_public_clone",
+    "python tools/h03/verify_integrity.py",
+    "git status --short"
+  ]
+}

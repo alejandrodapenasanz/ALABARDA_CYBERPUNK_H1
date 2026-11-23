@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:alabarda:test-manifest:1.0.0",
+  "title": "ALABARDA batch test manifest 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "is_template", "batch_id", "milestones", "code_commit", "previous_approved_commit", "branch", "created_at", "state", "environment", "tests"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "is_template": {"type": "boolean"},
+    "batch_id": {"type": "string", "pattern": "^B[0-8]$"},
+    "milestones": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^H(0[3-9]|1[0-9]|2[0-4])$"}},
+    "code_commit": {"$ref": "#/$defs/commit_or_null"},
+    "previous_approved_commit": {"$ref": "#/$defs/commit_or_null"},
+    "branch": {"type": "string", "minLength": 1},
+    "created_at": {"type": ["string", "null"], "format": "date-time"},
+    "state": {"enum": ["NOT_STARTED", "IN_PROGRESS", "CODE_READY", "INTEGRATION_READY", "VALIDATION_FAILED", "VALIDATED", "APPROVED", "BLOCKED"]},
+    "environment": {
+      "type": "object", "additionalProperties": false,
+      "required": ["os", "godot", "python", "framework", "blender", "renderer"],
+      "properties": {
+        "os": {"type": "string", "minLength": 1}, "godot": {"type": "string", "minLength": 1},
+        "python": {"type": "string", "minLength": 1}, "framework": {"type": "string", "minLength": 1},
+        "blender": {"type": ["string", "null"]}, "renderer": {"type": "string", "minLength": 1}
+      }
+    },
+    "tests": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/test"}}
+  },
+  "allOf": [{"if": {"properties": {"is_template": {"const": false}}}, "then": {"properties": {"code_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "previous_approved_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "created_at": {"type": "string", "format": "date-time"}}}}],
+  "$defs": {
+    "commit_or_null": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "strings": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "nonempty_strings": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "relative_path": {"type": "string", "minLength": 1, "pattern": "^(?![/\\\\])(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*[:\\\\]).+$"},
+    "command": {
+      "type": "object", "additionalProperties": false, "required": ["executable", "args"],
+      "properties": {"executable": {"type": "string", "minLength": 1}, "args": {"$ref": "#/$defs/strings"}}
+    },
+    "test": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "purpose", "milestones", "type", "critical", "owner", "requires", "preconditions", "cwd", "expected", "pass_criteria", "fail_criteria", "timeout_seconds", "depends_on", "log_path", "artifacts", "initial_status", "manual"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9_-]+$"},
+        "name": {"type": "string", "minLength": 1}, "purpose": {"type": "string", "minLength": 1},
+        "milestones": {"$ref": "#/$defs/nonempty_strings"},
+        "type": {"enum": ["static", "unit", "integration", "import", "regression", "graphics", "export", "manual"]},
+        "critical": {"type": "boolean"}, "owner": {"enum": ["CLAUDE", "CODEX", "CREATOR"]},
+        "requires": {"type": "array", "uniqueItems": true, "items": {"enum": ["python", "git", "godot", "blender", "desktop"]}},
+        "preconditions": {"$ref": "#/$defs/nonempty_strings"},
+        "command": {"$ref": "#/$defs/command"}, "cwd": {"$ref": "#/$defs/relative_path"},
+        "expected": {"type": "string", "minLength": 1},
+        "pass_criteria": {"$ref": "#/$defs/nonempty_strings"}, "fail_criteria": {"$ref": "#/$defs/nonempty_strings"},
+        "timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 3600},
+        "expected_exit_codes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer"}},
+        "depends_on": {"$ref": "#/$defs/strings"}, "log_path": {"$ref": "#/$defs/relative_path"},
+        "artifacts": {"type": "array", "items": {"$ref": "#/$defs/relative_path"}},
+        "initial_status": {"const": "NOT_RUN"},
+        "manual": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "required": ["scene", "open", "run", "controls", "initial_state", "steps", "repeat"],
+          "properties": {
+            "scene": {"$ref": "#/$defs/relative_path"}, "open": {"type": "string", "minLength": 1},
+            "run": {"type": "string", "minLength": 1}, "controls": {"$ref": "#/$defs/nonempty_strings"},
+            "initial_state": {"type": "string", "minLength": 1}, "steps": {"$ref": "#/$defs/nonempty_strings"},
+            "repeat": {"type": "string", "minLength": 1}
+          }
+        }
+      },
+      "allOf": [
+        {"if": {"properties": {"type": {"const": "manual"}}}, "then": {"properties": {"manual": {"type": "object"}}, "not": {"anyOf": [{"required": ["command"]}, {"required": ["expected_exit_codes"]}]}}, "else": {"required": ["command", "expected_exit_codes"], "properties": {"manual": {"type": "null"}}}},
+        {"if": {"properties": {"owner": {"const": "CLAUDE"}}}, "then": {"properties": {"requires": {"not": {"contains": {"enum": ["godot", "blender", "desktop"]}}}, "type": {"enum": ["static", "unit", "regression"]}}}}
+      ]
+    }
+  }
+}

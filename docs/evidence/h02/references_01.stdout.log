@@ -1,0 +1,8 @@
+MARKDOWN 96; HISTORY_HASHES 48; RUNTIME_HASHES 8
+RESOURCES 6; DEPENDENCIES 5; LINKS 140; FILE_REFS 1212; ID_REFS 218
+FAIL FILE_MISSING docs/ARCHITECTURE.md -> .gd.uid
+FAIL LINK_MISSING docs/DOCUMENTATION_AUDIT.md -> evidence/h02/inventory_and_references.json
+FAIL FILE_MISSING docs/GDD_TECNICO_H1.md -> .tscn
+FAIL FILE_MISSING docs/HANDOFF.md -> prompts/H02_AUDITORIA_H1.md
+RESULT errors=4 declared_or_historical_notices=13
+Detalle: docs/evidence/h02/inventory_and_references.json

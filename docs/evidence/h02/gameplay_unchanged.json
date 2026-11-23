@@ -1,0 +1,24 @@
+{
+  "started_madrid": "2026-11-20T09:39:22.437109+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "argv": [
+    "git",
+    "-c",
+    "core.autocrlf=false",
+    "diff",
+    "--exit-code",
+    "refs/h02/baseline",
+    "--",
+    "project.godot",
+    "scenes",
+    "scripts",
+    "AGENTS.md"
+  ],
+  "powershell": "& 'git' '-c' 'core.autocrlf=false' 'diff' '--exit-code' 'refs/h02/baseline' '--' 'project.godot' 'scenes' 'scripts' 'AGENTS.md'",
+  "executed": true,
+  "exit_code": 0,
+  "stdout": "gameplay_unchanged.stdout.log",
+  "stderr": "gameplay_unchanged.stderr.log"
+}

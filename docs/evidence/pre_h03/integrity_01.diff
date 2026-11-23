@@ -1,0 +1,862 @@
+--- before/AGENTS.md
++++ after/AGENTS.md
+@@ -1,6 +1,6 @@
+ # ALABARDA STUDIOS — CYBERPUNK FPS | Instrucciones permanentes para Codex
+ 
+-**Versión:** 0.3 · 2026-11-20
++**Versión:** 0.4 · 2026-11-20
+ **Estado:** Preproducción. Este documento define el proceso; NO autoriza a implementar hitos futuros.  
+ **Propósito:** Este archivo debe permanecer en la **raíz del repositorio Godot**, con nombre exacto `AGENTS.md`. Se lee al comienzo de CADA nueva conversación/hito de Codex.
+ 
+@@ -25,21 +25,21 @@
+ 
+ ## 2. Decisiones creativas APROBADAS a 2026-11-20
+ Consultar **`docs/DECISIONS.md` como registro detallado y autoritativo** y `docs/MVP_SCOPE.md` como alcance consolidado. Los siguientes puntos son resumen, no sustituyen esos archivos:
+-- PC/Windows, Godot 4, FPS, cyborg brazo izquierdo, estética retro industrial + cyberpunk PS1.
++- PC/Windows, Godot 4, FPS, cyborg brazo izquierdo, estética **Modern PSX / Retro Industrial Cyberpunk** (D-017): reinterpretación moderna, sin emulación literal del hardware PS1. `docs/ART_BIBLE.md` es la fuente artística principal; legibilidad moderna y efectos retro potencialmente perjudiciales configurables o desactivables.
+ - Vertical slice: guarida interactiva y un contrato Yakuza repetible de tres plantas, tres dificultades, boss dos fases, 15–25 minutos como objetivo.
+ - Tres armas cualesquiera de seis; katana, pistola silenciada y escopeta doble cañón iniciales; reserva infinita, cargadores y recarga animada; árbol de firmware con costes/dependencias/respec, efectos activos al instalar el USB y hasta respec.
+ - Sigilo reversible con percepción y memoria, alarmas, cámaras y detección de cadáveres; los tres arquetipos patrullan. Excepción aprobada: una alarma general impide recuperar el sigilo durante el resto de ese intento.
+ - Energía 0–150, extracción mantenida con F, curación continua E, ascensores recargan 150; ejecuciones y reducción de daño conforme a `GAME_DESIGN.md`.
+ - Ultimates Dead Eye, Aimbot, Overdrive; una equipada, >=100 energía, consume toda y escala duración. Dead Eye ralentiza el mundo con cualquier arma; la compatibilidad limita solo los efectos específicos de arma.
+ - Compras en PC → timbre → paquete transportado → montaje 3–4 pasos o instalación USB → equipar; economía en créditos, guardado automático, progreso persistente. Jefe otorga trofeo y flag de shurikens futuro.
+-- Arte basado en assets gratuitos seleccionados/adaptados, con registro de licencias y coherencia visual.
++- Producción artística híbrida y progresiva: assets gratuitos legales y adaptados, props propios en Blender, materiales/shaders propios y protagonistas personalizados; IA como apoyo conceptual. Registro de licencias y coherencia visual obligatorios.
+ 
+ ## 3. PENDIENTE (no implementar por intuición)
+ - Todo parámetro numérico no aprobado: daño, HP enemigos, duraciones, costes y velocidades; sistemas de dificultades y objetivos concretos.
+ - Lista y dependencias concretas de perks, precios, recompensas y efectos físicos de mejoras de armas.
+ - Compatibilidades definitivas arma/ultimate, lógica exacta de parry automático, F/E contextuales y detalles de ejecución.
+ - Nivel detallado (salas, rutas, densidad), estados de IA y telemetría, fases de boss, feedback de cámaras/alarma/cadáveres.
+-- Selección y licencia *específica* de assets, convenciones de arte, animación, sonido, UI, controles, accesibilidad.
++- Selección y licencia *específica* de assets; validación técnica de paleta, presupuestos, filtros y efectos conforme a ART_BIBLE; detalle de animación, sonido, UI, controles y accesibilidad. La dirección artística D-017 sí está aprobada; sus cifras orientativas no son límites definitivos.
+ - Exclusiones del MVP propuestas en `docs/MVP_SCOPE.md` y criterio final de cierre: requieren revisión del creador.
+ 
+ ## 4. Estructura documental objetivo
+--- before/README.md
++++ after/README.md
+@@ -1,6 +1,8 @@
+ # ALABARDA CYBERPUNK · Prototipo H1
+ 
+ Prototipo 3D greybox para PC creado con Godot 4 y GDScript. El creador aprobó cinco pruebas manuales de H1. H02 añade auditoría, limpieza y corrección de tres bugs con regresión headless en Godot 4.7.2; **pendiente de revisión focalizada del mensaje de victoria/reinicio y aprobación del cierre**. Resultados en [VALIDATION](docs/VALIDATION.md).
++
++PRE-H03 define oficialmente **Modern PSX / Retro Industrial Cyberpunk**: identidad retro reinterpretada con legibilidad moderna, sin emulación literal de PS1. [Biblia artística](docs/ART_BIBLE.md) y decisión D-017 en [DECISIONS](docs/DECISIONS.md). Esta actualización es documental; el greybox no cambia y H03 no está iniciado.
+ 
+ ## Cómo abrir
+ 1. Usa Godot 4.7.2 estándar, versión localizada y probada en H02 (no necesitas .NET).
+--- before/docs/ART_BIBLE.md
++++ after/docs/ART_BIBLE.md
+@@ -1,29 +1,156 @@
+-# ART_BIBLE — Dirección visual inicial
+-**Estado:** propuesta de producción, NO catálogo definitivo de assets.
++# ART_BIBLE — Modern PSX / Retro Industrial Cyberpunk
+ 
+-## Aprobado
+-- Retro industrial + cyberpunk PS1; low-poly; cohesión visual por encima de fidelidad de cada pack.
+-- Assets gratuitos seleccionados y adaptados; no asumir que generación IA 3D sea sustituto de modelos finales de calidad.
++**Versión 1.0 · 2026-11-20 · Dirección artística APROBADA (D-017).** Fuente principal de arte. Los parámetros técnicos marcados PROPUESTA siguen pendientes de validación en H03; ningún asset ni resultado visual queda aprobado por este documento. [Decisión y sustituciones](DECISIONS.md), [registro de assets](ASSET_REGISTRY.md).
+ 
+-## Propuesta de pipeline híbrida
+-1. **Greybox propio** en Godot para medir escala, visibilidad, cobertura y rutas de sigilo.
+-2. **Escenarios modulares externos** con licencias verificadas; importar preferentemente formatos 3D estables (p.ej. glTF/GLB), sin asumir que todos los packs encajan directamente.
+-3. **Blender para adaptación:** escala, pivotes, siluetas, UV, materiales, reducción de complejidad, variedad de props, recolor y ensamblaje.
+-4. **Assets clave con diseño propio o modificaciones profundas:** seis armas en primera persona, brazo cyborg, boss, interfaces, letreros y trofeos. Pueden partir de licencias que permitan obra derivada; no copiar elementos protegidos de videojuegos referenciales.
+-5. **Estilo consistente:** validar un prototipo visual de una sala con luz, texturas, siluetas y un enemigo antes de producir tres plantas.
+-6. **Asset registry y notices:** cada pack registra autor, URL, licencia exacta, versión/fecha y compatibilidad de redistribución comercial.
++## Identidad y filosofía aprobadas
+ 
+-## Por decidir
+-- Resolución objetivo y densidad de texeles, filtros pixelados, niebla, posterización/dithering, anti-aliasing, paleta y contraste.
+-- LOD/presupuesto por escena y perfil mínimo PC; iluminación y postprocesado aptos para rendimiento.
+-- Política de personajes animados, rigging y armas vista en primera persona; audio y licencias sonoras.
+-- Selección final de packs concretos. No distribuir assets no verificados.
++**MODERN PSX / RETRO INDUSTRIAL CYBERPUNK.** Reinterpretar el lenguaje 3D de finales de los noventa para un FPS actual: cómo recordamos visualmente los juegos de PS1, sin reproducir literalmente sus limitaciones de hardware. La identidad retro debe convivir con controles, animaciones, iluminación y legibilidad modernas.
+ 
+-## Fuentes oficiales de consulta (NO son autorización automática)
+-- Kenney: https://kenney.nl/support (describe CC0 para los assets de sus páginas; revisar cada paquete).
+-- Quaternius: https://quaternius.com/license.html (QAL v1.0 publicada 2026-08-28; revisar pack y licencia aplicable).
+-- Godot CLI: https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html
++Se conservan los pilares retro industrial, cyberpunk decadente, tecnología obsoleta y atmósfera nocturna. «PS1 graphics», «retro low-poly», «PSX horror» o «Cyberpunk PS1» dejan de ser definiciones suficientes del estilo; no obligan a emulación técnica ni convierten el proyecto en un juego de terror. Los históricos se conservan como antecedentes.
+ 
+-## Nota de auditoría H02 · 2026-11-20
++Prioridades, en este orden:
+ 
+-No se han descargado ni integrado assets, ni se han verificado online estas referencias/licencias en H02. Las menciones recibidas de proveedores son orientación histórica, no evidencia de licencia individual. El H1 usa geometría y materiales procedurales; no prueba el cumplimiento visual final de esta dirección artística. Selección concreta y revisión humana siguen P-004.
++1. Identidad artística reconocible.
++2. Atmósfera cyberpunk industrial.
++3. Coherencia visual entre assets.
++4. Legibilidad en combate y sigilo.
++5. Siluetas claras de personajes, enemigos y armas.
++6. Geometría low-poly deliberadamente simplificada.
++7. Texturas de baja resolución usadas con intención.
++8. Iluminación expresiva y contrastada.
++9. Sensación retro auténtica.
++10. Rendimiento estable en PC.
++
++La fidelidad al hardware original no es una prioridad. Ningún recurso estilístico debe hacer injustamente difícil detectar enemigos, proyectiles, peligros o interactuables.
++
++## Geometría y materiales
++
++Formas angulosas, siluetas expresivas, superficies amplias y geometría industrial contundente. Modelar el detalle que cambia la lectura; llevar detalles secundarios a texturas. Preferir componentes modulares para escenarios y reservar más detalle para armas y brazo en primera persona que para decoración lejana.
++
++Evitar modelos hiperrealistas, personajes cartoon brillantes, redondeado innecesario y densidades de detalle incompatibles entre packs. No hay un límite universal de polígonos aprobado: H03 propondrá presupuestos por categoría tras medir escala, distancia de cámara y coste.
++
++Metal desgastado, hormigón, plástico, madera y pintura envejecida forman un vocabulario común. Materiales y desgaste deben apoyar las formas y su función; mantener escala, respuesta a la luz y nivel de detalle coherentes. Evitar superficies fotográficas sin tratamiento o mezcla arbitraria de materiales hiperrealistas y modelos simples. Los ajustes concretos de materiales se compararán en Godot; no se prescribe un shader obligatorio.
++
++## Texturas y filtrado
++
++Pixelado visible y controlado, señalética retrofuturista, carteles y pantallas con personalidad, sin ruido que impida reconocer objetos. Mantener consistencia de densidad aparente entre categorías; considerar tamaño, distancia, importancia y lectura en movimiento.
++
++**PROPUESTA para evaluación H03, no límites absolutos:**
++
++| Categoría | Resolución inicial orientativa |
++|---|---|
++| Objetos pequeños | 64×64 o 128×128 |
++| Props medianos | 128×128 o 256×256 |
++| Armas y objetos protagonistas | 256×256 o 512×512 si mejora la lectura |
++| Superficies grandes | Materiales repetibles y atlas adecuados a escala y distancia |
++
++Evaluar nearest-neighbor y alternativas por material. No imponer nearest global: HUD, fuentes y elementos que necesiten claridad moderna requieren comprobación separada. Evitar tanto el suavizado que borre toda intención retro como pixelación extrema, fotografías sin adaptación y ruido excesivo.
++
++## Iluminación y paleta
++
++Ambientes oscuros con fuentes localizadas: luces industriales, CRT, señalización luminosa y neones moderados. Contrastar luz y sombra sin ocultar información necesaria. El color comunica peligro, seguridad e interacción con intención; no llenar todas las escenas de magenta y cian.
++
++**Paleta conceptual PROPUESTA para validar en H03:** negros y grises industriales; marrones y tonos cálidos envejecidos; azules/cian tecnológicos; rojo de alarma; verde de terminal; amarillo de interacción cuando corresponda. No fija códigos cromáticos ni umbrales definitivos. Se conserva la diferenciación ya aprobada de salud roja y energía azul en [GAME_DESIGN](GAME_DESIGN.md); el resto de la paleta no sustituye esa regla.
++
++## Efectos retro y legibilidad
++
++Se permite **explorar**, sin obligación de incorporarlos: dithering moderado, banding deliberado, pixelación selectiva, niebla, color grading retro, ruido ligero, vertex snapping/wobble muy sutil, CRT en monitores físicos y distorsiones tecnológicas puntuales.
++
++**Todos los efectos retro potencialmente perjudiciales para la legibilidad deben ser configurables o desactivables.** Comparar la imagen con y sin cada efecto. No imponer wobble intenso, resolución interna extremadamente baja, dithering que oculte enemigos, ruido que perjudique apuntar, distorsión permanente de cámara, blur excesivo, aberración cromática agresiva ni filtros que dificulten leer el HUD. Priorizar precisión y lectura durante el movimiento.
++
++## Aplicación por sistema
++
++### Guarida
++
++Espacio habitado por un mercenario cyborg: apartamento decadente, hardware antiguo, interiores industriales y objetos cotidianos. Ordenador retrofuturista con CRT o equivalente, banco con herramientas, cables, cajas, dispositivos, racks, pared de armas y vitrina de trofeos. No debe parecer showroom impecable ni laboratorio estéril. La composición distingue rápidamente las zonas interactuables; los props decorativos no añaden funcionalidades nuevas.
++
++### Contrato Yakuza
++
++Conservar las tres plantas aprobadas y evolucionar la atmósfera sin romper el lenguaje común:
++
++| Planta | Dirección visual |
++|---|---|
++| Infiltración | Oficinas corporativas decadentes, iluminación contenida, pasillos de vigilancia, cámaras y dispositivos de seguridad identificables. |
++| Combate | Instalaciones técnicas, servidores, zonas industriales, coberturas claras y mayor contraste/tensión. |
++| Jefe | Espacio memorable, arquitectura que permita leer patrones y luz dramática; referencias a la organización sin copiar assets protegidos. |
++
++Oscuridad, niebla y decoración no deben ocultar injustamente proyectiles, enemigos ni señales de peligro. Esto orienta la presentación; no decide rutas, densidad, IA ni patrones del jefe.
++
++### Armas y animaciones
++
++Las seis armas aprobadas —katana, pistola silenciada, rifle silenciado con mira, espada-sierra, revólver potente y escopeta de doble cañón— comparten materiales y lenguaje visual, con siluetas distintas, detalles mecánicos visibles y modelos low-poly personalizados. La vista FPS permite más detalle cuando favorece la silueta o la animación; evitar geometría ultrabaja que las deteriore.
++
++Animaciones expresivas, acciones legibles y retroceso visual satisfactorio, con respuesta propia de un FPS moderno. No copiar diseños identificables de otras franquicias. No se modifica la regla jugable de recuperación/cadencia gobernada por animación ni sus valores pendientes.
++
++### Brazo cyborg izquierdo
++
++Elemento protagonista de tecnología industrial: fuerza mecánica, componentes funcionales, modificaciones, desgaste y reparaciones. Mantener materiales y diseño consistentes en todas las escenas. Extracción de energía, curación/reparación e instalación de firmware deben tener animaciones reconocibles; esta dirección visual no altera sus controles, costes ni estados.
++
++### Enemigos
++
++| Arquetipo | Lectura de silueta y amenaza |
++|---|---|
++| Squishy | Ligero, poca protección, diseño sencillo. |
++| Ranged / tirador | Arma reconocible y animación que comunique amenaza a distancia. |
++| Tank / tanque | Volumen considerable, armadura visible, silueta pesada y cambio visual al perder protección. |
++
++La estética retro no debe impedir distinguirlos de inmediato, incluso en iluminación tenue y durante movimiento. No se aprueba aquí una IA nueva ni valores de armadura.
++
++### HUD e interfaces
++
++Sistema operativo del cyborg: minimalista, tecnológico y legible, inspirado en terminales, HUD militar y software industrial. Salud y energía diferenciadas; indicadores claros de interacción, detección, alarma y ultimate disponible cuando existan esos sistemas.
++
++El ordenador de la guarida puede ser más retro que el HUD de combate. No reproducir incomodidades de interfaces de los noventa; preservar tipografía legible y la lectura de información durante combates rápidos. CRT en pantallas físicas no implica filtro global sobre el HUD.
++
++## Producción híbrida y progresiva aprobada
++
++Orden de prioridad:
++
++1. Reutilizar assets gratuitos que cumplan requisitos legales y estilísticos.
++2. Adaptar modelos base: escala, pivotes, siluetas, UV, materiales, complejidad, recolor y ensamblaje.
++3. Crear en Blender props sencillos que aporten identidad.
++4. Desarrollar materiales y shaders propios cuando aporten utilidad comprobable.
++5. Personalizar armas, brazo y demás protagonistas, con diseño propio o derivados permitidos por licencia.
++6. Usar IA como apoyo conceptual; no depender de ella para modelos finales ni exclusivamente de packs sin modificar.
++
++El greybox propio sigue sirviendo para comprobar escala, cobertura y visibilidad. Antes de producir las tres plantas, validar una referencia común de luz, texturas, siluetas y elementos protagonistas. Registrar procedencia, versión, permisos, cambios, ruta y aprobación en [ASSET_REGISTRY](ASSET_REGISTRY.md). Sin licencia verificada, dejar pendiente y no incorporar ni distribuir. PRE-H03 no descarga assets.
++
++## Investigación técnica pendiente en H03
++
++**Estado observado:** Godot `4.7.2.stable.official.ed1daf0bf`, Windows, GL Compatibility en el H1; viewport 1280×720 y stretch canvas_items. [Arquitectura real](ARCHITECTURE.md). Esta configuración no es una pipeline visual validada y PRE-H03 no la modifica.
++
++H03 conserva infraestructura de pruebas y balance, y añade la investigación y escena comparativa solicitadas en PRE-H03. H04 conserva su vertical de arte y depende de H03; reutilizará la referencia cuando se autorice, sin duplicarla por defecto.
++
++| Área a investigar | Evidencia requerida en H03 |
++|---|---|
++| Renderer y Windows | Versión exacta, renderer real, hardware/driver, compatibilidad medida; justificar cualquier propuesta de cambio. |
++| glTF/GLB y adaptación Blender | Escala, pivotes, materiales, UV y animación de muestras disponibles con procedencia; registrar faltas, sin asumir importación ya probada. |
++| Texturas/materiales | Comparación A/B de resoluciones, atlas, densidad y filtros por categoría, incluyendo HUD/fuentes. |
++| Iluminación/sombras/fog | Utilidad visual, lectura de siluetas y compatibilidad con el renderer; no asumir soporte de cualquier técnica. |
++| Resolución interna/escalado | Claridad al apuntar y moverse, HUD legible, coste medido; valores provisionales. |
++| Shaders retro opcionales | Comparación activado/desactivado, intensidad/configuración, coste y justificación por efecto. |
++| Rendimiento | Misma escena/cámara y condiciones para comparar; registrar hardware, resolución, tiempos de frame y limitaciones. Sin FPS objetivo inventado. |
++
++Crear en H03 una escena de referencia aislada y reproducible con materiales, siluetas, un elemento FPS y UI de prueba; usar placeholders propios si faltan assets autorizados. Evaluar claridad, coherencia y coste sin implementar combate/sigilo futuro. Conservar capturas con configuración y punto de cámara cuando sea posible; si no, NOT_RUN con causa. Documentar decisiones técnicas provisionales separadas de decisiones de gameplay.
++
++**Estrategia de degradación a validar:** medir una base sin efectos opcionales; reducir/desactivar primero ruido, distorsión y postprocesado que no aporten lectura, luego ajustar fog/sombras/luces según coste observado; simplificar detalle decorativo y resolución solo tras comprobar legibilidad. Preservar siluetas, señales de peligro y HUD. La secuencia es propuesta técnica, no perfil ya implementado. No añadir dependencias sin necesidad y verificación.
++
++## Consistencia y aceptación visual
++
++La revisión humana debe comprobar que:
++
++- Una captura comunica PSX reinterpretada y atmósfera industrial, sin apariencia de fallo técnico.
++- Guarida, contrato, armas, brazo y enemigos comparten materiales, densidad aparente, escala y desgaste.
++- Siluetas y zonas de interacción se leen con luz clara, tenue y en condiciones de alarma cuando existan; nunca se confunde un fixture con un sistema jugable implementado.
++- Movimiento, apuntado, señales de amenaza y animaciones mantienen claridad; efectos opcionales no condicionan injustamente la información.
++- HUD y textos siguen legibles con los efectos activados y desactivados; salud/energía mantienen su distinción.
++- Las comparaciones usan condiciones reproducibles, capturas cuando sea posible y datos de rendimiento reales.
++- Cada asset usado tiene registro completo y aprobación legal/visual diferenciada; no hay mezcla incoherente de packs.
++
++H03 debe dejar revisables la escena comparativa, las propuestas de paleta, presupuestos por categoría, resoluciones/filtros, renderer, iluminación/fog, efectos y perfiles de degradación. Su aprobación visual corresponde al creador. Rigging/animación detallada, selección de packs y audio/licencias se concretan en sus hitos; no quedan aprobados por este texto.
++
++## Trazabilidad y límites
++
++D-017 precisa el componente artístico de D-001 y amplía D-015; conserva sus pilares compatibles. La versión inicial está en [histórico](history/pre_h02/docs/ART_BIBLE.md); el cambio PRE-H03 y su fuente se registran en [VALIDATION](VALIDATION.md). Las antiguas menciones de Kenney/Quaternius eran orientación sin verificación individual, no licencias de assets aprobadas. No se reutilizan esas afirmaciones como permiso.
++
++No se incorporó ningún asset en H02 ni PRE-H03. H1 usa primitivas/materiales procedurales; su existencia no demuestra cumplimiento de esta dirección. **H03 no iniciado; no hay escena de referencia, shaders ni aprobación visual nuevos en PRE-H03.**
+--- before/docs/ASSET_REGISTRY.md
++++ after/docs/ASSET_REGISTRY.md
+@@ -1,5 +1,5 @@
+ # ASSET_REGISTRY
+-**Estado:** no hay assets externos aprobados en este documento.
++**Actualizado PRE-H03 · 2026-11-20. Estado:** no hay assets externos aprobados en este documento. Dirección: **Modern PSX / Retro Industrial Cyberpunk**, D-017 y [ART_BIBLE](ART_BIBLE.md). No se han descargado ni añadido assets en esta tarea.
+ 
+ | Asset/pack | Autor | URL oficial | Versión | Licencia exacta/URL | Consultado | Uso comercial y redistribución en juego | Atribución | Ruta en repo | Modificaciones | Estado |
+ |---|---|---|---|---|---|---|---|---|---|---|
+@@ -7,6 +7,38 @@
+ 
+ **Regla:** no descargar/incorporar assets al repo sin revisión de licencia individual y registro completo. «Gratuito» no significa «sin restricciones».
+ 
++## Registro obligatorio por asset o pack
++
++La tabla anterior es un inventario vacío, no una aprobación. Cuando se seleccione un candidato, añadir una ficha que cubra todos estos campos; no completar datos desconocidos por inferencia:
++
++| Campo | Evidencia necesaria |
++|---|---|
++| Identificación | Nombre, pack/versión y elementos concretos incluidos o excluidos. |
++| Procedencia | Autor o proveedor, URL oficial de origen y fecha de consulta/verificación. |
++| Licencia | Nombre y versión exactos, URL/texto verificable, permisos de modificación, uso comercial y distribución incorporada al juego. |
++| Redistribución | Restricciones para fuentes/archivos sueltos y para el juego final; obligaciones y atribución exigida. |
++| Uso previsto | Categoría, escena/sistema de destino, motivo de encaje visual. |
++| Modificaciones | Adaptaciones reales de geometría, escala/pivote, UV, textura, material, rig/animación; no anotar cambios solo propuestos como realizados. |
++| Ubicación | Ruta real dentro del proyecto al incorporarse; PENDIENTE mientras no exista. |
++| Revisión legal | PENDIENTE / VERIFICADA / RECHAZADA, responsable, fecha y evidencia. |
++| Revisión técnica | Importación, versión de Godot/renderer, escala, materiales y coste comprobados; resultado y evidencia. |
++| Aprobación visual | PENDIENTE / APROBADA POR CREADOR / RECHAZADA, fecha y referencia de revisión. |
++| Estado de uso | CANDIDATO / ADAPTACIÓN / APROBADO PARA USO / EXCLUIDO, con las revisiones que lo justifican. |
++
++Una licencia comprobada no aprueba el estilo; una imagen aprobada no prueba derechos. Sin licencia verificable, dejar PENDIENTE y no incorporar ni distribuir. En assets propios registrar autoría/procedencia comprobable y cualquier material base utilizado. Añadir atribuciones en `THIRD_PARTY_NOTICES.md` cuando corresponda; hoy no existe porque no hay packs incorporados. No inventar autor, URL ni licencia.
++
++## Criterios de aceptación Modern PSX
++
++- Silueta clara, geometría intencional y densidad de detalle adecuada a distancia y función; comparar junto a la referencia común.
++- Materiales industriales coherentes, desgaste y escala consistentes, texturas tratadas sin mezcla arbitraria de fotografía hiperrealista/cartoon brillante.
++- Armas, brazo y protagonistas personalizables; permisos de derivados comprobados si parten de terceros. No copiar diseños protegidos de otras franquicias.
++- HUD, señales de amenaza y elementos interactuables legibles; no depender de efectos retro perjudiciales obligatorios.
++- Resoluciones orientativas y paleta de ART_BIBLE no son umbrales definitivos ni sustituyen la evaluación visual.
++- Compatibilidad con la versión exacta de Godot, renderer y Windows comprobada en su hito; registrar coste real y posible simplificación/degradación.
++- Revisiones legal, técnica y visual registradas por separado antes de dar el asset por aprobado para uso.
++
++Priorizar reutilización legal/adaptada, props propios en Blender y materiales/shaders propios; personalizar protagonistas y usar IA como apoyo conceptual. La producción es híbrida y progresiva, no dependiente de una sola fuente. H03 inventariará incluso los placeholders de su escena comparativa; PRE-H03 no crea esa escena.
++
+ ## Inspección H02 · 2026-11-20
+ 
+ No hay archivos de imagen, modelo o audio externos en el H1 recibido. `main.gd`, `player.gd` y `enemy.gd` construyen meshes y materiales con primitivas del motor. No se incorporó ningún pack en H02; la tabla sigue pendiente de selección. No se infiere licencia de terceros a partir de «gratuito». La autoría contractual del código recibido no se ha auditado.
+--- before/docs/DECISIONS.md
++++ after/docs/DECISIONS.md
+@@ -2,7 +2,7 @@
+ **Actualizado:** 2026-11-20 · Fuente: decisiones expresas del creador en la conversación de diseño, más PDF base.
+ 
+ ## APROBADA
+-- D-001 Godot 4, PC, estética retro industrial + cyberpunk PS1, vertical slice guarida/contrato/boss.
++- D-001 Godot 4, PC, vertical slice guarida/contrato/boss. Componente artístico precisado el 2026-11-20 por D-017: **Modern PSX / Retro Industrial Cyberpunk**; conserva los pilares industrial/cyberpunk y no exige emulación literal de PS1.
+ - D-002 Loadout libre 3 armas; Ninja móvil, Tanque resistente; híbridos posibles; los tres arquetipos patrullan.
+ - D-003 Sigilo completo, reacción a visión/ruido, romper contacto y recuperar sigilo, memoria de detección, cámaras/alarmas/cadáveres. Revisión APROBADA 2026-11-20: si se activa una alarma general, no se puede recuperar el sigilo durante el resto de ese intento.
+ - D-004 Seis armas: katana, pistola silenciada, rifle silenciado con mira, espada-sierra, revólver, escopeta doble cañón. Iniciales: katana, pistola silenciada, escopeta.
+@@ -16,14 +16,15 @@
+ - D-012 Guarida interactiva: PC, tienda/contratos, timbre, paquete físico transportado a mesa, montaje simple 3–4 pasos, USB firmware, pared de armas y trofeos.
+ - D-013 Autosave compras, mejoras y fin de contratos; progresión persistente.
+ - D-014 Tres dificultades (fácil, normal, difícil); duración objetivo de contrato 15–25 min.
+-- D-015 Arte: recurrir a assets gratuitos seleccionados y adaptados, estética consistente; sin asumir que IA genera modelos finales adecuados.
++- D-015 Arte: assets gratuitos seleccionados/adaptados con estética consistente, sin asumir que IA genera modelos finales adecuados. Ampliada el 2026-11-20 por D-017: producción híbrida y progresiva, props propios en Blender, materiales/shaders y protagonistas personalizados; IA como apoyo conceptual.
+ - D-016 Para cada hito/chat independiente, Codex lee `AGENTS.md` primero; tests automáticos y registro real de resultados antes de aprobación humana.
++- D-017 APROBADA (APPROVED) · 2026-11-20 · **Modern PSX / Retro Industrial Cyberpunk**: reinterpretación artística del 3D de finales de los noventa con legibilidad y experiencia modernas, sin emulación literal del hardware PS1. Fuente: solicitud expresa PRE-H03 del creador. Justificación: identidad retro, atmósfera industrial y coherencia con claridad en combate/sigilo. [ART_BIBLE](ART_BIBLE.md) pasa a ser la fuente detallada. Consecuencias: producción híbrida, geometría/texturas intencionales, iluminación expresiva, shaders retro potencialmente perjudiciales configurables o desactivables; investigación y escena comparativa en H03. No modifica gameplay, números de balance ni autoriza iniciar H03. Parámetros técnicos y assets individuales siguen pendientes de validación.
+ 
+ ## PENDIENTE DE APROBACIÓN / BALANCE
+ - P-001 Valores numéricos de todas las armas, enemigos, extracción, curación, ultimates, dash, dificultad.
+ - P-002 Árbol exacto de perks con costes, efectos y requisitos; precios y economía de contrato.
+ - P-003 Objetivos secundarios concretos, densidad de enemigos, mapa y secuencia exacta del boss.
+-- P-004 Catálogo de assets, licencias individuales y art bible concreta; pipeline Blender/GLB, texturas, material y animaciones.
++- P-004 PENDIENTE parcialmente: catálogo/licencias individuales, pipeline Blender/GLB validada, presupuestos, paleta y valores de texturas/materiales/efectos, rendimiento y detalle de animaciones. La dirección y reglas de ART_BIBLE ya están APROBADAS por D-017; las resoluciones orientativas y paleta conceptual siguen como propuestas para H03.
+ - P-005 Detalle de controles, prioridad de interacción E, muerte/carga/guardado intermedio, feedback y UX.
+ - P-006 Dato exacto de compatibilidad arma/ultimate; daño y cadencia durante Overdrive; parámetros Aimbot.
+ - P-007 Lista de exclusiones finales del MVP y definición final de terminado.
+@@ -73,3 +74,14 @@
+ | D-009 | Mundo al 50% y efectos solo en armas compatibles, sin separar ambos alcances. | Ralentización de Dead Eye global con cualquier arma; compatibilidad solo en efectos específicos. | H07/H09/H18 |
+ 
+ Fuente: respuestas del creador en esta conversación, reiteradas junto a «continúa hasta acabar». Se actualiza documentación; implementar estas mecánicas sigue reservado a sus hitos, no a H02.
++
++## Sustitución artística PRE-H03 — 2026-11-20
++
++| Antecedente conservado | Sustitución / precisión APROBADA por D-017 | Alcance |
++|---|---|---|
++| D-001: «retro industrial + cyberpunk PS1»; descripciones abreviadas PS1/low-poly. | Modern PSX / Retro Industrial Cyberpunk; reinterpretación, sin fidelidad obligatoria al hardware. Se mantienen industria, decadencia, tecnología obsoleta y noche. | Visión, alcance, biblia, resúmenes y prompts futuros. |
++| D-015: assets gratuitos seleccionados/adaptados y cautela sobre IA 3D. | Se conserva y amplía con producción híbrida/progresiva, props propios, materiales/shaders y protagonistas personalizados; IA conceptual. | Registro de assets y producción artística futura. |
++| P-004: biblia concreta enteramente pendiente; pipeline híbrida propuesta. | Dirección y estrategia aprobadas; parámetros, compatibilidad, presupuestos y aprobación individual aún pendientes. | Investigación H03, vertical H04 y aplicación en hitos posteriores, especialmente H23. |
++| H03 infraestructura; H04 primera vertical de arte. | H03 conserva infraestructura y balance y añade escena de referencia comparativa/investigación visual por petición PRE-H03. H04 mantiene su vertical y reutiliza esa base cuando se autorice. | Sin renumerar, reordenar ni cambiar dependencias H02→H03→H04. |
++
++Fuente íntegra: [solicitud PRE-H03](evidence/pre_h03/request.txt). Fecha de aprobación de la decisión: 20-11-2026 (convención del registro: 2026-11-20). Esta aprobación artística no equivale a aprobar una escena, cerrar H02 ni ejecutar H03. Los antecedentes H02 y sus sustituciones de firmware, alarma y Dead Eye permanecen vigentes. Los textos anteriores se conservan en el histórico H02 y el diff PRE-H03 registrado en VALIDATION.
+--- before/docs/DOCUMENTATION_AUDIT.md
++++ after/docs/DOCUMENTATION_AUDIT.md
+@@ -1,6 +1,8 @@
+ # DOCUMENTATION_AUDIT — H02
+ 
+ Fecha: 2026-11-20 · **Revisión correctiva: contradicciones materiales identificadas resueltas por el creador; saneamiento implementado. H02 pendiente solo de revisión manual de los cambios y aprobación expresa del cierre.** Los resultados anteriores se conservan en VALIDATION y en los logs; no se convierten retroactivamente en PASS.
++
++**Actualización PRE-H03 · 2026-11-20:** matriz artística sincronizada con D-017, **Modern PSX / Retro Industrial Cyberpunk**. La aprobación de dirección artística no cierra H02 ni inicia H03. Los recuentos y resultados de H02 inferiores describen su ejecución; la nueva verificación se registra por separado en VALIDATION.
+ 
+ ## Alcance, fuentes y método
+ 
+@@ -27,7 +29,7 @@
+ | Requisito | Documento de referencia / decisión | Estado y presencia real | Contradicciones / incompletitud | Acción correctiva / hito propuesto |
+ |---|---|---|---|---|
+ | REQ-001 FPS PC/Windows, Godot 4, cyborg brazo izquierdo | DV, MS, DC D-001, GDD histórico | APROBADA; FPS H1, brazo pendiente | No confundir greybox con personaje final | Arquitectura real documentada; H04/H08. |
+-| REQ-002 Retro industrial + cyberpunk PS1, low-poly, coherencia | DV, MS, AB, DC D-015 | APROBADA; dirección final pendiente | Paleta, texturas, audio, animación y presupuesto sin concretar (P-004) | No declarar validación artística; H04/H23. |
++| REQ-002 Modern PSX / Retro Industrial Cyberpunk, coherencia y legibilidad moderna | DV, MS, GD, AB, DC D-001/D-015/D-017 | APROBADA por el creador en PRE-H03; implementación visual pendiente | Emulación literal descartada como objetivo; paleta, resoluciones, presupuestos y técnicas siguen propuestas P-004 | Investigación y referencia comparativa H03, vertical H04, aplicación posterior H23; efectos perjudiciales configurables o desactivables. |
+ | REQ-003 Movimiento ágil, Ninja/Tanque/híbridos según equipo | DV, MS, GD, DC D-002 | APROBADA conceptual; marcha/sprint/salto/dash H1 | Velocidades, controles y movimientos adicionales no aprobados (P-001/P-005) | Preservar inputs H1, registrar números observados; H05. |
+ | REQ-004 Tres armas cualesquiera en loadout | MS, GD, DC D-002 | APROBADA; pendiente | Duplicados/slots vacíos P-011 | PENDING_APPROVAL; H07/H18. |
+ | REQ-005 Seis armas e iniciales katana/pistola silenciada/doble cañón | MS, GD, DC D-004 | APROBADA; solo pistola provisional H1 | Daño H1 35 no equivale a pistola propuesta 30 | No migrar balance; H07/H15. |
+@@ -56,7 +58,7 @@
+ | REQ-028 Muerte reinicia contrato conservando equipo/progreso | MS, GD, DC D-011 | APROBADA; H1 solo respawn local | Persistencia de intento y créditos pendientes P-005 | No describir respawn como reinicio contractual; H13/H21. |
+ | REQ-029 Créditos única moneda, compra/mejora, pago base + extras | MS, GD, DC D-011 | APROBADA; pendiente | Precios, recompensas y prevención de bloqueos P-002/P-003 | H13/H15/H21. |
+ | REQ-030 Autosave compras/mejoras/fin contrato; armas/firmware/créditos/loadout/ultimates/trofeos persistentes | MS, GD, DC D-013 | APROBADA; pendiente de implementación | Antes de USB hay compra sin efectos; recuperación detallada P-005 | Definir política de guardado intermedio en H13/H17; sin SaveData real en H1. |
+-| REQ-031 Assets gratuitos adaptados, licencia verificada antes de integrar | MS, AB, ASSET_REGISTRY, DC D-015 | APROBADA como política; ningún pack incorporado | Selección/licencias individuales P-004, PDF ausente | No asumir licencia de proveedor; H04/H23. |
++| REQ-031 Producción híbrida/progresiva, assets legales adaptados y protagonistas propios/personalizados | MS, AB, ASSET_REGISTRY, DC D-015/D-017 | APROBADA como política; ningún pack incorporado | Licencias, técnica y aprobación visual individuales pendientes P-004; IA solo apoyo conceptual | Inventariar muestras H03 y assets posteriores; verificar licencia antes de integrar. Blender/materiales/shaders propios permitidos, sin descarga en PRE-H03. |
+ | REQ-032 Tests verificables, lectura AGENTS, gates y aprobación humana | AGENTS, RM, TEST_STRATEGY, DC D-016 | APROBADA como proceso; H02 en revisión final | Tres bugs corregidos, cinco pruebas manuales previas aprobadas | Revisar feedback/reinicio tras corrección y aprobar cierre. H03 no iniciado. |
+ | REQ-033 Exclusiones restantes y DoD final del MVP | MS, DC P-007, RM | PROPUESTA; PENDING_APPROVAL | Lista no congelada; shurikens ya excluidos por D-010 | Mantener distinción, no añadir alcance. |
+ 
+@@ -90,3 +92,17 @@
+ La coherencia de las reglas aprobadas se revisó contra las tres respuestas expresas del creador: P-008/P-009/P-010 resueltas, P-012 corregida como dependencia documental. P-011/P-013/P-014 son detalles futuros expresamente pendientes, sin alternativas convertidas en exigencias; P-001…P-007 tampoco se elevan a decisiones. No quedan contradicciones materiales identificadas sin tratamiento. Esta conclusión es revisión documental, no test de gameplay futuro ni cierre del alcance completo del MVP.
+ 
+ Los tres defectos H1 están corregidos y la regresión ampliada pasa 34 comprobaciones. Integridad automática y logs: [VALIDATION](VALIDATION.md). El cierre de H02 sigue sujeto a revisión manual focalizada de feedback/reinicio y aprobación expresa del creador, conservando sus cinco pruebas previas ya aprobadas.
++
++## Coherencia artística PRE-H03 — revisión documental
++
++| Discrepancia o riesgo | Resolución y límite |
++|---|---|
++| PS1/low-poly como etiqueta genérica en visión, alcance, AGENTS y 23 prompts. | Definición única Modern PSX / Retro Industrial Cyberpunk, D-017 y ART_BIBLE como fuente detallada. Históricos y antecedentes se conservan, sin convertirlos en requisitos vigentes. |
++| Biblia/pipeline completamente propuestas; producción descrita solo como packs gratuitos. | Dirección y producción híbrida aprobadas; valores, compatibilidad técnica, assets y resultado visual pendientes. No se convierten propuestas de resolución/paleta en límites. |
++| Petición PRE-H03 exige referencia visual en H03, mientras H04 contenía la primera vertical. | H03 conserva infraestructura/balance y añade investigación/escena comparativa expresamente solicitada. H04 desarrolla esa base; numeración, dependencias y puertas se mantienen. |
++| Antiguo «post FX PS1» en H23 podía interpretarse como efecto obligatorio. | Efectos potencialmente perjudiciales configurables o desactivables; claridad de HUD, apuntado y señales preservada. H16 también explicita terminal retro con uso moderno. |
++| Paleta conceptual nueva frente a salud roja y energía azul ya aprobadas. | Se conserva la regla de GAME_DESIGN; el resto de la paleta se evalúa en H03. Sin modificación de gameplay. |
++| Referencias genéricas de proveedores/licencias en la biblia anterior. | Se conservan como antecedente en el diff/histórico, no como permiso. Registry exige evidencia individual, restricciones y aprobación legal/técnica/visual separadas. |
++| PRE-H03 se describe como posterior a H02, pero el repo aún no registra cierre. | Se completa solo la sincronización documental autorizada; se mantiene la revisión manual focalizada y aprobación H02 pendientes. No se adelanta H03. |
++
++No se ha identificado una contradicción artística material sin tratamiento después de la sincronización. Es una revisión semántica documental, no aprobación estética de una escena. La verificación automática comprueba enlaces, archivos, IDs y hashes, pero no certifica calidad artística. Ahora hay 17 decisiones maestras trazadas en los mismos 33 requisitos; el informe H02 de 16 decisiones sigue siendo evidencia histórica válida.
+--- before/docs/GAME_DESIGN.md
++++ after/docs/GAME_DESIGN.md
+@@ -27,7 +27,12 @@
+ - Guarida física, ordenador tienda/contratos, timbre, paquete transportable, montaje 3–4 interacciones, instalación USB, pared loadout, vitrina. Equipo inicial: katana, pistola silenciada y escopeta doble cañón.
+ - Guardado automático en compras, mejoras y final de contratos; estado persistente entre sesiones.
+ 
++## Presentación artística [APROBADA · D-017]
++
++La presentación de estas mecánicas sigue **Modern PSX / Retro Industrial Cyberpunk** (D-017), detallada en [ART_BIBLE](ART_BIBLE.md): siluetas, señales, animaciones y HUD legibles, con efectos retro potencialmente perjudiciales configurables o desactivables. Salud roja y energía azul conservan su regla aprobada. PRE-H03 no cambia ninguna mecánica, control ni cifra de este documento.
++
+ ## Propuestas históricas NO APROBADAS
++
+ - Daño/HP sugeridos: katana 35; pistola 30; rifle 90; espada-sierra 60; revólver 75; escopeta 8x12; squishy 60, tirador 80 y tanque 150 HP + 100 armadura.
+ - Energía 20/s, tope 60 por ejecución, curación 25 HP/s por 25 energía/s, reducción 50%; ultimate 6–10 s de duración. Estos números están por testar y **NO** se consideran requisitos.
+ - Tres ramas REFLEX/ASSAULT/SYSTEM y 12 perks son propuestas, no decisiones.
+--- before/docs/GAME_VISION.md
++++ after/docs/GAME_VISION.md
+@@ -1,16 +1,22 @@
+ # ALABARDA STUDIOS — GAME VISION
+-**Versión:** 0.9 (revisión antes de congelar alcance) · 2026-11-20
++**Versión:** 1.0 (dirección artística PRE-H03; alcance jugable sin congelar) · 2026-11-20
+ **Estado:** decisiones creativas aprobadas; balance y producción artística detallada pendientes.
+ 
+ ## Fantasía
+-Boomer shooter FPS 3D para PC/Windows en Godot 4, cyberpunk retro-industrial con rasgos PS1, mercenario cyborg con brazo izquierdo robótico. Contratos de exterminio con rutas tácticas y combate contundente. Dos especializaciones emergentes sin clases: Ninja (movilidad, silencio, precisión) y Tanque (resistencia, potencia); híbridos permitidos.
++Boomer shooter FPS 3D para PC/Windows en Godot 4, estética **Modern PSX / Retro Industrial Cyberpunk**, mercenario cyborg con brazo izquierdo robótico. Contratos de exterminio con rutas tácticas y combate contundente. Dos especializaciones emergentes sin clases: Ninja (movilidad, silencio, precisión) y Tanque (resistencia, potencia); híbridos permitidos.
+ 
+ ## Pilares
+ 1. El combate debe ser divertido sin escasez de munición convencional: reserva infinita, cargadores y recargas animadas.
+ 2. Energía recuperada mediante ejecuciones cuerpo a cuerpo, gastada en curación continua o una ultimate equipable.
+ 3. Sigilo completo: infiltración, detección, combate, ruptura de contacto y búsqueda con memoria. Es reversible salvo si se activa una alarma general, que impide recuperarlo durante el resto del intento.
+ 4. Progresión física y persistente en guarida: comprar, recibir paquete, transportar, montar/instalar, equipar. El firmware empieza a aplicar efectos al instalar el USB.
+-5. Estética homogénea a partir de assets gratuitos seleccionados y adaptados; priorizar originalidad en elementos protagonistas.
++5. Estética homogénea mediante producción híbrida y progresiva: assets gratuitos legales seleccionados/adaptados, props propios, materiales/shaders y protagonistas personalizados; IA como apoyo conceptual.
++
++## Dirección artística [APROBADA · D-017]
++
++**Modern PSX / Retro Industrial Cyberpunk** reinterpreta cómo recordamos el 3D de finales de los noventa con iluminación, controles, animaciones y legibilidad modernas. Conserva retro industrial, cyberpunk decadente, tecnología obsoleta y atmósfera nocturna. No exige emular fielmente PlayStation 1.
++
++Geometría low-poly intencional, siluetas claras, texturas de baja resolución controladas y luz expresiva forman un lenguaje común para guarida, contrato Yakuza, armas, brazo, enemigos y HUD. Los efectos retro que puedan perjudicar la lectura deben ser configurables o desactivables. Paleta y presupuestos concretos son propuestas a validar en H03, no límites aprobados. [ART_BIBLE](ART_BIBLE.md) es la fuente detallada; esta decisión no cambia gameplay ni narrativa.
+ 
+ ## Bucle
+ Guarida → PC (tienda + contratos) → entregas/workbench/árbol de firmware/loadout → contrato Yakuza de tres plantas → boss de dos fases → recompensas/trofeo → guarida. Contrato repetible.
+--- before/docs/HANDOFF.md
++++ after/docs/HANDOFF.md
+@@ -1,6 +1,16 @@
+-# HANDOFF — H02 preparado para cierre
++# HANDOFF — PRE-H03 documental y continuidad H02
+ 
+ 2026-11-20 · **IMPLEMENTADO Y VERIFICADO; pendiente de revisión manual focalizada y aprobación expresa del cierre. H03 no iniciado.** El creador ya aprobó las cinco pruebas jugables de H1 antes de la fase correctiva y las tres decisiones de diseño que se detallan abajo. No se adjudica todavía aprobación manual a los cambios posteriores.
++
++## Actualización artística PRE-H03
++
++D-017 APROBADA por solicitud expresa del creador el 2026-11-20: **Modern PSX / Retro Industrial Cyberpunk**. [ART_BIBLE](ART_BIBLE.md) es la fuente principal: lenguaje retro industrial con experiencia/legibilidad modernas; geometría y texturas intencionales, luz atmosférica, siluetas diferenciadas y efectos potencialmente perjudiciales configurables o desactivables. Producción híbrida/progresiva con reutilización legal, adaptación, props propios, materiales/shaders y protagonistas personalizados; IA conceptual.
++
++Se sincronizan visión, alcance, diseño, AGENTS, decisiones, registro de assets, roadmap, matriz, índice y los 23 prompts. H03 conserva pruebas/balance y añade investigación de pipeline y una escena comparativa; H04 mantiene la vertical y desarrolla esa base. No se renumeran dependencias. Paleta, resoluciones, presupuestos y técnicas concretas siguen propuestas por validar, sin assets aprobados por inferencia.
++
++PRE-H03 solo cambia documentación/prompts y añade evidencia; no cambia código, escenas, project, controles ni balance, no incorpora assets ni ejecuta H03. Resultados y listado exacto de cambios: [VALIDATION](VALIDATION.md). Fuente recibida: [solicitud](evidence/pre_h03/request.txt). Las herramientas H02 de generación/migración son históricas: no regenerar el índice o notas sin revisar el diff, porque las ampliaciones PRE-H03 viven ahora en los documentos.
++
++**Preparación:** H03 está documentalmente preparado, pero su ejecución sigue condicionada al cierre H02 y a la autorización de su propio hito. PRE-H03 no afirma haber completado la revisión manual pendiente. No hay nueva escena visual que aprobar en esta tarea documental.
+ 
+ ## Estado ejecutable y Git
+ 
+@@ -42,4 +52,6 @@
+ 
+ ## Resumen para nuevo chat
+ 
+-Leer AGENTS y documentos actuales. H02: limpieza y tres bugs corregidos, regresión PASS, tres contradicciones creativas resueltas expresamente. Historial íntegro, cero archivos (1), VALIDATION canónico. Falta solo revisión manual focalizada de victoria/reinicio y aprobación expresa del cierre; no iniciar H03 hasta esa aprobación. Prompt local: [H02](../prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md). No restaurar alias retirados ni confundir los FAIL históricos con los resultados correctivos actuales.
++Leer AGENTS y documentos actuales. H02: limpieza y tres bugs corregidos, regresión PASS, tres contradicciones creativas resueltas expresamente. Historial íntegro, cero archivos (1), VALIDATION canónico. Falta revisión manual focalizada de victoria/reinicio y aprobación expresa del cierre; no iniciar H03 hasta esa aprobación y su autorización propia. Prompt local: [H02](../prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md).
++
++PRE-H03: D-017 y ART_BIBLE fijan Modern PSX / Retro Industrial Cyberpunk; documentos y prompts sincronizados, sin trabajo de juego ni assets. [H03 preparado](../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md) conserva infraestructura y balance y añade investigación/escena comparativa, medición y revisión visual; H04 sigue siendo vertical de arte. Parámetros y resultado visual requieren validación futura. No restaurar alias retirados, no confundir los FAIL históricos con resultados posteriores y no dar por aprobados tests/arte no ejecutados.
+--- before/docs/MVP_SCOPE.md
++++ after/docs/MVP_SCOPE.md
+@@ -2,7 +2,7 @@
+ **Versión:** 0.9 · 2026-11-20 · **Estado:** revisión previa al cierre formal.
+ 
+ ## En alcance (APROBADO)
+-- PC/Windows, Godot 4, FPS 3D; dirección visual retro industrial + cyberpunk PS1.
++- PC/Windows, Godot 4, FPS 3D; estética consistente **Modern PSX / Retro Industrial Cyberpunk** según D-017 y [ART_BIBLE](ART_BIBLE.md): identidad retro con legibilidad moderna, sin emulación literal de PS1. Efectos retro potencialmente perjudiciales configurables o desactivables.
+ - Movimiento ágil para todos; builds mediante armas/firmware, Ninja destaca en movilidad y Tanque en resistencia.
+ - Tres slots para **tres armas cualesquiera**, sin restricciones por categoría.
+ - Seis armas: katana, pistola silenciada, rifle silenciado con mira; espada-sierra, revólver potente, escopeta doble cañón con disparo de uno o ambos cañones.
+@@ -21,7 +21,7 @@
+ - Armas iniciales: katana, pistola silenciada, escopeta doble cañón. Otras comprables.
+ - Boss: trofeo y flag persistente de desbloqueo de shurikens como **arma futura**, no shurikens jugables en MVP.
+ - Guardado automático al comprar, mejorar, completar contratos. Persistencia de armas, firmware, créditos, loadout, ultimates y trofeos.
+-- Producción visual: packs gratuitos seleccionados, adaptados a estilo consistente, licencia verificada y registrada antes de incorporar.
++- Producción visual híbrida y progresiva: assets gratuitos legales seleccionados/adaptados, props propios en Blender, materiales/shaders y protagonistas personalizados; IA como apoyo conceptual. Licencia verificada y registrada antes de incorporar. Esta dirección no añade funcionalidades jugables.
+ 
+ ## Fuera del MVP (PROPUESTA pendiente de confirmación explícita)
+ Mundo abierto, coches, cooperativo, contratos extra, facciones extra, árbol narrativo ramificado, shurikens jugables, personalización estética extensa, fabricación compleja, destrucción avanzada y múltiples idiomas.
+@@ -34,7 +34,7 @@
+ 3. Máquina de estados y alcance de alarma/cámaras/cadáveres; comunicación, cobertura y reset tras muerte.
+ 4. Economía: créditos iniciales, precios, recompensa base, objetivos y bonus, prevención de bloqueos de progreso.
+ 5. Armas: acciones de uso/recarga, comportamiento de escopeta doble modo y compatibilidades definitivas de cada ultimate.
+-6. Arte: identidad visual medible (paleta, texturas, iluminación, siluetas), selección/validación de assets, enemigos/armas protagonistas.
++6. Arte: dirección Modern PSX aprobada; validar paleta, resoluciones/filtros, presupuestos por categoría, iluminación, efectos y rendimiento en H03; selección/licencias y aprobación visual de assets/protagonistas siguen pendientes. Los números de ART_BIBLE son orientativos.
+ 7. UX: teclas contextuales E, Q, F, menú, selección dificultad, tutorial, accesibilidad mínima, guardado roto, salida del contrato.
+ 8. Política de autosave frente a compras entregadas pero no montadas; recuperación ante cierres inesperados.
+ 
+--- before/docs/PROMPTS_INDEX.md
++++ after/docs/PROMPTS_INDEX.md
+@@ -2,11 +2,13 @@
+ 
+ 2026-11-20. H02 en revisión; H03–H24 no iniciados. Son documentos propuestos, no autorizaciones. La precondición de cada hito requiere validación expresa del anterior. No se recibió un archivo concatenado.
+ 
++Actualización PRE-H03: todos los prompts remiten a **Modern PSX / Retro Industrial Cyberpunk**, D-017 y [ART_BIBLE](ART_BIBLE.md). Se actualiza H03 con investigación visual y escena comparativa conservando infraestructura/balance; H04 mantiene la vertical. No existe documento consolidado adicional que sincronizar. Las notas H02 inferiores conservan su fecha y no sustituyen esta actualización.
++
+ | Hito | Prompt recibido | Nota H02 |
+ |---|---|---|
+ | H02 | [Auditoría H1 y saneamiento documental](<../prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md>) | El prompt actual añade auditoría de todos los Markdown, matriz, enlaces, referencias e IDs; no cerrar con contradicciones materiales. |
+-| H03 | [Infraestructura de pruebas y balance](<../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md>) | Pendiente de autorización en su propio hito. |
+-| H04 | [Vertical de arte temprano](<../prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md>) | Pendiente de autorización en su propio hito. |
++| H03 | [Infraestructura de pruebas y balance + investigación visual](<../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md>) | PRE-H03 prepara escena comparativa, pipeline, coherencia/legibilidad, rendimiento, inventario y capturas. Requiere cierre H02 y autorización propia. |
++| H04 | [Vertical de arte temprano](<../prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md>) | Aplicar D-017 y desarrollar la referencia de H03; pendiente de aprobación H03 y autorización propia. |
+ | H05 | [Núcleo de jugador, interacción y movimiento](<../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md>) | P-005: prioridad E y tecla dedicada requieren decisión. P-012 resuelta: probar perfiles existentes; matriz de dificultades a partir de H13. |
+ | H06 | [Daño, salud, hitzones y estados de ataque](<../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md>) | Pendiente de autorización en su propio hito. |
+ | H07 | [Seis armas y loadout libre](<../prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md>) | P-006/P-011: compatibilidad de deflexión/ultimates y duplicados del mismo modelo en loadout siguen PENDING_APPROVAL. |
+--- before/docs/ROADMAP.md
++++ after/docs/ROADMAP.md
+@@ -1,5 +1,5 @@
+ # ROADMAP — ALABARDA CYBERPUNK FPS
+-**Versión 1.0 · 2026-11-20 · Estado: plan de implementación propuesto; requiere aprobación hito a hito.**
++**Versión 1.1 · PRE-H03 · 2026-11-20 · Estado: plan de implementación; requiere aprobación hito a hito.** La actualización artística D-017 está aprobada; los hitos no se dan por ejecutados.
+ 
+ ## Alcance, premisas y puertas
+ - H1: prototipo FPS reportado funcional por el creador. H02 registra ahora pruebas independientes y sus límites en [VALIDATION](VALIDATION.md); eso no cierra H02.
+@@ -13,8 +13,8 @@
+ | ID | Hito | Puerta mínima |
+ |---|---|---|
+ | H02 | Auditoría H1 y saneamiento documental | Repo H1 abre, escena inicial permanece jugable, no se elimina información histórica, documentación centralizada y HANDOFF completo. |
+-| H03 | Infraestructura de pruebas y balance | Comando local reproducible documentado, suite automatizada PASS, parámetros editables sin hardcodear, CI opcional sin credenciales. |
+-| H04 | Vertical de arte temprano | Sala de referencia aprobable y reglas visuales medibles; ningún asset sin trazabilidad. |
++| H03 | Infraestructura de pruebas y balance; investigación visual Modern PSX | Comando reproducible, suite PASS, parámetros editables, CI opcional sin credenciales. Escena comparativa de referencia, compatibilidad de pipeline con Godot exacto, legibilidad/coherencia revisables, rendimiento medido, inventario y decisiones técnicas; capturas cuando sea posible. |
++| H04 | Vertical de arte temprano | Desarrollar la referencia de H03 en una sala Modern PSX / Retro Industrial Cyberpunk aprobable y reglas visuales medibles; ningún asset sin trazabilidad. |
+ | H05 | Núcleo de jugador, interacción y movimiento | Movimiento jugable con estado estable e inputs documentados, sin teletransporte a través de geometría. |
+ | H06 | Daño, salud, hitzones y estados de ataque | Sistema de daño desacoplado reutilizable; cadencia declarada por animación. |
+ | H07 | Seis armas y loadout libre | Seis armas usables, acciones y recuperación animadas, libre selección y sin crashes. |
+@@ -53,6 +53,14 @@
+ ## Utilización
+ Los 23 prompts recibidos se enlazan por sus nombres reales en [PROMPTS_INDEX](PROMPTS_INDEX.md). No se recibió la versión concatenada que se anunciaba aquí. El prompt H02 de esta conversación añade auditoría documental; prevalece sobre la copia local anterior.
+ 
++## Preparación documental PRE-H03 · 2026-11-20
++
++D-017 establece **Modern PSX / Retro Industrial Cyberpunk**; [ART_BIBLE](ART_BIBLE.md) es la fuente artística detallada. H03 mantiene su infraestructura y balance y añade, por solicitud expresa PRE-H03, investigación de renderer, glTF/GLB, materiales/filtros, luces/sombras/fog, resolución/escalado, shaders opcionales, rendimiento y Windows. Cada técnica debe justificar utilidad visual, compatibilidad y coste, con estrategia de degradación que preserve la lectura.
++
++H03 construirá una escena comparativa aislada, contrastará materiales/técnicas con y sin efectos, comprobará coherencia y legibilidad, registrará decisiones técnicas provisionales y assets, y tomará capturas cuando sea posible. No requiere producir ya el arte definitivo ni los sistemas futuros de combate/sigilo. Paleta, cifras y presupuestos siguen sujetos a evaluación. H04 conserva su vertical de arte y reutilizará esa referencia; no se renumera ni altera H02→H03→H04.
++
++PRE-H03 solo actualiza documentos y prompts; no ejecuta H03. La revisión manual focalizada y el cierre de H02 continúan pendientes según HANDOFF/VALIDATION. La documentación queda preparada para solicitar H03 después de esa puerta, sin convertir esta decisión artística en aprobación del hito anterior.
++
+ ## Resultado de revisión H02 · 2026-11-20
+ 
+ H02 sigue **PENDIENTE, SIN APROBAR**; H03–H24 no iniciados. La secuencia sigue siendo una propuesta y no se reordena en esta auditoría.
+--- before/docs/SPEC_REVIEW.md
++++ after/docs/SPEC_REVIEW.md
+@@ -3,6 +3,8 @@
+ 
+ ## Ya aprobado
+ Ver `DECISIONS.md`, `GAME_DESIGN.md` y `MVP_SCOPE.md`. La especificación cubre visión, armas, ultimates, economía conceptual, sigilo, guarida, niveles, guardado, progresión y dificultad.
++
++PRE-H03 · 2026-11-20: D-017 aprueba **Modern PSX / Retro Industrial Cyberpunk** y producción híbrida/progresiva. [ART_BIBLE](ART_BIBLE.md) detalla geometría, texturas, iluminación, legibilidad, efectos opcionales y aplicación por sistema. Paleta/resoluciones/presupuestos siguen propuestas; no hay assets ni resultado visual aprobados. H03 prepara una escena comparativa e investigación; H04 conserva la vertical. La propuesta ampliada de dos armas/brazo de abajo no se convierte en requisito de H03.
+ 
+ ## Cierre propuesto (requiere aprobación)
+ - Congelar exclusiones incluidas en `MVP_SCOPE.md`.
+--- before/docs/TEST_STRATEGY.md
++++ after/docs/TEST_STRATEGY.md
+@@ -89,3 +89,9 @@
+ Migración v2: `tools/h02/verify_migration.py` verifica consolidación desde originales, 23 prompts, cero nombres con (1), repetición sin cambios, preservación de los 48 contenidos por hash y rechazo de ediciones ajenas/colisiones antes de escribir. El inventario valida rutas actuales del manifiesto, archivos históricos y snapshot de los tres scripts corregidos; no exige recrear los alias retirados por el creador.
+ 
+ El verificador documental revisa links relativos/anclas presentes, rutas de archivos en código inline e IDs de decisiones/requisitos; fórmulas, comandos y patrones no son archivos. Reporta referencias históricas y ausencias declaradas por separado. No es un parser universal de Markdown ni verifica URL externas o coherencia creativa por sí solo. La revisión humana queda en DOCUMENTATION_AUDIT.
++
++## PRE-H03 documental y futuras pruebas visuales
++
++PRE-H03 comprueba coherencia de D-017/ART_BIBLE/prompts, enlaces/IDs/duplicados y diff contra el estado de entrada propio, además de importación o arranque headless. Sus logs se guardan separados en `docs/evidence/pre_h03/`; no se sobrescriben resultados H02. Ver comandos y resultados en [VALIDATION](VALIDATION.md). Los checks existentes se reutilizan sin modificar herramientas ni scripts del juego.
++
++Al ejecutar H03 con autorización, añadir carga de la escena comparativa, dependencias de materiales/shaders, pruebas de configuración de efectos opcionales y muestras de importación realmente usadas. La comparación A/B de arte, HUD, siluetas y claridad en movimiento requiere ventana y revisión humana; medir rendimiento gráfico con hardware, driver, renderer, resolución y condiciones registrados. Capturas cuando sea posible. Headless no valida estética ni rendimiento GPU; registrar BLOCKED/NOT_RUN si falta esa capacidad. [Prompt H03 actualizado](../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md).
+--- before/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md
++++ after/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md
+@@ -3,7 +3,7 @@
+ # H02 — Auditoría H1 y saneamiento documental
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H1 funcional no se rompe. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md
++++ after/prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md
+@@ -2,17 +2,33 @@
+ 
+ # H03 — Infraestructura de pruebas y balance
+ 
++Actualización documental PRE-H03 · 2026-11-20: conserva infraestructura y balance; añade investigación visual y escena comparativa según D-017. **Leer íntegramente la nueva [ART_BIBLE](../docs/ART_BIBLE.md) y [ASSET_REGISTRY](../docs/ASSET_REGISTRY.md) antes de comenzar**, además de los documentos del bloque inicial. Esta edición del prompt no ejecuta H03.
++
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: Con H02 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+ ## Objetivo y tareas autorizadas
+ Instalar y fijar versión de framework de test compatible; crear ejecutor Windows reproducible, tests base, verificación headless, fixtures y archivo de balance provisional; definir arquitectura incremental de eventos y datos.
+ 
++### Investigación visual y escena de referencia
++
++1. Detectar versión exacta de Godot, renderer y entorno Windows. La base observada en H02 es Godot 4.7.2.stable.official.ed1daf0bf / GL Compatibility; verificarla de nuevo. No asumir técnicas compatibles por asociarse al estilo PSX.
++2. Investigar renderer, importación glTF/GLB, materiales, texturas y filtrado por material, iluminación, sombras, fog, resolución interna/escalado y shaders retro opcionales. Justificar utilidad visual, compatibilidad y coste de cada técnica; no cambiar renderer sin justificarlo ni añadir dependencias innecesarias.
++3. Construir una **escena de referencia aislada y reproducible**, conservando la entrada jugable H1. Incluir muestras de superficies/materiales, siluetas, elemento en primera persona y HUD/textos de prueba para comparar. Usar placeholders propios si no hay assets autorizados; no producir los sistemas futuros para simularlos.
++4. Comparar materiales y técnicas A/B con la misma cámara, luz y resolución. Valorar nearest frente a alternativas por material sin imponerlo globalmente; revisar fuentes/HUD por separado. Las resoluciones y paleta de ART_BIBLE son provisionales; proponer presupuestos por categoría tras medir, sin límite universal de polígonos.
++5. Comprobar coherencia Modern PSX / Retro Industrial Cyberpunk, siluetas, apuntado, información de amenaza/interacción y lectura en movimiento/luz tenue. Efectos potencialmente perjudiciales deben ser configurables o desactivables; comparar activados/desactivados. La revisión estética requiere aprobación del creador.
++6. Medir rendimiento en ventana real sobre Windows; registrar hardware/driver, versión, renderer, resolución, condiciones y tiempos de frame. Comparar la base y cada efecto sin inventar objetivos de FPS. Proponer degradación visual que preserve siluetas, señales y HUD. Headless solo prueba carga/integridad; si no puede medirse rendimiento gráfico, registrar BLOCKED/NOT_RUN y la causa.
++7. Inventariar todos los assets utilizados, incluidos placeholders, procedencia, modificaciones y rutas; comprobar licencias antes de incorporar terceros. Separar verificación legal/técnica y aprobación visual en ASSET_REGISTRY.
++8. Registrar decisiones técnicas provisionales y evidencia: escena/pasos reproducibles, configuración A/B, resultados y capturas cuando sea posible. Capturas no obtenidas: NOT_RUN con motivo. Actualizar ARCHITECTURE solo con lo realmente implementado; no elevar una técnica experimental a decisión de gameplay.
++
++H04 mantiene la vertical de arte temprano y desarrollará esta referencia después de aprobar H03, sin crear una segunda sala por defecto ni renumerar dependencias. H03 no produce las tres plantas, las seis armas finales ni arte definitivo.
++
+ ## Fuera de alcance
+ - No implementar características de los hitos siguientes, no cambiar reglas creativas aprobadas, no descargar assets sin validar licencia, no regenerar desde cero el proyecto H1.
+ - No instalar plugins sin verificar compatibilidad/licencia. No hacer refactors masivos irrelevantes.
++- No emular obligatoriamente limitaciones del hardware PS1 ni sacrificar legibilidad para obtener efectos retro. No aprobar parámetros visuales ni assets por intuición.
+ 
+ ## Protocolo de implementación
+ 1. Presenta un resumen breve del estado REAL del repo, rutas afectadas, plan mínimo y riesgos detectados.
+@@ -23,15 +39,21 @@
+ 
+ ## Tests AUTOMÁTICOS obligatorios
+ - Específicos del hito: Test de ejemplo con fallo controlado detectado; import Godot; test runner exit code !=0 en fallo; lectura de balance; test de no negativos y clamps; regresión H1.
++- Escena comparativa: carga/importación sin recursos perdidos, dependencias de materiales/texturas/shaders válidas y configuración de efectos opcionales comprobable. Si se usa glTF/GLB, registrar prueba real de importación y el asset concreto; no atribuir PASS a formatos o técnicas no probados.
+ - Ejecuta la suite existente de test y la importación Godot headless, usando los ejecutables/configuración reales registrados en `docs/TEST_STRATEGY.md` (detectar PATH y versión). Si no es posible, registra BLOCKED/NOT_RUN y explicación: NO escribir PASS.
+ - Comprueba los casos límite, errores de interacción y regresión de H1; no ocultes warnings/errores en log.
+ - Registra comando EXACTO, fecha, OS, versión Godot, exit code, resultados/contadores y ruta de logs. Nunca inventes una ejecución ni un resultado.
+ 
+ ## Criterios de aceptación
+ Comando local reproducible documentado, suite automatizada PASS, parámetros editables sin hardcodear, CI opcional sin credenciales.
++- Referencia visual reproducible e inventariada; comparación de materiales/técnicas, compatibilidad, rendimiento y degradación documentada; capturas cuando sea posible, con sus limitaciones. Coherencia y legibilidad revisadas manualmente por el creador, sin afirmar aprobación artística a partir de un test headless.
+ - Tests críticos del hito y regresión pasan realmente; sin errores fatales o recursos perdidos.
+ - `docs/VALIDATION.md` documenta resultados reales, y `docs/HANDOFF.md` incluye estado reproducible y siguientes pasos.
+ - El usuario debe aprobar manualmente las pruebas jugables/visuales antes de cerrar el hito.
++
++## Revisión manual visual y de rendimiento
++
++Abrir la escena de referencia en la versión registrada, reproducir cámaras/condiciones A/B, recorrerla y comprobar siluetas, superficies, elemento FPS y textos con cada efecto activado/desactivado. Comparar claridad en luz clara/tenue y la información simulada de alarma; los fixtures no implementan sistemas futuros. Revisar capturas y mediciones reales, proponer ajustes de paleta/presupuestos y obtener aprobación expresa antes de cerrar H03. Documentar por separado cualquier comprobación no ejecutable.
+ 
+ ## Entrega final OBLIGATORIA
+ Devuelve: (a) qué se implementó; (b) archivos cambiados; (c) comandos, exit codes y pruebas PASS/FAIL/BLOCKED/NOT_RUN; (d) pasos concretos de test manual que el creador debe ejecutar en Godot; (e) bugs y decisiones pendientes; (f) resumen para nuevo chat. **No te autoapruebes ni comiences H04.**
+--- before/prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md
++++ after/prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md
+@@ -3,12 +3,12 @@
+ # H04 — Vertical de arte temprano
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: Con H03 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+ ## Objetivo y tareas autorizadas
+-Sala industrial de referencia PS1 + cyberpunk retro; kit de materiales, iluminación, texturas pixeladas, props, silueta enemigo y viewmodel provisional; pipeline Blender→GLB y registro de assets con verificación real de licencias. No bloquear por assets: placeholders propios si falta permiso.
++Desarrollar la escena de referencia comparativa de H03 como vertical **Modern PSX / Retro Industrial Cyberpunk** según D-017 y ART_BIBLE; kit coherente de materiales, iluminación, texturas, props, silueta enemigo y viewmodel provisional; pipeline Blender→GLB y registro de assets con verificación real de licencias. Reutilizar la base aprobada, sin duplicar salas por defecto. No bloquear por assets: placeholders propios si falta permiso. Mantener legibilidad moderna y efectos retro potencialmente perjudiciales configurables o desactivables; presupuestos/paleta se validan, no se presuponen definitivos. Esta sincronización PRE-H03 no inicia H04.
+ 
+ ## Fuera de alcance
+ - No implementar características de los hitos siguientes, no cambiar reglas creativas aprobadas, no descargar assets sin validar licencia, no regenerar desde cero el proyecto H1.
+--- before/prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md
++++ after/prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md
+@@ -3,7 +3,7 @@
+ # H05 — Núcleo de jugador, interacción y movimiento
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H04 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md
++++ after/prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md
+@@ -3,7 +3,7 @@
+ # H06 — Daño, salud, hitzones y estados de ataque
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H05 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md
++++ after/prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md
+@@ -3,7 +3,7 @@
+ # H07 — Seis armas y loadout libre
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H06 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md
++++ after/prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md
+@@ -3,7 +3,7 @@
+ # H08 — Energía, curación y extracción cyborg
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H07 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md
++++ after/prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md
+@@ -3,7 +3,7 @@
+ # H09 — Tres ultimates independientes
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H08 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md
++++ after/prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md
+@@ -3,7 +3,7 @@
+ # H10 — Enemigos base: tres arquetipos y patrullas
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H09 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md
++++ after/prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md
+@@ -3,7 +3,7 @@
+ # H11 — Sigilo: memoria, búsqueda y retorno
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H10 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md
++++ after/prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md
+@@ -3,7 +3,7 @@
+ # H12 — Cámaras, alarmas y cadáveres
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H11 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md
++++ after/prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md
+@@ -3,7 +3,7 @@
+ # H13 — Persistencia, inventario, créditos y dificultades
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H12 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md
++++ after/prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md
+@@ -3,7 +3,7 @@
+ # H14 — Firmware árbol de perks y respec
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H13 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md
++++ after/prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md
+@@ -3,7 +3,7 @@
+ # H15 — Mejoras físicas de armas y catálogo comercial
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H14 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md
++++ after/prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md
+@@ -3,12 +3,12 @@
+ # H16 — Guarida y ordenador/terminal
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H15 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+ ## Objetivo y tareas autorizadas
+-Guarida explorable con PC, contratos, terminal compras, pared, vitrina y mesa provisional; mensajes hacker PS1, terminal y control de ratón/teclado; navegación FPS sin bloqueo; nada de entrega completa aún.
++Guarida explorable con PC, contratos, terminal compras, pared, vitrina y mesa provisional; mensajes y terminal retrofuturistas según ART_BIBLE, legibles y con control moderno de ratón/teclado; navegación FPS sin bloqueo; nada de entrega completa aún. Composición industrial habitada, hardware antiguo y zonas interactuables reconocibles según D-017.
+ 
+ ## Fuera de alcance
+ - No implementar características de los hitos siguientes, no cambiar reglas creativas aprobadas, no descargar assets sin validar licencia, no regenerar desde cero el proyecto H1.
+--- before/prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md
++++ after/prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md
+@@ -3,7 +3,7 @@
+ # H17 — Entregas físicas, montaje y USB
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H16 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md
++++ after/prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md
+@@ -3,7 +3,7 @@
+ # H18 — Arsenal, selección de 3 armas y vitrina
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H17 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md
++++ after/prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md
+@@ -3,7 +3,7 @@
+ # H19 — Contrato Yakuza: tres plantas + ascensores
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H18 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md
++++ after/prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md
+@@ -3,7 +3,7 @@
+ # H20 — Jefe Yakuza: dos fases y recompensa
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H19 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md
++++ after/prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md
+@@ -3,7 +3,7 @@
+ # H21 — Economía de contratos y objetivos secundarios
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H20 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md
++++ after/prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md
+@@ -3,7 +3,7 @@
+ # H22 — Integración, dificultad, UX y accesibilidad básica
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H21 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+--- before/prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md
++++ after/prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md
+@@ -3,12 +3,12 @@
+ # H23 — Pulido artístico/audio/animación y rendimiento
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H22 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 
+ ## Objetivo y tareas autorizadas
+-Aplicar ART_BIBLE en los 3 pisos, hub, armas y enemigos; sustituir placeholders legalmente aprobados; post FX PS1, animaciones legibles, sonido licenciado y hits impactantes, VFX de ejecuciones/ultimates; profiling y degradación por perfiles.
++Aplicar ART_BIBLE y D-017, Modern PSX / Retro Industrial Cyberpunk, en los 3 pisos, hub, armas, brazo y enemigos; sustituir placeholders por assets con revisión legal/técnica y aprobación visual registradas. Efectos retro potencialmente perjudiciales configurables o desactivables, animaciones legibles, sonido licenciado y hits impactantes, VFX de ejecuciones/ultimates; profiling y degradación por perfiles preservando siluetas, peligro y HUD. No imponer emulación literal de PS1.
+ 
+ ## Fuera de alcance
+ - No implementar características de los hitos siguientes, no cambiar reglas creativas aprobadas, no descargar assets sin validar licencia, no regenerar desde cero el proyecto H1.
+--- before/prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md
++++ after/prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md
+@@ -3,7 +3,7 @@
+ # H24 — Release candidate Windows + auditoría final
+ 
+ ## Contexto específico y precondición
+-- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética industrial + PS1, primero funcional y después pulido.
++- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido.
+ - Precondición: H23 aprobado. Si no está documentada/aprobada en `docs/HANDOFF.md` y `docs/VALIDATION.md`, **no asumir** que lo está; reporta BLOCKED y completa únicamente la auditoría que sí sea segura.
+ - Las reglas creativas aprobadas viven en `docs/DECISIONS.md` y `docs/MVP_SCOPE.md`; los números están en `docs/BALANCE_PROVISIONAL.md` y NO son balance definitivo.
+ 

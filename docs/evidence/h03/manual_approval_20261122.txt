@@ -1,0 +1,14 @@
+Fecha: 2026-11-22. Fuente: mensaje del creador en esta conversación.
+
+Pregunta presentada:
+1. H1 con F5: movimiento, ratón y disparo funcionan; puedes eliminar los cinco blancos y reiniciar con R.
+2. Laboratorio con F6: los textos del panel F se leen aceptablemente y, en la cámara 4, A reproduce las animaciones de los brazos.
+¿Esos dos puntos funcionan y das por aprobado el cierre de H03?
+
+Respuesta del creador:
+1. Si
+2. Si, me gustala fuente home video, se lee bien y en la camara 4 con a se mueven los brazos. Actualiza ho3, y acaba hito si es lo ultimo que queda.
+
+Si ya cierras hito, sube el codigo a github
+
+Registro: confirma ambas pruebas manuales finales y autoriza cierre/publicación si no quedan requisitos. Los requisitos técnicos constan PASS en run_06_selected_profile; no se inventan nuevos logs manuales ni pruebas adicionales. Se registra cierre H03 y preferencia HomeVideo D-020. H04 no autorizado.

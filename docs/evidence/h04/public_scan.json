@@ -1,0 +1,19 @@
+{
+  "status": "FAIL",
+  "files": 743,
+  "errors": [
+    [
+      "art_sources/h04/service_cabinet.blend",
+      "personal_windows_path"
+    ],
+    [
+      "art_sources/h04/transit_case.blend",
+      "personal_windows_path"
+    ],
+    [
+      "art_sources/h04/wall_panel.blend",
+      "personal_windows_path"
+    ]
+  ],
+  "scope": "Explicit excluded directories and sensitive patterns; no matched values emitted"
+}

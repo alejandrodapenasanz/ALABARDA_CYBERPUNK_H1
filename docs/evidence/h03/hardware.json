@@ -1,0 +1,10 @@
+﻿[
+    {
+        "Name":  "AMD Radeon(TM) Graphics",
+        "DriverVersion":  "32.0.11038.3"
+    },
+    {
+        "Name":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "DriverVersion":  "32.0.16.2124"
+    }
+]

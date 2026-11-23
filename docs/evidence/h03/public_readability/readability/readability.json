@@ -1,0 +1,32 @@
+{
+  "changed_pixels": 144056,
+  "failures": [],
+  "layouts": [
+    {
+      "fonts": false,
+      "view": "[P: (300.0, 73.0), S: (980.0, 589.0)]",
+      "window": "(1280, 720)"
+    },
+    {
+      "fonts": true,
+      "view": "[P: (300.0, 73.0), S: (980.0, 434.0)]",
+      "window": "(1280, 720)"
+    },
+    {
+      "fonts": false,
+      "view": "[P: (300.0, 73.0), S: (980.0, 589.0)]",
+      "window": "(960, 540)"
+    },
+    {
+      "fonts": true,
+      "view": "[P: (300.0, 73.0), S: (980.0, 434.0)]",
+      "window": "(960, 540)"
+    }
+  ],
+  "limits": "Pixel difference is technical evidence, not human artistic acceptance; runtime captures are unedited.",
+  "retro_mean_absolute_rgb_0_255": 4.68897699841718,
+  "sampled_pixels": 144060,
+  "status": "PASS",
+  "viewmodel": "Arma abstracta / muestra pública",
+  "zero_intensity_changed_pixels": 0
+}

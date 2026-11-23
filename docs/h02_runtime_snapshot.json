@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-20",
+  "authorization": "Corregir todos los errores para cerrar H02",
+  "files": {
+    "project.godot": {
+      "baseline_sha256": "0e4953331e1bfd5711c1190eb79232c013fe0def586cac56ceae10078828c0d4",
+      "sha256": "0e4953331e1bfd5711c1190eb79232c013fe0def586cac56ceae10078828c0d4",
+      "reason": "Sin cambios"
+    },
+    "scenes/main.tscn": {
+      "baseline_sha256": "5e9773e32417aee918196a439f9de0e1be5c743d0df6fc87c9bf199179e66676",
+      "sha256": "5e9773e32417aee918196a439f9de0e1be5c743d0df6fc87c9bf199179e66676",
+      "reason": "Sin cambios"
+    },
+    "scripts/enemy.gd": {
+      "baseline_sha256": "8e04537fa4a06273054577470445bdb19264f54ee8e3bb38783726f898fa3fed",
+      "sha256": "7449634767c738908b33a29edd19785d4ba03de615dcd45073301ddac70bf1db",
+      "reason": "H1-B02: muerte única/reentrante, sin ataque tras derrota, daño válido"
+    },
+    "scripts/enemy.gd.uid": {
+      "baseline_sha256": "b6d1ef1da8802a0ce6e0dca8fcac6a4e155af07cd1df9111ef33c1d3547efba7",
+      "sha256": "b6d1ef1da8802a0ce6e0dca8fcac6a4e155af07cd1df9111ef33c1d3547efba7",
+      "reason": "Sin cambios"
+    },
+    "scripts/main.gd": {
+      "baseline_sha256": "0dbbd186e778a869a2d02068f730c3f9c8adcd5c72ece3d4aa77ee4e710c9571",
+      "sha256": "32b40b51f25ae94912c957a850a6e4acbe76b4fd91b66b9b907d048765ae2cd7",
+      "reason": "H1-B03: preservar victoria y limpiar feedback al reiniciar"
+    },
+    "scripts/main.gd.uid": {
+      "baseline_sha256": "3b84fbb1850f57a9428c7b6db95e6cbc63afa0a0a3801b04941601e4b960b583",
+      "sha256": "3b84fbb1850f57a9428c7b6db95e6cbc63afa0a0a3801b04941601e4b960b583",
+      "reason": "Sin cambios"
+    },
+    "scripts/player.gd": {
+      "baseline_sha256": "096851a02c736455abd03fc49ca2a15e6d78816667d210236128dd3075969302",
+      "sha256": "4a9f9621a70c6938e18526195402903c8d1032db6ba78750bd6e49f01c2e550a",
+      "reason": "H1-B01: rechazar daño inválido y limitar HP"
+    },
+    "scripts/player.gd.uid": {
+      "baseline_sha256": "e37243119cee811aa19966c3d2b3ea76d2021893329be738821949744e88fcd5",
+      "sha256": "e37243119cee811aa19966c3d2b3ea76d2021893329be738821949744e88fcd5",
+      "reason": "Sin cambios"
+    }
+  }
+}

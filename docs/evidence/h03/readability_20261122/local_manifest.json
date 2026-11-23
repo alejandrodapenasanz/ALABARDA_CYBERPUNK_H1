@@ -1,0 +1,17 @@
+[
+  {
+    "source": "assets/Malorian/Malorian/Malorian.fbx",
+    "destination": "resources/local_experiments/malorian/Malorian.fbx",
+    "sha256": "a0a6bcf4b7fdf7f88c5a9184a035273ad66289f6e2592fb253603a4e8aa6c6ac"
+  },
+  {
+    "source": "assets/Malorian/Malorian/Textures/Malorian_Ammo.png",
+    "destination": "resources/local_experiments/malorian/Textures/Malorian_Ammo.png",
+    "sha256": "1a902d2e3f3db9c5e392193c351b6d74ada43ccc3f4e26be68c1f36aa702872e"
+  },
+  {
+    "source": "assets/Malorian/Malorian/Textures/Malorian_Base.png",
+    "destination": "resources/local_experiments/malorian/Textures/Malorian_Base.png",
+    "sha256": "7d5e636d23ce291783484c104941656688f47b07f49646cfa780fcf13eb15230"
+  }
+]

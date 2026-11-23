@@ -1,0 +1,24 @@
+SCRIPT ERROR: Parse Error: Cannot infer the type of "meshes" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tests/h03/integration/art_reference_test.gd:113)
+   GDScript backtrace (most recent call first):
+       [0] load_with_disabled_warnings (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:225)
+       [1] _load_is_test_suite (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:129)
+       [2] _scan_test_suites_scripts (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:95)
+       [3] scan_directory (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:69)
+       [4] scan (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:54)
+       [5] discover_tests (res://addons/gdUnit4/src/core/runners/GdUnitTestCIRunner.gd:407)
+       [6] init_gd_unit (res://addons/gdUnit4/src/core/runners/GdUnitTestCIRunner.gd:382)
+       [7] init_runner (res://addons/gdUnit4/src/core/runners/GdUnitTestCIRunner.gd:117)
+       [8] _process (res://addons/gdUnit4/src/core/runners/GdUnitTestSessionRunner.gd:120)
+ERROR: Failed to load script "res://tests/h03/integration/art_reference_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] load_with_disabled_warnings (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:225)
+       [1] _load_is_test_suite (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:129)
+       [2] _scan_test_suites_scripts (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:95)
+       [3] scan_directory (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:69)
+       [4] scan (res://addons/gdUnit4/src/core/GdUnitTestSuiteScanner.gd:54)
+       [5] discover_tests (res://addons/gdUnit4/src/core/runners/GdUnitTestCIRunner.gd:407)
+       [6] init_gd_unit (res://addons/gdUnit4/src/core/runners/GdUnitTestCIRunner.gd:382)
+       [7] init_runner (res://addons/gdUnit4/src/core/runners/GdUnitTestCIRunner.gd:117)
+       [8] _process (res://addons/gdUnit4/src/core/runners/GdUnitTestSessionRunner.gd:120)

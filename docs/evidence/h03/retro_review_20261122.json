@@ -1,0 +1,15 @@
+{
+  "changed_pixels": 197322,
+  "date": "2026-11-22",
+  "interpretation": "Nonzero differences establish an effect in prior captures, not human perceptibility or current input delivery",
+  "max_absolute_rgb_0_255": "(3.0, 3.0, 3.0)",
+  "mean_absolute_rgb_0_255": "(0.678444, 0.928608, 0.8515)",
+  "roi_xyxy": [
+    300,
+    250,
+    1100,
+    540
+  ],
+  "source": "Existing run_03 PNGs from 2026-11-21; not a new render or user-machine test",
+  "total_pixels": 232000
+}

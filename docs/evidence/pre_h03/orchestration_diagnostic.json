@@ -1,0 +1,11 @@
+{
+  "purpose": "Reproducción del fallo de quoting del lanzador al reanudar; no es un test del juego.",
+  "recorded_utc": "2026-11-20 17:05:41 UTC",
+  "command_powershell": "& 'C:/Users/aleja/AppData/Local/Programs/Python/Python313/python.exe' '-X' 'utf8' '-c' 'import sys,json; import tools.h02.run_logged as r; r.LOGS=r.ROOT/''docs/evidence/pre_h03''; args=json.loads((r.LOGS/''integrity_01.json'').read_text(encoding=''utf-8''))[''argv'']; args[-1]=args[-1].replace(\"label=''integrity_01''\", \"label=''integrity_final''\"); sys.argv=[sys.argv[0],''integrity_final'',*args]; sys.exit(r.main())'",
+  "chunk_id": "84473f",
+  "wall_time_seconds": 0.2487272,
+  "exit_code": 1,
+  "original_token_count": 19,
+  "output": "  File \"<string>\", line 1\r\nSyntaxError: keyword argument repeated: label\r\n",
+  "prior_orchestration": "Antes hubo TypeError de functions.exec al consultar memoria auxiliar ausente; no inició un proceso. Posteriormente un Get-Content pidió el log todavía inexistente y emitió PathNotFound; esa sesión terminó 0 por el rg siguiente, no se interpreta como éxito de la lectura."
+}

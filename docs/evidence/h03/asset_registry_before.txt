@@ -1,0 +1,44 @@
+# ASSET_REGISTRY
+**Actualizado PRE-H03 · 2026-11-20. Estado:** no hay assets externos aprobados en este documento. Dirección: **Modern PSX / Retro Industrial Cyberpunk**, D-017 y [ART_BIBLE](ART_BIBLE.md). No se han descargado ni añadido assets en esta tarea.
+
+| Asset/pack | Autor | URL oficial | Versión | Licencia exacta/URL | Consultado | Uso comercial y redistribución en juego | Atribución | Ruta en repo | Modificaciones | Estado |
+|---|---|---|---|---|---|---|---|---|---|---|
+| *Pendiente de selección* | — | — | — | — | — | — | — | — | — | PENDIENTE |
+
+**Regla:** no descargar/incorporar assets al repo sin revisión de licencia individual y registro completo. «Gratuito» no significa «sin restricciones».
+
+## Registro obligatorio por asset o pack
+
+La tabla anterior es un inventario vacío, no una aprobación. Cuando se seleccione un candidato, añadir una ficha que cubra todos estos campos; no completar datos desconocidos por inferencia:
+
+| Campo | Evidencia necesaria |
+|---|---|
+| Identificación | Nombre, pack/versión y elementos concretos incluidos o excluidos. |
+| Procedencia | Autor o proveedor, URL oficial de origen y fecha de consulta/verificación. |
+| Licencia | Nombre y versión exactos, URL/texto verificable, permisos de modificación, uso comercial y distribución incorporada al juego. |
+| Redistribución | Restricciones para fuentes/archivos sueltos y para el juego final; obligaciones y atribución exigida. |
+| Uso previsto | Categoría, escena/sistema de destino, motivo de encaje visual. |
+| Modificaciones | Adaptaciones reales de geometría, escala/pivote, UV, textura, material, rig/animación; no anotar cambios solo propuestos como realizados. |
+| Ubicación | Ruta real dentro del proyecto al incorporarse; PENDIENTE mientras no exista. |
+| Revisión legal | PENDIENTE / VERIFICADA / RECHAZADA, responsable, fecha y evidencia. |
+| Revisión técnica | Importación, versión de Godot/renderer, escala, materiales y coste comprobados; resultado y evidencia. |
+| Aprobación visual | PENDIENTE / APROBADA POR CREADOR / RECHAZADA, fecha y referencia de revisión. |
+| Estado de uso | CANDIDATO / ADAPTACIÓN / APROBADO PARA USO / EXCLUIDO, con las revisiones que lo justifican. |
+
+Una licencia comprobada no aprueba el estilo; una imagen aprobada no prueba derechos. Sin licencia verificable, dejar PENDIENTE y no incorporar ni distribuir. En assets propios registrar autoría/procedencia comprobable y cualquier material base utilizado. Añadir atribuciones en `THIRD_PARTY_NOTICES.md` cuando corresponda; hoy no existe porque no hay packs incorporados. No inventar autor, URL ni licencia.
+
+## Criterios de aceptación Modern PSX
+
+- Silueta clara, geometría intencional y densidad de detalle adecuada a distancia y función; comparar junto a la referencia común.
+- Materiales industriales coherentes, desgaste y escala consistentes, texturas tratadas sin mezcla arbitraria de fotografía hiperrealista/cartoon brillante.
+- Armas, brazo y protagonistas personalizables; permisos de derivados comprobados si parten de terceros. No copiar diseños protegidos de otras franquicias.
+- HUD, señales de amenaza y elementos interactuables legibles; no depender de efectos retro perjudiciales obligatorios.
+- Resoluciones orientativas y paleta de ART_BIBLE no son umbrales definitivos ni sustituyen la evaluación visual.
+- Compatibilidad con la versión exacta de Godot, renderer y Windows comprobada en su hito; registrar coste real y posible simplificación/degradación.
+- Revisiones legal, técnica y visual registradas por separado antes de dar el asset por aprobado para uso.
+
+Priorizar reutilización legal/adaptada, props propios en Blender y materiales/shaders propios; personalizar protagonistas y usar IA como apoyo conceptual. La producción es híbrida y progresiva, no dependiente de una sola fuente. H03 inventariará incluso los placeholders de su escena comparativa; PRE-H03 no crea esa escena.
+
+## Inspección H02 · 2026-11-20
+
+No hay archivos de imagen, modelo o audio externos en el H1 recibido. `main.gd`, `player.gd` y `enemy.gd` construyen meshes y materiales con primitivas del motor. No se incorporó ningún pack en H02; la tabla sigue pendiente de selección. No se infiere licencia de terceros a partir de «gratuito». La autoría contractual del código recibido no se ha auditado.

@@ -1,0 +1,163 @@
+# ARCHITECTURE — estado H03 y antecedente H02
+
+**Estado vigente 2026-11-22:** H04 CERRADO / APROBADO POR CREADOR (D-021). La revisión manual está registrada en VALIDATION. El cierre no altera la implementación descrita; las menciones de revisión pendiente inferiores corresponden a la entrega anterior. H05 no iniciado.
+
+Publicación H04: `tools/h04/package_public.py <destino_nuevo>` amplía la selección H03 con fuentes originales del kit, tests H04, herramientas de autoría/runner y documentos breves de `tools/h04/public_docs/`. Excluye colección original, local_experiments y evidencia privada. El generador Blender elimina carpetas personales del estado del explorador antes de guardar; `sanitize_sources.py` aplica la misma limpieza a fuentes existentes, conservando geometría/UV/GLB y actualizando hashes de fuente. La copia pública se comprueba con suite gráfica completa y fallback propio.
+
+## Implementación vigente H04 · 2026-11-22
+
+H04 autorizado e implementado; pruebas técnicas PASS y revisión visual pendiente. Se conserva `scenes/art_reference/modern_psx_lab.tscn`, su API y controles H03. `project.godot`, main.tscn, tres scripts H1 y balance permanecen intactos. El laboratorio sigue sin colisiones, movimiento FPS, combate, IA ni terminal interactivo.
+
+| Componente | Responsabilidad real |
+|---|---|
+| scripts/art_reference/lookdev_room.gd | Ensambla el mismo laboratorio con arquitectura, ocho instancias del kit, señales físicas, cinco muestras suministradas y silueta estática. |
+| scripts/art_reference/lookdev_profile.gd + resources/art_kit/lookdev.tres | Resource de parámetros de presentación: paleta, ambiente, energía de luces, rango, posiciones/objetivos de cámaras. Cifras experimentales, separadas del balance. |
+| lab_world.gd | Conserva cámara, viewmodel opcional/fallback, rig y API set_filter/set_lighting/set_shadows/set_fog. Duplica materiales antes de armonizar roughness/metallic/tintes; fuentes originales intactas. |
+| modern_psx_lab.gd | Mismo layout sin solapes; L/botón recorre atmosférica, neutra y alarma estática. Reset conserva D-019 y elimina estado de alarma. X/B/F/A/M/1–4 siguen disponibles. |
+| resources/art_kit/*.glb | Tres props originales, metros, eje Y-up, origen al suelo, UV, materiales incluidos; ocho instancias en sala. No binarios de Blender requeridos para abrir Godot. |
+| art_sources/h04/*.blend | Fuentes editables producidas por Blender 4.5.3; art_sources/.gdignore evita que el editor intente importarlas. |
+| tools/h04/build_kit.py | Autoría reproducible sin plugins extra; aplica transforms, UV y triangulación al exportar; manifiesto SHA-256 de GLB y blend. Paleta hexadecimal convertida de sRGB a lineal antes del Principled BSDF. |
+| tests/h04/integration/lookdev_test.gd | Cuatro casos: geometría/UV/pivote/metros; reversibilidad de tres luces; reutilización/aislamiento de materiales; separación de gameplay/UI. |
+| tests/h04/lookdev_probe.gd | Ventana real, tres luces × cuatro cámaras, comparación sin sombras y repetición base; foco, hardware, muestras y PNG originales. |
+| tools/h04/run_tests.py | Ejecuta suite H03/H1 y añade H04. Exige cuatro casos JUnit reales, cero failures/errors/skips, manifiesto intacto y exit de probes. |
+
+El texto físico usa HomeVideo a 40 px en SubViewport 320×128, actualizado una vez, QuadMesh sin iluminación. Ese ViewportTexture no tiene mipmaps: usa filtro lineal para conservar trazos a distancia. Los materiales 3D restantes siguen nearest+mips por defecto. HUD y panel F siguen fuera del postprocesado. No supone aprobación global de HomeVideo para HUD.
+
+### Pipeline Blender → GLB → Godot comprobada
+
+Herramienta: **Blender 4.5.3 LTS portátil**, paquete Windows del [servidor oficial](https://download.blender.org/release/Blender4.5/), SHA-256 cotejado antes de ejecutar. [Registro URL/hash](evidence/h04/blender_download.json); copyright incluido identifica GPL y componentes compatibles. Ejecutable fuera del repositorio; no plugin instalado. Godot 4.7.2 / GL Compatibility y GdUnit4 6.2.3 conservados.
+
+```powershell
+# BLENDER_BIN apunta a blender.exe portátil 4.5.3; GODOT_BIN al console.exe 4.7.2.
+& $env:BLENDER_BIN --background --factory-startup --python tools/h04/build_kit.py
+& $env:GODOT_BIN --headless --path . --editor --import --quit
+python -X utf8 tools/h04/run_tests.py --godot $env:GODOT_BIN --output docs/evidence/h04/nueva_ejecucion --graphics
+```
+
+El generador sobrescribe únicamente sus tres fuentes y exports propios; desactiva copias `.blend1`. El runner exige un directorio de logs nuevo. No se necesita Blender para tests o ejecución normal, solo para regenerar el kit. El manifiesto permite comprobar que no cambió desde export. No se atribuye identidad binaria a exports de versiones distintas.
+
+Los apartados H03 siguientes son históricos; sus parámetros antiguos no sustituyen D-019 ni el estado H04.
+
+**2026-11-22 · H03 CERRADO Y APROBADO POR CREADOR.** Se completó validación humana H1, HomeVideo y animación de brazos; perfil D-019 vigente. Este cierre documental no modifica la implementación descrita. Las menciones de aprobación pendiente en los antecedentes son históricas. H04 no iniciado.
+
+**Valor vigente 2026-11-22, D-019:** DEFAULT_OPTIONS inicia y restaura iluminación atmosférica, nearest+mips, 1280×720, sombras sí, retro/niebla no. Reemplaza el reset neutro de diagnóstico de la corrección anterior. Intensidad 0.70 inactiva con retro apagado; todos los toggles se conservan. Perfil aprobado por el creador, revisable; no cambio de H1.
+
+## Implementación H03 · 2026-11-21
+
+**Corrección vigente 2026-11-22:** controles en panel lateral, título/leyenda fuera del 3D, fuentes en panel desplegable que ocupa espacio propio y no superpone la escena. El render 3D mantiene 1280×720/640×360 y se presenta conservando 16:9; cambiar tamaño de ventana no cambia esas resoluciones de prueba. Cámara general frontal con FOV 55°, las restantes 65°. `B` activa split A/B del retro, slider regula intensidad; `X` cambia efecto completo y sale de split; `0` restaura neutra/nearest/nativa/sombras, sin retro/niebla/fuentes. Parámetros actuales de shader: 15 pasos, líneas 0.10 y mezcla 0.70, no los valores iniciales descritos en la tabla histórica inferior.
+
+`lab_world.gd` carga opcionalmente Malorian local sin preload, solo si existe el FBX importado. Asigna la textura suministrada y adapta transform de una instancia; mantiene fallback propio cuando no existe la carpeta. `.gitignore` y `package_public.py` excluyen `resources/local_experiments/`; integridad comprueba su manifiesto si está presente y declara ausencia opcional en la copia pública. La carpeta local no está aprobada para exportación; antes de futuros exports aplicar una selección explícita. No hay export presets en H03.
+
+Integración ampliada a 8 casos: distribución de controles/fuentes, reset/A-B y carga local/fallback público, además de los cinco previos. `tests/h03/readability_probe.gd`, añadido a `-Graphics`, captura cuatro cámaras y dos tamaños de ventana, comprueba rectángulos sin solapes, efecto real sobre píxeles y ausencia de efecto a intensidad cero. Los tests gráficos no sustituyen aprobación humana.
+
+H03 implementado para revisión, **sin aprobación del creador**. H1 sigue como entrada y conserva íntegros project.godot, main.tscn y los tres scripts productivos. El bloque H02 inferior describe el antecedente; sus afirmaciones de ausencia de framework/assets/Resources ya no describen H03.
+
+| Componente real | Función / dependencias |
+|---|---|
+| addons/gdUnit4 | Framework **6.2.3, MIT**, vendorizado sin cambios; no se activa plugin de editor. CLI probada en Godot 4.7.2 Windows. |
+| tools/h03/gdunit.lock.json, tools/h03/install_gdunit.py | URL de tag y SHA-256 del ZIP; reinstalación idempotente, rechaza bytes distintos sin sobrescribir. Solo extrae addon y LICENSE. |
+| tools/run_tests.ps1 → tools/h03/run_tests.py | Ejecuta versión/import, unitarias, integración, fallo controlado, arranque, regresión H1 e integridad; opcional gráfico real. Logs separados por ejecución, JUnit y summary.json. |
+| scripts/config/balance_profile.gd | Resource con schema_version, diccionarios separados rules/values, validación y clamps puros de límites aprobados. No implementa energía/curación/ultimate/dificultad. |
+| resources/balance/provisional.tres | Perfil editable con datos del documento de balance. H1 **no lo consume**, por tanto su daño 35 no cambia a la propuesta 30. |
+| scenes/art_reference/modern_psx_lab.tscn | Escena aislada ejecutable con F6; Control raíz. No sustituye main. |
+| scripts/art_reference/modern_psx_lab.gd | SubViewport propio para 3D → TextureRect con shader → UI externa. Controles de comparación, cuatro cámaras, movimiento sinusoidal de inspección, comparación de fuentes. |
+| scripts/art_reference/lab_world.gd | Geometría/materiales propios, CRT/desk, dos meshes del FBX industrial, silueta estática, arma abstracta FPS y rig de brazos sobre peana. Sin colisiones/IA/daño/interacciones. |
+| resources/shaders/subtle_retro.gdshader | Cuantización y líneas sutiles, intensity=0.25, apagado por defecto; solo 3D. HUD/fuentes fuera del shader. |
+| assets/.gdignore | Conserva el archivo original y evita importación de duplicados, blend, escenas Godot antiguas y recursos no autorizados. |
+| resources/art_samples | Una selección importable licenciada; manifiesto fuente/destino/hash. Solo aquí se normaliza Textures→textures para FBX. Godot extrae texturas embebidas de glTF/GLB. |
+| tests/h03/unit, tests/h03/integration | 8 tests de datos y 5 de escena/recursos/reversibilidad/glifos/animación. No dependen de input headless. |
+| tests/h03/controlled_failure | Una aserción que debe fallar, fuera de los directorios de suite normal. El ejecutor exige el nombre/caso JUnit esperado y exit 100. |
+| tests/h03/graphics_probe.gd | Ventana real, capturas sin edición y wall time entre frame_post_draw, hardware/renderer/config y muestras crudas. Rechaza headless. |
+| tools/h03/audit_assets.py, inspect_samples.gd, verify_integrity.py | Inventario estático completo, inspección runtime y preservación por hash/referencias. No reescriben evidencia H02. |
+
+Motor verificado nuevamente: **4.7.2.stable.official.ed1daf0bf**, estándar x64, Windows 11 build 26200. Renderer conservado **GL Compatibility**; ejecución gráfica real OpenGL 3.3.0 / NVIDIA 621.24 / RTX 4050 Laptop. No se instalan Blender ni plugins de render.
+
+### Instalación y ejecución reproducibles
+
+Requiere Godot estándar **4.7.2**, PowerShell y Python **3.11+** (probado 3.13.15). El addon y muestras ya se entregan. Para reconstruir addon ausente, desde raíz:
+
+```powershell
+python -X utf8 tools/h03/install_gdunit.py
+# GODOT_BIN debe apuntar al ejecutable console de tu instalación.
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_tests.ps1 -Godot $env:GODOT_BIN
+# Añade medición/capturas en ventana real al final:
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/run_tests.ps1 -Godot $env:GODOT_BIN -Graphics
+```
+
+También acepta Godot en PATH como godot/godot4. No se incluye ninguna ruta personal en el ejecutor. Sin motor resuelto devuelve 2; test/import/error de recurso devuelve 1; éxito global devuelve 0. Cada proceso conserva su exit real; el fallo esperado devuelve 100 y solo se acepta si JUnit confirma exactamente ese fallo. Un error de parseo o ausencia de tests no puede sustituirlo. Timeout 180 s (import 240 s), resultado 124. Carpetas de salida nuevas, sin sobrescribir logs. Detalle: [TEST_STRATEGY](TEST_STRATEGY.md).
+
+Upstream v6.2.3 declara Godot 4.5+ y enumera 4.7/4.7.1; no se atribuye certificación upstream específica de 4.7.2. Antes de integrar se verificó import + test positivo en proyecto temporal con el ejecutable real. [Compatibilidad](https://github.com/godot-gdunit-labs/gdUnit4/tree/v6.2.3), [CLI Windows](https://godot-gdunit-labs.github.io/gdUnit4/latest/advanced_testing/cmd/), evidencia preflight en VALIDATION. SHA-256 ZIP: 8fb1a298af110be6d73067af66132bf036049deb6d5929d4a16756e18d2228bb.
+
+### Decisiones técnicas y límites
+
+Datos separados de presentación y de H1; no nuevo autoload ni bus global porque aún no hay sistemas que lo requieran. Señales de H1 intactas. El laboratorio tiene API apply_options/set_camera/capture_config para pruebas, sin depender de controles de gameplay. Cada material de muestra se duplica en memoria para evitar contaminar imports o escenas ajenas.
+
+Nearest/linear con mipmaps por material; resolución 3D 1280×720 o 640×360 mediante SubViewport, UI a tamaño lógico del proyecto. Luz ambiente/direccional y dos OmniLight3D, sombras opcionales, niebla estándar (no volumétrica). Se conserva renderer; ninguna mejora requiere Forward+. La [documentación de formatos](https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/available_formats.html) recomienda glTF, permite FBX ufbx y requiere Blender para blend: solo los formatos ejecutados se dan por comprobados.
+
+El arte continúa EXPERIMENTAL. No hay export presets/paquete Windows ni objetivos finales de rendimiento. Registro de assets/licencias en ASSET_REGISTRY, manual y continuidad en HANDOFF.
+
+## Antecedente H02 (conservado)
+
+2026-11-20. Inventario del código recibido y comprobaciones H02. El contrato técnico propuesto anterior se conserva íntegro en [histórico](history/pre_h02/docs/ARCHITECTURE.md); no está implementado.
+
+## Motor y entrada
+
+- Windows 11, build 26200; Godot `4.7.2.stable.official.ed1daf0bf`, editor estándar. `project.godot` declara features 4.7 y GL Compatibility, viewport 1280×720, stretch canvas_items.
+- Inicio: [project.godot](../project.godot) → [scenes/main.tscn](../scenes/main.tscn) → [scripts/main.gd](../scripts/main.gd).
+- Única escena productiva: raíz `PrototypeH1: Node3D`, con un ext_resource Script. No hay escenas independientes de jugador/enemigo, autoloads, plugins, navegación, guardado, export presets ni Resources de balance.
+- Los tres scripts productivos tienen sidecars `.gd.uid`; rutas y UIDs conservados. La fase correctiva H02 modifica esos tres scripts para resolver los defectos reproducidos y limpiar el feedback al reiniciar.
+
+## Construcción y dependencias
+
+`main.gd` precarga `player.gd` y `enemy.gd`; no hay ciclos entre ellos. Crea en `_ready`: WorldEnvironment, DirectionalLight3D, bloques de arena, Player, cinco enemigos y CanvasLayer/HUD. Geometría, materiales, arma, colisiones y UI son procedurales con clases de Godot; no existen archivos de assets externos en el proyecto recibido.
+
+| Componente | Responsabilidad y contrato existente |
+|---|---|
+| `scripts/main.gd` | Arena 32×32, cinco blancos, HUD vida/hostiles/feedback, reinicio con R solo con contador cero. Instancia scripts con `.new()`. |
+| `scripts/player.gd` | CharacterBody3D; grupo player; CapsuleShape3D, Camera3D, WeaponRay y meshes de arma; movimiento en `_physics_process`, `move_and_slide`, hitscan, recoil, salud y respawn. |
+| `scripts/enemy.gd` | StaticBody3D; grupo enemies; caja de colisión/mesh; `configure(player, hp, ranged)` antes de entrar al árbol; daño por distancia y temporizador en `_process`. No hay visión ni proyectiles. |
+| `tests/h02/h1_probe.gd` | SceneTree de auditoría que instancia la escena real. Fixtures aíslan ataques automáticos y colocan jugador/objetivos para raycast. No se carga al ejecutar F5. |
+| `tools/h02/` | Utilidades Python de inventario, captura histórica, migración y registro de comandos para H02; biblioteca estándar, sin framework instalado. |
+
+Señales: Player `health_changed(current, maximum)` → HUD; `shot_fired(hit)` → feedback mientras queden enemigos; `died` → aviso de respawn. Enemy `eliminated(enemy)` → contador/victoria, como máximo una vez por enemigo. Respawn restaura posición, velocidad y salud; no repone blancos ni reinicia un contrato persistente.
+
+Correcciones H02: `take_damage(amount)` rechaza valores no finitos/no positivos; jugador limita HP a [0,max_health]. Enemy limita HP a cero y activa `defeated` antes de emitir eliminación, impidiendo daño reentrante y ataques tras derrota. Main preserva feedback de victoria ante la señal del último disparo y limpia el feedback al reponer blancos. No cambian daño, velocidades, cooldowns ni bindings. [Regresión](VALIDATION.md).
+
+## Inputs comprobados en código
+
+No hay sección Input Map personalizada en `project.godot`. Se usan consultas directas de teclas; no existe remapeo.
+
+| Entrada | Implementación H1 |
+|---|---|
+| W/S/A/D | Dirección normalizada relativa al jugador. |
+| Shift | Sprint mientras se mantiene. |
+| Q + dirección | Dash mientras cooldown permite; mantener Q puede repetir tras enfriamiento. |
+| Espacio | Salto al estar en suelo; se consulta tecla mantenida. |
+| Ratón | `_unhandled_input`, yaw y pitch limitado, solo con captura. |
+| Clic izquierdo | Disparo mientras se mantiene, hay captura y cooldown cero. Con cursor visible solicita captura. |
+| Escape | Libera cursor; no pausa simulación. |
+| R | Repone blancos tras eliminar todos. No es recarga. |
+| E/F | No implementadas en H1. |
+
+## Datos numéricos realmente usados
+
+Se conservan los parámetros de H1 sin migrarlos en H02. Son descripción del código, no balance definitivo. La configuración mediante Resources queda en la propuesta H03, pendiente de autorización.
+
+| Dato H1 | Valor observado / ubicación |
+|---|---|
+| Marcha / sprint / dash / salto / gravedad | 8.5 / 12.5 / 22 / 6 / 22, exports en player. |
+| Dash duración / cooldown | 0.16 / 1 s, literales en player. |
+| Vida inicial/máxima | 100; max_health export. |
+| Daño / recuperación / alcance de pistola | 35 / 0.23 s / 90, literales en player; no cargador ni AnimationPlayer. |
+| Blancos | Dos de 35 HP y tres de 70 HP, definidos en main. |
+| Corto alcance | Radio 3, daño 12, intervalo 1.5 s. |
+| Distancia | Radio 17, daño 7, intervalo 2.2 s. |
+| Primer ataque | Temporizador inicial 0.8 s; no comprueba línea de visión. |
+
+## Auditoría, git y reproducción
+
+Entorno y comandos: [TEST_STRATEGY](TEST_STRATEGY.md). No existía suite; se añadieron comprobaciones acotadas H02 sin GdUnit4 ni arquitectura de H03. El smoke automatiza teclas y llama `_shoot()` en headless para ejercitar el RayCast3D real: este backend conserva mouse_mode visible, por lo que cursor/clic extremo a extremo requieren prueba manual.
+
+Git local: rama `h02-audit`; snapshot de 56 archivos originales como tree `a876fef52112f952de91a015903026e6f79cce9a` en `refs/h02/baseline`. No hay commits ni remote: no había identidad Git configurada y no se inventó una. El índice conserva el snapshot recibido; `git status` muestra archivos añadidos, modificaciones y retiradas autorizadas. Project, escena y UIDs deben conservar los hashes originales; los tres scripts tienen hashes de la revisión correctiva en [snapshot H02](h02_runtime_snapshot.json). El tree de entrada no se reescribe. Los nuevos archivos H02 no están en ese tree ni en el índice.
+
+Migración H02 v2 autorizada: eliminar alias redundantes, normalizar nombres de 22 prompts y deduplicar seis copias históricas idénticas. Las 48 entradas Markdown originales se recuperan desde 42 archivos históricos por SHA-256; el manifiesto conserva rutas antiguas, actuales y de archivo. VALIDATION es el único registro activo de pruebas; VALIDACION histórico sigue intacto. [Manifiesto](history/pre_h02/manifest.json), [diff original](evidence/h02/original_comparisons.diff) y [auditoría](DOCUMENTATION_AUDIT.md).

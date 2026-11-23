@@ -1,0 +1,18 @@
+{
+  "started_madrid": "2026-11-20T13:19:09.909802+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "argv": [
+    "C:/Users/aleja/AppData/Local/Programs/Python/Python313/python.exe",
+    "-X",
+    "utf8",
+    "-c",
+    "import hashlib, json, tempfile, shutil, datetime\nfrom pathlib import Path\nroot=Path.cwd()\nout=root/'docs/evidence/pre_h03'\nassert not (out/'before.json').exists(), 'No sobrescribir baseline PRE-H03'\nbackup=Path(tempfile.mkdtemp(prefix='alabarda_pre_h03_'))\nskip={'.git','.godot','__pycache__'}\nfiles={}\ndocs=[]\nfor p in sorted(root.rglob('*')):\n    rel=p.relative_to(root)\n    if not p.is_file() or skip.intersection(rel.parts) or rel.as_posix().startswith('docs/evidence/pre_h03/'):\n        continue\n    files[rel.as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()\n    if p.suffix=='.md' and 'history' not in rel.parts:\n        dst=backup/rel\n        dst.parent.mkdir(parents=True,exist_ok=True)\n        shutil.copyfile(p,dst)\n        docs.append(rel.as_posix())\nout.mkdir(parents=True,exist_ok=True)\nrequest=Path('C:/Users/aleja/.codex/attachments/9a490010-7dd0-40b7-826a-5edb5afccb31/Pasted text.txt')\nshutil.copyfile(request,out/'request.txt')\ndata={'date_madrid':datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).isoformat(),'files':files,'active_markdown':docs,'backup_root':str(backup),'request_sha256':hashlib.sha256(request.read_bytes()).hexdigest()}\n(out/'before.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')\nprint('SNAPSHOT files='+str(len(files))+' active_markdown='+str(len(docs))+' backup='+str(backup))\n"
+  ],
+  "powershell": "& 'C:/Users/aleja/AppData/Local/Programs/Python/Python313/python.exe' '-X' 'utf8' '-c' 'import hashlib, json, tempfile, shutil, datetime\nfrom pathlib import Path\nroot=Path.cwd()\nout=root/''docs/evidence/pre_h03''\nassert not (out/''before.json'').exists(), ''No sobrescribir baseline PRE-H03''\nbackup=Path(tempfile.mkdtemp(prefix=''alabarda_pre_h03_''))\nskip={''.git'',''.godot'',''__pycache__''}\nfiles={}\ndocs=[]\nfor p in sorted(root.rglob(''*'')):\n    rel=p.relative_to(root)\n    if not p.is_file() or skip.intersection(rel.parts) or rel.as_posix().startswith(''docs/evidence/pre_h03/''):\n        continue\n    files[rel.as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()\n    if p.suffix==''.md'' and ''history'' not in rel.parts:\n        dst=backup/rel\n        dst.parent.mkdir(parents=True,exist_ok=True)\n        shutil.copyfile(p,dst)\n        docs.append(rel.as_posix())\nout.mkdir(parents=True,exist_ok=True)\nrequest=Path(''C:/Users/aleja/.codex/attachments/9a490010-7dd0-40b7-826a-5edb5afccb31/Pasted text.txt'')\nshutil.copyfile(request,out/''request.txt'')\ndata={''date_madrid'':datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).isoformat(),''files'':files,''active_markdown'':docs,''backup_root'':str(backup),''request_sha256'':hashlib.sha256(request.read_bytes()).hexdigest()}\n(out/''before.json'').write_text(json.dumps(data,ensure_ascii=False,indent=2)+''\\n'',encoding=''utf-8'')\nprint(''SNAPSHOT files=''+str(len(files))+'' active_markdown=''+str(len(docs))+'' backup=''+str(backup))\n'",
+  "executed": true,
+  "exit_code": 0,
+  "stdout": "baseline.stdout.log",
+  "stderr": "baseline.stderr.log"
+}

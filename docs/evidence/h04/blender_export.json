@@ -1,0 +1,17 @@
+{
+  "label": "blender_export",
+  "date": "2026-11-22T15:16:57.351707+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "C:/dev/tools/blender-4.5.3-windows-x64/blender.exe",
+    "--background",
+    "--factory-startup",
+    "--python",
+    "tools/h04/build_kit.py"
+  ],
+  "powershell": "& 'C:/dev/tools/blender-4.5.3-windows-x64/blender.exe' '--background' '--factory-startup' '--python' 'tools/h04/build_kit.py'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

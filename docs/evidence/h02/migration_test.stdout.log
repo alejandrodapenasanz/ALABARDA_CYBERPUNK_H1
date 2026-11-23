@@ -1,0 +1,6 @@
+MIGRATION aliases=8 changed=8
+MIGRATION aliases=8 changed=0
+PASS migración inicial 8 alias; repetición 0 cambios; hashes idénticos
+PASS 48 originales Markdown conservados byte a byte
+PASS rechazo de edición ajena sin escrituras parciales
+RESULT passed=3 failed=0

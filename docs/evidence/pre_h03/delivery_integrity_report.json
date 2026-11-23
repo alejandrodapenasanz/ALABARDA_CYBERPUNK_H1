@@ -1,0 +1,105 @@
+{
+  "changed_documents": [
+    "AGENTS.md",
+    "README.md",
+    "docs/ART_BIBLE.md",
+    "docs/ASSET_REGISTRY.md",
+    "docs/DECISIONS.md",
+    "docs/DOCUMENTATION_AUDIT.md",
+    "docs/GAME_DESIGN.md",
+    "docs/GAME_VISION.md",
+    "docs/HANDOFF.md",
+    "docs/MVP_SCOPE.md",
+    "docs/PROMPTS_INDEX.md",
+    "docs/ROADMAP.md",
+    "docs/SPEC_REVIEW.md",
+    "docs/TEST_STRATEGY.md",
+    "docs/VALIDATION.md",
+    "prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md",
+    "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+    "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+    "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+    "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+    "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+    "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+    "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+    "prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md",
+    "prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md",
+    "prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md",
+    "prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md",
+    "prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md",
+    "prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md",
+    "prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md",
+    "prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md",
+    "prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md",
+    "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+    "prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md",
+    "prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md",
+    "prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md",
+    "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+    "prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md"
+  ],
+  "removed": [],
+  "added_outside_evidence": [],
+  "checks": [
+    {
+      "check": "DOCUMENTATION_ONLY",
+      "pass": true,
+      "detail": {
+        "changed": 38,
+        "removed": [],
+        "added_outside_evidence": []
+      }
+    },
+    {
+      "check": "EXISTING_NON_DOCUMENTS_AND_HISTORY_UNCHANGED",
+      "pass": true,
+      "detail": 211
+    },
+    {
+      "check": "GAMEPLAY_DECISIONS_RETAINED",
+      "pass": true,
+      "detail": "27 entradas idénticas; D-001/D-015/P-004 revisadas expresamente por arte"
+    },
+    {
+      "check": "GAME_DESIGN_ORIGINAL_LINES_RETAINED",
+      "pass": true,
+      "detail": "Todas las líneas originales siguen presentes"
+    },
+    {
+      "check": "PRIOR_VALIDATION_RETAINED",
+      "pass": true,
+      "detail": "Registro H02 completo conservado"
+    },
+    {
+      "check": "OFFICIAL_STYLE_CORE_AND_PROMPTS",
+      "pass": true,
+      "detail": "11 documentos principales y 23 prompts"
+    },
+    {
+      "check": "NO_ACTIVE_IDENTICAL_DOCUMENTS",
+      "pass": true,
+      "detail": {
+        "active": 41,
+        "duplicate_groups": []
+      }
+    },
+    {
+      "check": "NO_SUFFIX_DUPLICATES",
+      "pass": true,
+      "detail": "Sin nombres (1) fuera de cachés/Git"
+    },
+    {
+      "check": "GODOT_IMPORT_LOGS",
+      "pass": true,
+      "detail": "Exit 0, stderr vacío, sin indicadores de error/warning en stdout"
+    },
+    {
+      "check": "GODOT_STARTUP_LOGS",
+      "pass": true,
+      "detail": "Exit 0, stderr vacío, sin indicadores de error/warning en stdout"
+    }
+  ],
+  "errors": 0,
+  "scope": "Excluye .git/.godot/__pycache__ y nueva evidencia PRE-H03; verifica el resto por SHA-256."
+}

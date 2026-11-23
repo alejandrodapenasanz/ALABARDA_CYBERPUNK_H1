@@ -1,0 +1,34 @@
+# DECISIONS — Registro maestro
+**Actualizado:** 2026-11-20 · Fuente: decisiones expresas del creador en la conversación de diseño, más PDF base.
+
+## APROBADA
+- D-001 Godot 4, PC, estética retro industrial + cyberpunk PS1, vertical slice guarida/contrato/boss.
+- D-002 Loadout libre 3 armas; Ninja móvil, Tanque resistente; híbridos posibles; los tres arquetipos patrullan.
+- D-003 Sigilo completo, reacción a visión/ruido, romper contacto y recuperar sigilo, memoria de detección, cámaras/alarmas/cadáveres.
+- D-004 Seis armas: katana, pistola silenciada, rifle silenciado con mira, espada-sierra, revólver, escopeta doble cañón. Iniciales: katana, pistola silenciada, escopeta.
+- D-005 Reserva de munición infinita con cargadores y recargas; cadencia ligada a animación. Escopeta 1 o 2 cañones. Katana desvía balas automáticamente equipada.
+- D-006 Mejora física de armas separada de firmware; firmware árbol con dependencias, créditos, perks compradas activas, compras ilimitadas, refund/respec y perks mixtas.
+- D-007 Salud 0–100, energía 0–150; ejecución normal si debilitado/aturdido/no detectado; tanque con armadura rota/debilitado; reducción de daño durante extracción; F mantenida da energía proporcional al tiempo. Interrupción solo por muerte.
+- D-008 E mantenida para curación gradual que consume energía, ascensor recarga a 150.
+- D-009 Tres ultimates diferentes, una equipada, se activa >=100, consume todo 100–150 y escala **solo duración**: Dead Eye mundo 50% y jugador normal, Aimbot ayuda intensa a cabezas visibles sin disparo automático, Overdrive cadencia y daño con armas de fuego; efectos solo en armas compatibles.
+- D-010 Contrato Yakuza 3 plantas: infiltración/combate/boss, boss dos fases con shurikens, trofeo y flag de arma futura, contrato repetible.
+- D-011 Muerte reinicia contrato desde inicio sin perder mejoras compradas. Crédito única moneda, pago base + extras opcionales variados de sigilo/combate.
+- D-012 Guarida interactiva: PC, tienda/contratos, timbre, paquete físico transportado a mesa, montaje simple 3–4 pasos, USB firmware, pared de armas y trofeos.
+- D-013 Autosave compras, mejoras y fin de contratos; progresión persistente.
+- D-014 Tres dificultades (fácil, normal, difícil); duración objetivo de contrato 15–25 min.
+- D-015 Arte: recurrir a assets gratuitos seleccionados y adaptados, estética consistente; sin asumir que IA genera modelos finales adecuados.
+- D-016 Para cada hito/chat independiente, Codex lee `AGENTS.md` primero; tests automáticos y registro real de resultados antes de aprobación humana.
+
+## PENDIENTE DE APROBACIÓN / BALANCE
+- P-001 Valores numéricos de todas las armas, enemigos, extracción, curación, ultimates, dash, dificultad.
+- P-002 Árbol exacto de perks con costes, efectos y requisitos; precios y economía de contrato.
+- P-003 Objetivos secundarios concretos, densidad de enemigos, mapa y secuencia exacta del boss.
+- P-004 Catálogo de assets, licencias individuales y art bible concreta; pipeline Blender/GLB, texturas, material y animaciones.
+- P-005 Detalle de controles, prioridad de interacción E, muerte/carga/guardado intermedio, feedback y UX.
+- P-006 Dato exacto de compatibilidad arma/ultimate; daño y cadencia durante Overdrive; parámetros Aimbot.
+- P-007 Lista de exclusiones finales del MVP y definición final de terminado.
+
+## NOTAS DE CONSISTENCIA
+- El `GDD_TECNICO_H1.md` registra H1 y propuestas antiguas; **no prevalece** frente a estas decisiones.
+- «Firmware comprado sin límite» y «todas perks activas» son compatibles; la acción respec elimina sus efectos al reembolsar.
+- `ROADMAP.md` y prompts completos aún no se han creado; hacerlo **solo tras revisión/cierre del alcance**.

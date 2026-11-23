@@ -1,0 +1,18 @@
+{
+  "started_madrid": "2026-11-20T09:37:53.216933+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; src=Path('docs/history/pre_h02/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md'); dst=Path('prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md'); assert not dst.exists(); dst.write_bytes(src.read_bytes()); print('RESTORED exact historical bytes with user authorization')"
+  ],
+  "powershell": "& 'python' '-X' 'utf8' '-c' 'from pathlib import Path; src=Path(''docs/history/pre_h02/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md''); dst=Path(''prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md''); assert not dst.exists(); dst.write_bytes(src.read_bytes()); print(''RESTORED exact historical bytes with user authorization'')'",
+  "executed": true,
+  "exit_code": 0,
+  "stdout": "restore_h02_prompt.stdout.log",
+  "stderr": "restore_h02_prompt.stderr.log"
+}

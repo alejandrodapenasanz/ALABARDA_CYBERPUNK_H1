@@ -1,0 +1,1025 @@
+# H03 — INFRAESTRUCTURA DE PRUEBAS, BALANCE Y VALIDACIÓN ARTÍSTICA MODERN PSX
+
+Proyecto: ALABARDA STUDIOS — CYBERPUNK FPS  
+Motor: Godot 4  
+Plataforma objetivo: Windows PC  
+Dirección artística: Modern PSX / Retro Industrial Cyberpunk  
+Estado previo: H02 finalizado; verificar documentalmente su aprobación antes de comenzar.
+
+## 0. INSTRUCCIÓN OBLIGATORIA — LEER AGENTS.MD
+
+**Antes de realizar cualquier modificación, lee íntegramente `AGENTS.md` en la raíz del repositorio.**
+
+Sus instrucciones tienen prioridad dentro del proyecto, salvo cuando entren en conflicto con requisitos superiores o con decisiones creativas aprobadas más recientes.
+
+Después, lee los siguientes documentos si existen:
+
+- `docs/GAME_VISION.md`
+- `docs/MVP_SCOPE.md`
+- `docs/DECISIONS.md`
+- `docs/GAME_DESIGN.md`
+- `docs/ROADMAP.md`
+- `docs/ARCHITECTURE.md`
+- `docs/ART_BIBLE.md`
+- `docs/ASSET_REGISTRY.md`
+- `docs/BALANCE_PROVISIONAL.md`
+- `docs/TEST_STRATEGY.md`
+- `docs/VALIDATION.md`
+- `docs/HANDOFF.md`
+- `docs/DOCUMENTATION_AUDIT.md`
+- `docs/SPEC_REVIEW.md`
+
+Inspecciona también:
+
+- `project.godot`
+- `scenes/`
+- `scripts/`
+- `assets/`
+- `tests/`, si existe
+- Los prompts del roadmap y el propio H03, si están disponibles
+- El resultado de `git status`
+
+No supongas que los sistemas descritos en la documentación ya están implementados.
+
+No confundas documentación, intención de diseño y funcionalidad verificada.
+
+Antes de editar, proporciona un diagnóstico breve del repositorio, su estado real, archivos faltantes, cambios existentes y plan de implementación.
+
+Si H02 no figura como aprobado en los registros correspondientes, detén la implementación de H03 y presenta el bloqueo. No declares aprobado H02 por tu cuenta.
+
+---
+
+# 1. OBJETIVO DEL HITO
+
+H03 tiene tres objetivos principales:
+
+**A. Infraestructura de pruebas**
+
+Preparar una infraestructura automatizada, reproducible y mantenible para validar el desarrollo de los siguientes hitos.
+
+**B. Sistema de balance**
+
+Establecer una base de configuración de parámetros de gameplay, separando los valores provisionales de las reglas creativas aprobadas.
+
+**C. Pipeline artístico Modern PSX**
+
+Auditar los assets ya disponibles, verificar su viabilidad técnica y legal, preparar un sistema visual consistente y construir una escena de referencia para comparar materiales, iluminación, texturas y elementos FPS.
+
+No implementar sistemas futuros del videojuego.
+
+H03 debe crear la infraestructura técnica y visual sobre la que trabajará H04.
+
+---
+
+# 2. NUEVO CONTEXTO — ASSETS EXISTENTES
+
+El creador ha incorporado una primera colección de assets en `assets/`.
+
+Las siguientes rutas aparecen en una captura del repositorio. Debes comprobar sus nombres reales, contenido y ubicación antes de utilizarlas.
+
+## 2.1. Inventario inicial conocido
+
+### `assets/CRT_TV_VHS_fbx_gltx_blend_textures/`
+
+Pack de elementos electrónicos retro.
+
+Uso previsto:
+
+- Guarida.
+- Televisores CRT.
+- Equipos VHS.
+- Decoración.
+- Tecnología retrofuturista.
+
+Inspeccionar archivos, formatos, texturas y licencia.
+
+### `assets/CRTVHS_GodotFiles/`
+
+Posible variante de assets CRT/VHS preparada para Godot.
+
+Comprobar si duplica contenido del pack anterior.
+
+No importar dos veces los mismos modelos sin necesidad.
+
+Identificar cuál es la versión más práctica para el proyecto.
+
+### `assets/HomeVideo_Font_0_9/`
+
+Tipografía retro elegida por el creador por su apariencia hacker/PSX.
+
+Uso previsto:
+
+- Ordenador de la guarida.
+- Terminales.
+- Mensajes de instalación de firmware.
+- Interfaz de contratos.
+- Elementos decorativos con texto.
+
+**Esta fuente es una candidata visual prioritaria.**
+
+No asumir que es adecuada para todos los tamaños de texto.
+
+Evaluar legibilidad en resolución nativa, pantallas pequeñas y diferentes escalados.
+
+No utilizarla automáticamente en el HUD principal si dificulta leer información durante el combate.
+
+Verificar licencia y derechos de redistribución de la tipografía.
+
+### `assets/Industrial_exterior_v1 (1)/`
+
+Pack de elementos industriales.
+
+Uso previsto:
+
+- Estructuras arquitectónicas.
+- Pasillos.
+- Decoración industrial.
+- Instalaciones técnicas.
+- Contrato Yakuza.
+
+Inspeccionar compatibilidad, escala, materiales y modularidad.
+
+### `assets/Malorian/`
+
+Modelo de arma PSX, seleccionado como referencia visual importante por el creador.
+
+Referencia de origen proporcionada:
+
+https://wildenza.itch.io/psx-malorian-armscyberpunk
+
+Este modelo representa especialmente bien la estética deseada:
+
+- Geometría low-poly.
+- Silueta contundente.
+- Textura pixelada.
+- Diseño industrial.
+- Detalles mecánicos visibles.
+- Identidad cyberpunk.
+
+Uso autorizado para este hito: evaluación visual y técnica, sujeto a licencia.
+
+**No convertirlo automáticamente en un arma definitiva del juego.**
+
+Investigar las condiciones reales de uso y los posibles derechos de terceros relacionados con el diseño de la Malorian.
+
+No asumir que una licencia del archivo resuelve todos los derechos sobre diseños derivados de obras comerciales existentes.
+
+Si existen dudas legales, mantenerlo solo como referencia visual y no aprobarlo para una distribución comercial.
+
+### `assets/OFFICE/`
+
+Modelos de mobiliario y oficinas.
+
+Uso previsto:
+
+- Primera planta del contrato Yakuza.
+- Oficinas corporativas.
+- Escritorios.
+- Sillas.
+- Archivadores.
+- Decoración de la guarida.
+
+Comprobar estilos, formatos, materiales y compatibilidad.
+
+### `assets/PSX Electronics Asset Pack/`
+
+Elementos electrónicos de estilo PSX.
+
+Uso previsto:
+
+- Guarida.
+- Ordenador del mercenario.
+- Pantallas.
+- Props electrónicos.
+- Ambientación retrofuturista.
+
+Comparar con los assets CRT/VHS.
+
+Evitar duplicar elementos muy parecidos sin justificación.
+
+### `assets/psx-first-person-arms-free-game-assets/`
+
+Pack de brazos para perspectiva FPS.
+
+Uso previsto:
+
+- Referencia para el sistema de viewmodels.
+- Rig y animaciones.
+- Prototipo de brazos del personaje.
+
+El protagonista definitivo tendrá un brazo izquierdo robótico.
+
+No asumir que este pack contiene ese brazo ni que podrá sustituir el diseño definitivo sin modificaciones.
+
+Verificar:
+
+- Esqueleto.
+- Rig.
+- Animaciones disponibles.
+- Formato.
+- Escala.
+- Orientación.
+- Compatibilidad con Godot.
+- Licencia.
+
+En H03 solo debe utilizarse como elemento de referencia o muestra visual.
+
+### `assets/PSXAmmoBoxes/`
+
+Cajas de munición con estética PSX.
+
+**Decisión visual del creador:**
+
+Se quieren utilizar especialmente para decorar la guarida, debajo de la pared de armas.
+
+Son elementos ambientales, no un sistema de munición coleccionable.
+
+Recordar que el diseño aprobado del juego utiliza munición de reserva ilimitada con cargadores y recargas.
+
+No introducir pickups de munición como nueva mecánica.
+
+Evaluar también su utilización en:
+
+- Mesa de trabajo.
+- Estanterías.
+- Almacenamiento de armas.
+- Cajas y embalajes.
+
+### `assets/CRTVHS Preview.blend`
+
+Archivo Blender independiente.
+
+Comprobar si es un archivo de demostración del pack CRT/VHS.
+
+No eliminarlo ni importarlo automáticamente como asset definitivo.
+
+Determinar su función y documentarla.
+
+---
+
+# 3. AUDITORÍA OBLIGATORIA DE ASSETS
+
+Recorrer de forma controlada todo el directorio `assets/`.
+
+No limitarse a las carpetas indicadas anteriormente, porque pueden existir otros archivos o directorios no visibles en la captura.
+
+Para cada pack:
+
+1. Identificar archivos reales.
+2. Registrar formatos disponibles.
+3. Identificar modelos y texturas.
+4. Detectar materiales.
+5. Comprobar dependencias.
+6. Revisar escala y orientación cuando sea posible.
+7. Identificar animaciones y rig, si existen.
+8. Buscar archivos LICENSE, README y documentación del autor.
+9. Identificar posible fuente original.
+10. Registrar duplicados.
+11. Verificar compatibilidad con importación de Godot.
+12. Clasificar el uso potencial dentro del videojuego.
+13. Evaluar coherencia con la dirección Modern PSX.
+14. Identificar necesidades de adaptación.
+15. Registrar limitaciones encontradas.
+
+## 3.1. Registro de licencias
+
+Actualizar `docs/ASSET_REGISTRY.md`.
+
+Cada recurso debe incluir, cuando se pueda verificar:
+
+- ID estable.
+- Nombre del pack.
+- Nombre del autor.
+- URL del creador.
+- Ruta local.
+- Formato.
+- Tipo de recurso.
+- Licencia.
+- Evidencia de licencia.
+- Fecha de verificación.
+- Uso previsto.
+- Compatibilidad técnica.
+- Estado de importación.
+- Estado de aprobación visual.
+- Riesgos legales.
+- Modificaciones necesarias.
+- Estado final.
+
+Si no se puede verificar un dato, utilizar `UNVERIFIED`.
+
+No inventar licencias ni atribuciones.
+
+Distinguir:
+
+- DISCOVERED
+- LICENSE_VERIFIED
+- TECHNICALLY_VALIDATED
+- VISUALLY_APPROVED
+- REJECTED
+- BLOCKED
+
+Estos estados representan dimensiones diferentes cuando corresponda. Un asset técnicamente válido no queda automáticamente aprobado legal o artísticamente.
+
+No aprobar para distribución un recurso con licencia o derechos dudosos.
+
+## 3.2. Organización física
+
+No mover ni renombrar masivamente las carpetas originales durante H03.
+
+Crear una organización clara para futuros imports si resulta necesario.
+
+Distinguir:
+
+- Assets originales.
+- Assets experimentales.
+- Assets adaptados.
+- Assets finales aprobados.
+
+Evitar copiar varias veces los modelos originales.
+
+No borrar archivos de los packs sin autorización.
+
+No modificar binarios originales de terceros de forma destructiva.
+
+---
+
+# 4. DIRECCIÓN ARTÍSTICA OFICIAL
+
+La dirección artística aprobada es:
+
+**MODERN PSX / RETRO INDUSTRIAL CYBERPUNK**
+
+No es una emulación literal del hardware PlayStation 1.
+
+Queremos un FPS moderno con:
+
+- Geometría low-poly.
+- Texturas low-resolution.
+- Modelos expresivos.
+- Tecnología industrial.
+- Hardware antiguo.
+- Ambientes oscuros.
+- Iluminación atmosférica.
+- Neones controlados.
+- Materiales desgastados.
+- Sensación underground.
+- Elementos cotidianos retrofuturistas.
+- Buena legibilidad moderna.
+- Controles y animaciones fluidos.
+
+Prioridades:
+
+1. Identidad visual.
+2. Atmósfera.
+3. Coherencia.
+4. Legibilidad.
+5. Siluetas.
+6. Rendimiento.
+7. Apariencia retro.
+
+No sacrificar el apuntado, el sigilo o la visibilidad de enemigos para emular defectos técnicos antiguos.
+
+No aplicar globalmente efectos extremos de wobble, dithering, pixelación o distorsión.
+
+Todos los efectos potencialmente perjudiciales deben poder desactivarse.
+
+Consulta íntegramente `docs/ART_BIBLE.md` y la decisión D-017, si conserva ese identificador.
+
+Si existen contradicciones documentales, utiliza el registro de decisiones aprobado más reciente y documenta el conflicto.
+
+No inventes nuevas decisiones creativas para resolver ambigüedades importantes.
+
+---
+
+# 5. INFRAESTRUCTURA DE PRUEBAS
+
+## 5.1. Entorno
+
+Detectar:
+
+- Versión exacta de Godot.
+- Renderer activo.
+- Sistema operativo.
+- Ejecutable real.
+- Arquitectura.
+- Configuración del proyecto.
+- Plugins existentes.
+- Framework de tests disponible.
+
+La versión observada anteriormente fue Godot 4.7.2 stable y renderer GL Compatibility.
+
+**Debes verificarla otra vez.**
+
+No asumir que la versión anterior sigue instalada.
+
+## 5.2. Framework de tests
+
+Seleccionar e integrar un framework de pruebas compatible con la versión real del motor.
+
+GdUnit4 es candidato prioritario.
+
+Antes de instalarlo:
+
+- Verificar compatibilidad.
+- Verificar licencia.
+- Fijar versión.
+- Consultar documentación de instalación.
+- Comprobar ejecución desde línea de comandos.
+- Verificar que funciona en Windows.
+
+No instalar plugins no verificados.
+
+Si no existe una versión compatible con el motor, no instalar arbitrariamente una versión antigua.
+
+Documentar el bloqueo y evaluar una alternativa reproducible.
+
+## 5.3. Ejecutor Windows
+
+Crear un procedimiento o script reproducible para ejecutar:
+
+- Importación Godot.
+- Pruebas unitarias.
+- Pruebas de integración.
+- Comprobación de recursos.
+- Regresiones de H1.
+
+El comando debe poder ejecutarse desde la raíz del proyecto.
+
+Documentar requisitos y dependencias.
+
+No introducir rutas absolutas personales si pueden evitarse.
+
+## 5.4. Pruebas base
+
+Implementar pruebas que validen:
+
+- Inicialización del framework.
+- Test de ejemplo positivo.
+- Test de fallo controlado detectado correctamente.
+- Exit code diferente de cero cuando una prueba falla.
+- Lectura de recursos de configuración.
+- Límites y clamps.
+- Valores de balance no negativos cuando corresponda.
+- Detección de recursos faltantes.
+- Regresión funcional de H1.
+
+La regresión H1 no debe depender únicamente de abrir el editor.
+
+---
+
+# 6. SISTEMA DE BALANCE PROVISIONAL
+
+Revisar `docs/BALANCE_PROVISIONAL.md`.
+
+Mantener explícitamente la separación entre:
+
+**Reglas aprobadas**
+
+- Energía máxima de 150.
+- Salud máxima de 100.
+- Extracción proporcional al tiempo manteniendo F.
+- Curación continua manteniendo E.
+- Ultimate disponible a partir de 100.
+- Ultimate consume toda la energía acumulada.
+- Duración de ultimate escalada con energía.
+- Ascensores recargan completamente la energía.
+- Reducción de daño durante extracción.
+- Tres dificultades seleccionables.
+
+**Valores provisionales**
+
+- Daño por arma.
+- Cadencia.
+- Multiplicadores de cabeza.
+- Salud enemiga.
+- Armadura.
+- Velocidad del jugador.
+- Intensidad del dash.
+- Velocidad de extracción.
+- Coste de curación por segundo.
+- Reducción porcentual de daño.
+- Duración exacta de ultimates.
+- Multiplicadores de dificultad.
+
+No convertir valores provisionales en decisiones creativas definitivas.
+
+Implementar únicamente la infraestructura de datos necesaria para futuros sistemas.
+
+Evitar magic numbers.
+
+Crear tests para lectura, validación, rangos y casos límite.
+
+No reimplementar todavía las seis armas, las ultimates o los enemigos.
+
+---
+
+# 7. ESCENA ARTÍSTICA DE REFERENCIA
+
+Crear una escena de referencia aislada, reproducible y claramente identificada, por ejemplo:
+
+`scenes/art_reference/modern_psx_lab.tscn`
+
+El nombre exacto puede adaptarse a las convenciones existentes.
+
+Esta escena NO sustituye la escena principal H1.
+
+No cambiar el arranque del juego sin autorización.
+
+## 7.1. Contenido mínimo
+
+La escena debe permitir comparar:
+
+- Material industrial.
+- Material de oficina.
+- Textura pixelada.
+- Material metálico.
+- Luz ambiental.
+- Luz puntual.
+- Ambiente iluminado.
+- Ambiente tenue.
+- Silueta de personaje o placeholder.
+- Elemento FPS.
+- Tipografía retro.
+- Tipografía de interfaz legible.
+- Indicadores visuales de amenaza simulados.
+
+Incorporar una selección pequeña y justificada de los assets existentes cuya utilización experimental esté permitida.
+
+Prioridad visual sugerida:
+
+1. Un ordenador o televisor CRT.
+2. Un objeto industrial.
+3. Un mueble de oficina.
+4. Una caja de munición decorativa.
+5. Un arma de referencia, únicamente si su uso está suficientemente autorizado.
+6. Brazos FPS, si se importan correctamente y su uso está autorizado.
+
+No es necesario utilizar todos los packs.
+
+Si un modelo tiene licencia no verificada, no debe convertirse en una dependencia de la escena entregable. Utilizar un placeholder propio y registrar el motivo.
+
+## 7.2. Tipografía HomeVideo
+
+Preparar una comparación entre:
+
+- HomeVideo.
+- Una tipografía legible ya disponible en el proyecto o en Godot.
+
+Comprobar:
+
+- Tamaño.
+- Espaciado.
+- Contraste.
+- Legibilidad.
+- Renderizado.
+- Escalado.
+- Compatibilidad con caracteres usados en el juego.
+
+Dejar HomeVideo como candidata para terminales y pantallas si supera las comprobaciones correspondientes.
+
+No utilizarla globalmente por defecto.
+
+## 7.3. Cajas de munición
+
+Si su licencia está verificada y resultan compatibles, introducir cajas PSXAmmoBoxes en una composición experimental de pared de armas o banco de trabajo.
+
+El objetivo es probar su integración estética.
+
+No implementar pickups, inventarios de munición ni sistemas de loot.
+
+## 7.4. Arma Malorian
+
+Si su uso experimental está permitido y es técnicamente viable, cargarla en una muestra aislada.
+
+Evaluar:
+
+- Silueta.
+- Textura.
+- Escala.
+- Posición FPS.
+- Apariencia con iluminación real.
+- Compatibilidad con brazos.
+- Materiales.
+
+No implementar disparo, daño, recarga o mecánicas definitivas.
+
+No usar su diseño como modelo definitivo aprobado sin resolver posibles dudas de derechos.
+
+## 7.5. Brazos FPS
+
+Si la licencia y el rig lo permiten, preparar una muestra de compatibilidad.
+
+No crear todavía el brazo cyborg definitivo.
+
+Registrar qué trabajo necesitaría para transformarse en un brazo izquierdo robótico original.
+
+---
+
+# 8. COMPARATIVAS VISUALES A/B
+
+Preparar un método reproducible para comparar configuraciones visuales.
+
+Como mínimo estudiar:
+
+**Texturas**
+
+- Nearest.
+- Filtrado alternativo apropiado.
+- Comparación por material.
+
+**Iluminación**
+
+- Iluminación neutra.
+- Iluminación industrial atmosférica.
+
+**Resolución**
+
+- Resolución nativa.
+- Una alternativa con escalado interno, si es técnicamente viable.
+
+**Efectos retro**
+
+- Sin efectos.
+- Efecto sutil opcional, cuando esté justificado.
+
+**Tipografía**
+
+- HomeVideo.
+- Fuente alternativa legible.
+
+Comparar con condiciones consistentes de cámara, iluminación y resolución.
+
+No afirmar que una técnica es superior sin observación o justificación.
+
+Documentar capturas si es posible.
+
+No generar capturas falsas.
+
+---
+
+# 9. RENDIMIENTO Y COMPATIBILIDAD
+
+Evaluar el comportamiento gráfico real de la escena de referencia.
+
+Registrar:
+
+- Hardware.
+- GPU.
+- Driver, si está disponible.
+- Versión Godot.
+- Renderer.
+- Resolución.
+- Número aproximado de objetos.
+- Condiciones de iluminación.
+- Efectos activados.
+- Tiempos de frame.
+- Posibles problemas.
+
+No inventar valores.
+
+Si no puede realizarse una medición gráfica real, marcarla como NOT_RUN o BLOCKED con su justificación.
+
+La ejecución headless no equivale a una prueba de rendimiento gráfico.
+
+Proponer mecanismos de degradación visual:
+
+- Desactivar efectos retro opcionales.
+- Reducir coste de sombras.
+- Simplificar iluminación.
+- Reducir efectos de posprocesado.
+- Mantener siempre la legibilidad del HUD, enemigos y amenazas.
+
+No establecer presupuestos definitivos de rendimiento sin evidencia.
+
+---
+
+# 10. DOCUMENTACIÓN QUE DEBES ACTUALIZAR
+
+Este hito está autorizado a modificar toda la documentación pertinente para reflejar sus resultados reales.
+
+## `docs/ASSET_REGISTRY.md`
+
+Actualización obligatoria.
+
+Inventariar los assets reales detectados, sus rutas, formatos, licencias y estados.
+
+Registrar también los archivos no verificados y las posibles duplicidades.
+
+## `docs/ART_BIBLE.md`
+
+Actualizar solo cuando las pruebas aporten información nueva.
+
+Documentar:
+
+- Técnicas evaluadas.
+- Materiales.
+- Filtrado.
+- Iluminación.
+- Fuentes tipográficas.
+- Assets visualmente compatibles.
+- Limitaciones encontradas.
+- Criterios pendientes de aprobación.
+
+No modificar la visión artística aprobada sin consultar.
+
+## `docs/ARCHITECTURE.md`
+
+Documentar la estructura técnica realmente implementada.
+
+Incluir:
+
+- Framework de tests.
+- Ejecutor Windows.
+- Recursos de balance.
+- Escena experimental.
+- Organización de recursos.
+- Dependencias.
+
+No documentar código futuro como si ya existiera.
+
+## `docs/BALANCE_PROVISIONAL.md`
+
+Actualizar con los valores utilizados y su procedencia.
+
+Distinguir:
+
+- APPROVED_RULE.
+- PROVISIONAL_VALUE.
+- REQUIRES_PLAYTEST.
+- PENDING_APPROVAL.
+
+No fijar el balance definitivo.
+
+## `docs/TEST_STRATEGY.md`
+
+Actualizar:
+
+- Framework y versión.
+- Instalación.
+- Comandos de ejecución.
+- Tipos de pruebas.
+- Tests de regresión.
+- Limitaciones.
+- Requisitos de CI futuros.
+
+## `docs/VALIDATION.md`
+
+Añadir los resultados reales de H03.
+
+Incluir:
+
+- Fecha.
+- Entorno.
+- Comandos exactos.
+- Exit codes.
+- Logs.
+- Tests PASS.
+- Tests FAIL.
+- Tests BLOCKED.
+- Tests NOT_RUN.
+- Comprobaciones manuales pendientes.
+
+No sobrescribir ni inventar validaciones anteriores.
+
+## `docs/HANDOFF.md`
+
+Actualizar para permitir continuar desde un nuevo chat de Codex.
+
+Incluir:
+
+- Estado real de H03.
+- Sistemas implementados.
+- Archivos modificados.
+- Decisiones técnicas.
+- Assets inventariados.
+- Bloqueos.
+- Pruebas pendientes.
+- Próximo hito autorizado.
+
+## `docs/DECISIONS.md`
+
+Registrar únicamente las nuevas decisiones técnicas confirmadas.
+
+Diferenciar decisiones de implementación de decisiones creativas.
+
+No marcar como aprobada una opción estética que todavía debe revisar el creador.
+
+## `docs/ROADMAP.md`
+
+Mantener numeración y dependencias.
+
+Actualizar el estado de H03 según resultados reales.
+
+No marcar H03 como cerrado sin aprobación manual.
+
+No iniciar H04.
+
+## Documentación adicional
+
+Si descubres que otros archivos contienen información obsoleta o contradictoria, actualízalos cuando sea necesario, sin borrar decisiones históricas.
+
+Registrar cada cambio.
+
+No modificar documentos únicamente por estilo editorial.
+
+---
+
+# 11. TESTS AUTOMÁTICOS OBLIGATORIOS
+
+Ejecutar y documentar:
+
+### Infraestructura
+
+- Framework instalado correctamente.
+- Suite ejecutable.
+- Test positivo.
+- Test de fallo controlado.
+- Exit code correcto ante fallo.
+
+### Balance
+
+- Lectura de configuración.
+- Valores válidos.
+- Límites.
+- Clamps.
+- Casos extremos.
+- Manejo de configuración incorrecta.
+
+### Godot
+
+- Importación headless.
+- Carga de escenas.
+- Recursos existentes.
+- Scripts sin errores fatales.
+- Regresión H1.
+
+### Escena artística
+
+- La escena se importa.
+- Las referencias de recursos son válidas.
+- Los materiales utilizados existen.
+- Las texturas están accesibles.
+- Los shaders experimentales compilan si corresponden.
+- Los assets seleccionados se cargan.
+- Las configuraciones opcionales son reversibles.
+
+### Integridad
+
+- H1 continúa siendo jugable.
+- La escena principal no se ha sustituido.
+- No se han implementado sistemas futuros.
+- No se han eliminado archivos originales de assets sin autorización.
+
+Registrar comandos reales, exit codes y evidencias.
+
+Si una prueba no puede ejecutarse, no declararla superada.
+
+---
+
+# 12. VALIDACIÓN MANUAL OBLIGATORIA
+
+Antes de cerrar H03, entregar al creador instrucciones precisas para abrir la escena de referencia en Godot.
+
+Debe poder comprobar:
+
+1. Que la escena funciona.
+2. Que los modelos elegidos encajan visualmente.
+3. Que la iluminación transmite Modern PSX.
+4. Que los materiales son coherentes.
+5. Que el pixelado no resulta excesivo.
+6. Que las fuentes son legibles.
+7. Que las cajas de munición encajan con la decoración de la guarida.
+8. Que los elementos FPS son visibles y están bien proporcionados.
+9. Que los efectos retro se pueden activar/desactivar.
+10. Que H1 continúa funcionando.
+
+La decisión sobre la calidad artística final corresponde al creador.
+
+No autoaprobar H03 después de superar los tests automáticos.
+
+---
+
+# 13. RESTRICCIONES
+
+No implementar H04.
+
+No desarrollar la guarida definitiva.
+
+No crear las tres plantas del contrato.
+
+No producir las seis armas finales.
+
+No implementar nuevas mecánicas.
+
+No modificar las decisiones de gameplay.
+
+No convertir referencias experimentales en assets finales aprobados.
+
+No descargar recursos externos sin validar procedencia y licencia.
+
+No instalar plugins sin verificar compatibilidad.
+
+No eliminar recursos originales.
+
+No crear duplicados innecesarios.
+
+No realizar refactors masivos.
+
+No cambiar el renderer principal sin justificación y aprobación cuando afecte al proyecto.
+
+No marcar como PASS pruebas no ejecutadas.
+
+---
+
+# 14. CRITERIOS DE ACEPTACIÓN
+
+H03 podrá proponerse para aprobación manual únicamente cuando:
+
+1. La infraestructura de tests funcione de forma reproducible.
+2. El ejecutor Windows esté documentado.
+3. El sistema de balance provisional sea válido y testeable.
+4. La regresión H1 pase.
+5. Exista una escena Modern PSX de referencia.
+6. Exista una comparación A/B reproducible.
+7. Los assets existentes estén inventariados.
+8. Los assets experimentales utilizados tengan un estado legal documentado.
+9. HomeVideo esté evaluada como fuente.
+10. PSXAmmoBoxes esté registrada con su uso ambiental previsto.
+11. La Malorian esté clasificada como referencia, no como arma definitiva.
+12. Los brazos FPS estén evaluados cuando sea viable.
+13. Los resultados gráficos y de rendimiento estén documentados o señalados como pendientes.
+14. Los documentos técnicos estén actualizados.
+15. No existan errores críticos conocidos sin registrar.
+16. El creador disponga de instrucciones para validar manualmente el resultado.
+
+Los requisitos bloqueados deben quedar identificados explícitamente. No ocultar carencias para declarar el hito completado.
+
+---
+
+# 15. ENTREGA FINAL OBLIGATORIA
+
+Al finalizar, devuelve un informe estructurado:
+
+## H03 — INFORME DE IMPLEMENTACIÓN
+
+**A. Estado**
+
+PASS / PARTIAL / BLOCKED.
+
+No equivale a aprobación definitiva del hito.
+
+**B. Infraestructura**
+
+Framework instalado, versión y sistema de ejecución.
+
+**C. Balance**
+
+Configuraciones implementadas y valores provisionales.
+
+**D. Assets**
+
+Tabla completa de packs detectados, compatibilidad, licencias y uso recomendado.
+
+**E. Escena Modern PSX**
+
+Ruta exacta, contenido, técnicas y pasos para abrirla.
+
+**F. Comparativas**
+
+Resultados A/B y limitaciones.
+
+**G. Rendimiento**
+
+Mediciones reales o explicación de por qué no se pudieron ejecutar.
+
+**H. Pruebas automáticas**
+
+Comandos, exit codes, PASS/FAIL/BLOCKED/NOT_RUN y logs.
+
+**I. Archivos modificados**
+
+Relación de todos los archivos creados o actualizados.
+
+**J. Documentación**
+
+Confirmación de que `ASSET_REGISTRY.md`, `ART_BIBLE.md`, `ARCHITECTURE.md`, `VALIDATION.md` y `HANDOFF.md` reflejan el estado real.
+
+**K. Pruebas manuales**
+
+Instrucciones exactas para el creador, con controles y condiciones reproducibles.
+
+**L. Continuidad**
+
+Resumen para el siguiente chat Codex, bloqueos y decisiones pendientes.
+
+---
+
+# 16. REGLA FINAL
+
+**No te autoapruebes. No inicies H04.**
+
+Tu trabajo termina cuando la infraestructura esté preparada, los assets estén correctamente inventariados, la escena de referencia sea reproducible y las pruebas realizadas estén documentadas.
+
+El creador debe revisar y aprobar H03 antes de iniciar H04.
+
+La prioridad es construir una base técnica y artística fiable que pueda utilizarse durante todos los hitos siguientes de Alabarda Studios Cyberpunk FPS.

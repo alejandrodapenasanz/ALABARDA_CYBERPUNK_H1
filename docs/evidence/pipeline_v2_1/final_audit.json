@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "date": "2026-11-23",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\aleja\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-X",
+        "utf8",
+        "tools/pipeline/check_docs.py"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+      "timestamp_utc": "2026-11-23T06:03:37.849754+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"protected_files_checked\": 2705,\n  \"protected_files_unchanged\": 2705,\n  \"historical_documents\": 41,\n  \"milestone_prompts\": 23,\n  \"active_markdown_files\": 53,\n  \"local_links\": 678,\n  \"health_energy_cases\": 29,\n  \"control_cases\": 10,\n  \"git_index_unchanged\": true,\n  \"errors\": [],\n  \"limits\": [\n    \"No external URLs checked\",\n    \"No engine/gameplay tests executed\",\n    \"Historical/public snapshot links are not active guides; originals protected by hash\",\n    \"Semantic review complements token checks; no human approval inferred\"\n  ]\n}\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+      "timestamp_utc": "2026-11-23T06:03:37.910430+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: in the working copy of 'AGENTS.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/GDD_TECNICO_H1.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/HANDOFF.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/TEST_STRATEGY.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/VALIDATION.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/enemy.gd', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/main.gd', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'scripts/player.gd', LF will be replaced by CRLF the next time Git touches it\n",
+      "status": "PASS"
+    }
+  ],
+  "inventory_exact": true,
+  "modified_count": 40,
+  "created_count": 94,
+  "removed_count": 0,
+  "migration_approval": "PENDING_APPROVAL",
+  "B1": "NOT_STARTED",
+  "gameplay_tests_this_task": "NOT_RUN"
+}

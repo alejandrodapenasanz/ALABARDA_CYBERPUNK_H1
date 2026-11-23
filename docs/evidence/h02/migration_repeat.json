@@ -1,0 +1,17 @@
+{
+  "started_madrid": "2026-11-20T09:39:26.459563+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "tools/h02/migrate_docs.py"
+  ],
+  "powershell": "& 'python' '-X' 'utf8' 'tools/h02/migrate_docs.py'",
+  "executed": true,
+  "exit_code": 0,
+  "stdout": "migration_repeat.stdout.log",
+  "stderr": "migration_repeat.stderr.log"
+}

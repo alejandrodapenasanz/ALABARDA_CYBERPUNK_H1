@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "is_template": true,
+  "batch_id": "B1",
+  "milestones": ["H05", "H06"],
+  "code_commit": null,
+  "previous_approved_commit": null,
+  "branch": "TEMPLATE_COMPLETE_BEFORE_TRANSFER",
+  "created_at": null,
+  "state": "NOT_STARTED",
+  "environment": {
+    "os": "Windows 11",
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "python": ">=3.11",
+    "framework": "GdUnit4 6.2.3",
+    "blender": null,
+    "renderer": "GL Compatibility"
+  },
+  "tests": [
+    {
+      "id": "EXAMPLE-IMPORT",
+      "name": "Ejemplo de importación; completar suite del lote",
+      "purpose": "Detectar dependencias rotas al importar el candidato",
+      "milestones": ["H05", "H06"],
+      "type": "import",
+      "critical": true,
+      "owner": "CODEX",
+      "requires": ["godot"],
+      "preconditions": ["Candidato limpio en code_commit", "GODOT_BIN resuelto a la versión requerida", "Recursos del candidato presentes"],
+      "command": {"executable": "${GODOT_BIN}", "args": ["--headless", "--path", ".", "--editor", "--import", "--quit"]},
+      "cwd": ".",
+      "expected": "Importación termina sin errores ni recursos ausentes",
+      "pass_criteria": ["Exit0", "Sin errores de parseo/importación en stdout/stderr"],
+      "fail_criteria": ["Exit distinto de0 o timeout", "Error de motor o recurso ausente aunque exit0"],
+      "timeout_seconds": 240,
+      "expected_exit_codes": [0],
+      "depends_on": [],
+      "log_path": "evidence/attempt_01/import.log",
+      "artifacts": ["evidence/attempt_01/environment.json"],
+      "initial_status": "NOT_RUN",
+      "manual": null
+    },
+    {
+      "id": "EXAMPLE-MANUAL",
+      "name": "Ejemplo de ficha manual por completar",
+      "purpose": "Mostrar los campos que Claude debe concretar para el caso del lote",
+      "milestones": ["H05"],
+      "type": "manual",
+      "critical": false,
+      "owner": "CREATOR",
+      "requires": ["godot", "desktop"],
+      "preconditions": ["Completar escena y datos de prueba del hito antes de entregar"],
+      "cwd": ".",
+      "expected": "COMPLETAR resultado observable del caso concreto",
+      "pass_criteria": ["COMPLETAR observaciones verificables"],
+      "fail_criteria": ["COMPLETAR observación que indica fallo"],
+      "timeout_seconds": 300,
+      "depends_on": ["EXAMPLE-IMPORT"],
+      "log_path": "evidence/attempt_01/manual.md",
+      "artifacts": ["evidence/attempt_01/manual.png"],
+      "initial_status": "NOT_RUN",
+      "manual": {
+        "scene": "scenes/COMPLETE_FIXTURE.tscn",
+        "open": "COMPLETAR escena exacta y cómo abrir",
+        "run": "COMPLETAR F5 o F6 según la escena",
+        "controls": ["COMPLETAR controles reales del caso"],
+        "initial_state": "COMPLETAR valores y posición iniciales",
+        "steps": ["1. COMPLETAR preparación", "2. COMPLETAR acción", "3. COMPLETAR observación y captura"],
+        "repeat": "COMPLETAR procedimiento de reinicio del fixture"
+      }
+    }
+  ]
+}

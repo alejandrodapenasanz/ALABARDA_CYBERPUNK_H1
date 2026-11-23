@@ -1,0 +1,25 @@
+# Índice de prompts — 1 chat por hito
+
+- `H02` **Auditoría H1 y saneamiento documental** — H1 funcional no se rompe
+- `H03` **Infraestructura de pruebas y balance** — Con H02 aprobado
+- `H04` **Vertical de arte temprano** — Con H03 aprobado
+- `H05` **Núcleo de jugador, interacción y movimiento** — H04 aprobado
+- `H06` **Daño, salud, hitzones y estados de ataque** — H05 aprobado
+- `H07` **Seis armas y loadout libre** — H06 aprobado
+- `H08` **Energía, curación y extracción cyborg** — H07 aprobado
+- `H09` **Tres ultimates independientes** — H08 aprobado
+- `H10` **Enemigos base: tres arquetipos y patrullas** — H09 aprobado
+- `H11` **Sigilo: memoria, búsqueda y retorno** — H10 aprobado
+- `H12` **Cámaras, alarmas y cadáveres** — H11 aprobado
+- `H13` **Persistencia, inventario, créditos y dificultades** — H12 aprobado
+- `H14` **Firmware árbol de perks y respec** — H13 aprobado
+- `H15` **Mejoras físicas de armas y catálogo comercial** — H14 aprobado
+- `H16` **Guarida y ordenador/terminal** — H15 aprobado
+- `H17` **Entregas físicas, montaje y USB** — H16 aprobado
+- `H18` **Arsenal, selección de 3 armas y vitrina** — H17 aprobado
+- `H19` **Contrato Yakuza: tres plantas + ascensores** — H18 aprobado
+- `H20` **Jefe Yakuza: dos fases y recompensa** — H19 aprobado
+- `H21` **Economía de contratos y objetivos secundarios** — H20 aprobado
+- `H22` **Integración, dificultad, UX y accesibilidad básica** — H21 aprobado
+- `H23` **Pulido artístico/audio/animación y rendimiento** — H22 aprobado
+- `H24` **Release candidate Windows + auditoría final** — H23 aprobado

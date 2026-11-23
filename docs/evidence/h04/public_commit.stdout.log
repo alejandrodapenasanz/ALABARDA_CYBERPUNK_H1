@@ -1,0 +1,25 @@
+[main 48f972c] Complete H04 art reference with creator approval and verified Blender kit
+ 32 files changed, 928 insertions(+), 184 deletions(-)
+ create mode 100644 art_sources/.gdignore
+ create mode 100644 art_sources/h04/service_cabinet.blend
+ create mode 100644 art_sources/h04/transit_case.blend
+ create mode 100644 art_sources/h04/wall_panel.blend
+ create mode 100644 resources/art_kit/lookdev.tres
+ create mode 100644 resources/art_kit/manifest.json
+ create mode 100644 resources/art_kit/service_cabinet.glb
+ create mode 100644 resources/art_kit/service_cabinet.glb.import
+ create mode 100644 resources/art_kit/transit_case.glb
+ create mode 100644 resources/art_kit/transit_case.glb.import
+ create mode 100644 resources/art_kit/wall_panel.glb
+ create mode 100644 resources/art_kit/wall_panel.glb.import
+ create mode 100644 scripts/art_reference/lookdev_profile.gd
+ create mode 100644 scripts/art_reference/lookdev_profile.gd.uid
+ create mode 100644 scripts/art_reference/lookdev_room.gd
+ create mode 100644 scripts/art_reference/lookdev_room.gd.uid
+ create mode 100644 tests/h04/integration/lookdev_test.gd
+ create mode 100644 tests/h04/integration/lookdev_test.gd.uid
+ create mode 100644 tests/h04/lookdev_probe.gd
+ create mode 100644 tests/h04/lookdev_probe.gd.uid
+ create mode 100644 tools/h04/build_kit.py
+ create mode 100644 tools/h04/run_tests.py
+ create mode 100644 tools/h04/sanitize_sources.py

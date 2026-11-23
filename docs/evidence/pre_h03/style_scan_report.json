@@ -1,0 +1,309 @@
+{
+  "active_documents": 41,
+  "obsolete_normative_patterns": [
+    "^- Proyecto:.*estética industrial \\+ PS1",
+    "^- PC/Windows.*dirección visual retro industrial \\+ cyberpunk PS1",
+    "^Sala industrial de referencia PS1",
+    "^Aplicar ART_BIBLE.*; post FX PS1",
+    "^- Retro industrial \\+ cyberpunk PS1"
+  ],
+  "failures": [],
+  "artistic_references_for_semantic_review": [
+    {
+      "file": "AGENTS.md",
+      "line": 28,
+      "text": "- PC/Windows, Godot 4, FPS, cyborg brazo izquierdo, estética **Modern PSX / Retro Industrial Cyberpunk** (D-017): reinterpretación moderna, sin emulación literal del hardware PS1. `docs/ART_BIBLE.md` es la fuente artística principal; legibilidad moderna y efectos retro potencialmente perjudiciales configurables o desactivables."
+    },
+    {
+      "file": "README.md",
+      "line": 5,
+      "text": "PRE-H03 define oficialmente **Modern PSX / Retro Industrial Cyberpunk**: identidad retro reinterpretada con legibilidad moderna, sin emulación literal de PS1. [Biblia artística](docs/ART_BIBLE.md) y decisión D-017 en [DECISIONS](docs/DECISIONS.md). Esta actualización es documental; el greybox no cambia y H03 no está iniciado."
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 1,
+      "text": "# ART_BIBLE — Modern PSX / Retro Industrial Cyberpunk"
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 7,
+      "text": "**MODERN PSX / RETRO INDUSTRIAL CYBERPUNK.** Reinterpretar el lenguaje 3D de finales de los noventa para un FPS actual: cómo recordamos visualmente los juegos de PS1, sin reproducir literalmente sus limitaciones de hardware. La identidad retro debe convivir con controles, animaciones, iluminación y legibilidad modernas."
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 9,
+      "text": "Se conservan los pilares retro industrial, cyberpunk decadente, tecnología obsoleta y atmósfera nocturna. «PS1 graphics», «retro low-poly», «PSX horror» o «Cyberpunk PS1» dejan de ser definiciones suficientes del estilo; no obligan a emulación técnica ni convierten el proyecto en un juego de terror. Los históricos se conservan como antecedentes."
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 47,
+      "text": "Evaluar nearest-neighbor y alternativas por material. No imponer nearest global: HUD, fuentes y elementos que necesiten claridad moderna requieren comprobación separada. Evitar tanto el suavizado que borre toda intención retro como pixelación extrema, fotografías sin adaptación y ruido excesivo."
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 57,
+      "text": "Se permite **explorar**, sin obligación de incorporarlos: dithering moderado, banding deliberado, pixelación selectiva, niebla, color grading retro, ruido ligero, vertex snapping/wobble muy sutil, CRT en monitores físicos y distorsiones tecnológicas puntuales."
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 59,
+      "text": "**Todos los efectos retro potencialmente perjudiciales para la legibilidad deben ser configurables o desactivables.** Comparar la imagen con y sin cada efecto. No imponer wobble intenso, resolución interna extremadamente baja, dithering que oculte enemigos, ruido que perjudique apuntar, distorsión permanente de cámara, blur excesivo, aberración cromática agresiva ni filtros que dificulten leer el HUD. Priorizar precisión y lectura durante el movimiento."
+    },
+    {
+      "file": "docs/ART_BIBLE.md",
+      "line": 142,
+      "text": "- Una captura comunica PSX reinterpretada y atmósfera industrial, sin apariencia de fallo técnico."
+    },
+    {
+      "file": "docs/ASSET_REGISTRY.md",
+      "line": 2,
+      "text": "**Actualizado PRE-H03 · 2026-11-20. Estado:** no hay assets externos aprobados en este documento. Dirección: **Modern PSX / Retro Industrial Cyberpunk**, D-017 y [ART_BIBLE](ART_BIBLE.md). No se han descargado ni añadido assets en esta tarea."
+    },
+    {
+      "file": "docs/ASSET_REGISTRY.md",
+      "line": 30,
+      "text": "## Criterios de aceptación Modern PSX"
+    },
+    {
+      "file": "docs/DECISIONS.md",
+      "line": 5,
+      "text": "- D-001 Godot 4, PC, vertical slice guarida/contrato/boss. Componente artístico precisado el 2026-11-20 por D-017: **Modern PSX / Retro Industrial Cyberpunk**; conserva los pilares industrial/cyberpunk y no exige emulación literal de PS1."
+    },
+    {
+      "file": "docs/DECISIONS.md",
+      "line": 21,
+      "text": "- D-017 APROBADA (APPROVED) · 2026-11-20 · **Modern PSX / Retro Industrial Cyberpunk**: reinterpretación artística del 3D de finales de los noventa con legibilidad y experiencia modernas, sin emulación literal del hardware PS1. Fuente: solicitud expresa PRE-H03 del creador. Justificación: identidad retro, atmósfera industrial y coherencia con claridad en combate/sigilo. [ART_BIBLE](ART_BIBLE.md) pasa a ser la fuente detallada. Consecuencias: producción híbrida, geometría/texturas intencionales, iluminación expresiva, shaders retro potencialmente perjudiciales configurables o desactivables; investigación y escena comparativa en H03. No modifica gameplay, números de balance ni autoriza iniciar H03. Parámetros técnicos y assets individuales siguen pendientes de validación."
+    },
+    {
+      "file": "docs/DECISIONS.md",
+      "line": 82,
+      "text": "| D-001: «retro industrial + cyberpunk PS1»; descripciones abreviadas PS1/low-poly. | Modern PSX / Retro Industrial Cyberpunk; reinterpretación, sin fidelidad obligatoria al hardware. Se mantienen industria, decadencia, tecnología obsoleta y noche. | Visión, alcance, biblia, resúmenes y prompts futuros. |"
+    },
+    {
+      "file": "docs/DOCUMENTATION_AUDIT.md",
+      "line": 5,
+      "text": "**Actualización PRE-H03 · 2026-11-20:** matriz artística sincronizada con D-017, **Modern PSX / Retro Industrial Cyberpunk**. La aprobación de dirección artística no cierra H02 ni inicia H03. Los recuentos y resultados de H02 inferiores describen su ejecución; la nueva verificación se registra por separado en VALIDATION."
+    },
+    {
+      "file": "docs/DOCUMENTATION_AUDIT.md",
+      "line": 32,
+      "text": "| REQ-002 Modern PSX / Retro Industrial Cyberpunk, coherencia y legibilidad moderna | DV, MS, GD, AB, DC D-001/D-015/D-017 | APROBADA por el creador en PRE-H03; implementación visual pendiente | Emulación literal descartada como objetivo; paleta, resoluciones, presupuestos y técnicas siguen propuestas P-004 | Investigación y referencia comparativa H03, vertical H04, aplicación posterior H23; efectos perjudiciales configurables o desactivables. |"
+    },
+    {
+      "file": "docs/DOCUMENTATION_AUDIT.md",
+      "line": 100,
+      "text": "| PS1/low-poly como etiqueta genérica en visión, alcance, AGENTS y 23 prompts. | Definición única Modern PSX / Retro Industrial Cyberpunk, D-017 y ART_BIBLE como fuente detallada. Históricos y antecedentes se conservan, sin convertirlos en requisitos vigentes. |"
+    },
+    {
+      "file": "docs/DOCUMENTATION_AUDIT.md",
+      "line": 103,
+      "text": "| Antiguo «post FX PS1» en H23 podía interpretarse como efecto obligatorio. | Efectos potencialmente perjudiciales configurables o desactivables; claridad de HUD, apuntado y señales preservada. H16 también explicita terminal retro con uso moderno. |"
+    },
+    {
+      "file": "docs/GAME_DESIGN.md",
+      "line": 32,
+      "text": "La presentación de estas mecánicas sigue **Modern PSX / Retro Industrial Cyberpunk** (D-017), detallada en [ART_BIBLE](ART_BIBLE.md): siluetas, señales, animaciones y HUD legibles, con efectos retro potencialmente perjudiciales configurables o desactivables. Salud roja y energía azul conservan su regla aprobada. PRE-H03 no cambia ninguna mecánica, control ni cifra de este documento."
+    },
+    {
+      "file": "docs/GAME_VISION.md",
+      "line": 6,
+      "text": "Boomer shooter FPS 3D para PC/Windows en Godot 4, estética **Modern PSX / Retro Industrial Cyberpunk**, mercenario cyborg con brazo izquierdo robótico. Contratos de exterminio con rutas tácticas y combate contundente. Dos especializaciones emergentes sin clases: Ninja (movilidad, silencio, precisión) y Tanque (resistencia, potencia); híbridos permitidos."
+    },
+    {
+      "file": "docs/GAME_VISION.md",
+      "line": 17,
+      "text": "**Modern PSX / Retro Industrial Cyberpunk** reinterpreta cómo recordamos el 3D de finales de los noventa con iluminación, controles, animaciones y legibilidad modernas. Conserva retro industrial, cyberpunk decadente, tecnología obsoleta y atmósfera nocturna. No exige emular fielmente PlayStation 1."
+    },
+    {
+      "file": "docs/HANDOFF.md",
+      "line": 7,
+      "text": "D-017 APROBADA por solicitud expresa del creador el 2026-11-20: **Modern PSX / Retro Industrial Cyberpunk**. [ART_BIBLE](ART_BIBLE.md) es la fuente principal: lenguaje retro industrial con experiencia/legibilidad modernas; geometría y texturas intencionales, luz atmosférica, siluetas diferenciadas y efectos potencialmente perjudiciales configurables o desactivables. Producción híbrida/progresiva con reutilización legal, adaptación, props propios, materiales/shaders y protagonistas personalizados; IA conceptual."
+    },
+    {
+      "file": "docs/HANDOFF.md",
+      "line": 57,
+      "text": "PRE-H03: D-017 y ART_BIBLE fijan Modern PSX / Retro Industrial Cyberpunk; documentos y prompts sincronizados, sin trabajo de juego ni assets. [H03 preparado](../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md) conserva infraestructura y balance y añade investigación/escena comparativa, medición y revisión visual; H04 sigue siendo vertical de arte. Parámetros y resultado visual requieren validación futura. No restaurar alias retirados, no confundir los FAIL históricos con resultados posteriores y no dar por aprobados tests/arte no ejecutados."
+    },
+    {
+      "file": "docs/MVP_SCOPE.md",
+      "line": 5,
+      "text": "- PC/Windows, Godot 4, FPS 3D; estética consistente **Modern PSX / Retro Industrial Cyberpunk** según D-017 y [ART_BIBLE](ART_BIBLE.md): identidad retro con legibilidad moderna, sin emulación literal de PS1. Efectos retro potencialmente perjudiciales configurables o desactivables."
+    },
+    {
+      "file": "docs/MVP_SCOPE.md",
+      "line": 37,
+      "text": "6. Arte: dirección Modern PSX aprobada; validar paleta, resoluciones/filtros, presupuestos por categoría, iluminación, efectos y rendimiento en H03; selección/licencias y aprobación visual de assets/protagonistas siguen pendientes. Los números de ART_BIBLE son orientativos."
+    },
+    {
+      "file": "docs/PROMPTS_INDEX.md",
+      "line": 5,
+      "text": "Actualización PRE-H03: todos los prompts remiten a **Modern PSX / Retro Industrial Cyberpunk**, D-017 y [ART_BIBLE](ART_BIBLE.md). Se actualiza H03 con investigación visual y escena comparativa conservando infraestructura/balance; H04 mantiene la vertical. No existe documento consolidado adicional que sincronizar. Las notas H02 inferiores conservan su fecha y no sustituyen esta actualización."
+    },
+    {
+      "file": "docs/ROADMAP.md",
+      "line": 16,
+      "text": "| H03 | Infraestructura de pruebas y balance; investigación visual Modern PSX | Comando reproducible, suite PASS, parámetros editables, CI opcional sin credenciales. Escena comparativa de referencia, compatibilidad de pipeline con Godot exacto, legibilidad/coherencia revisables, rendimiento medido, inventario y decisiones técnicas; capturas cuando sea posible. |"
+    },
+    {
+      "file": "docs/ROADMAP.md",
+      "line": 17,
+      "text": "| H04 | Vertical de arte temprano | Desarrollar la referencia de H03 en una sala Modern PSX / Retro Industrial Cyberpunk aprobable y reglas visuales medibles; ningún asset sin trazabilidad. |"
+    },
+    {
+      "file": "docs/ROADMAP.md",
+      "line": 58,
+      "text": "D-017 establece **Modern PSX / Retro Industrial Cyberpunk**; [ART_BIBLE](ART_BIBLE.md) es la fuente artística detallada. H03 mantiene su infraestructura y balance y añade, por solicitud expresa PRE-H03, investigación de renderer, glTF/GLB, materiales/filtros, luces/sombras/fog, resolución/escalado, shaders opcionales, rendimiento y Windows. Cada técnica debe justificar utilidad visual, compatibilidad y coste, con estrategia de degradación que preserve la lectura."
+    },
+    {
+      "file": "docs/SPEC_REVIEW.md",
+      "line": 7,
+      "text": "PRE-H03 · 2026-11-20: D-017 aprueba **Modern PSX / Retro Industrial Cyberpunk** y producción híbrida/progresiva. [ART_BIBLE](ART_BIBLE.md) detalla geometría, texturas, iluminación, legibilidad, efectos opcionales y aplicación por sistema. Paleta/resoluciones/presupuestos siguen propuestas; no hay assets ni resultado visual aprobados. H03 prepara una escena comparativa e investigación; H04 conserva la vertical. La propuesta ampliada de dos armas/brazo de abajo no se convierte en requisito de H03."
+    },
+    {
+      "file": "prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "line": 8,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "line": 17,
+      "text": "1. Detectar versión exacta de Godot, renderer y entorno Windows. La base observada en H02 es Godot 4.7.2.stable.official.ed1daf0bf / GL Compatibility; verificarla de nuevo. No asumir técnicas compatibles por asociarse al estilo PSX."
+    },
+    {
+      "file": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "line": 20,
+      "text": "4. Comparar materiales y técnicas A/B con la misma cámara, luz y resolución. Valorar nearest frente a alternativas por material sin imponerlo globalmente; revisar fuentes/HUD por separado. Las resoluciones y paleta de ART_BIBLE son provisionales; proponer presupuestos por categoría tras medir, sin límite universal de polígonos."
+    },
+    {
+      "file": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "line": 21,
+      "text": "5. Comprobar coherencia Modern PSX / Retro Industrial Cyberpunk, siluetas, apuntado, información de amenaza/interacción y lectura en movimiento/luz tenue. Efectos potencialmente perjudiciales deben ser configurables o desactivables; comparar activados/desactivados. La revisión estética requiere aprobación del creador."
+    },
+    {
+      "file": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "line": 31,
+      "text": "- No emular obligatoriamente limitaciones del hardware PS1 ni sacrificar legibilidad para obtener efectos retro. No aprobar parámetros visuales ni assets por intuición."
+    },
+    {
+      "file": "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+      "line": 11,
+      "text": "Desarrollar la escena de referencia comparativa de H03 como vertical **Modern PSX / Retro Industrial Cyberpunk** según D-017 y ART_BIBLE; kit coherente de materiales, iluminación, texturas, props, silueta enemigo y viewmodel provisional; pipeline Blender→GLB y registro de assets con verificación real de licencias. Reutilizar la base aprobada, sin duplicar salas por defecto. No bloquear por assets: placeholders propios si falta permiso. Mantener legibilidad moderna y efectos retro potencialmente perjudiciales configurables o desactivables; presupuestos/paleta se validan, no se presuponen definitivos. Esta sincronización PRE-H03 no inicia H04."
+    },
+    {
+      "file": "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    },
+    {
+      "file": "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+      "line": 11,
+      "text": "Aplicar ART_BIBLE y D-017, Modern PSX / Retro Industrial Cyberpunk, en los 3 pisos, hub, armas, brazo y enemigos; sustituir placeholders por assets con revisión legal/técnica y aprobación visual registradas. Efectos retro potencialmente perjudiciales configurables o desactivables, animaciones legibles, sonido licenciado y hits impactantes, VFX de ejecuciones/ultimates; profiling y degradación por perfiles preservando siluetas, peligro y HUD. No imponer emulación literal de PS1."
+    },
+    {
+      "file": "prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md",
+      "line": 6,
+      "text": "- Proyecto: ALABARDA STUDIOS CYBERPUNK FPS, Godot 4, Windows, estética Modern PSX / Retro Industrial Cyberpunk (D-017 y docs/ART_BIBLE.md), reinterpretación moderna sin emulación literal de PS1; primero funcional y después pulido."
+    }
+  ],
+  "limit": "Comprueba patrones conocidos, no certifica coherencia semántica ni calidad visual."
+}

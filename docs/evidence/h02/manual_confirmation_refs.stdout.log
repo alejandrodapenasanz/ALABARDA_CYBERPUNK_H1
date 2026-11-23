@@ -1,0 +1,5 @@
+MARKDOWN 96; HISTORY_HASHES 48; RUNTIME_HASHES 8
+RESOURCES 6; DEPENDENCIES 5; LINKS 181; FILE_REFS 1231; ID_REFS 227
+FAIL ORIGINAL_PATH_MISSING docs/DECISIONS (1).md
+RESULT errors=1 declared_or_historical_notices=11
+Detalle: docs/evidence/h02/inventory_and_references.json

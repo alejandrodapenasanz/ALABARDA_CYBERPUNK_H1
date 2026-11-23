@@ -1,0 +1,19 @@
+{
+  "initial_crlf_attempt_reversed": true,
+  "final": [
+    {
+      "path": "scripts/art_reference/lab_world.gd",
+      "final_sha256": "f000a8ce1316b4851549ed50e1f286490ca1f1c4f387f0c33e241a3e80e09fb0",
+      "normalized_equal": true,
+      "baseline_line_ending": "LF",
+      "final_line_ending": "LF"
+    },
+    {
+      "path": "scripts/art_reference/modern_psx_lab.gd",
+      "final_sha256": "c35404cd6c0282cd4aa5d16eb845e4199796e0553a65e991ef4030adb66ce743",
+      "normalized_equal": true,
+      "baseline_line_ending": "LF",
+      "final_line_ending": "LF"
+    }
+  ]
+}

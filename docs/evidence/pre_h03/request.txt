@@ -1,0 +1,618 @@
+# PRE-H03 — Actualización integral de la dirección artística de Alabarda Studios Cyberpunk FPS
+
+## 0. Instrucción obligatoria: lectura del contexto
+
+**Antes de modificar cualquier archivo, lee íntegramente `AGENTS.md`.**
+
+Después, consulta como mínimo:
+
+- `docs/GAME_VISION.md`
+- `docs/ART_BIBLE.md`
+- `docs/ASSET_REGISTRY.md`
+- `docs/GAME_DESIGN.md`
+- `docs/MVP_SCOPE.md`
+- `docs/DECISIONS.md`
+- `docs/ROADMAP.md`
+- `docs/VALIDATION.md`
+- `docs/HANDOFF.md`, si existe.
+- El prompt correspondiente a H03, si está disponible en el repositorio.
+
+Respeta las convenciones, reglas de documentación, criterios de validación y decisiones aprobadas del proyecto.
+
+Este trabajo se realiza **después de completar H02 y antes de comenzar H03**.
+
+No debes ejecutar H03, avanzar ningún hito ni modificar funcionalidades del videojuego.
+
+Si algún documento no existe, registra su ausencia. No recrees archivos que puedan haber sido renombrados durante H02 sin comprobar primero cuál es su sustituto.
+
+---
+
+# 1. Objetivo
+
+Actualizar y sincronizar toda la documentación relevante del proyecto para establecer una nueva decisión artística oficial:
+
+**ALABARDA STUDIOS CYBERPUNK FPS utilizará una estética PSX moderna, reinterpretada para un videojuego actual.**
+
+El objetivo NO es reproducir fielmente las limitaciones técnicas de PlayStation 1.
+
+Queremos utilizar los elementos visuales característicos de los videojuegos 3D de finales de los años noventa como lenguaje artístico deliberado, combinándolos con iluminación, controles, animaciones y legibilidad propios de un FPS moderno.
+
+La nueva dirección artística debe ser:
+
+**MODERN PSX / RETRO INDUSTRIAL CYBERPUNK**
+
+Esta definición sustituye o precisa las descripciones anteriores que puedan generar ambigüedad, como «PS1 graphics», «retro low-poly», «PSX horror» o «Cyberpunk PS1».
+
+No elimina los pilares visuales previamente aprobados: retro industrial, cyberpunk decadente, tecnología obsoleta y atmósfera nocturna.
+
+La dirección artística debe mantenerse coherente a lo largo de la guarida, el contrato Yakuza, las armas, el brazo cyborg, los enemigos, las animaciones y la interfaz.
+
+---
+
+# 2. Filosofía artística
+
+## 2.1. Principio fundamental
+
+**Queremos cómo recordamos visualmente los juegos de PS1, no necesariamente cómo se veían realmente.**
+
+La estética debe resultar claramente retro, pero sin sacrificar la experiencia de juego.
+
+Queremos que un jugador vea una captura y piense:
+
+«Parece un juego de PS1 reinterpretado con una dirección artística moderna».
+
+No queremos que piense:
+
+«Este juego funciona o se ve mal porque está imitando limitaciones técnicas antiguas».
+
+## 2.2. Prioridades visuales
+
+En orden de importancia:
+
+1. Identidad artística reconocible.
+2. Atmósfera cyberpunk industrial.
+3. Coherencia visual entre assets.
+4. Legibilidad durante el combate y el sigilo.
+5. Siluetas claras de personajes, enemigos y armas.
+6. Modelos low-poly con geometría deliberadamente simplificada.
+7. Texturas de baja resolución utilizadas de forma intencionada.
+8. Iluminación expresiva y contrastada.
+9. Sensación retro auténtica.
+10. Rendimiento estable en PC.
+
+La fidelidad técnica al hardware original de PlayStation 1 NO es una prioridad.
+
+---
+
+# 3. Características visuales obligatorias
+
+## 3.1. Geometría 3D
+
+Utilizar modelos low-poly con siluetas claramente reconocibles.
+
+Características deseadas:
+
+- Geometría relativamente simple.
+- Formas angulosas.
+- Siluetas expresivas.
+- Detalles principales modelados cuando afecten a la lectura.
+- Detalles secundarios representados mediante texturas.
+- Superficies grandes con pocos polígonos.
+- Objetos industriales y tecnológicos con geometría contundente.
+- Escenarios construidos preferentemente mediante componentes modulares.
+
+Evitar:
+
+- Modelos excesivamente realistas.
+- Personajes de apariencia cartoon brillante.
+- Assets con una densidad de detalle visual incompatible con el estilo.
+- Superficies innecesariamente redondeadas.
+- Geometría excesivamente compleja que no aporte al resultado final.
+
+No imponer un límite universal de polígonos sin pruebas. Definir presupuestos orientativos por categoría durante H03.
+
+## 3.2. Texturas
+
+Usar texturas low-resolution como parte de la identidad visual.
+
+Propuesta técnica inicial para evaluación:
+
+- Objetos pequeños: 64×64 o 128×128.
+- Props medianos: 128×128 o 256×256.
+- Armas y objetos destacados: 256×256 o 512×512 cuando sea necesario.
+- Superficies grandes: materiales repetibles y atlas apropiados.
+
+Estos valores son **orientativos y provisionales**, no restricciones absolutas.
+
+La resolución debe responder a la distancia de cámara, importancia visual, tamaño del objeto y legibilidad.
+
+Características deseadas:
+
+- Pixelado visible pero controlado.
+- Materiales industriales desgastados.
+- Metal, hormigón, plástico, madera y superficies pintadas.
+- Carteles, pantallas y señalética retrofuturista.
+- Texturas con personalidad visual.
+- Consistencia entre las distintas categorías de assets.
+
+Evitar:
+
+- Texturas hiperrealistas mezcladas indiscriminadamente con modelos low-poly.
+- Fotografías sin tratamiento artístico.
+- Pixelación extrema que impida reconocer objetos.
+- Ruido visual excesivo.
+- Filtros de suavizado que eliminen por completo la intención retro.
+
+Evaluar en Godot el uso de filtrado nearest-neighbor y otras configuraciones de textura por material.
+
+No imponer nearest-neighbor globalmente sin comprobar sus consecuencias sobre HUD, fuentes y elementos que requieren legibilidad moderna.
+
+## 3.3. Iluminación
+
+Queremos iluminación atmosférica, no iluminación realista necesariamente.
+
+Características:
+
+- Ambientes oscuros.
+- Fuentes de luz localizadas.
+- Contraste entre zonas iluminadas y oscuras.
+- Neones utilizados con moderación.
+- Pantallas CRT como elementos visuales destacados.
+- Luces industriales.
+- Señalización luminosa.
+- Sombras suficientemente claras para comprender la escena.
+- Colores que comuniquen peligro, seguridad e interacción.
+
+Paleta conceptual inicial:
+
+- Negros y grises industriales.
+- Marrones y tonos cálidos envejecidos.
+- Azules y cian tecnológicos.
+- Rojos de alarma.
+- Verdes de terminal.
+- Amarillos para elementos interactivos cuando corresponda.
+
+Esta paleta es una propuesta para validar durante H03.
+
+No convertir todas las escenas en una mezcla indiscriminada de luces magenta y cian.
+
+El color debe utilizarse con intención.
+
+## 3.4. Efectos retro
+
+Se permite explorar:
+
+- Dithering moderado.
+- Banding deliberado.
+- Pixelación selectiva.
+- Niebla ambiental.
+- Color grading retro.
+- Ligero ruido visual.
+- Vertex snapping o wobble muy sutil.
+- Efectos CRT en monitores físicos.
+- Distorsiones tecnológicas puntuales.
+
+Sin embargo:
+
+**Todos los efectos retro potencialmente perjudiciales para la legibilidad deben ser configurables o desactivables.**
+
+No aplicar de forma obligatoria:
+
+- Wobble intenso.
+- Resolución interna extremadamente baja.
+- Dithering que dificulte detectar enemigos.
+- Ruido que perjudique el apuntado.
+- Distorsión permanente de cámara.
+- Blur excesivo.
+- Aberración cromática agresiva.
+- Filtros que dificulten leer el HUD.
+
+La imagen debe conservar suficiente claridad para un FPS rápido con sigilo y armas de precisión.
+
+---
+
+# 4. Aplicación por sistemas del videojuego
+
+## 4.1. Guarida del mercenario
+
+La guarida será uno de los espacios más representativos de la identidad artística.
+
+Debe transmitir que el protagonista es un mercenario cyborg que vive rodeado de tecnología, armas y equipamiento.
+
+Referencias conceptuales:
+
+- Apartamentos cyberpunk decadentes.
+- Hardware antiguo.
+- Interiores PSX atmosféricos.
+- Habitaciones industriales.
+- Espacios densos con objetos cotidianos.
+
+Elementos deseados:
+
+- Ordenador de sobremesa retrofuturista.
+- Monitor CRT o dispositivo de estética equivalente.
+- Mesa de trabajo con herramientas.
+- Cables visibles.
+- Cajas de equipamiento.
+- Dispositivos electrónicos.
+- Racks y componentes.
+- Pared de armas.
+- Vitrina de trofeos.
+- Elementos cotidianos que den personalidad al espacio.
+
+La habitación debe parecer utilizada y habitada.
+
+No debe parecer un showroom futurista impecable ni una sala de laboratorio estéril.
+
+La composición debe permitir identificar rápidamente las zonas interactuables.
+
+## 4.2. Contrato Yakuza
+
+El contrato mantendrá sus tres plantas aprobadas:
+
+1. Infiltración.
+2. Combate.
+3. Jefe final.
+
+La estética debe evolucionar entre plantas manteniendo coherencia.
+
+Planta de infiltración:
+
+- Oficinas corporativas decadentes.
+- Iluminación contenida.
+- Pasillos y espacios de vigilancia.
+- Cámaras y dispositivos de seguridad claramente identificables.
+
+Planta de combate:
+
+- Instalaciones técnicas.
+- Servidores.
+- Zonas industriales.
+- Coberturas claras.
+- Mayor contraste y tensión visual.
+
+Planta del jefe:
+
+- Espacio reconocible y memorable.
+- Arquitectura que permita leer los patrones de ataque.
+- Iluminación dramática.
+- Referencias visuales a la organización Yakuza sin depender de assets protegidos.
+
+La visibilidad nunca debe impedir injustamente detectar proyectiles, enemigos o señales de peligro.
+
+## 4.3. Armas
+
+Las seis armas aprobadas deben seguir el mismo lenguaje visual:
+
+- Katana.
+- Pistola silenciada.
+- Rifle silenciado con mira.
+- Espada-sierra.
+- Revólver potente.
+- Escopeta de doble cañón.
+
+Características:
+
+- Modelos low-poly personalizados.
+- Siluetas diferentes.
+- Animaciones expresivas.
+- Retroceso visual satisfactorio.
+- Materiales coherentes.
+- Detalles mecánicos visibles.
+- Lectura clara en primera persona.
+
+La perspectiva FPS permite dedicar más detalle visual a las armas que a objetos decorativos lejanos.
+
+La geometría no necesita ser ultrabaja si eso perjudica la silueta o las animaciones.
+
+Evitar copiar directamente diseños identificables de franquicias de terceros.
+
+## 4.4. Brazo cyborg
+
+El brazo izquierdo robótico es uno de los elementos más importantes de la identidad del juego.
+
+Debe comunicar:
+
+- Tecnología industrial.
+- Fuerza mecánica.
+- Modificaciones cibernéticas.
+- Componentes funcionales.
+- Posible desgaste y reparaciones.
+- Capacidad para extraer energía y realizar reparaciones.
+
+Las animaciones de extracción, curación e instalación de firmware deben ser visualmente reconocibles.
+
+El brazo debe mantener consistencia de materiales y diseño en todas las escenas.
+
+## 4.5. Enemigos
+
+Los tres arquetipos deben distinguirse de inmediato.
+
+Squishy:
+
+- Silueta ligera.
+- Poca protección.
+- Diseño visual sencillo.
+
+Ranged:
+
+- Arma reconocible.
+- Silueta clara.
+- Animaciones que comuniquen amenaza a distancia.
+
+Tank:
+
+- Volumen considerable.
+- Armadura visible.
+- Silueta pesada.
+- Cambios visuales cuando pierde protección.
+
+La estética PSX nunca debe impedir distinguir estos arquetipos.
+
+## 4.6. HUD e interfaces
+
+La interfaz debe parecer parte del sistema operativo del cyborg.
+
+Características:
+
+- Minimalista.
+- Tecnológica.
+- Legible.
+- Información clara durante combates rápidos.
+- Salud y energía visualmente diferenciadas.
+- Indicadores de interacción.
+- Señales de detección y alarma.
+- Información sobre ultimate disponible.
+
+Inspiración conceptual:
+
+- Terminales.
+- HUD militar.
+- Software industrial.
+- Sistemas cibernéticos.
+
+No reproducir una interfaz auténtica de los noventa si resulta incómoda para el jugador actual.
+
+La interfaz del ordenador de la guarida puede ser deliberadamente más retro que el HUD de combate.
+
+---
+
+# 5. Estrategia de producción de modelos y assets
+
+La dirección aprobada es **producción artística híbrida y progresiva**.
+
+No depender exclusivamente de modelos 3D generados con IA.
+
+Tampoco depender exclusivamente de paquetes gratuitos sin modificar.
+
+Prioridad:
+
+1. Reutilizar assets gratuitos que cumplan las condiciones legales y estilísticas.
+2. Modificar modelos base cuando sea necesario.
+3. Crear en Blender props sencillos que aporten identidad.
+4. Desarrollar materiales y shaders propios.
+5. Personalizar armas, brazo cyborg y elementos protagonistas.
+6. Utilizar IA como apoyo conceptual, no como fuente obligatoria de modelos finales.
+
+En `ASSET_REGISTRY.md` registrar, para cada asset:
+
+- Nombre.
+- Autor o proveedor.
+- URL de origen.
+- Licencia.
+- Fecha de verificación.
+- Uso previsto.
+- Modificaciones realizadas.
+- Estado de aprobación.
+- Restricciones de redistribución.
+- Ubicación dentro del proyecto.
+
+Si no se puede verificar la licencia, marcarlo como pendiente y no incorporarlo a la distribución final.
+
+No inventar autores, enlaces ni licencias.
+
+No descargar assets nuevos durante esta tarea documental.
+
+---
+
+# 6. Requisitos técnicos para Godot 4
+
+Actualizar la documentación para reflejar que H03 deberá investigar y validar una pipeline visual compatible con la versión exacta de Godot utilizada por el proyecto.
+
+Aspectos que deberán estudiarse:
+
+- Configuración del renderer.
+- Importación de modelos glTF/GLB.
+- Materiales y texturas.
+- Filtrado de texturas.
+- Iluminación.
+- Sombras.
+- Fog.
+- Resolución interna y escalado.
+- Shaders retro opcionales.
+- Rendimiento.
+- Compatibilidad con Windows.
+
+No seleccionar técnicas únicamente porque se asocien históricamente al estilo PSX.
+
+Cada técnica debe justificar su utilidad visual, compatibilidad y coste de rendimiento.
+
+Establecer una estrategia de degradación visual si algún efecto resulta demasiado caro.
+
+No introducir dependencias externas innecesarias.
+
+---
+
+# 7. Cambios documentales obligatorios
+
+## 7.1. `docs/ART_BIBLE.md`
+
+Debe convertirse en la fuente principal y detallada de la dirección artística.
+
+Actualizar o añadir:
+
+- Definición oficial: Modern PSX / Retro Industrial Cyberpunk.
+- Filosofía artística.
+- Prioridades visuales.
+- Geometría.
+- Texturas.
+- Iluminación.
+- Paleta conceptual.
+- Efectos retro.
+- Guarida.
+- Contrato Yakuza.
+- Armas.
+- Brazo cyborg.
+- Enemigos.
+- HUD.
+- Pipeline de assets.
+- Reglas de consistencia.
+- Criterios de aceptación visual.
+- Aspectos pendientes de validar en H03.
+
+Conservar las decisiones anteriores compatibles.
+
+## 7.2. `docs/GAME_VISION.md`
+
+Actualizar el apartado artístico y garantizar que no se describa el juego como una emulación exacta de PS1.
+
+Mantener inalterados los pilares de gameplay y narrativa aprobados.
+
+## 7.3. `docs/DECISIONS.md`
+
+Añadir una decisión formal identificable que registre:
+
+- Fecha de aprobación: 20-11-2026.
+- Estado: APPROVED.
+- Decisión: estética Modern PSX reinterpretada.
+- Justificación: identidad retro con legibilidad y experiencia moderna.
+- Consecuencias: dirección artística, shaders, assets, iluminación y H03.
+
+Si el repositorio usa otro formato de identificación o fecha, respetar su convención.
+
+## 7.4. `docs/ASSET_REGISTRY.md`
+
+Actualizar criterios de aceptación de assets.
+
+No marcar como aprobados assets todavía no comprobados.
+
+## 7.5. `docs/MVP_SCOPE.md`
+
+Aclarar que el MVP incluirá una estética PSX moderna consistente.
+
+No añadir nuevas funcionalidades jugables.
+
+## 7.6. `docs/ROADMAP.md`
+
+Actualizar la descripción de H03 para reflejar los nuevos requisitos artísticos.
+
+Mantener su numeración y dependencias.
+
+No modificar el estado de H02 si ya está aprobado.
+
+## 7.7. Prompt H03
+
+Si existe en el repositorio, actualizarlo para que incluya explícitamente:
+
+- Lectura de la nueva biblia artística.
+- Construcción de una escena de referencia.
+- Comparación de materiales y técnicas retro.
+- Validación de coherencia visual.
+- Comprobación de legibilidad.
+- Registro de decisiones técnicas.
+- Comprobación de rendimiento.
+- Inventario de assets utilizados.
+- Capturas de evidencia cuando sea posible.
+
+No ejecutar el prompt H03 durante esta tarea.
+
+Si existe un documento consolidado con todos los prompts, actualizar también su sección H03, evitando que existan instrucciones contradictorias.
+
+## 7.8. `docs/VALIDATION.md` y documento de continuidad
+
+Registrar esta actualización como trabajo documental PRE-H03.
+
+No declarar pruebas de gameplay ejecutadas si no se han ejecutado.
+
+No sobrescribir resultados anteriores.
+
+Actualizar `HANDOFF.md` si existe.
+
+---
+
+# 8. Criterios de aceptación
+
+La tarea estará terminada únicamente cuando:
+
+1. `ART_BIBLE.md` describa claramente el estilo Modern PSX.
+2. La definición artística sea coherente en toda la documentación.
+3. No queden referencias que obliguen a emular literalmente el hardware PS1.
+4. Estén documentadas las prioridades de legibilidad moderna.
+5. Existan reglas para geometría, texturas, materiales, iluminación y efectos retro.
+6. La guarida, el contrato, las armas y los enemigos compartan una dirección visual consistente.
+7. El registro de assets contemple procedencia, licencias y aprobación.
+8. H03 incorpore la nueva decisión.
+9. No se hayan modificado funcionalidades de gameplay.
+10. La actualización esté registrada en `DECISIONS.md`, `VALIDATION.md` y el documento de continuidad correspondiente.
+
+---
+
+# 9. Validaciones obligatorias
+
+Realiza las siguientes comprobaciones:
+
+### A. Coherencia documental
+
+- Buscar definiciones artísticas contradictorias.
+- Comprobar que los documentos principales utilizan una definición consistente.
+- Verificar referencias relativas entre documentos.
+- Identificar duplicados que puedan haber quedado tras H02.
+
+### B. Integridad
+
+- Verificar que no se han eliminado decisiones de gameplay.
+- Comprobar que no se han alterado los sistemas de combate, armas, energía, IA o progresión.
+- Revisar el diff completo.
+
+### C. Estado del proyecto
+
+- Verificar que los cambios se limitan a documentación y prompts.
+- Si las reglas de `AGENTS.md` lo exigen y Godot está disponible, ejecutar una comprobación de importación o arranque headless.
+- No atribuir a esta tarea pruebas que no se hayan ejecutado.
+
+### D. Trazabilidad
+
+- Registrar todos los documentos modificados.
+- Explicar el motivo de cada cambio.
+- Registrar cualquier contradicción no resuelta.
+- Indicar si H03 está documentalmente preparado para comenzar.
+
+---
+
+# 10. Entrega final obligatoria
+
+Al finalizar, devuelve un informe con esta estructura:
+
+**PRE-H03 — ART DIRECTION UPDATE**
+
+1. Estado general: PASS / PARTIAL / BLOCKED.
+2. Archivos revisados.
+3. Archivos modificados.
+4. Decisión artística aprobada y registrada.
+5. Resumen de las reglas visuales.
+6. Cambios realizados al prompt H03.
+7. Comprobaciones ejecutadas y resultados reales.
+8. Contradicciones detectadas y cómo se resolvieron.
+9. Problemas pendientes.
+10. Confirmación explícita de que no se ha comenzado H03.
+11. Recomendación sobre si la documentación está preparada para iniciar H03.
+
+No marques como superadas pruebas no ejecutadas.
+
+No cambies código del juego.
+
+No añadas funcionalidades ni assets.
+
+No avances al siguiente hito.
+
+**El objetivo de esta tarea es dejar oficialmente definida y documentada la identidad visual del juego para que todos los hitos posteriores construyan sobre una estética coherente.**

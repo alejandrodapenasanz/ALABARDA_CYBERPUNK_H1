@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 621.24 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4050 Laptop GPU
+
+GRAPHICS native_nearest mean_ms=1.77847222222222
+GRAPHICS native_linear mean_ms=1.52875
+GRAPHICS atmospheric mean_ms=8.33256666666666
+GRAPHICS half_resolution mean_ms=8.33386666666666
+GRAPHICS subtle_retro mean_ms=8.33284444444445
+GRAPHICS no_shadows mean_ms=8.33307777777778
+GRAPHICS fog mean_ms=8.33286111111111
+GRAPHICS_COMPLETE C:/dev/ALABARDA_CYBERPUNK_H03_PUBLIC/docs/evidence/h03/public_readability/graphics

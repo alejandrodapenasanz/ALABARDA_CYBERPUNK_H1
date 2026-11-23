@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+MOUSE display=headless initial_mode=0
+PASS cinco blancos reales
+PASS salud y cámara inicial
+PASS jugador colisiona con suelo
+PASS W mueve jugador mediante input real
+PASS sprint supera marcha
+PASS dash y cooldown
+PASS salto desde suelo
+PASS pared bloquea movimiento/dash
+PASS Escape libera cursor
+MOUSE after_click=0
+MOUSE after_explicit_capture=0
+FAIL clic recaptura cursor
+PASS daño y HUD conectado
+PASS muerte y respawn H1
+PASS ataque cercano existente
+PASS fuera de rango no daña
+PASS R no reinicia durante combate
+FAIL hitscan por input: ocho impactos contra HP 35/70
+FAIL derrota de cinco blancos y señales
+FAIL HUD cero hostiles
+PASS R restaura cinco blancos tras victoria
+RESULT passed=15 failed=4

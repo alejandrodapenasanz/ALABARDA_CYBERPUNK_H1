@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "date": "2026-11-22",
+  "scope": "Runtime scene/script/resource files, tests and UIDs compared to last tested public commit; local experimental binary samples excluded",
+  "public_commit": "1c66903536b81b191c1cb7008560c781dff1b374",
+  "checked": 518,
+  "differences": []
+}

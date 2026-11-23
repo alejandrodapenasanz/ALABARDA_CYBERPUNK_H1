@@ -1,0 +1,504 @@
+{
+  "date": "2026-11-20",
+  "git_tree": "a876fef52112f952de91a015903026e6f79cce9a",
+  "git_ref": "refs/h02/baseline",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a043c23db9399b374ef4b47268f161bff21989675be219eb0e2fc3e049b4a49e",
+      "bytes": 10801,
+      "archive": "docs/history/pre_h02/AGENTS.md",
+      "current_path": "AGENTS.md",
+      "archive_original": "docs/history/pre_h02/AGENTS.md"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "9028ec00f0056e5866d5c0a41180d088a4cd104fffd8de2c5e7c9ecd7883d79f",
+      "bytes": 2076,
+      "archive": "docs/history/pre_h02/docs/ARCHITECTURE.md",
+      "current_path": "docs/ARCHITECTURE.md",
+      "archive_original": "docs/history/pre_h02/docs/ARCHITECTURE.md"
+    },
+    {
+      "path": "docs/ART_BIBLE (1).md",
+      "sha256": "3c0478613d3ed5e35e31a9c6554c95ff7e03ff6f489d519be1e90d2eebed5db4",
+      "bytes": 2176,
+      "archive": "docs/history/pre_h02/docs/ART_BIBLE.md",
+      "current_path": "docs/ART_BIBLE.md",
+      "archive_original": "docs/history/pre_h02/docs/ART_BIBLE (1).md"
+    },
+    {
+      "path": "docs/ART_BIBLE.md",
+      "sha256": "3c0478613d3ed5e35e31a9c6554c95ff7e03ff6f489d519be1e90d2eebed5db4",
+      "bytes": 2176,
+      "archive": "docs/history/pre_h02/docs/ART_BIBLE.md",
+      "current_path": "docs/ART_BIBLE.md",
+      "archive_original": "docs/history/pre_h02/docs/ART_BIBLE.md"
+    },
+    {
+      "path": "docs/ASSET_REGISTRY.md",
+      "sha256": "98330430ed38408ef5ad06b901ddd9ecf9adba04df997d0185629f92141b5db1",
+      "bytes": 563,
+      "archive": "docs/history/pre_h02/docs/ASSET_REGISTRY.md",
+      "current_path": "docs/ASSET_REGISTRY.md",
+      "archive_original": "docs/history/pre_h02/docs/ASSET_REGISTRY.md"
+    },
+    {
+      "path": "docs/BALANCE_PROVISIONAL.md",
+      "sha256": "cdd0a623b388f82b6ad0f58462f347ebda8a96d7990f253f19ed53abf8eca108",
+      "bytes": 3339,
+      "archive": "docs/history/pre_h02/docs/BALANCE_PROVISIONAL.md",
+      "current_path": "docs/BALANCE_PROVISIONAL.md",
+      "archive_original": "docs/history/pre_h02/docs/BALANCE_PROVISIONAL.md"
+    },
+    {
+      "path": "docs/DECISIONES.md",
+      "sha256": "7e93f3daa69dcb8883e1d0075e4bf86120b5f8dc299f60650d503b4859361c73",
+      "bytes": 508,
+      "archive": "docs/history/pre_h02/docs/DECISIONES.md",
+      "current_path": "docs/DECISIONS.md",
+      "archive_original": "docs/history/pre_h02/docs/DECISIONES.md"
+    },
+    {
+      "path": "docs/DECISIONS (1).md",
+      "sha256": "1b6c9d00b7b0ffddf644c633fe9dee8cf5b7c6969d6a9de450f4edfc099b14a4",
+      "bytes": 3762,
+      "archive": "docs/history/pre_h02/docs/DECISIONS.md",
+      "current_path": "docs/DECISIONS.md",
+      "archive_original": "docs/history/pre_h02/docs/DECISIONS (1).md"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "sha256": "1b6c9d00b7b0ffddf644c633fe9dee8cf5b7c6969d6a9de450f4edfc099b14a4",
+      "bytes": 3762,
+      "archive": "docs/history/pre_h02/docs/DECISIONS.md",
+      "current_path": "docs/DECISIONS.md",
+      "archive_original": "docs/history/pre_h02/docs/DECISIONS.md"
+    },
+    {
+      "path": "docs/GAME_DESIGN (1).md",
+      "sha256": "014c47dc37c94da73b7eaf791fa493a7b10f388797f1d178abb3146f4e1c7bbb",
+      "bytes": 4242,
+      "archive": "docs/history/pre_h02/docs/GAME_DESIGN.md",
+      "current_path": "docs/GAME_DESIGN.md",
+      "archive_original": "docs/history/pre_h02/docs/GAME_DESIGN (1).md"
+    },
+    {
+      "path": "docs/GAME_DESIGN.md",
+      "sha256": "014c47dc37c94da73b7eaf791fa493a7b10f388797f1d178abb3146f4e1c7bbb",
+      "bytes": 4242,
+      "archive": "docs/history/pre_h02/docs/GAME_DESIGN.md",
+      "current_path": "docs/GAME_DESIGN.md",
+      "archive_original": "docs/history/pre_h02/docs/GAME_DESIGN.md"
+    },
+    {
+      "path": "docs/GAME_VISION (1).md",
+      "sha256": "47c18b56aab9f55fd10d6041f6aa438465bb29437b5442c953ee4e55784cafa1",
+      "bytes": 1712,
+      "archive": "docs/history/pre_h02/docs/GAME_VISION.md",
+      "current_path": "docs/GAME_VISION.md",
+      "archive_original": "docs/history/pre_h02/docs/GAME_VISION (1).md"
+    },
+    {
+      "path": "docs/GAME_VISION.md",
+      "sha256": "47c18b56aab9f55fd10d6041f6aa438465bb29437b5442c953ee4e55784cafa1",
+      "bytes": 1712,
+      "archive": "docs/history/pre_h02/docs/GAME_VISION.md",
+      "current_path": "docs/GAME_VISION.md",
+      "archive_original": "docs/history/pre_h02/docs/GAME_VISION.md"
+    },
+    {
+      "path": "docs/GDD_TECNICO_H1.md",
+      "sha256": "8908493bcda4571d81f4c75cb4a8c36a106ccd01c0457ff08b8b7882e4073960",
+      "bytes": 7446,
+      "archive": "docs/history/pre_h02/docs/GDD_TECNICO_H1.md",
+      "current_path": "docs/GDD_TECNICO_H1.md",
+      "archive_original": "docs/history/pre_h02/docs/GDD_TECNICO_H1.md"
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "sha256": "bef5ab26261fb6456cc57f15312fe1bb24f2868a15b5f50705e212d021c4a464",
+      "bytes": 1136,
+      "archive": "docs/history/pre_h02/docs/HANDOFF.md",
+      "current_path": "docs/HANDOFF.md",
+      "archive_original": "docs/history/pre_h02/docs/HANDOFF.md"
+    },
+    {
+      "path": "docs/MVP_SCOPE.md",
+      "sha256": "862430decc9c13d80d6e4d8e6508de3c5b5e35416ca7ebc8ca74e01365ed30b7",
+      "bytes": 5343,
+      "archive": "docs/history/pre_h02/docs/MVP_SCOPE.md",
+      "current_path": "docs/MVP_SCOPE.md",
+      "archive_original": "docs/history/pre_h02/docs/MVP_SCOPE.md"
+    },
+    {
+      "path": "docs/PROMPTS_INDEX.md",
+      "sha256": "ddc3308739d16bf554e763abc5fabd4428ae8f82c5dd473cc2da74bc922c2856",
+      "bytes": 1638,
+      "archive": "docs/history/pre_h02/docs/PROMPTS_INDEX.md",
+      "current_path": "docs/PROMPTS_INDEX.md",
+      "archive_original": "docs/history/pre_h02/docs/PROMPTS_INDEX.md"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "sha256": "805c5d6f1df804f0eee454f93a9f2cfd80bc846dc0da8f9e11907876300815a4",
+      "bytes": 5613,
+      "archive": "docs/history/pre_h02/docs/ROADMAP.md",
+      "current_path": "docs/ROADMAP.md",
+      "archive_original": "docs/history/pre_h02/docs/ROADMAP.md"
+    },
+    {
+      "path": "docs/SPEC_REVIEW (1).md",
+      "sha256": "f79c90145ef83ffc64a60ae37af17e8e2ed487de800ef1d80d90b5e84bf2916d",
+      "bytes": 1813,
+      "archive": "docs/history/pre_h02/docs/SPEC_REVIEW.md",
+      "current_path": "docs/SPEC_REVIEW.md",
+      "archive_original": "docs/history/pre_h02/docs/SPEC_REVIEW (1).md"
+    },
+    {
+      "path": "docs/SPEC_REVIEW.md",
+      "sha256": "f79c90145ef83ffc64a60ae37af17e8e2ed487de800ef1d80d90b5e84bf2916d",
+      "bytes": 1813,
+      "archive": "docs/history/pre_h02/docs/SPEC_REVIEW.md",
+      "current_path": "docs/SPEC_REVIEW.md",
+      "archive_original": "docs/history/pre_h02/docs/SPEC_REVIEW.md"
+    },
+    {
+      "path": "docs/TEST_STRATEGY.md",
+      "sha256": "bb8c72dc046b0d14d4a235ca083a22a183e3259723699c57ab2fd27a866a330c",
+      "bytes": 3299,
+      "archive": "docs/history/pre_h02/docs/TEST_STRATEGY.md",
+      "current_path": "docs/TEST_STRATEGY.md",
+      "archive_original": "docs/history/pre_h02/docs/TEST_STRATEGY.md"
+    },
+    {
+      "path": "docs/VALIDACION.md",
+      "sha256": "478538d86419918bde47742eee62520a8557eb7c14af1cd641b09972fcbf07e6",
+      "bytes": 545,
+      "archive": "docs/history/pre_h02/docs/VALIDACION.md",
+      "current_path": "docs/VALIDATION.md",
+      "archive_original": "docs/history/pre_h02/docs/VALIDACION.md"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "sha256": "c53c57cb112987c1a38ba4c290f843785c0954c86a3a70fcd4ef6e10c5f87095",
+      "bytes": 957,
+      "archive": "docs/history/pre_h02/docs/VALIDATION.md",
+      "current_path": "docs/VALIDATION.md",
+      "archive_original": "docs/history/pre_h02/docs/VALIDATION.md"
+    },
+    {
+      "path": "GDD_TECNICO_H1.md",
+      "sha256": "8908493bcda4571d81f4c75cb4a8c36a106ccd01c0457ff08b8b7882e4073960",
+      "bytes": 7446,
+      "archive": "docs/history/pre_h02/docs/GDD_TECNICO_H1.md",
+      "current_path": "docs/GDD_TECNICO_H1.md",
+      "archive_original": "docs/history/pre_h02/GDD_TECNICO_H1.md"
+    },
+    {
+      "path": "project.godot",
+      "sha256": "0e4953331e1bfd5711c1190eb79232c013fe0def586cac56ceae10078828c0d4",
+      "bytes": 724,
+      "current_path": "project.godot"
+    },
+    {
+      "path": "prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md",
+      "sha256": "b9ec0659546c58fe088780a74146ce1defe7128ea750a82f0dd6f6aa4b7494fb",
+      "bytes": 4307,
+      "archive": "docs/history/pre_h02/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md",
+      "current_path": "prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md",
+      "archive_original": "docs/history/pre_h02/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md"
+    },
+    {
+      "path": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "sha256": "4f33fffb01c28ccca0044da1ed97964fb93df3b5509e032e0345b07d4f237d57",
+      "bytes": 4276,
+      "archive": "docs/history/pre_h02/prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "current_path": "prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md",
+      "archive_original": "docs/history/pre_h02/prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md"
+    },
+    {
+      "path": "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO (1).md",
+      "sha256": "32dc992cef34c3b99e2b896751461063ad0362cfddcf0d1ecc6235257a79b415",
+      "bytes": 4320,
+      "archive": "docs/history/pre_h02/prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+      "current_path": "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+      "archive_original": "docs/history/pre_h02/prompts/H04_VERTICAL_DE_ARTE_TEMPRANO (1).md"
+    },
+    {
+      "path": "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO (1).md",
+      "sha256": "d7d7e3887fc14b806a67c96ccef0a87ae52027faa9e6d4730a281d3364f37578",
+      "bytes": 4360,
+      "archive": "docs/history/pre_h02/prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+      "current_path": "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+      "archive_original": "docs/history/pre_h02/prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO (1).md"
+    },
+    {
+      "path": "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE (1).md",
+      "sha256": "565a7043c0cebef6ac1a19d6802a8815df6c200647ee23d69483e97dd85b606d",
+      "bytes": 4240,
+      "archive": "docs/history/pre_h02/prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+      "current_path": "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+      "archive_original": "docs/history/pre_h02/prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE (1).md"
+    },
+    {
+      "path": "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE (1).md",
+      "sha256": "d295670f16e5fd268cc0d5eb49e0f55458e027bc495d5a7a2ca8aa22cba0323a",
+      "bytes": 4390,
+      "archive": "docs/history/pre_h02/prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+      "current_path": "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+      "archive_original": "docs/history/pre_h02/prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE (1).md"
+    },
+    {
+      "path": "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG (1).md",
+      "sha256": "5535e9892b26e01a6249758aed0bde5894721a988a10cf0679deecdfc0b7de07",
+      "bytes": 4451,
+      "archive": "docs/history/pre_h02/prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+      "current_path": "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+      "archive_original": "docs/history/pre_h02/prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG (1).md"
+    },
+    {
+      "path": "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES (1).md",
+      "sha256": "dc5e73ecda724d57205abce653566f90b81a99bede8ec124fdc6ee28358284a7",
+      "bytes": 4418,
+      "archive": "docs/history/pre_h02/prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+      "current_path": "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+      "archive_original": "docs/history/pre_h02/prompts/H09_TRES_ULTIMATES_INDEPENDIENTES (1).md"
+    },
+    {
+      "path": "prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS (1).md",
+      "sha256": "b3af5f0b7f8c9e5df64e40dd9daf19d5c7aef2f55c7836f972ebc4e05620ff4c",
+      "bytes": 4298,
+      "archive": "docs/history/pre_h02/prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md",
+      "current_path": "prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md",
+      "archive_original": "docs/history/pre_h02/prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS (1).md"
+    },
+    {
+      "path": "prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO (1).md",
+      "sha256": "27ade1029c96dbc08f4a064e18aaa7db21f00bd14489a0b5292c3f01d4c4d684",
+      "bytes": 4307,
+      "archive": "docs/history/pre_h02/prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md",
+      "current_path": "prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md",
+      "archive_original": "docs/history/pre_h02/prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO (1).md"
+    },
+    {
+      "path": "prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES (1).md",
+      "sha256": "7c2d53ed4b907735f41d6f065f801e5fddb37fa04d089b8218d6f77fb158cff2",
+      "bytes": 4265,
+      "archive": "docs/history/pre_h02/prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md",
+      "current_path": "prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md",
+      "archive_original": "docs/history/pre_h02/prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES (1).md"
+    },
+    {
+      "path": "prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD (1).md",
+      "sha256": "3f7ef6665df85caf7ea5ecb1530c6aebadab217128baca59bad109d224840d86",
+      "bytes": 4342,
+      "archive": "docs/history/pre_h02/prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md",
+      "current_path": "prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md",
+      "archive_original": "docs/history/pre_h02/prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD (1).md"
+    },
+    {
+      "path": "prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC (1).md",
+      "sha256": "8cb05b1c88f57ef919763e2ed921547920dcf164627648b612cc02214e9a3392",
+      "bytes": 4368,
+      "archive": "docs/history/pre_h02/prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md",
+      "current_path": "prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md",
+      "archive_original": "docs/history/pre_h02/prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC (1).md"
+    },
+    {
+      "path": "prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL (1).md",
+      "sha256": "3bd03b243f0925c90b7c2e672935e162ac4a99dce3af0df52a34a9a116d05e5f",
+      "bytes": 4308,
+      "archive": "docs/history/pre_h02/prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md",
+      "current_path": "prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md",
+      "archive_original": "docs/history/pre_h02/prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL (1).md"
+    },
+    {
+      "path": "prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL (1).md",
+      "sha256": "8a2460bb5ae58508b0a771764b743bd9855ded26cb933e33360ee33380ead6ca",
+      "bytes": 4182,
+      "archive": "docs/history/pre_h02/prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md",
+      "current_path": "prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md",
+      "archive_original": "docs/history/pre_h02/prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL (1).md"
+    },
+    {
+      "path": "prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB (1).md",
+      "sha256": "2ea14d11599a8f3778e16c682f35a3ecf37da8a99b93dfb414a5d5185dd0f22e",
+      "bytes": 4391,
+      "archive": "docs/history/pre_h02/prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md",
+      "current_path": "prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md",
+      "archive_original": "docs/history/pre_h02/prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB (1).md"
+    },
+    {
+      "path": "prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA (1).md",
+      "sha256": "8ce4408b9f3dd7d5a54aec94f66fdd23abad054a0302f20df313bc819ea6fb10",
+      "bytes": 4219,
+      "archive": "docs/history/pre_h02/prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md",
+      "current_path": "prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md",
+      "archive_original": "docs/history/pre_h02/prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA (1).md"
+    },
+    {
+      "path": "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES (1).md",
+      "sha256": "7fe8e874ba919bdcbd32c576f882281bef5b8ea99b16ffbfdbc2f1ce43b9b6b2",
+      "bytes": 4339,
+      "archive": "docs/history/pre_h02/prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+      "current_path": "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+      "archive_original": "docs/history/pre_h02/prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES (1).md"
+    },
+    {
+      "path": "prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA (1).md",
+      "sha256": "05a35e7680195d822a123400a5e55e8d8f6418eee848143c26dd14359a7f1fe5",
+      "bytes": 4305,
+      "archive": "docs/history/pre_h02/prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md",
+      "current_path": "prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md",
+      "archive_original": "docs/history/pre_h02/prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA (1).md"
+    },
+    {
+      "path": "prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS (1).md",
+      "sha256": "f104676bffb39c111d61c2ca8be4aa1f7f3c5ecd32c58d836c61af3707da8f84",
+      "bytes": 4273,
+      "archive": "docs/history/pre_h02/prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md",
+      "current_path": "prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md",
+      "archive_original": "docs/history/pre_h02/prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS (1).md"
+    },
+    {
+      "path": "prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS (1).md",
+      "sha256": "b1ba32876c9982dc3a733eff954bc4dc01a725bf356e6db5ef8addef110be3ae",
+      "bytes": 4411,
+      "archive": "docs/history/pre_h02/prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md",
+      "current_path": "prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md",
+      "archive_original": "docs/history/pre_h02/prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS (1).md"
+    },
+    {
+      "path": "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT (1).md",
+      "sha256": "4040ed781cf8caf32482875de06bfb009d24ef7bd59f4b3afa4991522fe5d786",
+      "bytes": 4303,
+      "archive": "docs/history/pre_h02/prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+      "current_path": "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+      "archive_original": "docs/history/pre_h02/prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT (1).md"
+    },
+    {
+      "path": "prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL (1).md",
+      "sha256": "4aecfc286a9ab404776373a810bccc1795fd056564435248eb012c51435340e1",
+      "bytes": 4375,
+      "archive": "docs/history/pre_h02/prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md",
+      "current_path": "prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md",
+      "archive_original": "docs/history/pre_h02/prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL (1).md"
+    },
+    {
+      "path": "README.md",
+      "sha256": "bb8d57659ee2df21dee1aa7f2f4f341f4fe2f448339c6e0b4fc20068934d0158",
+      "bytes": 1288,
+      "archive": "docs/history/pre_h02/README.md",
+      "current_path": "README.md",
+      "archive_original": "docs/history/pre_h02/README.md"
+    },
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "5e9773e32417aee918196a439f9de0e1be5c743d0df6fc87c9bf199179e66676",
+      "bytes": 176,
+      "current_path": "scenes/main.tscn"
+    },
+    {
+      "path": "scripts/enemy.gd",
+      "sha256": "8e04537fa4a06273054577470445bdb19264f54ee8e3bb38783726f898fa3fed",
+      "bytes": 1831,
+      "current_path": "scripts/enemy.gd"
+    },
+    {
+      "path": "scripts/enemy.gd.uid",
+      "sha256": "b6d1ef1da8802a0ce6e0dca8fcac6a4e155af07cd1df9111ef33c1d3547efba7",
+      "bytes": 19,
+      "current_path": "scripts/enemy.gd.uid"
+    },
+    {
+      "path": "scripts/main.gd",
+      "sha256": "0dbbd186e778a869a2d02068f730c3f9c8adcd5c72ece3d4aa77ee4e710c9571",
+      "bytes": 6531,
+      "current_path": "scripts/main.gd"
+    },
+    {
+      "path": "scripts/main.gd.uid",
+      "sha256": "3b84fbb1850f57a9428c7b6db95e6cbc63afa0a0a3801b04941601e4b960b583",
+      "bytes": 20,
+      "current_path": "scripts/main.gd.uid"
+    },
+    {
+      "path": "scripts/player.gd",
+      "sha256": "096851a02c736455abd03fc49ca2a15e6d78816667d210236128dd3075969302",
+      "bytes": 5101,
+      "current_path": "scripts/player.gd"
+    },
+    {
+      "path": "scripts/player.gd.uid",
+      "sha256": "e37243119cee811aa19966c3d2b3ea76d2021893329be738821949744e88fcd5",
+      "bytes": 20,
+      "current_path": "scripts/player.gd.uid"
+    }
+  ],
+  "migration": {
+    "date": "2026-11-20",
+    "version": 2,
+    "authorization": "Petición expresa: eliminar duplicados (1), una copia correcta y corregir H02.",
+    "redirects": {
+      "docs/ART_BIBLE (1).md": "docs/ART_BIBLE.md",
+      "docs/history/pre_h02/docs/ART_BIBLE (1).md": "docs/history/pre_h02/docs/ART_BIBLE.md",
+      "docs/DECISIONES.md": "docs/DECISIONS.md",
+      "docs/DECISIONS (1).md": "docs/DECISIONS.md",
+      "docs/history/pre_h02/docs/DECISIONS (1).md": "docs/history/pre_h02/docs/DECISIONS.md",
+      "docs/GAME_DESIGN (1).md": "docs/GAME_DESIGN.md",
+      "docs/history/pre_h02/docs/GAME_DESIGN (1).md": "docs/history/pre_h02/docs/GAME_DESIGN.md",
+      "docs/GAME_VISION (1).md": "docs/GAME_VISION.md",
+      "docs/history/pre_h02/docs/GAME_VISION (1).md": "docs/history/pre_h02/docs/GAME_VISION.md",
+      "docs/SPEC_REVIEW (1).md": "docs/SPEC_REVIEW.md",
+      "docs/history/pre_h02/docs/SPEC_REVIEW (1).md": "docs/history/pre_h02/docs/SPEC_REVIEW.md",
+      "docs/VALIDACION.md": "docs/VALIDATION.md",
+      "GDD_TECNICO_H1.md": "docs/GDD_TECNICO_H1.md",
+      "docs/history/pre_h02/GDD_TECNICO_H1.md": "docs/history/pre_h02/docs/GDD_TECNICO_H1.md",
+      "prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md": "prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md",
+      "docs/history/pre_h02/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL (1).md": "docs/history/pre_h02/prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md",
+      "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO (1).md": "prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+      "docs/history/pre_h02/prompts/H04_VERTICAL_DE_ARTE_TEMPRANO (1).md": "docs/history/pre_h02/prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md",
+      "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO (1).md": "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+      "docs/history/pre_h02/prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO (1).md": "docs/history/pre_h02/prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+      "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE (1).md": "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+      "docs/history/pre_h02/prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE (1).md": "docs/history/pre_h02/prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+      "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE (1).md": "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+      "docs/history/pre_h02/prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE (1).md": "docs/history/pre_h02/prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+      "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG (1).md": "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+      "docs/history/pre_h02/prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG (1).md": "docs/history/pre_h02/prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+      "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES (1).md": "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+      "docs/history/pre_h02/prompts/H09_TRES_ULTIMATES_INDEPENDIENTES (1).md": "docs/history/pre_h02/prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+      "prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS (1).md": "prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md",
+      "docs/history/pre_h02/prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS (1).md": "docs/history/pre_h02/prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md",
+      "prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO (1).md": "prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md",
+      "docs/history/pre_h02/prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO (1).md": "docs/history/pre_h02/prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md",
+      "prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES (1).md": "prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md",
+      "docs/history/pre_h02/prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES (1).md": "docs/history/pre_h02/prompts/H12_CAMARAS_ALARMAS_Y_CADAVERES.md",
+      "prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD (1).md": "prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md",
+      "docs/history/pre_h02/prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD (1).md": "docs/history/pre_h02/prompts/H13_PERSISTENCIA_INVENTARIO_CREDITOS_Y_DIFICULTAD.md",
+      "prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC (1).md": "prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md",
+      "docs/history/pre_h02/prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC (1).md": "docs/history/pre_h02/prompts/H14_FIRMWARE_ARBOL_DE_PERKS_Y_RESPEC.md",
+      "prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL (1).md": "prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md",
+      "docs/history/pre_h02/prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL (1).md": "docs/history/pre_h02/prompts/H15_MEJORAS_FISICAS_DE_ARMAS_Y_CATALOGO_COMERCIAL.md",
+      "prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL (1).md": "prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md",
+      "docs/history/pre_h02/prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL (1).md": "docs/history/pre_h02/prompts/H16_GUARIDA_Y_ORDENADOR_TERMINAL.md",
+      "prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB (1).md": "prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md",
+      "docs/history/pre_h02/prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB (1).md": "docs/history/pre_h02/prompts/H17_ENTREGAS_FISICAS_MONTAJE_Y_USB.md",
+      "prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA (1).md": "prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md",
+      "docs/history/pre_h02/prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA (1).md": "docs/history/pre_h02/prompts/H18_ARSENAL_SELECCION_DE_3_ARMAS_Y_VITRINA.md",
+      "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES (1).md": "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+      "docs/history/pre_h02/prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES (1).md": "docs/history/pre_h02/prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+      "prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA (1).md": "prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md",
+      "docs/history/pre_h02/prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA (1).md": "docs/history/pre_h02/prompts/H20_JEFE_YAKUZA_DOS_FASES_Y_RECOMPENSA.md",
+      "prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS (1).md": "prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md",
+      "docs/history/pre_h02/prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS (1).md": "docs/history/pre_h02/prompts/H21_ECONOMIA_DE_CONTRATOS_Y_OBJETIVOS_SECUNDARIOS.md",
+      "prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS (1).md": "prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md",
+      "docs/history/pre_h02/prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS (1).md": "docs/history/pre_h02/prompts/H22_INTEGRACION_DIFICULTAD_UX_Y_ACCESIBILIDAD_BAS.md",
+      "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT (1).md": "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+      "docs/history/pre_h02/prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT (1).md": "docs/history/pre_h02/prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+      "prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL (1).md": "prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md",
+      "docs/history/pre_h02/prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL (1).md": "docs/history/pre_h02/prompts/H24_RELEASE_CANDIDATE_WINDOWS_AUDITORIA_FINAL.md"
+    }
+  }
+}

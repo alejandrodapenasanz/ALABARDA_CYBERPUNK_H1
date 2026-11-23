@@ -1,5 +1,7 @@
 # Third-party notices — H03/H04 experimental samples
 
+The complete development transfer also includes the original verified CRT, HomeVideo, Industrial Exterior, Office and First Person Arms packs under assets/, for experimentation. Their source bytes remain unchanged and the credits/licenses below apply to the original files as well as the selected samples. Malorian, PSXAmmoBoxes and the Electronics pack with unverified third-party image provenance remain excluded; see docs/GITHUB_TRANSFER.md and the per-file checkout manifest. This does not designate any pack as final game art.
+
 H04 reuses these samples. Source model/texture/font bytes remain unchanged. Runtime instance changes: roughness floor 0.78, metallic ceiling 0.3, moderate desk/barrel tint, placement and material filtering. HomeVideo is additionally rendered on two physical signs. Original service cabinet, wall panel and transit case in resources/art_kit were authored for this project with Blender; they contain no third-party geometry or images. Blender 4.5.3 is an external authoring tool, not distributed with the project.
 
 - GdUnit4 6.2.3 — Copyright (c) 2023 Mike Schulze; MIT. Full notice: [LICENSE](addons/gdUnit4/LICENSE). Source: https://github.com/godot-gdunit-labs/gdUnit4/tree/v6.2.3 . Unmodified development dependency.

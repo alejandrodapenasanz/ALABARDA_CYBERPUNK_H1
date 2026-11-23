@@ -1,0 +1,11 @@
+{
+  "checked": 908,
+  "external_changes": {
+    "AGENTS.md": {
+      "sha256": "5e99dbdd2cda12812246d78ba0eaba678c044b98c91cba2dda651300492802b4",
+      "reason": "Observed during H03; appended artistic continuity policy, read in full; not edited by this implementation. Original hash remains in before.json."
+    }
+  },
+  "runtime_references": 12,
+  "errors": []
+}

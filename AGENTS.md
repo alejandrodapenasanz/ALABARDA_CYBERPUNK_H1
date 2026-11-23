@@ -1,144 +1,66 @@
-# ALABARDA STUDIOS — CYBERPUNK FPS | Instrucciones permanentes para Codex
+# ALABARDA STUDIOS — Instrucciones permanentes para Claude y Codex
 
-**Versión:** 0.4 · 2026-11-20
-**Estado:** Preproducción. Este documento define el proceso; NO autoriza a implementar hitos futuros.  
-**Propósito:** Este archivo debe permanecer en la **raíz del repositorio Godot**, con nombre exacto `AGENTS.md`. Se lee al comienzo de CADA nueva conversación/hito de Codex.
+**Versión 0.5 · pipeline v2.1 · 2026-11-22.** Migración pendiente de validación expresa del creador. Este proceso NO autoriza B1 ni ningún lote futuro. H1–H04 conservan sus aprobaciones históricas.
 
-## 0. Orden de lectura obligatorio al iniciar cada hito
-1. Este `AGENTS.md` completo.
-2. `docs/GAME_VISION.md` y `docs/MVP_SCOPE.md` (cuando existan).
-3. `docs/DECISIONS.md` y `docs/ROADMAP.md` (cuando existan).
-4. `docs/ARCHITECTURE.md` y `docs/GAME_DESIGN.md` (cuando existan).
-5. `docs/ART_BIBLE.md` y `docs/ASSET_REGISTRY.md` si se modifican imágenes, escenas, modelos o audio.
-6. `docs/VALIDATION.md` y la implementación actual del proyecto.
-7. El prompt del hito actual.
+## 0. Lectura obligatoria por conversación o lote
 
-Si algún archivo todavía NO existe, señalarlo en el informe inicial y continuar con los documentos realmente disponibles. **No fingir que se ha leído.** La migración H02 fue autorizada expresamente: los documentos activos son `docs/GDD_TECNICO_H1.md`, `docs/DECISIONS.md` y `docs/VALIDATION.md`. Los nombres españoles anteriores y las copias con sufijo (1) se retiraron de la documentación activa; sus contenidos originales siguen trazados en `docs/history/pre_h02/manifest.json`. No recrear alias ni copias redundantes.
+1. Este `AGENTS.md` íntegro, siempre en la raíz Godot.
+2. [GAME_VISION](docs/GAME_VISION.md) y [MVP_SCOPE](docs/MVP_SCOPE.md).
+3. [DECISIONS](docs/DECISIONS.md), [ROADMAP](docs/ROADMAP.md) y [DEVELOPMENT_WORKFLOW](docs/DEVELOPMENT_WORKFLOW.md).
+4. [ARCHITECTURE](docs/ARCHITECTURE.md), [GAME_DESIGN](docs/GAME_DESIGN.md), [HEALTH_ENERGY_CONTRACT](docs/HEALTH_ENERGY_CONTRACT.md), [CONTROLS](docs/CONTROLS.md) y [BALANCE_PROVISIONAL](docs/BALANCE_PROVISIONAL.md).
+5. [ART_BIBLE](docs/ART_BIBLE.md) y [ASSET_REGISTRY](docs/ASSET_REGISTRY.md) íntegros antes de afectar escenarios, personajes, armas, interfaces, animaciones, modelos o audio.
+6. [TEST_STRATEGY](docs/TEST_STRATEGY.md), [VALIDATION](docs/VALIDATION.md), [HANDOFF](docs/HANDOFF.md), implementación/tests reales y `git status`.
+7. Prompt del lote, todos sus hitos y paquete de transferencia si existe. [Índice](docs/PROMPTS_INDEX.md).
 
-## 1. Jerarquía de autoridad
-1. Decisiones expresas más recientes del creador en el prompt del hito o en `docs/DECISIONS.md`.
-2. Decisiones aprobadas documentadas en `docs/GAME_VISION.md`, `docs/MVP_SCOPE.md`, `docs/GAME_DESIGN.md` y `docs/ART_BIBLE.md`.
-3. El PDF original `JUEGO CYBERPUNK.pdf` y `docs/GDD_TECNICO_H1.md` como fuentes históricas.
-4. Propuestas y prototipos previos, solo si no contradicen decisiones aprobadas.
+Señalar documentos ausentes sin fingir lectura. H02 autorizó la consolidación: no recrear alias españoles ni copias `(1)`. [Histórico H02](docs/history/pre_h02/manifest.json) y [originales anteriores a v2.1](docs/history/pre_pipeline_v2_1/manifest.json) trazados por hash. El GDD H1 y los históricos no son especificación vigente.
 
-Ante una contradicción material, parar la funcionalidad afectada, documentar la discrepancia y solicitar decisión. No reinterpretar una **PROPUESTA** como decisión aprobada. No modificar el alcance sin permiso.
+## 1. Autoridad y alcance
 
-## 2. Decisiones creativas APROBADAS a 2026-11-20
-Consultar **`docs/DECISIONS.md` como registro detallado y autoritativo** y `docs/MVP_SCOPE.md` como alcance consolidado. Los siguientes puntos son resumen, no sustituyen esos archivos:
-- PC/Windows, Godot 4, FPS, cyborg brazo izquierdo, estética **Modern PSX / Retro Industrial Cyberpunk** (D-017): reinterpretación moderna, sin emulación literal del hardware PS1. `docs/ART_BIBLE.md` es la fuente artística principal; legibilidad moderna y efectos retro potencialmente perjudiciales configurables o desactivables.
-- Vertical slice: guarida interactiva y un contrato Yakuza repetible de tres plantas, tres dificultades, boss dos fases, 15–25 minutos como objetivo.
-- Tres armas cualesquiera de seis; katana, pistola silenciada y escopeta doble cañón iniciales; reserva infinita, cargadores y recarga animada; árbol de firmware con costes/dependencias/respec, efectos activos al instalar el USB y hasta respec.
-- Sigilo reversible con percepción y memoria, alarmas, cámaras y detección de cadáveres; los tres arquetipos patrullan. Excepción aprobada: una alarma general impide recuperar el sigilo durante el resto de ese intento.
-- Energía 0–150, extracción mantenida con F, curación continua E, ascensores recargan 150; ejecuciones y reducción de daño conforme a `GAME_DESIGN.md`.
-- Ultimates Dead Eye, Aimbot, Overdrive; una equipada, >=100 energía, consume toda y escala duración. Dead Eye ralentiza el mundo con cualquier arma; la compatibilidad limita solo los efectos específicos de arma.
-- Compras en PC → timbre → paquete transportado → montaje 3–4 pasos o instalación USB → equipar; economía en créditos, guardado automático, progreso persistente. Jefe otorga trofeo y flag de shurikens futuro.
-- Producción artística híbrida y progresiva: assets gratuitos legales y adaptados, props propios en Blender, materiales/shaders propios y protagonistas personalizados; IA como apoyo conceptual. Registro de licencias y coherencia visual obligatorios.
+Prevalecen las decisiones expresas más recientes del creador y DECISIONS; después visión/alcance/diseño/biblia aprobados; después PDF original y GDD histórico; finalmente propuestas y prototipos. Una propuesta numérica no es una aprobación de balance. Ante contradicción material, parar solo la funcionalidad afectada, registrarla y pedir decisión. No ampliar el MVP ni ejecutar lotes por la mera existencia de un prompt.
 
-## 3. PENDIENTE (no implementar por intuición)
-- Todo parámetro numérico no aprobado: daño, HP enemigos, duraciones, costes y velocidades; sistemas de dificultades y objetivos concretos.
-- Lista y dependencias concretas de perks, precios, recompensas y efectos físicos de mejoras de armas.
-- Compatibilidades definitivas arma/ultimate, lógica exacta de parry automático, F/E contextuales y detalles de ejecución.
-- Nivel detallado (salas, rutas, densidad), estados de IA y telemetría, fases de boss, feedback de cámaras/alarma/cadáveres.
-- Selección y licencia *específica* de assets; validación técnica de paleta, presupuestos, filtros y efectos conforme a ART_BIBLE; detalle de animación, sonido, UI, controles y accesibilidad. La dirección artística D-017 sí está aprobada; sus cifras orientativas no son límites definitivos.
-- Exclusiones del MVP propuestas en `docs/MVP_SCOPE.md` y criterio final de cierre: requieren revisión del creador.
+## 2. Roles y estados
 
-## 4. Estructura documental objetivo
-```text
-AGENTS.md                          # Este contrato de trabajo, siempre en la raíz
-project.godot
-README.md
-docs/
-  GDD_TECNICO_H1.md                # Referencia histórica existente
-  GAME_VISION.md                   # Pilares y experiencia aprobada
-  MVP_SCOPE.md                     # Inclusiones, exclusiones y DoD final
-  GAME_DESIGN.md                   # Mecánicas y reglas consolidadas
-  ART_BIBLE.md                     # Paleta, geometría, pixelación, FX y UI
-  ASSET_REGISTRY.md                # Fuente, autor, URL, licencia, versión, uso, modificaciones
-  ARCHITECTURE.md                  # Escenas, scripts, señales, data y guardado
-  ROADMAP.md                       # Hitos, dependencias y criterios verificables
-  DECISIONS.md                     # Registro de decisiones aprobadas/pendientes
-  VALIDATION.md                    # Pruebas realizadas, resultados y limitaciones
-  HANDOFF.md                       # Estado ejecutable y siguientes pasos por hito
-scenes/
-scripts/
-assets/
-tests/
-```
-Los documentos objetivo pueden crearse en un hito de documentación aprobado; **no renombrar** archivos de la versión previa sin migración explícita. Los nombres nuevos no significan que ya existan.
+Claude programa los lotes autorizados, prepara escenas de texto, Resources, tests y documentación. Su PC **no tiene Godot ni Blender**: no valida importación, gameplay, gráficos, animaciones o rendimiento. Ejecuta comprobaciones documentales/lógica externa disponibles y registra resultados reales.
 
-## 5. Procedimiento obligatorio por hito
-**Antes de editar:**
-- Leer lo indicado en §0, examinar los archivos reales y `git status`.
-- Resumir alcance, criterios de aceptación, componentes afectados y dependencias.
-- Verificar versión de Godot disponible y cómo ejecutar el proyecto/tests.
-- Identificar dudas que bloquean la implementación; preguntar solo por decisiones verdaderamente necesarias.
+Codex integra y valida en el PC con Godot/Blender sobre el commit exacto del paquete. Conserva evidencia y hace solo correcciones pequeñas/locales. Devuelve cambios estructurales o grandes a Claude con bugs reproducibles. Blender solo cuando el lote lo exige. El creador valida sensaciones, arte, animación, gunplay, dificultad, legibilidad y UX y concede la aprobación final.
 
-**Durante:**
-- Implementar solamente el hito autorizado, en incrementos pequeños.
-- Conservar funcionalidades anteriores, rutas de escenas y bindings de Input Map.
-- Preferir escenas reutilizables, `Resource` para datos de configuración y señales desacopladas cuando aporten claridad.
-- Evitar plugins/dependencias innecesarias y cambios masivos sin justificación.
-- No descargar ni integrar assets sin licencia verificable y entrada en `ASSET_REGISTRY.md`.
-- Todo código y comentario en estilo coherente con el repositorio; documentar parámetros de balance.
+Estados de trabajo: `NOT_STARTED`, `IN_PROGRESS`, `CODE_READY`, `INTEGRATION_READY`, `VALIDATION_FAILED`, `VALIDATED`, `APPROVED`, `BLOCKED`. Pruebas: `PASS`, `FAIL`, `NOT_RUN`, `BLOCKED`. CODE_READY no significa VALIDATED; únicamente el creador permite APPROVED. Transiciones en DEVELOPMENT_WORKFLOW.
 
-**Después:**
-- Ejecutar los tests pertinentes, guardar comandos + resultados reales.
-- Diferenciar `PASS`, `FAIL`, `BLOCKED` y `NOT_RUN`; NUNCA atribuir PASS a algo no ejecutado.
-- Actualizar `docs/VALIDATION.md` y `docs/HANDOFF.md` con cambios, rutas y pasos de reproducción.
-- Actualizar solo los documentos de diseño afectados por decisiones **aprobadas**, no por conjeturas.
-- Entregar informe: resumen, archivos cambiados, test ejecutados, fallos/bloqueos y pruebas manuales pendientes.
-- **No marcar el hito cerrado ni empezar el siguiente sin la validación expresa del creador.**
+## 3. Decisiones vigentes resumidas
 
-## 6. Pruebas y puertas de calidad
-Cada futuro prompt de hito debe especificar tests concretos, sus datos de entrada, condiciones de éxito y regresiones que no deben romperse. Como mínimo:
-1. **Integridad/importación:** abrir/importar Godot sin rutas o recursos rotos; ejecutar comprobación headless cuando el entorno lo permita.
-2. **Unitarias:** lógica pura de daño, inventario, energía, costes, estados y persistencia cuando esos sistemas existan.
-3. **Integración:** escenas e interacciones reales del hito, señales, nodos y transición entre estados.
-4. **Regresión:** verificar funcionalidades de hitos anteriores mediante tests automatizados y smoke tests.
-5. **Manual:** sensaciones de movimiento/disparo, legibilidad, feedback, sonido, IA de combate/sigilo y UX; requieren aprobación humana.
-6. **Compilación/exportación Windows:** al cerrar el MVP y en hitos que afecten exportación.
+- Godot 4, PC/Windows, FPS, brazo izquierdo cyborg; Modern PSX / Retro Industrial Cyberpunk, sin emulación literal PS1; legibilidad moderna y efectos retro configurables/desactivables.
+- Guarida interactiva y contrato Yakuza repetible: tres plantas, tres dificultades, boss dos fases; 15–25 minutos es objetivo de diseño.
+- Tres armas cualesquiera de seis; iniciales katana, pistola silenciada y escopeta doble. Reserva infinita, cargadores, recarga/recuperación por animación. Firmware al instalar USB y hasta respec; mejoras físicas separadas.
+- Salud 0–100 y energía 0–150 independientes, HUD rojo/azul. Salud automática tras 5 s sin daño a 5 HP/s; E mantenida cura a 25 HP/s gastando 25 energía/s; energía pasiva a 8/s hasta 100 incluso en combate; cada baja confirmada del jugador aporta +15 hasta 150. **Tasas y tiempos PROVISIONAL_VALUE / PENDING_PLAYTEST**, no balance final. Matar no cura HP. Extracción mantenida con F **SUPERSEDED**. Contrato y límites en HEALTH_ENERGY_CONTRACT.
+- E exclusiva para curar incluso junto a objetos; tecla de interacción dedicada **PENDING_APPROVAL**. WASD; dash WW/AA/SS/DD; 1/2/3 seleccionan slots y repetir el equipado lo guarda. Etiquetas melee/primaria/secundaria no restringen tres armas cualesquiera; conflicto pendiente.
+- Una ultimate equipada; >=100 energía, consume toda y solo escala duración. Dead Eye global con cualquier arma; Aimbot asiste a cabezas visibles sin disparo automático; Overdrive para armas de fuego. Ascensores recargan energía a 150 **sin modificar HP**, excepción a sobrecarga por bajas.
+- Sigilo reversible con memoria, patrullas, alarmas, cámaras y cadáveres; alarma general impide volver al sigilo durante ese intento.
+- PC → timbre → paquete transportado → montaje 3–4 pasos o USB → equipar; créditos, autosave y progreso persistente. Boss entrega trofeo y flag de shurikens futuro.
 
-Si se adopta un framework de pruebas (p. ej. GdUnit4), fijar versión compatible con Godot, instalación reproducible y comandos de ejecución **en `docs/ARCHITECTURE.md`**, sin asumir que ya está instalado. Tests headless no sustituyen pruebas manuales de jugabilidad.
+## 4. Procedimiento por lote
 
-**Puerta del hito:** requisitos satisfechos + tests obligatorios PASS + no regresiones críticas + informe de validación + aprobación manual explícita. Si no puede correrse un test crítico, el hito queda **PENDIENTE**, no PASS.
+Antes de editar: leer §0, examinar repo/índice, diagnosticar alcance, criterios, dependencias y dudas reales. Claude declara herramientas ausentes; Codex verifica versiones y comandos. Preservar cambios ajenos y funcionalidades/rutas anteriores; no resetear el índice histórico.
 
-## 7. Política de assets y licencias
-- Se priorizan packs gratuitos coherentes con la `ART_BIBLE.md`, optimizados para Godot 4 y Windows.
-- Registrar antes de incorporar: nombre y versión del pack; creador; URL oficial; licencia EXACTA y fecha de consulta; si permite modificación, distribución incorporada al juego y uso comercial; atribución requerida; elementos excluidos; ruta en proyecto.
-- Evitar copiar assets de otros videojuegos o asumir que una imagen de referencia autoriza reutilización.
-- Si una licencia o autoría es ambigua, bloquear la incorporación hasta aclararla.
-- Mantener la autoría y atribuciones exigidas en un archivo `THIRD_PARTY_NOTICES.md` cuando corresponda.
-- No combinar packs con estilos incompatibles sin revisión artística.
+Durante: solo lote autorizado, incrementos con checkpoint por hito (archivos, interfaces, tests preparados/ejecutados, dependencias, bugs y commit separado cuando sea posible). Puede continuar los hitos autorizados del mismo lote sin fingir aprobación intermedia. Preferir Resources de configuración y señales desacopladas cuando aporten claridad; conservar estilo, sin dependencias innecesarias ni refactors ajenos. No marcar cerrado por haber escrito código.
 
-## 8. Prompt estándar para comenzar cualquier hito
-Todo prompt de Codex debe **empezar** por un bloque equivalente a este:
+Después: entregar `validation/BXX/TEST_HANDOFF.md`, `TEST_MANIFEST.json`, `TEST_RESULTS.md` y `evidence/` según plantillas. Manifest versionado, SHA exacto y tests reproducibles. Mantener VALIDATION/HANDOFF/ROADMAP y documentos afectados; informar archivos, comandos, resultados, bugs y pendientes humanos. INTEGRATION_READY exige paquete completo.
 
-> Lee primero `AGENTS.md` desde la raíz del repositorio y cumple todas sus reglas. Después lee los documentos aplicables en `docs/`, especialmente `ROADMAP.md`, `DECISIONS.md`, `ARCHITECTURE.md`, `VALIDATION.md` y `HANDOFF.md` si existen. Antes de editar, indica el alcance del hito, el estado actual del repo y cualquier documento ausente. Implementa solo el hito indicado; ejecuta y documenta sus pruebas automáticas y regresiones; deja las pruebas manuales pendientes para mi validación. Actualiza el handoff. No declares el hito terminado ni comiences otro sin mi aprobación.
+No comenzar otro lote sin encargo explícito. Solapar lotes autorizados solo con ramas aisladas, interfaces estables y sin bloqueos críticos/decisiones creativas pendientes, según workflow. No fusionar a estable código sin validar. No cerrar lote/hito sin pruebas críticas satisfechas y aprobación manual expresa.
 
-A continuación deben aparecer: **ID de hito / objetivo / requisitos aprobados / fuera de alcance / archivos probables / pruebas exigidas / criterios de aceptación / entregables**.
+## 5. Pruebas y honestidad
 
-## 9. Validación H1 existente
-El creador ha confirmado que **el prototipo H1 funciona en su PC**. Esa afirmación valida el arranque y jugabilidad básica desde la experiencia del creador, **no demuestra que todos los tests automáticos hayan pasado**. No reescribir retroactivamente su historial de pruebas.
+Preparar integridad/importación, unitarias, integración, regresión, manuales y export Windows cuando corresponda. Registrar comando, cwd, commit, versiones, exit, contadores, logs y límites. Tests críticos no ejecutables impiden VALIDATED; distinguir BLOCKED de NOT_RUN. Headless no aprueba estética/jugabilidad. Conservar H1–H04 sin atribuir cobertura de nuevas mecánicas.
 
-## 10. Gestión de cambios
-- Las decisiones deben llevar fecha y estado: `APROBADA`, `PENDIENTE` o `DESCARTADA`.
-- Si cambia un requisito ya aprobado, registrar en `DECISIONS.md` la sustitución y qué hitos afecta.
-- Si surge un requisito nuevo que altere alcance del MVP, pedir aprobación explícita antes de añadirlo al roadmap.
-- Los ejemplos y valores propuestos nunca son especificaciones hasta que el creador los confirme.
+GdUnit4 6.2.3 vendorizado; comandos/Godot probado en ARCHITECTURE/TEST_STRATEGY. No asumir herramientas iguales en ambos PC. Cada corrección exige nuevo commit y repetir test del bug y regresiones afectadas; conservar fallos previos. No cambiar tests para esconder fallos.
 
-## Política obligatoria de assets y continuidad artística
+## 6. Assets y continuidad artística
 
-Antes de implementar cualquier hito que afecte a escenarios, personajes, armas, interfaces, animaciones o elementos visuales:
+Inspeccionar y reutilizar recursos compatibles antes de crear/descargar. Producción híbrida: assets gratuitos legales adaptados, props Blender propios, materiales/shaders y protagonistas personalizados; IA conceptual. Registrar antes de incorporar nombre/versión, autor, URL oficial, licencia exacta/fecha, permisos de modificación/distribución/uso comercial, atribución, exclusiones, rutas y cambios. Autoría/licencia ambigua bloquea ese recurso; una referencia no autoriza copiar videojuegos. Mantener THIRD_PARTY_NOTICES. No mezclar estilos sin revisión.
 
-1. Leer íntegramente `docs/ART_BIBLE.md` y `docs/ASSET_REGISTRY.md`.
-2. Inspeccionar los assets existentes antes de crear o descargar modelos nuevos.
-3. Reutilizar preferentemente los assets aprobados que sean compatibles con los requisitos del hito.
-4. Respetar la dirección artística Modern PSX / Retro Industrial Cyberpunk.
-5. No asumir que un asset descargado tiene licencia comercial verificada.
-6. Registrar cualquier recurso nuevo o modificado en `ASSET_REGISTRY.md`.
-7. Mantener la coherencia entre materiales, texturas, iluminación, modelos y animaciones.
-8. No modificar decisiones creativas aprobadas sin autorización.
-9. Actualizar `HANDOFF.md` con los cambios relevantes para los siguientes hitos.
-10. Si una implementación requiere cambiar un prompt futuro, registrar el cambio necesario en `HANDOFF.md` y actualizar el prompt afectado si está disponible, sin ejecutar anticipadamente ese hito.
+Muestras suministradas experimentales, no finales. Malorian opcional local, fuera del público; conservar fallback y exclusiones del registry. Respetar D-019/D-020/D-021 y límites de aprobación visual. Mantener coherencia de materiales, texturas, modelos, iluminación y animaciones. Actualizar registry/handoff y prompts futuros afectados sin ejecutar esos hitos.
 
-Estas reglas se aplican a todos los hitos futuros, independientemente de que el prompt individual las repita.
+## 7. Pendientes y continuidad
+
+Consultar P-001…P-017: balance, perks/economía, niveles/IA/boss, compatibilidades, controles sin decidir, duplicados/slots vacíos, retorno entre plantas, remates independientes y alcance final. No borrar remates al retirar extracción; su adaptación requiere revisión. Decisiones con fecha, fuente y estado `APROBADA`, `PENDIENTE`, `DESCARTADA` o `SUPERSEDED`; conservar sustituciones históricas.
+
+Cada prompt empieza leyendo este archivo, distingue rol, lote/hitos, objetivo, requisitos, fuera de alcance, archivos, pruebas y aceptación. Plantillas operativas obligatorias. Al terminar un chat, HANDOFF debe permitir continuar sin memoria del chat. La confirmación de H1 y cierres H02–H04 conservan su alcance exacto, sin inventar ejecuciones.

@@ -1,0 +1,69 @@
+# DECISIONS — registro maestro vigente
+
+**2026-11-22 · pipeline v2.1.** Las reglas nuevas son instrucciones expresas del creador en el documento suministrado; la aprobación de esta **entrega de migración** sigue PENDING_APPROVAL. H1–H04 conservan sus cierres; B1 no autorizado. Fuente: [documento recibido](../ALABARDA_MASTER_PIPELINE_MIGRATION_v2_1.md), cuyo nombre v2_1 conserva cabecera v2.0; discrepancia editorial registrada, fuente intacta.
+
+## Decisiones conservadas APROBADAS
+
+Las fechas/fuentes originales permanecen en el [registro anterior íntegro](history/pre_pipeline_v2_1/docs/DECISIONS.md). Las autorizaciones de ejecución antiguas no son nuevas autorizaciones. D-021 posterior prevalece sobre textos anteriores de revisión H04 pendiente.
+
+- D-021 APROBADA · 2026-11-22 · **Referencia artística H04 aceptada para pruebas y continuidad**. El creador confirma «Si, todo me cuadra» tras solicitar su revisión de composición/materiales/paleta, luces, silueta/HomeVideo, cámaras/brazos/reset y regresión breve H1. Cierra H04 junto con las pruebas técnicas PASS. Se aceptan la sala y el kit en el contexto experimental entregado, manteniendo D-018/D-019/D-020. No implica modelos finales, presupuestos máximos de producción, escalados/equipos no descritos ni nueva autorización de redistribución. H05 requiere encargo propio.
+- D-020 APROBADA · 2026-11-22 · **HomeVideo preferida y legible en el laboratorio H03**. El creador expresa que le gusta y se lee bien al confirmar el panel F; también confirma el movimiento de brazos en cámara 4 con A. HomeVideo queda como referencia tipográfica preferida para terminales en continuidad artística, con aprobación visual limitada al contexto probado. No implica sustitución global de HUD, aceptación de cualquier tamaño/escalado ni aprobación de modelos finales. No se cambia la UI durante el cierre.
+- D-019 APROBADA · 2026-11-22 · **Perfil visual vigente y revisable**. Fuente: captura del laboratorio y declaración del creador «Esta es la decision final de momento. Quiza en el futuro cambia». Selección: Nearest + mipmaps, luz atmosférica, resolución interna 1280×720, retro desactivado, sombras activadas y niebla desactivada. Intensidad de retro conservada al 70%, sin efecto mientras esté apagado; comparación dividida desactivada en el estado seleccionado. Se aplica al abrir/restaurar el laboratorio y es referencia para el arte futuro. Sustituye la luz neutra de diagnóstico del reset anterior, sin eliminarla como alternativa de comparación. No es selección de assets finales, aprobación de condiciones de redistribución, validación manual de pruebas no mencionadas ni autorización de H04. Todo cambio posterior se registra como revisión expresa; «revisable» no reduce esta aprobación a propuesta.
+- D-001 Godot 4, PC, vertical slice guarida/contrato/boss. Componente artístico precisado el 2026-11-20 por D-017: **Modern PSX / Retro Industrial Cyberpunk**; conserva los pilares industrial/cyberpunk y no exige emulación literal de PS1.
+- D-002 Loadout libre 3 armas; Ninja móvil, Tanque resistente; híbridos posibles; los tres arquetipos patrullan.
+- D-003 Sigilo completo, reacción a visión/ruido, romper contacto y recuperar sigilo, memoria de detección, cámaras/alarmas/cadáveres. Revisión APROBADA 2026-11-20: si se activa una alarma general, no se puede recuperar el sigilo durante el resto de ese intento.
+- D-004 Seis armas: katana, pistola silenciada, rifle silenciado con mira, espada-sierra, revólver, escopeta doble cañón. Iniciales: katana, pistola silenciada, escopeta.
+- D-005 Reserva de munición infinita con cargadores y recargas; cadencia ligada a animación. Escopeta 1 o 2 cañones. Katana desvía balas automáticamente equipada.
+- D-006 Mejora física de armas separada de firmware; firmware árbol con dependencias, créditos, compras ilimitadas, refund/respec y perks mixtas. Revisión APROBADA 2026-11-20: los efectos de una perk comienzan al instalar su USB, no al comprarla, y permanecen activos hasta respec.
+- D-009 Tres ultimates diferentes, una equipada, se activa >=100, consume todo 100–150 y escala **solo duración**: Dead Eye mundo 50% y jugador normal, Aimbot ayuda intensa a cabezas visibles sin disparo automático, Overdrive cadencia y daño con armas de fuego. Revisión APROBADA 2026-11-20: Dead Eye ralentiza el mundo con cualquier arma; compatibilidad limita solo efectos específicos de arma.
+- D-010 Contrato Yakuza 3 plantas: infiltración/combate/boss, boss dos fases con shurikens, trofeo y flag de arma futura, contrato repetible.
+- D-011 Muerte reinicia contrato desde inicio sin perder mejoras compradas. Crédito única moneda, pago base + extras opcionales variados de sigilo/combate.
+- D-012 Guarida interactiva: PC, tienda/contratos, timbre, paquete físico transportado a mesa, montaje simple 3–4 pasos, USB firmware, pared de armas y trofeos.
+- D-013 Autosave compras, mejoras y fin de contratos; progresión persistente.
+- D-014 Tres dificultades (fácil, normal, difícil); duración objetivo de contrato 15–25 min.
+- D-015 Arte: assets gratuitos seleccionados/adaptados con estética consistente, sin asumir que IA genera modelos finales adecuados. Ampliada el 2026-11-20 por D-017: producción híbrida y progresiva, props propios en Blender, materiales/shaders y protagonistas personalizados; IA como apoyo conceptual.
+- D-017 APROBADA (APPROVED) · 2026-11-20 · **Modern PSX / Retro Industrial Cyberpunk**: reinterpretación artística del 3D de finales de los noventa con legibilidad y experiencia modernas, sin emulación literal del hardware PS1. Fuente: solicitud expresa PRE-H03 del creador. Justificación: identidad retro, atmósfera industrial y coherencia con claridad en combate/sigilo. [ART_BIBLE](ART_BIBLE.md) pasa a ser la fuente detallada. Consecuencias: producción híbrida, geometría/texturas intencionales, iluminación expresiva, shaders retro potencialmente perjudiciales configurables o desactivables; investigación y escena comparativa en H03. No modifica gameplay, números de balance ni autoriza iniciar H03. Parámetros técnicos y assets individuales siguen pendientes de validación.
+- D-018 APROBADA · 2026-11-21 · Alcance de assets H03 por encargo y reiteración del creador: usar los recursos suministrados como pruebas experimentales, no como assets finales. PSXAmmoBoxes se destina a decoración bajo pared de armas/banco/estantes, nunca pickups; Malorian es referencia, no arma definitiva. Los permisos individuales se verifican antes de incorporar/distribuir. No modifica D-005 ni aprueba el resultado artístico. Afecta H03/H04 y selección futura.
+
+## Sustituciones y ampliaciones · 2026-11-22
+
+| ID | Estado vigente | Cambio y alcance |
+|---|---|---|
+| D-007 | PARCIALMENTE SUPERSEDED por D-023/D-024 | Conserva HP 0–100, energía 0–150 y antecedente de remates. F proporcional al tiempo y protección ligada a extracción dejan de definir la obtención de energía. Adaptación de remates P-017; no borrarlos ni trasladar su protección a E. Afecta H05/H06/H08/H10/H22/H23 |
+| D-008 | APROBADA, ampliada por D-023/D-024 | E mantenida consume energía por salud efectiva; ascensor energía150 sin cambiar HP. H08/H19 |
+| D-016 | SUPERSEDED operativamente por D-022 | Sustituye agente único/puertas por hito por roles asimétricos y lotes; conserva AGENTS, honestidad, tests y aprobación humana |
+| D-022 | APROBADA como instrucción; entrega pendiente de validación | Claude programa sin Godot/Blender; Codex valida/corrige local; cambios grandes vuelven a Claude; creador aprueba. B0–B8, checkpoints por hito, estados oficiales y paquete por SHA. DEVELOPMENT_WORKFLOW |
+| D-023 | APROBADA como regla; cifras provisionales | Dos barras; salud automática, E exclusiva, coste parcial, pausa automática durante manual y muerte bloquea curación. H06/H08/H13/H14/H22 |
+| D-024 | APROBADA como regla; cifras provisionales | Pasiva hasta100 incluso combate, bajas hasta150 sin HP, retirada F, ascensor150/HPintacto, energía compartida con ultimate. H08/H09/H10/H19/H22 |
+| D-025 | APROBADA como regla; tiempos provisionales | WASD, dash WW/AA/SS/DD misma tecla, cooldown y ventana configurables, no auto-repeat/parejas mixtas; disponible para todos. H05/H14/H22 |
+| D-026 | APROBADA con conflicto de etiquetas pendiente | 1/2/3 equipa, repetir guarda, otro slot cambia directo. Separar slot/etiqueta/arma/restricción; tres armas cualesquiera sigue vigente. P-016. H07/H18/H22 |
+
+Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
+
+Ultimates conservan D-009: Dead Eye global 50%/jugador normal, Aimbot cabezas visibles/asistencia sin auto-fire, Overdrive firearms. Duración 6 s a100/10 s a150 e interpolación son **PROVISIONAL_VALUE / PENDING_PLAYTEST**; solo escala duración. Firmware sigue D-006 (USB/hasta respec), sin perks nuevos inventados.
+
+## Pendientes y resoluciones
+
+| ID | Estado | Contenido y puerta |
+|---|---|---|
+| P-001 | PENDIENTE / PENDING_PLAYTEST | Daño/HP enemigos, curación, regeneración, ultimates, dash, dificultad; las tasas anteriores no son balance final |
+| P-002 | PENDIENTE | Lista/costes/efectos/dependencias de perks, economía; doce nodos y tres ramas siguen propuesta |
+| P-003 | PENDIENTE | Objetivos, densidad, rutas detalladas, patrones boss y parámetros IA |
+| P-004 | PENDIENTE parcialmente | Arte final, licencias individuales, presupuestos, animaciones; D-017 dirección y D-019–D-021 referencia experimental ya aprobadas; pipeline Blender H04 validada |
+| P-005 | PENDIENTE parcialmente | Controles restantes, UX, guardado intermedio/recuperación; E exclusiva resuelta, tecla interacción P-015 |
+| P-006 | PENDIENTE | Compatibilidades específicas, parry/proyectiles, bonus Overdrive y parámetros Aimbot |
+| P-007 | PENDIENTE | Exclusiones restantes y DoD final del MVP; shurikens jugables ya excluidos por D-010 |
+| P-008 | RESUELTA APROBADA | Firmware solo después de instalar USB, D-006 |
+| P-009 | RESUELTA APROBADA | Alarma general bloquea sigilo resto del intento, D-003 |
+| P-010 | RESUELTA APROBADA | Dead Eye global con cualquier arma; compatibilidad solo bonus, D-009 |
+| P-011 | PENDIENTE | Duplicados del mismo modelo y loadout incompleto; H07/H18, tests de robustez no deciden política |
+| P-012 | RESUELTA | Matriz de tres dificultades a partir de H13; H05/H10 usan perfiles existentes |
+| P-013 | RESUELTA parcialmente / PENDIENTE | Ascensor NO cambia HP (D-024); retorno entre plantas sigue pendiente H19 |
+| P-014 | SUPERSEDED para extracción | Liberar F/mínimo/energía temporal ya no son requisito H08. Tiempos/disparador de remates pasan a P-017 |
+| P-015 | PENDIENTE / PENDING_APPROVAL | Tecla de interacción dedicada distinta de E; no asignar R/F ni precedencia contextual por intuición. Bloquea binding/prueba manual afectada en B1 |
+| P-016 | PENDIENTE / PENDING_APPROVAL | Etiquetas melee/primaria/secundaria frente a tres armas cualesquiera. No imponer restricciones mientras no decida el creador |
+| P-017 | PENDIENTE / PENDING_APPROVAL | Adaptar remates de D-007 sin extracción: disparador, tiempos, protección y estados; no borrarlos ni implementarlos automáticamente |
+
+## Trazabilidad histórica
+
+Los IDs D001–D004 sin guion pertenecen al registro de 2026-11-19 y no equivalen por número a D-001…: [original](history/pre_h02/docs/DECISIONES.md). D-003, D-006 y D-009 se revisaron expresamente en H02; D-017 precisó arte; D-018 limitó muestras a prueba; D-019 perfil; D-020 HomeVideo; D-021 cerró H04. [Manifiesto v2.1](history/pre_pipeline_v2_1/manifest.json) conserva toda la redacción previa, incluidas fórmulas/pendientes sustituidos. No reescribir su historial de pruebas.

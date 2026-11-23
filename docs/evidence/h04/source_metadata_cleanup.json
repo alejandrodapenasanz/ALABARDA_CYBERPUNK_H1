@@ -1,0 +1,17 @@
+{
+  "label": "source_metadata_cleanup",
+  "date": "2026-11-22T20:14:05.098849+01:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "C:/dev/tools/blender-4.5.3-windows-x64/blender.exe",
+    "--background",
+    "--factory-startup",
+    "--python",
+    "tools/h04/sanitize_sources.py"
+  ],
+  "powershell": "& 'C:/dev/tools/blender-4.5.3-windows-x64/blender.exe' '--background' '--factory-startup' '--python' 'tools/h04/sanitize_sources.py'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

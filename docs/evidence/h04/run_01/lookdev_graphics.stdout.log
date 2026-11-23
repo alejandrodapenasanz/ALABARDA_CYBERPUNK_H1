@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 621.24 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4050 Laptop GPU
+
+H04_GRAPHICS atmospheric mean_ms=2.26694444444444
+H04_GRAPHICS neutral mean_ms=2.29454444444444
+H04_GRAPHICS alarm mean_ms=2.35416111111111
+H04_GRAPHICS no_shadows mean_ms=1.46657222222222
+H04_GRAPHICS atmospheric_repeat mean_ms=2.39332777777778

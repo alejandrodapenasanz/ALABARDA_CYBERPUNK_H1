@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-22",
+  "repository": "https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1",
+  "visibility": "PUBLIC",
+  "branch": "main",
+  "commit": "5f03fb3b751e7037c3d742f5fd661df61dcec99a",
+  "previous_commit": "9153287449f1521b864ad7818d19a8b9914b6c51",
+  "push_exit_code": 0,
+  "remote_head_matches": true,
+  "public_worktree_clean": true,
+  "public_suite": "public_readability",
+  "public_suite_exit_code": 0,
+  "public_suite_status": "PASS",
+  "local_suite": "run_05_readability",
+  "local_suite_exit_code": 0,
+  "local_suite_status": "PASS",
+  "malorian_files_published": false,
+  "original_workspace_index_preserved": true,
+  "manual_approval": "PENDING"
+}

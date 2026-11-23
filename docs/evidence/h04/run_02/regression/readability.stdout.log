@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 621.24 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4050 Laptop GPU
+
+READABILITY {"changed_pixels":143983,"failures":[],"layouts":[{"fonts":false,"view":"[P: (300.0, 73.0), S: (980.0, 589.0)]","window":"(1280, 720)"},{"fonts":true,"view":"[P: (300.0, 73.0), S: (980.0, 434.0)]","window":"(1280, 720)"},{"fonts":false,"view":"[P: (300.0, 73.0), S: (980.0, 589.0)]","window":"(960, 540)"},{"fonts":true,"view":"[P: (300.0, 73.0), S: (980.0, 434.0)]","window":"(960, 540)"}],"limits":"Pixel difference is technical evidence, not human artistic acceptance; runtime captures are unedited.","retro_mean_absolute_rgb_0_255":3.75576618833595,"sampled_pixels":144060,"status":"PASS","viewmodel":"Malorian / prueba local","zero_intensity_changed_pixels":0}

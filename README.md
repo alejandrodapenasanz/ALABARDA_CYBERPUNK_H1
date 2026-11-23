@@ -1,21 +1,17 @@
-# ALABARDA CYBERPUNK — H04
+# ALABARDA CYBERPUNK — Godot
 
-Godot 4.7.2 / Windows / GL Compatibility. **H1–H04 closed with creator approval, 2026-11-22.** H04 develops the existing Modern PSX reference room with a reusable industrial kit, materials, HomeVideo signs and three lighting conditions. Assets remain experimental.
+**Descarga para otro PC:** usa la rama **main** del repositorio y sigue [GITHUB_TRANSFER](docs/GITHUB_TRANSFER.md). Incluye la documentación completa, prompts, herramientas y recursos de prueba redistribuibles. `python -X utf8 tools/pipeline/verify_checkout.py` comprueba la copia antes de editar. B1 sigue sin implementar.
 
-Open `project.godot` in Godot 4.7.2. **F5** starts the H1 gameplay prototype. To view H04, open `scenes/art_reference/modern_psx_lab.tscn` and press **F6**.
+**2026-11-22:** H1–H04 cerrados y aprobados. Migración documental pipeline v2.1 preparada para revisión, **sin aprobación de esta entrega**; B1 NOT_STARTED, sin programar. [Handoff](docs/HANDOFF.md), [informe](docs/PIPELINE_MIGRATION_REPORT.md).
 
-- **1–4:** general, CRT, silhouette, arms rig. **A:** arm animation; **M:** inspection motion.
-- **L:** atmospheric → neutral → static alarm light → atmospheric.
-- **T/R/X/S/G:** filtering/internal resolution/retro/shadows/fog. **B:** retro split comparison.
-- **F:** font comparison. **0:** approved defaults. **Esc:** exit lab.
+Importa `project.godot` con Godot **4.7.2 estándar**. **F5 inicia la greybox H1**. Para arte abre `scenes/art_reference/modern_psx_lab.tscn` y pulsa **F6**: laboratorio H04, kit propio y muestras experimentales. L cambia luz, 1–4 cámara, A anima brazos, F compara fuentes, X/B retro, 0 restaura D-019. Malorian solo local/opcional, publicación con fallback propio; assets de prueba, no finales.
 
-Defaults: nearest+mipmaps, atmospheric light, internal 1280×720, shadows on, retro/fog off. HomeVideo physical signs use linear minification to preserve strokes. HUD remains outside the 3D effect.
+H1 actual: WASD, ratón/clic disparo, Shift sprint, Espacio salto, Q+dirección dash, Esc libera cursor, R repone blancos tras vencer cinco. HP100/respawn; no energía, E ni nuevos controles todavía. [Arquitectura real](docs/ARCHITECTURE.md).
 
-Public viewmodel is an original abstract placeholder. Optional local experimental assets are excluded. The lab has no combat, AI or interactive terminal; H1 gameplay remains intact. H05 has not started.
+## Desarrollo siguiente
 
-```powershell
-# GODOT_BIN points to the Godot 4.7.2 console executable. Python 3.11+ required.
-python -X utf8 tools/h04/run_tests.py --godot $env:GODOT_BIN --output docs/evidence/h04/new_run --graphics
-```
+Leer [AGENTS](AGENTS.md) y [workflow Claude → Codex](docs/DEVELOPMENT_WORKFLOW.md). Claude programa sin Godot/Blender, Codex valida SHA exacto, creador aprueba. [Roadmap](docs/ROADMAP.md), [prompts](docs/PROMPTS_INDEX.md), [contrato de dos barras](docs/HEALTH_ENERGY_CONTRACT.md) y [controles futuros](docs/CONTROLS.md). La existencia de estos documentos no autoriza B1.
 
-Blender is only needed to regenerate the authored kit. [Architecture and pipeline](docs/ARCHITECTURE.md), [asset provenance](docs/ASSET_REGISTRY.md), [validation](docs/VALIDATION.md), [handoff](docs/HANDOFF.md), [third-party notices](THIRD_PARTY_NOTICES.md).
+## Verificación
+
+Comandos y capacidades en [TEST_STRATEGY](docs/TEST_STRATEGY.md); resultados reales en [VALIDATION](docs/VALIDATION.md). Históricos H1–H04 no certifican el sistema nuevo. Fuente de gameplay vigente DECISIONS/GAME_DESIGN; GDD y paquetes públicos H03/H04 son snapshots históricos. La copia pública resumida no sustituye la documentación completa para desarrollar entre PC.

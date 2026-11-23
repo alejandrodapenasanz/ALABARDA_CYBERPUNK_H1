@@ -1,0 +1,8 @@
+MARKDOWN 83; HISTORY_HASHES 48; RUNTIME_HASHES 8
+RESOURCES 6; DEPENDENCIES 5; LINKS 168; FILE_REFS 1217; ID_REFS 257
+FAIL DUPLICATE_ID D-006
+FAIL DUPLICATE_ID D-003
+FAIL DUPLICATE_ID D-009
+FAIL FILE_MISSING docs/TEST_STRATEGY.md -> verify_migration.py
+RESULT errors=4 declared_or_historical_notices=18
+Detalle: docs/evidence/h02/inventory_and_references.json
