@@ -1,0 +1,129 @@
+# TEST_HANDOFF — B1 (H05, H06)
+
+Documento autónomo para validar B1 en el PC Codex y para la revisión del creador. Los IDs coinciden con [TEST_MANIFEST.json](TEST_MANIFEST.json) y [TEST_RESULTS.md](TEST_RESULTS.md). **Ninguna prueba Godot se ha ejecutado**: el PC Claude no tiene Godot ni Blender.
+
+## A. Identificación
+
+| Campo | Valor |
+|---|---|
+| Lote / hitos | B1 · H05 Núcleo de jugador, interacción y movimiento · H06 Daño, salud, hitzones y estados de ataque |
+| Fecha / autor | 2026-11-23 · Claude (PC Claude, sin Godot/Blender) |
+| Rama | `B1` (creada desde `main`, D-028) |
+| **Candidato C (código y tests a probar)** | `bfe7071b63e756200f4e1ea94160175bc6294644` |
+| Paquete P | commit siguiente en `B1` que añade `validation/B01/`; su SHA se comunica en el mensaje de entrega (un fichero no puede contener su propio SHA) |
+| Commit aprobado anterior | `796255711fd04c4e6a6d061fba718e86db8cf099` (`main`, migración v2.1 aprobada, D-028) |
+| Estado | `INTEGRATION_READY` (H05 y H06 `CODE_READY`; nada `VALIDATED` ni `APPROVED`) |
+| Entorno esperado | Windows 11 · Godot 4.7.2.stable.official.ed1daf0bf (console) · GL Compatibility · Python 3.11+ · GdUnit4 6.2.3 vendorizado · Blender no necesario |
+| Sistemas afectados | Nuevo jugador B1, input map en runtime, salud/daño/hitboxes, arma fixture, sandbox B1. **H1 sin cambios** |
+
+Commits por hito dentro de `B1`: `7e293e3` H05 · `8cc5996` H06 · `bfe7071` candidato (runner, documentación técnica, manifest portable).
+
+## B. Funcionalidad entregada
+
+En `scenes/b1/b1_sandbox.tscn` (F6) el jugador puede:
+
+- **Moverse** con WASD, **esprintar** con Shift, **saltar** con Espacio y mirar con el ratón (tope vertical ±1,45 rad). Esc libera el ratón; clic lo recaptura.
+- **Hacer dash con doble toque** de la misma tecla (WW adelante, SS atrás, AA izquierda, DD derecha, relativo a la vista). Ventana 0,25 s (propuesta), duración 0,16 s, cooldown 1 s. Un dash por par; la repetición automática del teclado, las parejas mixtas (WA, WD…) y los pares durante el cooldown no hacen dash. Una pared detiene el dash.
+- **Interactuar con F** con lo que tiene delante (rayo de 2,5 m desde la cámara; las paredes bloquean). **E nunca interactúa**: queda registrada como acción `heal` reservada para H08 y en B1 no hace nada (el sandbox muestra un aviso).
+- **Recibir daño** (zona roja 10/s, proyectiles de torreta 8) con una **barra de salud roja 0–100**. Tras **5 s sin daño** regenera **5 HP/s** hasta 100; un nuevo daño reinicia la espera. Valores provisionales.
+- **Morir una sola vez**: a 0 HP se bloquean movimiento, dash, interacción y disparo, no hay regeneración; el sandbox se reinicia a los 3 s (solo sandbox).
+- **Disparar** un arma de prueba hitscan (35 de daño, cargador 12, hipótesis H1/H03) contra blancos con zona de **cuerpo** (x1) y **cabeza** (x2,0 provisional); un blanco tanque tiene 100 de **armadura** que se consume antes que la salud. La cadencia la marcan las animaciones (ataque 0,10 s con impacto a 0,03 s, recuperación 0,13 s); al vaciar el cargador **recarga sola** (0,9 s) porque la recarga no tiene tecla aprobada.
+
+Separación: **implementado** = todo lo anterior. **Fixture/placeholder** = arma de prueba, blancos estáticos, zona de daño, torreta, consola, geometría greybox, recarga automática, reinicio del sandbox. **Futuro (no implementado)** = energía y curación con E (H08), seis armas y slots 1/2/3 (H07), ultimates (H09), enemigos con IA (H10), respawn/contrato (H19), tecla de recarga.
+
+## C. Archivos
+
+Nuevos (H05): `scripts/core/physics_layers.gd`, `scripts/player/{input_actions,double_tap_detector,dash_controller,player_movement_config,b1_player}.gd`, `resources/player/movement_default.tres`, `scenes/player/b1_player.tscn`, `scripts/interaction/interactable_switch.gd`, `scripts/b1/b1_sandbox.gd`, `scenes/b1/b1_sandbox.tscn`, `tests/b1/support/test_world.gd`, `tests/b1/unit/{double_tap,dash_and_config}_test.gd`, `tests/b1/integration/player_movement_test.gd`.
+
+Nuevos (H06): `scripts/combat/{damage_info,health_config,health_component,hitbox,hitscan,damage_projectile,attack_state_machine,fixture_weapon,target_dummy}.gd`, `resources/combat/player_health.tres`, `scripts/b1/sandbox_hazards.gd`, `tests/b1/unit/health_component_test.gd`, `tests/b1/integration/combat_test.gd`. Modificados en H06: `scenes/player/b1_player.tscn`, `scripts/player/b1_player.gd`, `scripts/b1/b1_sandbox.gd`.
+
+Candidato: nuevo `tools/b1/run_tests.py`; modificados `docs/ARCHITECTURE.md` (sección B1 con rutas reales), `docs/CONTROLS.md`, `docs/BALANCE_PROVISIONAL.md` (ventana 0,25 s y cabeza x2,0 como propuestas), `docs/TEST_STRATEGY.md`, `README.md`, `tools/pipeline/checkout_manifest.json` (29 ficheros nuevos).
+
+Eliminados: ninguno. **No modificados**: `scenes/main.tscn`, `scripts/player.gd`, `scripts/enemy.gd`, `scripts/main.gd`, `project.godot`, H03/H04, assets, addons. Sin assets nuevos (todo con primitivas): no hay licencias que registrar.
+
+## D. Dependencias
+
+- Base: `main` en `7962557` (H1–H04 aprobados, D-027/D-028). GdUnit4 6.2.3 ya vendorizado. Ninguna dependencia nueva del juego.
+- El input map de B1 se registra en runtime (`InputActions.ensure_registered()`), no en `project.godot`, para no alterar H1.
+- Interfaces estables para B2: `HealthComponent.heal(amount) -> float` (HP efectivo), `set_regen_paused(source, paused)` (H08 usará `&"manual_heal"`), señales `damaged/died/health_changed`; `DamageInfo`; `Hitbox.receive_hit`; `AttackStateMachine` (estados y `hit_frame`); `B1Player.set_disabled`, `fire`, `take_damage`; acción `heal` (E) ya reservada.
+- Decisiones aplicadas: D-025 (dash), D-027 (F interactúa, E reservada). Pendientes que no bloquean B1: ventana del doble toque y multiplicador de cabeza (PENDING_PLAYTEST), tecla de recarga, P-017 remates.
+
+## E. Pruebas automáticas
+
+**Forma recomendada (un comando):** en un worktree limpio de C, `python -X utf8 tools/b1/run_tests.py --godot <ruta a Godot_v4.7.2-stable_win64_console.exe> --output <directorio nuevo fuera del candidato>`. Ejecuta B1-IMPORT, B1-UNIT, B1-INTEGRATION, B1-SMOKE y B1-REGRESSION, guarda logs/JSON/JUnit y escribe `summary.json`. Exit 0 solo si todo pasa.
+
+| ID | Tipo · crítico | Comando (cwd = raíz de C) | PASS | FAIL | Timeout | Depende |
+|---|---|---|---|---|---|---|
+| B1-STATIC | static · no | `python -X utf8 tools/pipeline/check_godot_static.py` | exit 0, `errors` vacío | error nuevo | 120 s | — |
+| B1-IMPORT | import · sí | `${GODOT_BIN} --headless --path . --editor --import --quit` | exit 0 sin SCRIPT ERROR/Parse Error/Failed to load | exit≠0, timeout o error de motor | 300 s | — |
+| B1-UNIT | unit · sí | `${GODOT_BIN} --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd -a res://tests/b1/unit --ignoreHeadlessMode -rd ${EVIDENCE_DIR}/b1_unit_reports` | exit 0, **37** testcase, 0 failure/error/skipped | cualquier fallo o recuento ≠ 37 | 300 s | IMPORT |
+| B1-INTEGRATION | integration · sí | igual con `-a res://tests/b1/integration` y `-rd ${EVIDENCE_DIR}/b1_integration_reports` | exit 0, **28** testcase, 0 failure/error/skipped | cualquier fallo o recuento ≠ 28 | 300 s | IMPORT |
+| B1-SMOKE | integration · sí | `${GODOT_BIN} --headless --path . --fixed-fps 60 --quit-after 600 res://scenes/b1/b1_sandbox.tscn` | exit 0 sin errores de motor | error/timeout | 180 s | IMPORT |
+| B1-REGRESSION | regression · sí | `python -X utf8 tools/h04/run_tests.py --godot ${GODOT_BIN} --output ${EVIDENCE_DIR}/regression` | `summary.json` PASS; `RESULT passed=34 failed=0 not_run=1` en H1 | cualquier entrada FAIL | 900 s | IMPORT |
+
+Cobertura de los tests (todos `NOT_RUN`):
+
+- `double_tap_test.gd` (10): CT-01 cuatro direcciones; CT-02 ventana lenta, límite inclusivo, parejas mixtas, mixta seguida de la misma tecla; CT-03 echo/soltar ignorados, tecla mantenida, triple toque = un dash; entradas inválidas y reloj hacia atrás.
+- `dash_and_config_test.gd` (10): duración, cooldown, dirección aplanada/validada, estado bloqueado sin consumir cooldown, delta inválido; config por defecto válida e inválidas rechazadas; acciones con teclas aprobadas; E≠F; sin binding inventado para recarga/ultimate/pausa.
+- `health_component_test.gd` (17): SB-01, SB-02, SB-03 (incluye pasos partidos = paso grande), SB-04, SB-05, SB-06/SB-26, SB-07, `heal` efectivo, **contrato de pausa H08 con doble** (20+25, nunca 20+30; reanuda sin nueva espera), fuentes de pausa independientes, armadura y rotura única, absorción parcial, vulnerabilidad/inmunidad/multiplicador inválido/invulnerable, varios impactos con muerte única, `DamageInfo`, recurso de salud y aplicación de config.
+- `player_movement_test.gd` (14): CT-05 suelo, W con input real, sprint, salto, cámara; CT-01 dirección por acción y por yaw, doble toque con eventos reales; CT-02; CT-03; CT-04 pared y estado bloqueado; CT-06 F frente a E junto a la consola, pared y distancia.
+- `combat_test.gd` (14): cabeza x2/cuerpo, pared bloquea hitscan, armadura y hitboxes desactivadas al morir, proyectil impacta una vez, proyectil rápido no atraviesa pared fina, caducidad, ciclo de ataque por animación, sin cadencia sin avance de animación, recarga por animación, interrupción sin impacto, hitscan en el frame de impacto, el jugador no se daña a sí mismo, proyectil + regeneración del jugador, muerte única que bloquea el control.
+
+> Recuento: 10 + 10 + 17 = 37 unitarios; 14 + 14 = 28 de integración. El runner compara el recuento JUnit con los `func test_` declarados.
+
+## F. Pruebas manuales Godot
+
+Todas en `scenes/b1/b1_sandbox.tscn`: abrir la escena en el editor y pulsar **F6** (F5 sigue lanzando H1). Fichas completas en el manifest; resumen:
+
+| ID | Quién | Qué | Pasos clave | Esperado / fallo |
+|---|---|---|---|---|
+| M-01-DASH | Creador | CT-01..03 y sensación de la ventana 0,25 s | 1. Caminar suelto y con W mantenida 5 s. 2. WW, AA, SS, DD. 3. W luego A. 4. Par durante cooldown. 5. Girar 90° y WW. 6. Valorar la ventana | Un dash por par en la dirección de la vista; nunca al caminar / dash accidental o doble |
+| M-02-WALL | Codex | CT-04 | Dash repetido contra el muro gris (10, 1.5, -2) y un muro perimetral | Se detiene y vuelve a SUELO / atraviesa o se queda en DASH |
+| M-03-MOVE | Creador | CT-05 | Marcas de 1 m andando y con Shift, salto al bloque bajo, tope de cámara | Igual o mejor que H1 / tirones o cámara invertida |
+| M-04-INTERACT | Codex | CT-06 / SB-15 | Ante la consola (-4, 1.4, 4): E sin efecto + aviso; F la pone verde; a más de 2,5 m F no hace nada | F alterna, E nunca / E activa |
+| M-05-REGEN | Codex | SB-02..05 | Zona roja hasta 70, salir, cronometrar REGEN SÍ (~5 s), subir a 100, reentrar a mitad | 5 s de espera, ~6 s de 70 a 100, reinicio con daño / regenera antes o supera 100 |
+| M-06-COMBAT | Creador | Hitzones, armadura, cadencia, recarga | Cuerpo y cabeza al blanco de 60; vaciar el cargador; tanque | -35/-70, ARM antes que HP, recarga a los 12 disparos / zona errónea o sin recarga |
+| M-07-DEATH | Codex | SB-06/SB-26 | Torreta (15, 0.6, 15) + zona roja hasta 0; intentar moverse, disparar y F | HAS MUERTO una vez, BLOQUEADO, sin regenerar, reinicio a 3 s / se mueve o dispara muerto |
+| M-08-H1 | Creador | Regresión H1 | F5: Q dash, cinco blancos, R | Igual que antes de B1 |
+
+Captura o nota en `evidence/attempt_01/manual/<ID>.md|png`. Sin captura real: `NOT_RUN` con motivo.
+
+## G. Regresiones
+
+- **H1** (`scenes/main.tscn`): no se ha tocado ningún fichero suyo; B1-REGRESSION ejecuta `tests/h02/h1_probe.gd --edges` y exige `passed=34 failed=0 not_run=1`. Q dash, R y respawn de H1 siguen siendo comportamiento legado válido solo en H1.
+- **H03**: suites unitarias/integración, control negativo (exit 100 esperado) e integridad, vía `tools/h04/run_tests.py`.
+- **H04**: integración de lookdev (4 tests) e integridad del kit Blender/GLB.
+- Riesgo de interferencia bajo: B1 registra acciones de input nuevas en runtime (no existen en H1) y usa capas físicas 2–4 solo en sus escenas.
+
+## H. Problemas conocidos y límites
+
+- Sin ejecución en motor: **todo puede fallar en Godot** aunque el análisis estático pase. Riesgos concretos a vigilar: emisión de `animation_finished` dentro de `AnimationPlayer.advance()` en modo manual (tests de `combat_test.gd`), entrega de eventos con `Input.parse_input_event` en GdUnit headless, posibles avisos del analizador de Godot no detectados por gdtoolkit.
+- Fixtures, no producto: arma de prueba y blancos con primitivas; geometría greybox; recarga automática; reinicio del sandbox a los 3 s.
+- Valores provisionales (PENDING_PLAYTEST): ventana 0,25 s, cabeza x2,0, velocidades/dash de H1, regeneración 5 s / 5 HP/s.
+- El salto se repite si se mantiene Espacio (igual que H1). El dash aéreo está permitido (`allow_air_dash = true`, como H1); cambiarlo es una decisión de diseño.
+- Worktree en Windows: usar `git -c core.longpaths=true worktree add …`; sin esa opción el checkout falla por rutas largas de assets (comprobado en el PC Claude).
+- Sin bugs abiertos (no hay ejecución que los revele). Ningún BUG_REPORT.
+
+## I. Checklist del creador
+
+- [ ] M-01 dash: ¿la ventana de 0,25 s evita dashes accidentales y responde al doble toque?
+- [ ] M-03 movimiento, sprint, salto y cámara se sienten bien.
+- [ ] M-06 disparo: lectura de impacto cabeza/cuerpo, armadura, cadencia por animación, recarga automática aceptable como provisional.
+- [ ] HUD: barra roja de salud legible; textos de estado útiles para probar.
+- [ ] Regeneración 5 s / 5 HP/s razonable como punto de partida.
+- [ ] M-08 H1 sin cambios.
+- [ ] Aceptación o rechazo expreso con fecha y SHA (no lo rellena ninguna IA).
+
+## J. Aceptación
+
+- **VALIDATED** (Codex): B1-IMPORT, B1-UNIT (37/37), B1-INTEGRATION (28/28), B1-SMOKE y B1-REGRESSION en PASS sobre `bfe7071…` exacto; M-02, M-04, M-05 y M-07 observados sin fallo; sin regresiones críticas.
+- **APPROVED** (creador): además M-01, M-03, M-06 y M-08 aceptados expresamente.
+- Bloquea VALIDATED: cualquier test crítico FAIL o NOT_RUN, SHA distinto o regresión H1/H03/H04. Bloquea APPROVED: rechazo de sensación/legibilidad o pendientes que el creador considere necesarios.
+- Fallos → `VALIDATION_FAILED` con BUG_REPORT; correcciones pequeñas y locales puede hacerlas Codex en `B1` con nuevo SHA; estructurales vuelven a Claude.
+
+## K. Recuperación
+
+- Último aprobado: `796255711fd04c4e6a6d061fba718e86db8cf099` (`main`). Para comparar sin perder trabajo: `git -c core.longpaths=true worktree add --detach <dir-nuevo> 796255711fd04c4e6a6d061fba718e86db8cf099`.
+- Aislar un fallo: `tools/b1/run_tests.py --skip-regression` repite solo B1; cada suite GdUnit puede lanzarse sola con su comando de E.
+- B1 no guarda partidas ni datos persistentes: no hay saves que respaldar.
+- Tras un fix: nuevo commit en `B1`, nuevo intento en un directorio de evidencia nuevo, repetir el test del bug y B1-REGRESSION. No usar `reset --hard`, `clean` ni force-push.

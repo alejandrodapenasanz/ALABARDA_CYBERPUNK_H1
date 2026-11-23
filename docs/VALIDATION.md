@@ -1,3 +1,7 @@
+# B1 (H05, H06) · INTEGRATION_READY · 2026-11-23
+
+Claude programó B1 en la rama `B1` sin Godot. Candidato C `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete [validation/B01](../validation/B01/TEST_HANDOFF.md). En un worktree limpio de C: `check_godot_static.py` PASS (42 .gd, 12 .tscn/.tres), `verify_checkout.py` PASS (2871 ficheros), `verify_integrity.py` PASS (H1/H03/H04 intactos), `validate_manifest.py --ready` PASS. **B1-IMPORT, B1-UNIT (37), B1-INTEGRATION (28), B1-SMOKE, B1-REGRESSION y M-01…M-08: NOT_RUN** hasta Codex/creador. Resultados históricos posteriores intactos.
+
 # Decisiones D-027/D-028 y validador estático · 2026-11-23
 
 **Origen:** decisiones expresas del creador en conversación con Claude (PC Claude, sin Godot ni Blender). Solo documentación y herramientas del pipeline; no se modifican scripts de juego, escenas, Resources, assets ni tests Godot.

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "portable-development-checkout",
+  "runtime_only": false,
+  "checked_files": 2871,
+  "active_local_links": 690,
+  "declared_exclusions": 61,
+  "errors": [],
+  "note": "Checks the recorded transfer baseline, not approval of future gameplay or current work after edits."
+}

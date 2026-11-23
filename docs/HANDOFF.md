@@ -2,6 +2,20 @@
 
 **2026-11-23: entrega documental APROBADA por el creador (D-027/D-028). B1 NOT_STARTED; se desarrollará en la rama `B1` creada desde `main`.** H1–H04 conservan sus aprobaciones; no se programa gameplay ni se repiten H03/H04 durante esta tarea. [Informe completo](PIPELINE_MIGRATION_REPORT.md), [validación](VALIDATION.md), [documentos anteriores](history/pre_pipeline_v2_1/manifest.json).
 
+## Estado actual · B1 INTEGRATION_READY · 2026-11-23
+
+Claude ha programado B1 en la rama `B1`: H05 (`7e293e3`) y H06 (`8cc5996`) en `CODE_READY`; candidato **C = `bfe7071b63e756200f4e1ea94160175bc6294644`**; paquete en [validation/B01](../validation/B01/TEST_HANDOFF.md). Solo se ha ejecutado análisis estático y pipeline (PASS); **todos los tests Godot NOT_RUN**. Nada VALIDATED ni APPROVED. Sandbox jugable: `scenes/b1/b1_sandbox.tscn` (F6); F5 sigue siendo H1 sin cambios.
+
+**Siguiente paso, PC Codex:**
+
+1. `git fetch origin` y `git -c core.longpaths=true worktree add --detach <dir-nuevo> bfe7071b63e756200f4e1ea94160175bc6294644` (sin longpaths falla por rutas largas de assets).
+2. Leer `AGENTS.md`, [CODEX_VALIDATE_BATCH](../prompts/_templates/CODEX_VALIDATE_BATCH.md) y [TEST_HANDOFF B1](../validation/B01/TEST_HANDOFF.md).
+3. Desde la copia de `B1` (con el paquete): `python -X utf8 tools/pipeline/validate_manifest.py validation/B01/TEST_MANIFEST.json --ready --candidate <dir-nuevo>`.
+4. En `<dir-nuevo>`: `python -X utf8 tools/b1/run_tests.py --godot <Godot_v4.7.2-stable_win64_console.exe> --output <evidencia nueva fuera del candidato>`.
+5. Pruebas manuales M-02, M-04, M-05 y M-07; registrar en `validation/B01/TEST_RESULTS.md` (intento 01). Fallos pequeños y locales: fix en `B1` con nuevo SHA; estructurales: BUG_REPORT para Claude.
+
+**Después, creador:** M-01, M-03, M-06 y M-08 y checklist I del handoff. Con VALIDATED + APPROVED, fusionar `B1` en `main`, repetir la verificación en `main` y crear `B2` desde ese `main` (D-028).
+
 ## Qué está preparado
 
 AGENTS para ambos roles; [workflow](DEVELOPMENT_WORKFLOW.md) con lotes/estados/Git/SHA;23 prompts individuales, [catálogo B0–B8](../prompts/BATCH_PROMPTS.md); plantillas Claude implementar/fix, Codex validar y handoff/manifest/resultados/bug. Schema versionado y verificador de paquetes; no ejecutor universal de comandos. [Índice](PROMPTS_INDEX.md).
