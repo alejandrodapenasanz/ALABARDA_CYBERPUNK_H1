@@ -2,13 +2,13 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H07 — Seis armas y loadout libre
 
-**Revisión pipeline v2.1 · 2026-11-22 · B2 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H06 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
+**Revisión pipeline v2.1 · 2026-11-22 · B2 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H06 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
 
 ## Objetivo funcional
 
 Katana auto-deflect equipada (limitar a proyectiles compatibles definidos), pistola silenciada, rifle con scope, espada-sierra, revólver, escopeta 1/2 cañones; cargadores y reserva ilimitada; recargas animadas; tres slots de cualquier arma, iniciales katana/pistola/escopeta. Implementar data-driven y viewmodels provisionales con feedback.
 
-1/2/3: desde desarmado equipa, mismo slot guarda, otro cambia directo respetando animación. Separar slot/etiqueta/asignación/restricciones; NO imponer categorías. P-016 etiquetas, P-011 duplicados/vacíos y P-006 parry/bonus requieren decisión para sus componentes.
+1/2/3: desde desarmado equipa, mismo slot guarda, otro cambia directo respetando animación. Separar slot y arma asignada; NO imponer categorías: 1/2/3 son slots libres, se admite cualquier combinación, incluidas tres armas cuerpo a cuerpo (D-027). P-011 duplicados/vacíos y P-006 parry/bonus requieren decisión para sus componentes.
 
 ## Roles, checkpoint y alcance
 

@@ -1,6 +1,6 @@
 # Índice de prompts — v2.1
 
-**2026-11-22.** Exactamente23 prompts H02–H24, mismos IDs/rutas. H08 conserva EXTRACCION en el nombre por compatibilidad; su contenido vigente es energía pasiva/bajas/E. No existe PROMPTS_TODOS.md recibido; [BATCH_PROMPTS](../prompts/BATCH_PROMPTS.md) agrupa por enlaces, sin una segunda copia contradictoria. B1 no iniciado.
+**2026-11-22.** Exactamente23 prompts H02–H24, mismos IDs/rutas. H08 conserva EXTRACCION en el nombre por compatibilidad; su contenido vigente es energía por bajas/E. No existe PROMPTS_TODOS.md recibido; [BATCH_PROMPTS](../prompts/BATCH_PROMPTS.md) agrupa por enlaces, sin una segunda copia contradictoria. B1 no iniciado.
 
 ## Operación
 
@@ -20,7 +20,7 @@
 - [H05 — Núcleo de jugador, interacción y movimiento](../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md) · B1
 - [H06 — Daño, salud, hitzones y estados de ataque](../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md) · B1
 - [H07 — Seis armas y loadout libre](../prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md) · B2
-- [H08 — Energía pasiva, bajas y curación manual con E](../prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md) · B2
+- [H08 — Energía por bajas y curación manual con E](../prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md) · B2
 - [H09 — Tres ultimates independientes](../prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md) · B2
 - [H10 — Enemigos base: tres arquetipos y patrullas](../prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md) · B3
 - [H11 — Sigilo: memoria, búsqueda y retorno](../prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md) · B3

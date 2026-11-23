@@ -1,5 +1,5 @@
 # MVP_SCOPE — Vertical slice contractual
-**Versión:** 1.0 · 2026-11-22 · migración pendiente de validación; alcance final P-007.
+**Versión:** 1.0 · 2026-11-22 · migración aprobada por el creador 2026-11-23 (D-028); alcance final P-007.
 
 ## En alcance (APROBADO)
 - PC/Windows, Godot 4, FPS 3D; estética consistente **Modern PSX / Retro Industrial Cyberpunk** según D-017 y [ART_BIBLE](ART_BIBLE.md): identidad retro con legibilidad moderna, sin emulación literal de PS1. Efectos retro potencialmente perjudiciales configurables o desactivables.
@@ -8,7 +8,7 @@
 - Seis armas: katana, pistola silenciada, rifle silenciado con mira; espada-sierra, revólver potente, escopeta doble cañón con disparo de uno o ambos cañones.
 - Munición de reserva ilimitada, cargadores y recargas con animaciones; ataques gobernados por recuperación/animación.
 - Katana con desvío automático de balas cuando está equipada (detalle preciso de proyectiles compatibles, efecto y balance PENDIENTE).
-- Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
+- Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
 - Ultimates: una equipada, activación con >=100 energía, consume toda la disponible; más energía aumenta **solo duración**. Dead Eye: mundo al 50 % y jugador a velocidad normal (inicial), con cualquier arma. Aimbot: ayuda intensa a apuntar a cabezas visibles sin disparo automático. Overdrive: potencia/cadencia de armas de fuego. Compatibilidad limita los efectos específicos de arma, no la ralentización global de Dead Eye (D-009 revisada).
 - Sigilo integral: patrullas de los tres arquetipos (squishy, tirador, tanque), visión, oído, investigación, búsqueda, retención de última posición, ruptura de contacto, retorno al sigilo; cámaras, alarmas y cadáveres detectables. Excepción D-003 revisada: tras una alarma general no se recupera sigilo durante ese intento.
 - Contrato Yakuza único: tres plantas (infiltración, combate, boss), jefe de dos fases con shurikens y cambio de patrones, objetivo principal y secundarios variados de sigilo/combate, bonus económicos.
@@ -34,7 +34,7 @@ Aclaración H02 (2026-11-20): la exclusión de shurikens jugables ya está aprob
 4. Economía: créditos iniciales, precios, recompensa base, objetivos y bonus, prevención de bloqueos de progreso.
 5. Armas: acciones de uso/recarga, comportamiento de escopeta doble modo y compatibilidades definitivas de cada ultimate.
 6. Arte: dirección Modern PSX aprobada; D-019–D-021 validan referencia experimental H03/H04; validar presupuestos finales por categoría, animaciones y rendimiento del contrato; selección/licencias y aprobación visual de assets/protagonistas siguen pendientes. Los números de ART_BIBLE son orientativos.
-7. UX: E exclusiva de curación; tecla distinta de interacción P-015, controles restantes, menú, selección dificultad, tutorial, accesibilidad mínima, guardado roto, salida del contrato.
+7. UX: E exclusiva de curación; interacción F (D-027), controles restantes, menú, selección dificultad, tutorial, accesibilidad mínima, guardado roto, salida del contrato.
 8. Política de autosave frente a compras entregadas pero no montadas; recuperación ante cierres inesperados.
 
 ## Definición de completado para el vertical slice (PROPUESTA)

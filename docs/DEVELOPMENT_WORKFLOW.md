@@ -1,6 +1,6 @@
 # Desarrollo por lotes — Claude → Codex → Claude → creador
 
-**v2.1 · 2026-11-22 · migración pendiente de validación del creador.** Fuente operativa principal, subordinada a [AGENTS](../AGENTS.md) y [DECISIONS](DECISIONS.md). No autoriza iniciar B1. [Roadmap](ROADMAP.md), [plantillas e índice](PROMPTS_INDEX.md). **Actualización2026-11-23:** el creador encarga publicar toda la versión actual para otro PC; [guía de transferencia](GITHUB_TRANSFER.md). Publicación autorizada, aprobación semántica no inferida.
+**v2.1 · 2026-11-22 · migración aprobada por el creador 2026-11-23 (D-028).** Fuente operativa principal, subordinada a [AGENTS](../AGENTS.md) y [DECISIONS](DECISIONS.md). No autoriza iniciar B1. [Roadmap](ROADMAP.md), [plantillas e índice](PROMPTS_INDEX.md). **Actualización2026-11-23:** el creador encarga publicar toda la versión actual para otro PC; [guía de transferencia](GITHUB_TRANSFER.md). Publicación autorizada, aprobación semántica no inferida.
 
 ## Responsabilidades y capacidad real
 
@@ -39,7 +39,7 @@ Cada hito tiene checkpoint propio y el lote agrega su estado. Dentro de un lote 
 
 ## Git: sincronización reproducible entre los dos PC
 
-Usar repositorio compartido completo para desarrollo; ramas `claude/B01`, `fix/B01/<bug>` y rama de paquetes `handoff/B01`. Estable contiene únicamente trabajo validado/aprobado. Nombres orientativos, SHA obligatorio. No reset, limpieza destructiva ni force-push para resolver divergencias. Conservar cambios ajenos y commits de correcciones.
+Usar repositorio compartido completo para desarrollo; **una rama por lote desde `main` (D-028)**: `B1`, `B2`… hasta `B8`. Claude programa en `B1` y entrega allí el candidato C y el commit de paquete P. Codex hace fetch de `B1` y valida C en el PC con Godot; las correcciones van en la misma rama (o en `B1-fix-<bug>` si conviene aislarlas) con nuevos SHA. Tras VALIDATED y APPROVED, el creador fusiona `B1` en `main`, repite la verificación sobre `main` y crea `B2` desde ese `main`. `main` (estable) contiene únicamente trabajo validado/aprobado. SHA obligatorio. No reset, limpieza destructiva ni force-push para resolver divergencias. Conservar cambios ajenos y commits de correcciones.
 
 **Situación de entrada:** carpeta de trabajo original en `h02-audit`, índice histórico y sin HEAD. NO ejecutar aquí `git add .` ni inventar un SHA. La copia pública H04 en `C:/dev/ALABARDA_CYBERPUNK_H03_PUBLIC` tiene commit `48f972c6ebeac2a4c7e6ab526e7dead43ad2baba`; contiene documentación pública resumida, no toda la documentación de desarrollo. No basta clonar esa publicación para dar a Claude todos los requisitos.
 

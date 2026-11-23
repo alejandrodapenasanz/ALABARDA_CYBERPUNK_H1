@@ -1,12 +1,12 @@
 Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. Después lee `docs/DEVELOPMENT_WORKFLOW.md`, `docs/ROADMAP.md`, `docs/DECISIONS.md`, `docs/GAME_DESIGN.md`, `docs/HEALTH_ENERGY_CONTRACT.md`, `docs/CONTROLS.md`, `docs/BALANCE_PROVISIONAL.md`, `docs/ARCHITECTURE.md`, `docs/TEST_STRATEGY.md`, `docs/VALIDATION.md` y `docs/HANDOFF.md`. Para visuales, ART_BIBLE y ASSET_REGISTRY íntegros. Inspecciona project.godot, escenas/scripts/tests y git status antes de editar; declara ausencias/capacidades. Este archivo solo se ejecuta con encargo expreso dentro del lote autorizado.
 
-# H08 — Energía pasiva, bajas y curación manual con E
+# H08 — Energía por bajas y curación manual con E
 
-**Revisión pipeline v2.1 · 2026-11-22 · B2 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H07 como checkpoint dentro del mismo lote.
+**Revisión pipeline v2.1 · 2026-11-22, actualizado 2026-11-23 con D-027 · B2 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H07 como checkpoint dentro del mismo lote.
 
 ## Objetivo funcional
 
-EnergySystem0–150 independiente de HealthSystem; regeneración8/s hasta100 incluso en combate, bajas+15 hasta150, cifras provisionales. E mantenida25 HP/s por25 energía/s provisional, coste proporcional al HP real, límites/muerte y pausa de autoHP; E exclusiva junto a objetos. HUD salud roja/energía azul. Eliminar dependencia de extracción F, no implementar protección ni remates pendientes P-017. Adaptar datos/tests H03 obsoletos de forma explícita. Integrar evento único de baja; usar fixtures mientras IA H10 no exista.
+EnergySystem 0–150 independiente de HealthSystem. **Sin regeneración pasiva de energía** (D-027): la energía solo sube por bajas confirmadas del jugador, +15 por baja hasta 150 (provisional), y por ascensor (fija 150 sin tocar HP; real en H19). La única regeneración pasiva del juego es la de salud (H06). E mantenida 25 HP/s por 25 energía/s provisional, coste proporcional al HP real, límites/muerte y pausa de autoHP; con energía 0, E no cura. E exclusiva de curación incluso junto a objetos; la interacción va en **F** (D-027, binding de H05) y ambas acciones no se solapan. HUD salud roja/energía azul. Eliminar dependencia de extracción F, no implementar protección ni remates pendientes P-017. Adaptar datos/tests H03 obsoletos de forma explícita. Integrar evento único de baja; usar fixtures mientras IA H10 no exista.
 
 
 
@@ -20,11 +20,11 @@ Fuera de alcance: hitos ajenos al lote, reinterpretar propuestas como aprobadas,
 
 ## Contrato transversal (no adelanta otros hitos)
 
-Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](../docs/HEALTH_ENERGY_CONTRACT.md).
+Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](../docs/HEALTH_ENERGY_CONTRACT.md).
 
 ## Pruebas a preparar y ejecutar en el entorno correspondiente
 
-- SB-08…SB-22 y SB-25…SB-29 aplicables: E continua/liberación/energía0/HP100/coste parcial/daño/pausa auto/interacción; energía0/99/100/150/151, pasiva y bajas,95→110/145→150, no sobrecarga, muerte, no F. SB-27 ascensor solo contrato/doble hasta H19. Regresión armas/H06. Integrar regeneración energética durante E con orden de eventos documentado.
+- SB-08…SB-22 y SB-25…SB-29 aplicables: E continua/liberación/energía0/HP100/coste parcial/daño/pausa auto/E frente a interacción F; energía0/99/100/150/151, ausencia de pasiva (el tiempo no sube energía), bajas 95→110/145→150, no sobrecarga, muerte, F no extrae energía. SB-27 ascensor solo contrato/doble hasta H19. Regresión armas/H06. Integrar baja durante E (ganancia y coste en el mismo frame) con orden de eventos documentado.
 - Cada caso del paquete: ID, propósito, fixture/datos, precondiciones, comando exacto o pasos numerados, cwd, esperado, PASS/FAIL, timeout, dependencias, entorno y evidencia. No basta enumerar nombres de tests.
 - Claude: revisión estática/documental ejecutada se registra como tal; tests Godot NOT_RUN. Codex: importación headless, suites pertinentes, logs/JUnit y regresiones existentes sobre el commit pedido según TEST_STRATEGY. No atribuir PASS por haber escrito un test.
 - Manual: escena exacta, cómo abrir/ejecutar, controles, estado inicial, pasos, resultado/fallo observable, evidencia y repetición. Gameplay/arte/performance requieren motor/ventana y revisión humana, no solo headless.

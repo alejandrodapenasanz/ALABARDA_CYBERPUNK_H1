@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "purpose": "Known, accepted findings of check_godot_static.py on the approved H04 baseline. Only NEW findings fail. Do not add entries to hide a real bug: each entry needs a reason.",
+  "accepted": [
+    {"prefix": "scripts/art_reference/lab_world.gd: missing res://resources/local_experiments/malorian/", "reason": "Malorian is optional and local only, excluded from the public repo; the lab has an own fallback (AGENTS §6, ASSET_REGISTRY)."},
+    {"prefix": "tests/h03/unit/balance_test.gd: missing res://resources/balance/does_not_exist.tres", "reason": "Intentional negative test: loading a missing profile must fail safely."},
+    {"prefix": "assets/CRTVHS_GodotFiles/CRTVHS/Scenes/", "reason": "Third-party A-002: old Godot format=2 sample scenes with foreign res://CRTVHS paths, not used; the glTF is used instead (ASSET_REGISTRY A-002)."}
+  ]
+}

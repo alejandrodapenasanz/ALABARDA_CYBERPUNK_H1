@@ -2,11 +2,11 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H05 — Núcleo de jugador, interacción y movimiento
 
-**Revisión pipeline v2.1 · 2026-11-22 · B1 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H04 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
+**Revisión pipeline v2.1 · 2026-11-22 · B1 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H04 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
 
 ## Objetivo funcional
 
-Separar CharacterBody3D, cámara, acciones y movimiento; sprint, salto, colisiones y dash WW/AA/SS/DD. Ventana/cooldown configurables, un dash por par de la misma tecla, no parejas mixtas ni auto-repeat. Conservar movimiento normal y bloquear estados incompatibles. Preparar interacción dedicada configurable distinta de E; binding P-015 pendiente. E reservada a curación futura incluso junto a objetos; no programar E/energía de H08 ni volver a F extracción. No inventar un inventario completo de H07/H13.
+Separar CharacterBody3D, cámara, acciones y movimiento; sprint, salto, colisiones y dash WW/AA/SS/DD. Ventana/cooldown configurables, un dash por par de la misma tecla, no parejas mixtas ni auto-repeat. Conservar movimiento normal y bloquear estados incompatibles. Preparar interacción dedicada configurable distinta de E, con binding por defecto **F** (D-027). E reservada a curación futura incluso junto a objetos; no programar E/energía de H08 ni volver a F extracción. No inventar un inventario completo de H07/H13.
 
 
 

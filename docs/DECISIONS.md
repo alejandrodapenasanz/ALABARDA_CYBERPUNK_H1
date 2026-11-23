@@ -1,6 +1,6 @@
 # DECISIONS — registro maestro vigente
 
-**2026-11-22 · pipeline v2.1.** Las reglas nuevas son instrucciones expresas del creador en el documento suministrado; la aprobación de esta **entrega de migración** sigue PENDING_APPROVAL. H1–H04 conservan sus cierres; B1 no autorizado. Fuente: [documento recibido](../ALABARDA_MASTER_PIPELINE_MIGRATION_v2_1.md), cuyo nombre v2_1 conserva cabecera v2.0; discrepancia editorial registrada, fuente intacta.
+**2026-11-22 · pipeline v2.1.** Las reglas nuevas son instrucciones expresas del creador en el documento suministrado; la **entrega de migración** fue APROBADA por el creador el 2026-11-23 (D-028). H1–H04 conservan sus cierres; B1 requiere encargo expreso. Fuente: [documento recibido](../ALABARDA_MASTER_PIPELINE_MIGRATION_v2_1.md), cuyo nombre v2_1 conserva cabecera v2.0; discrepancia editorial registrada, fuente intacta.
 
 ## Decisiones conservadas APROBADAS
 
@@ -32,13 +32,15 @@ Las fechas/fuentes originales permanecen en el [registro anterior íntegro](hist
 | D-007 | PARCIALMENTE SUPERSEDED por D-023/D-024 | Conserva HP 0–100, energía 0–150 y antecedente de remates. F proporcional al tiempo y protección ligada a extracción dejan de definir la obtención de energía. Adaptación de remates P-017; no borrarlos ni trasladar su protección a E. Afecta H05/H06/H08/H10/H22/H23 |
 | D-008 | APROBADA, ampliada por D-023/D-024 | E mantenida consume energía por salud efectiva; ascensor energía150 sin cambiar HP. H08/H19 |
 | D-016 | SUPERSEDED operativamente por D-022 | Sustituye agente único/puertas por hito por roles asimétricos y lotes; conserva AGENTS, honestidad, tests y aprobación humana |
-| D-022 | APROBADA como instrucción; entrega pendiente de validación | Claude programa sin Godot/Blender; Codex valida/corrige local; cambios grandes vuelven a Claude; creador aprueba. B0–B8, checkpoints por hito, estados oficiales y paquete por SHA. DEVELOPMENT_WORKFLOW |
+| D-022 | APROBADA; entrega aprobada 2026-11-23 (D-028) | Claude programa sin Godot/Blender; Codex valida/corrige local; cambios grandes vuelven a Claude; creador aprueba. B0–B8, checkpoints por hito, estados oficiales y paquete por SHA. DEVELOPMENT_WORKFLOW |
 | D-023 | APROBADA como regla; cifras provisionales | Dos barras; salud automática, E exclusiva, coste parcial, pausa automática durante manual y muerte bloquea curación. H06/H08/H13/H14/H22 |
-| D-024 | APROBADA como regla; cifras provisionales | Pasiva hasta100 incluso combate, bajas hasta150 sin HP, retirada F, ascensor150/HPintacto, energía compartida con ultimate. H08/H09/H10/H19/H22 |
+| D-024 | APROBADA como regla; pasiva energética SUPERSEDED por D-027 | (Pasiva hasta100 incluso combate: SUPERSEDED por D-027), bajas hasta150 sin HP, retirada F, ascensor150/HPintacto, energía compartida con ultimate. H08/H09/H10/H19/H22 |
 | D-025 | APROBADA como regla; tiempos provisionales | WASD, dash WW/AA/SS/DD misma tecla, cooldown y ventana configurables, no auto-repeat/parejas mixtas; disponible para todos. H05/H14/H22 |
-| D-026 | APROBADA con conflicto de etiquetas pendiente | 1/2/3 equipa, repetir guarda, otro slot cambia directo. Separar slot/etiqueta/arma/restricción; tres armas cualesquiera sigue vigente. P-016. H07/H18/H22 |
+| D-026 | APROBADA; conflicto de etiquetas resuelto por D-027 | 1/2/3 equipa, repetir guarda, otro slot cambia directo. Slots libres sin categoría; tres armas cualesquiera sigue vigente. H07/H18/H22 |
+| D-027 | APROBADA · 2026-11-23 · creador | (1) Interacción con **F**; E solo curación, también junto a objetos (resuelve P-015). (2) Ascensor: energía 150 sin cambiar HP, confirmado como excepción a «solo bajas llenan la energía». (3) **Sin regeneración pasiva de energía**: sustituye la pasiva 8/s hasta 100 de D-024. La única regeneración pasiva del juego es la de salud (5 s sin daño, 5 HP/s). La energía 0–150 solo sube por bajas confirmadas del jugador (+15, PROVISIONAL_VALUE / PENDING_PLAYTEST) y por ascensor; con energía 0, mantener E no cura. (4) 1/2/3 son slots libres sin categoría: cualquier combinación de tres armas, incluidas tres cuerpo a cuerpo; se retiran las etiquetas melee/primaria/secundaria (resuelve P-016). H05/H07/H08/H18/H19/H22 |
+| D-028 | APROBADA · 2026-11-23 · creador | (1) **Migración documental pipeline v2.1 aprobada**, incluida D-027. La aprobación no inicia ningún lote: cada lote requiere encargo expreso. (2) **Una rama por lote**: `B1` se crea desde `main`; Claude programa y entrega en `B1`; Codex valida en `B1` en el PC con Godot; tras VALIDATED y APPROVED el creador fusiona `B1` en `main`, vuelve a verificar sobre `main` y la rama `B2` sale de ese `main`; igual hasta B8. (3) PC Claude ejecuta `tools/pipeline/check_godot_static.py` (sintaxis GDScript y referencias de escenas/recursos sin Godot) antes de cada checkpoint; su PASS no equivale a VALIDATED |
 
-Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
+Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
 
 Ultimates conservan D-009: Dead Eye global 50%/jugador normal, Aimbot cabezas visibles/asistencia sin auto-fire, Overdrive firearms. Duración 6 s a100/10 s a150 e interpolación son **PROVISIONAL_VALUE / PENDING_PLAYTEST**; solo escala duración. Firmware sigue D-006 (USB/hasta respec), sin perks nuevos inventados.
 
@@ -50,7 +52,7 @@ Ultimates conservan D-009: Dead Eye global 50%/jugador normal, Aimbot cabezas vi
 | P-002 | PENDIENTE | Lista/costes/efectos/dependencias de perks, economía; doce nodos y tres ramas siguen propuesta |
 | P-003 | PENDIENTE | Objetivos, densidad, rutas detalladas, patrones boss y parámetros IA |
 | P-004 | PENDIENTE parcialmente | Arte final, licencias individuales, presupuestos, animaciones; D-017 dirección y D-019–D-021 referencia experimental ya aprobadas; pipeline Blender H04 validada |
-| P-005 | PENDIENTE parcialmente | Controles restantes, UX, guardado intermedio/recuperación; E exclusiva resuelta, tecla interacción P-015 |
+| P-005 | PENDIENTE parcialmente | Controles restantes, UX, guardado intermedio/recuperación; E exclusiva resuelta, interacción F (D-027) |
 | P-006 | PENDIENTE | Compatibilidades específicas, parry/proyectiles, bonus Overdrive y parámetros Aimbot |
 | P-007 | PENDIENTE | Exclusiones restantes y DoD final del MVP; shurikens jugables ya excluidos por D-010 |
 | P-008 | RESUELTA APROBADA | Firmware solo después de instalar USB, D-006 |
@@ -60,8 +62,8 @@ Ultimates conservan D-009: Dead Eye global 50%/jugador normal, Aimbot cabezas vi
 | P-012 | RESUELTA | Matriz de tres dificultades a partir de H13; H05/H10 usan perfiles existentes |
 | P-013 | RESUELTA parcialmente / PENDIENTE | Ascensor NO cambia HP (D-024); retorno entre plantas sigue pendiente H19 |
 | P-014 | SUPERSEDED para extracción | Liberar F/mínimo/energía temporal ya no son requisito H08. Tiempos/disparador de remates pasan a P-017 |
-| P-015 | PENDIENTE / PENDING_APPROVAL | Tecla de interacción dedicada distinta de E; no asignar R/F ni precedencia contextual por intuición. Bloquea binding/prueba manual afectada en B1 |
-| P-016 | PENDIENTE / PENDING_APPROVAL | Etiquetas melee/primaria/secundaria frente a tres armas cualesquiera. No imponer restricciones mientras no decida el creador |
+| P-015 | RESUELTA APROBADA · 2026-11-23 | Interacción con F, distinta de E (D-027). Antes: pendiente, sin asignar R/F por intuición |
+| P-016 | RESUELTA APROBADA · 2026-11-23 | 1/2/3 son slots libres sin categoría; etiquetas melee/primaria/secundaria retiradas (D-027) |
 | P-017 | PENDIENTE / PENDING_APPROVAL | Adaptar remates de D-007 sin extracción: disparador, tiempos, protección y estados; no borrarlos ni implementarlos automáticamente |
 
 ## Trazabilidad histórica

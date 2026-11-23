@@ -48,7 +48,7 @@ python -m venv .venv
 
 La plantilla válida no es un lote INTEGRATION_READY; falta código B1 y su SHA. Las pruebas Godot siguen NOT_RUN en Claude. No instalar Godot/Blender solo para simular resultados.
 
-Para comenzar B1, usar el bloque de nuevo chat en HANDOFF, reemplazando BASE_SHA por `git rev-parse HEAD`. La validación de la migración y el encargo B1 deben ser expresos en ese nuevo chat. P-015 (tecla de interacción) sigue pendiente: no elegirla por intuición; E queda reservada a curación. H05/H06 no implementan energía/E de H08 ni armas/ultimates de H07/H09.
+Para comenzar B1, usar el bloque de nuevo chat en HANDOFF, reemplazando BASE_SHA por `git rev-parse HEAD`. La validación de la migración y el encargo B1 deben ser expresos en ese nuevo chat. P-015 resuelta (D-027): interacción con F; E queda reservada a curación. H05/H06 no implementan energía/E de H08 ni armas/ultimates de H07/H09.
 
 ## PC Codex y validación
 

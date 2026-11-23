@@ -2,13 +2,13 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H22 — Integración, dificultad, UX y accesibilidad básica
 
-**Revisión pipeline v2.1 · 2026-11-22 · B7 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H21 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
+**Revisión pipeline v2.1 · 2026-11-22 · B7 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H21 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
 
 ## Objetivo funcional
 
 Verificar end-to-end de todos los sistemas, equilibrar fácil/normal/difícil con datos, resolución/ventana, sensibilidad ratón, volumen y subtítulos mínimos si hay diálogo, controles remapeables donde sea razonable, opciones, onboarding HUD, feedback. No convertir balance provisional en aprobado sin feedback humano.
 
-Ejecutar todos los casos SB-01…SB-29 y CT-01…CT-10; dos barras claramente etiquetadas, autoHP/E/pasiva/bajas/ascensor/ultimate independientes. F extracción SUPERSEDED. Probar dash/slots/E junto a interacción y matriz tres dificultades. No aprobar cifras sin playtest.
+Ejecutar todos los casos SB-01…SB-29 y CT-01…CT-10; dos barras claramente etiquetadas, autoHP/E/bajas/ascensor/ultimate (sin pasiva energética) independientes. F extracción SUPERSEDED. Probar dash/slots/E junto a interacción y matriz tres dificultades. No aprobar cifras sin playtest.
 
 ## Roles, checkpoint y alcance
 
@@ -20,7 +20,7 @@ Fuera de alcance: hitos ajenos al lote, reinterpretar propuestas como aprobadas,
 
 ## Contrato transversal (no adelanta otros hitos)
 
-Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](../docs/HEALTH_ENERGY_CONTRACT.md).
+Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](../docs/HEALTH_ENERGY_CONTRACT.md).
 
 ## Pruebas a preparar y ejecutar en el entorno correspondiente
 

@@ -1,6 +1,6 @@
 # ALABARDA STUDIOS — Instrucciones permanentes para Claude y Codex
 
-**Versión 0.5 · pipeline v2.1 · 2026-11-22.** Migración pendiente de validación expresa del creador. Este proceso NO autoriza B1 ni ningún lote futuro. H1–H04 conservan sus aprobaciones históricas.
+**Versión 0.6 · pipeline v2.1 · 2026-11-23.** Migración aprobada por el creador (D-027/D-028). La aprobación NO inicia B1 ni ningún lote: cada lote requiere encargo expreso y se desarrolla en su rama (`B1`, `B2`…) desde `main`. H1–H04 conservan sus aprobaciones históricas.
 
 ## 0. Lectura obligatoria por conversación o lote
 
@@ -20,7 +20,7 @@ Prevalecen las decisiones expresas más recientes del creador y DECISIONS; despu
 
 ## 2. Roles y estados
 
-Claude programa los lotes autorizados, prepara escenas de texto, Resources, tests y documentación. Su PC **no tiene Godot ni Blender**: no valida importación, gameplay, gráficos, animaciones o rendimiento. Ejecuta comprobaciones documentales/lógica externa disponibles y registra resultados reales.
+Claude programa los lotes autorizados, prepara escenas de texto, Resources, tests y documentación. Su PC **no tiene Godot ni Blender**: no valida importación, gameplay, gráficos, animaciones o rendimiento. Ejecuta comprobaciones documentales/lógica externa disponibles, incluido `tools/pipeline/check_godot_static.py` antes de cada checkpoint, y registra resultados reales.
 
 Codex integra y valida en el PC con Godot/Blender sobre el commit exacto del paquete. Conserva evidencia y hace solo correcciones pequeñas/locales. Devuelve cambios estructurales o grandes a Claude con bugs reproducibles. Blender solo cuando el lote lo exige. El creador valida sensaciones, arte, animación, gunplay, dificultad, legibilidad y UX y concede la aprobación final.
 
@@ -31,8 +31,8 @@ Estados de trabajo: `NOT_STARTED`, `IN_PROGRESS`, `CODE_READY`, `INTEGRATION_REA
 - Godot 4, PC/Windows, FPS, brazo izquierdo cyborg; Modern PSX / Retro Industrial Cyberpunk, sin emulación literal PS1; legibilidad moderna y efectos retro configurables/desactivables.
 - Guarida interactiva y contrato Yakuza repetible: tres plantas, tres dificultades, boss dos fases; 15–25 minutos es objetivo de diseño.
 - Tres armas cualesquiera de seis; iniciales katana, pistola silenciada y escopeta doble. Reserva infinita, cargadores, recarga/recuperación por animación. Firmware al instalar USB y hasta respec; mejoras físicas separadas.
-- Salud 0–100 y energía 0–150 independientes, HUD rojo/azul. Salud automática tras 5 s sin daño a 5 HP/s; E mantenida cura a 25 HP/s gastando 25 energía/s; energía pasiva a 8/s hasta 100 incluso en combate; cada baja confirmada del jugador aporta +15 hasta 150. **Tasas y tiempos PROVISIONAL_VALUE / PENDING_PLAYTEST**, no balance final. Matar no cura HP. Extracción mantenida con F **SUPERSEDED**. Contrato y límites en HEALTH_ENERGY_CONTRACT.
-- E exclusiva para curar incluso junto a objetos; tecla de interacción dedicada **PENDING_APPROVAL**. WASD; dash WW/AA/SS/DD; 1/2/3 seleccionan slots y repetir el equipado lo guarda. Etiquetas melee/primaria/secundaria no restringen tres armas cualesquiera; conflicto pendiente.
+- Salud 0–100 y energía 0–150 independientes, HUD rojo/azul. Salud automática tras 5 s sin daño a 5 HP/s; E mantenida cura a 25 HP/s gastando 25 energía/s; sin energía pasiva: solo cada baja confirmada del jugador aporta +15 hasta 150, y el ascensor la fija a 150 (D-027). **Tasas y tiempos PROVISIONAL_VALUE / PENDING_PLAYTEST**, no balance final. Matar no cura HP. Extracción mantenida con F **SUPERSEDED**. Contrato y límites en HEALTH_ENERGY_CONTRACT.
+- E exclusiva para curar incluso junto a objetos; interacción con **F** (D-027). WASD; dash WW/AA/SS/DD; 1/2/3 seleccionan slots y repetir el equipado lo guarda. 1/2/3 son slots libres sin categoría: cualquier combinación de tres armas, incluidas tres cuerpo a cuerpo (D-027).
 - Una ultimate equipada; >=100 energía, consume toda y solo escala duración. Dead Eye global con cualquier arma; Aimbot asiste a cabezas visibles sin disparo automático; Overdrive para armas de fuego. Ascensores recargan energía a 150 **sin modificar HP**, excepción a sobrecarga por bajas.
 - Sigilo reversible con memoria, patrullas, alarmas, cámaras y cadáveres; alarma general impide volver al sigilo durante ese intento.
 - PC → timbre → paquete transportado → montaje 3–4 pasos o USB → equipar; créditos, autosave y progreso persistente. Boss entrega trofeo y flag de shurikens futuro.

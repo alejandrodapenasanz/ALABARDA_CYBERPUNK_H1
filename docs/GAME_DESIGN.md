@@ -1,6 +1,6 @@
 # GAME_DESIGN — reglas funcionales vigentes
 
-**v1.0 · 2026-11-22.** Diseño aprobado/solicitado no significa implementado. B1–B8 NOT_STARTED; migración pendiente de validación. [Decisiones](DECISIONS.md), [arquitectura real](ARCHITECTURE.md).
+**v1.0 · 2026-11-22.** Diseño aprobado/solicitado no significa implementado. B1–B8 NOT_STARTED; migración aprobada por el creador 2026-11-23 (D-028). [Decisiones](DECISIONS.md), [arquitectura real](ARCHITECTURE.md).
 
 ## Combate y loadout [APROBADO]
 
@@ -11,13 +11,13 @@
 
 ## Salud, energía y ultimates
 
-Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
+Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
 
 Duración ultimate **6 s a100 / 10 s a150**, interpolación lineal **PROVISIONAL_VALUE / PENDING_PLAYTEST**. Dead Eye mundo/IA/proyectiles al50%, jugador normal y cualquier arma. Aimbot destaca cabezas visibles con asistencia intensa, respeta oclusión y requiere disparo manual. Overdrive potencia/cadencia firearms por animaciones. Una equipada; más energía solo duración, no potencia. [Contrato íntegro y remates pendientes](HEALTH_ENERGY_CONTRACT.md).
 
 ## Movimiento e inputs
 
-WASD y dash WW/AA/SS/DD dentro de ventana configurable; cooldown, un dash por par, sin auto-repeat ni parejas mixtas. Disponible en todos los builds. 1/2/3 equipa slot, mismo equipado guarda, otro cambia directo. Etiquetas no restringen loadout libre P-016; duplicados/vacíos P-011. E siempre curación; interacción distinta con tecla P-015 pendiente. Tabla única y casos [CONTROLS](CONTROLS.md). H1 conserva Q dash/R reset y no se modifica en esta migración.
+WASD y dash WW/AA/SS/DD dentro de ventana configurable; cooldown, un dash por par, sin auto-repeat ni parejas mixtas. Disponible en todos los builds. 1/2/3 equipa slot, mismo equipado guarda, otro cambia directo. 1/2/3 son slots libres sin categoría (D-027); duplicados/vacíos P-011. E siempre curación; interacción con F (D-027). Tabla única y casos [CONTROLS](CONTROLS.md). H1 conserva Q dash/R reset y no se modifica en esta migración.
 
 ## IA y sigilo [APROBADO]
 

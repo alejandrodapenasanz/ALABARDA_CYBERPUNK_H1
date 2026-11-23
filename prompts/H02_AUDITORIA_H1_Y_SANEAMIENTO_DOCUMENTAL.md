@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H02 — Auditoría H1 y saneamiento documental
 
-**Revisión pipeline v2.1 · 2026-11-22 · auditoría previa a B0 · APPROVED histórico.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H1 funcional preservado; H02 fuera de lotes.
+**Revisión pipeline v2.1 · 2026-11-22 · auditoría previa a B0 · APPROVED histórico.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H1 funcional preservado; H02 fuera de lotes.
 
 ## Objetivo funcional
 

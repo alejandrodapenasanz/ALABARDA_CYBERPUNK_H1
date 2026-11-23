@@ -2,13 +2,13 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H18 — Arsenal, selección de 3 armas y vitrina
 
-**Revisión pipeline v2.1 · 2026-11-22 · B5 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H17 como checkpoint dentro del mismo lote.
+**Revisión pipeline v2.1 · 2026-11-22 · B5 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H17 como checkpoint dentro del mismo lote.
 
 ## Objetivo funcional
 
 Pared de arsenal para seleccionar tres armas cualesquiera, validación disponibilidad, ultimate equipable, perks instaladas activas por árbol, vitrina muestra trofeos persistentes, placeholders para shuriken lock futuro.
 
-Seleccionar tres armas cualesquiera y guardar asignación de slots sin convertir etiquetas en clases. P-011/P-016 pendientes. Una ultimate equipada; no equipar por HP ni activar firmware sin USB.
+Seleccionar tres armas cualesquiera y guardar asignación de slots sin convertir etiquetas en clases. Slots libres sin categoría (D-027); P-011 pendiente. Una ultimate equipada; no equipar por HP ni activar firmware sin USB.
 
 ## Roles, checkpoint y alcance
 

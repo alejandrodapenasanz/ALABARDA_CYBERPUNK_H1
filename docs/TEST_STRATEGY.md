@@ -1,13 +1,13 @@
 # TEST_STRATEGY — pruebas por entorno y por commit
 
-**2026-11-23 · v2.1, migración pendiente de validación humana.** [Workflow](DEVELOPMENT_WORKFLOW.md), [histórico íntegro](history/pre_pipeline_v2_1/docs/TEST_STRATEGY.md). Los resultados H1–H04 no se recalifican.
+**2026-11-23 · v2.1, migración aprobada por el creador 2026-11-23 (D-028).** [Workflow](DEVELOPMENT_WORKFLOW.md), [histórico íntegro](history/pre_pipeline_v2_1/docs/TEST_STRATEGY.md). Los resultados H1–H04 no se recalifican.
 
 ## Capacidades y resultado
 
 | Prueba | Claude | Codex | Creador |
 |---|---|---|---|
-| Documentación, JSON/schema, archivos/IDs, lógica externa sin motor | Prepara y puede ejecutar si dispone de Python/dependencias | Puede ejecutar | Revisa decisiones |
-| Unitarias GDScript, importación, escenas, integración y regresión | Prepara fixtures/scripts; NOT_RUN, sin Godot | Ejecuta en Godot exacto con logs/exit/contadores | Revisión complementaria |
+| Documentación, JSON/schema, archivos/IDs, lógica externa sin motor, sintaxis GDScript y referencias .tscn/.tres (`check_godot_static.py`) | Prepara y puede ejecutar si dispone de Python/dependencias | Puede ejecutar | Revisa decisiones |
+| Unitarias GDScript, importación, escenas, integración y regresión | Prepara fixtures/scripts y pasa `check_godot_static.py`; ejecución NOT_RUN, sin Godot | Ejecuta en Godot exacto con logs/exit/contadores | Revisión complementaria |
 | Blender/GLB | Prepara requisitos/scripts; NOT_RUN, sin Blender | Solo si el caso requiere autoría/inspección | Aprueba resultado artístico |
 | Gráficos, animación, profiling | Prepara pasos; NOT_RUN | Ventana real, hardware/config/capturas originales | Aprueba legibilidad, sensación y arte |
 | Movimiento, gunplay, dificultad, UX | Prepara escenas/pasos; no autoaprueba | Reproduce aspectos técnicos | Acepta o rechaza expresamente |
@@ -35,10 +35,11 @@ python -m venv C:/dev/tools/alabarda-pipeline-v21-venv
 & C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe -X utf8 tools/pipeline/validate_manifest.py validation/_templates/TEST_MANIFEST.json
 & C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe -X utf8 tools/pipeline/test_manifest.py
 python -X utf8 tools/pipeline/check_docs.py
+python -X utf8 tools/pipeline/check_godot_static.py
 git diff --check
 ```
 
-La primera orden de manifest valida una **plantilla**, no INTEGRATION_READY. Para un paquete real: ejecutar `validate_manifest.py <ruta-manifest> --ready --candidate <worktree-C>` con campos completados y SHA real. Las rutas entre `<...>` son marcadores, no comandos literales. El resultado registra cero comandos ejecutados desde el manifest. `check_docs.py` comprueba esta migración respecto a su snapshot, no impone inmutabilidad de gameplay a todos los hitos futuros. Histórico/paquetes públicos se preservan por hash; no se convierten en guías activas.
+`check_godot_static.py` (gdtoolkit, D-028) analiza sin Godot la sintaxis GDScript, `class_name` duplicados y referencias res:// de scripts/.tscn/.tres/project.godot; errores bloquean, avisos gdlint (`gdlintrc`) solo informan, y los hallazgos aceptados del legado están en `tools/pipeline/static_baseline.json` con motivo. Su PASS **no** demuestra importación ni ejecución: los tests Godot siguen NOT_RUN hasta Codex. La primera orden de manifest valida una **plantilla**, no INTEGRATION_READY. Para un paquete real: ejecutar `validate_manifest.py <ruta-manifest> --ready --candidate <worktree-C>` con campos completados y SHA real. Las rutas entre `<...>` son marcadores, no comandos literales. El resultado registra cero comandos ejecutados desde el manifest. `check_docs.py` comprueba esta migración respecto a su snapshot, no impone inmutabilidad de gameplay a todos los hitos futuros. Histórico/paquetes públicos se preservan por hash; no se convierten en guías activas.
 
 ## Godot y regresiones existentes (no ejecutadas en esta migración)
 

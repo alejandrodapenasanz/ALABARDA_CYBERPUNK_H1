@@ -1,6 +1,6 @@
 # Salud y energía — contrato v2.1
 
-**2026-11-22 · D-023/D-024; implementación NOT_STARTED.** Reglas solicitadas por el creador; migración pendiente de validación humana. [Balance](BALANCE_PROVISIONAL.md) y [pruebas futuras](HEALTH_ENERGY_TEST_CASES.md).
+**2026-11-22, revisado 2026-11-23 · D-023/D-024/D-027; implementación NOT_STARTED.** Reglas solicitadas por el creador; migración aprobada por el creador 2026-11-23 (D-028). [Balance](BALANCE_PROVISIONAL.md) y [pruebas futuras](HEALTH_ENERGY_TEST_CASES.md).
 
 ## Dos barras
 
@@ -14,16 +14,16 @@ Estando vivo, tras **5 s sin daño**, recuperar **5 HP/s** hasta 100, sin gastar
 
 Curación continua **25 HP/s** por **25 energía/s**, relación inicial 1:1; **PROVISIONAL_VALUE / PENDING_PLAYTEST**. Empieza sin esperar la regeneración automática. Termina al soltar, morir, alcanzar 100 HP o agotar energía. Daño no la cancela mientras se sobreviva. Gastar solo el coste del HP efectivamente recuperado; HP lleno no consume. Aislando otras fuentes, HP=99/energía=10 durante 1 s → HP=100/energía=9; HP=50/energía=2 → como máximo 2 HP de curación antes de agotar esa energía.
 
-«Manual activa» significa que recupera HP y consume energía; mantener E sin poder curar no genera gasto ficticio. H08 documentará orden de eventos/delta y comprobará fuentes simultáneas. La regeneración energética sigue sus condiciones (vivo y por debajo de 100); no inventar una exclusión durante E. Las pruebas unitarias aíslan fuentes y la integración comprueba su combinación.
+«Manual activa» significa que recupera HP y consume energía; mantener E sin poder curar no genera gasto ficticio. H08 documentará orden de eventos/delta y comprobará fuentes simultáneas. No existe regeneración pasiva de energía (D-027): con energía 0, mantener E no cura. Las pruebas unitarias aíslan fuentes y la integración comprueba su combinación.
 
-E exclusiva para curación **también junto a objetos**. Interacción tendrá acción distinta configurable; tecla **PENDING_APPROVAL P-015**, sin imponer R/F ni E contextual. H05 puede preparar API/test por inyección; la prueba manual de interacción requiere resolver el binding.
+E exclusiva para curación **también junto a objetos**. Interacción es una acción distinta y configurable, por defecto **F** (D-027), sin E contextual.
 
 ## Energía
 
-- Vivo y energía<100: **8 energía/s**, **PROVISIONAL_VALUE / PENDING_PLAYTEST**, incluso en combate. Pasiva limitada a 100; no rebajar energía almacenada >100.
+- **Sin regeneración pasiva de energía** (D-027; sustituye la pasiva 8/s hasta 100 de D-024). El tiempo nunca aumenta la energía. La única regeneración pasiva del juego es la de salud.
 - Cada baja confirmada atribuida al jugador: **+15**, **PROVISIONAL_VALUE / PENDING_PLAYTEST**, una sola vez e independiente del arquetipo. Sin multiplicadores no aprobados, eventos duplicados ni ganancias muerto.
-- 95+15=110; 145+15→150. Esperar en 100 no llega a 150. Gastar por debajo de 100 reactiva la pasiva; energía llena no se sobrecarga.
-- En combate normal solo bajas llenan 100–150. **Excepción aprobada:** ascensor fija energía a 150 **sin cambiar HP**.
+- 95+15=110; 145+15→150. Esperar nunca aumenta la energía (ni en 0 ni en 100). Energía llena no se sobrecarga.
+- Solo las bajas llenan la energía (0–150). **Excepción aprobada y confirmada por el creador (D-027):** ascensor fija energía a 150 **sin cambiar HP**.
 - Extracción mantenida con F **SUPERSEDED**: no dependencia, fórmula vigente ni test de aceptación que la exija. El nombre antiguo del prompt H08 conserva compatibilidad de rutas.
 
 ## Ultimates

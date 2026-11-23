@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H12 — Cámaras, alarmas y cadáveres
 
-**Revisión pipeline v2.1 · 2026-11-22 · B3 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H11 como checkpoint dentro del mismo lote.
+**Revisión pipeline v2.1 · 2026-11-22 · B3 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H11 como checkpoint dentro del mismo lote.
 
 ## Objetivo funcional
 

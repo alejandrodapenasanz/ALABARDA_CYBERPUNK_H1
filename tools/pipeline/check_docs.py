@@ -87,20 +87,24 @@ def check():
                 if unquote(anchor) not in slugs:
                     errors.append(f'Broken heading {path.relative_to(ROOT)} -> {raw}')
     balance = (ROOT/'docs/BALANCE_PROVISIONAL.md').read_text(encoding='utf-8')
-    for key, value in {'health_max':'100','energy_max':'150','energy_passive_cap':'100',
+    for key, value in {'health_max':'100','energy_max':'150',
                        'ultimate_activation_min':'100','health_auto_regen_delay_s':'5.0',
                        'health_auto_regen_hp_per_s':'5.0','health_manual_heal_hp_per_s':'25.0',
-                       'health_manual_energy_cost_per_s':'25.0','energy_passive_regen_per_s':'8.0',
+                       'health_manual_energy_cost_per_s':'25.0',
                        'energy_per_kill':'15.0','manual_heal_pauses_auto_regen':'true',
                        'ultimate_duration_at_100_s':'6.0','ultimate_duration_at_150_s':'10.0'}.items():
-        classification = 'APPROVED_RULE' if key in ('health_max','energy_max','energy_passive_cap','ultimate_activation_min') else 'PROVISIONAL_VALUE / PENDING_PLAYTEST'
+        classification = 'APPROVED_RULE' if key in ('health_max','energy_max','ultimate_activation_min') else 'PROVISIONAL_VALUE / PENDING_PLAYTEST'
         if f'| {key} | {value} | {classification} |' not in balance:
             errors.append('Balance rule/value/status mismatch: '+key)
+    # D-027 (2026-11-23): no passive energy; energy only from kills and elevator.
+    for row in ('| energy_passive_regen_per_s | 0 | APPROVED_RULE', '| energy_passive_cap | n/a | SUPERSEDED'):
+        if row not in balance:
+            errors.append('Balance D-027 row missing: '+row)
     critical_docs = ['docs/GAME_DESIGN.md','docs/DECISIONS.md','docs/BALANCE_PROVISIONAL.md']
     critical_docs += [p for p in prompts if int(p[9:11]) in (6,8,9,13,14,15,19,22)]
     for name in critical_docs:
         content=(ROOT/name).read_text(encoding='utf-8')
-        for token in ('5 s sin daño','5 HP/s','25 HP/s','25 energía/s','8/s hasta 100','+15 hasta 150',
+        for token in ('5 s sin daño','5 HP/s','25 HP/s','25 energía/s','Sin energía pasiva','+15 hasta 150',
                       'PROVISIONAL_VALUE / PENDING_PLAYTEST','SUPERSEDED','sin curación directa de HP'):
             if token not in content: errors.append(f'{name}: health contract marker missing: {token}')
     cases = (ROOT/'docs/HEALTH_ENERGY_TEST_CASES.md').read_text(encoding='utf-8')

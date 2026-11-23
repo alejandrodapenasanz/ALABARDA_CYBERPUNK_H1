@@ -1,6 +1,6 @@
 # ROADMAP — H02–H24 y lotes B0–B8
 
-**2026-11-22 · agrupación solicitada v2.1; migración pendiente de validación.** No se renumera ni implementa ningún hito. H1–H04 cerrados por el creador; B1 NOT_STARTED y no autorizado.
+**2026-11-22 · agrupación solicitada v2.1; migración aprobada por el creador 2026-11-23 (D-028).** No se renumera ni implementa ningún hito. H1–H04 cerrados por el creador; B1 NOT_STARTED, se desarrollará en la rama `B1` con encargo expreso.
 
 ## Lotes y dependencias
 
@@ -28,7 +28,7 @@ H02 es auditoría previa fuera de lotes. B0 identifica infraestructura ya aproba
 | H05 | [Núcleo de jugador, interacción y movimiento](../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md) | B1 | NOT_STARTED | H04 |
 | H06 | [Daño, salud, hitzones y estados de ataque](../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md) | B1 | NOT_STARTED | H05 |
 | H07 | [Seis armas y loadout libre](../prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md) | B2 | NOT_STARTED | H06 |
-| H08 | [Energía pasiva, bajas y curación manual con E](../prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md) | B2 | NOT_STARTED | H07 |
+| H08 | [Energía por bajas y curación manual con E](../prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md) | B2 | NOT_STARTED | H07 |
 | H09 | [Tres ultimates independientes](../prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md) | B2 | NOT_STARTED | H08 |
 | H10 | [Enemigos base: tres arquetipos y patrullas](../prompts/H10_ENEMIGOS_BASE_TRES_ARQUETIPOS_Y_PATRULLAS.md) | B3 | NOT_STARTED | H09 |
 | H11 | [Sigilo: memoria, búsqueda y retorno](../prompts/H11_SIGILO_MEMORIA_BUSQUEDA_Y_RETORNO.md) | B3 | NOT_STARTED | H10 |
@@ -52,6 +52,6 @@ Cada prompt mantiene su objetivo, pruebas y aceptación. H06 prepara salud/autoH
 
 NOT_STARTED → IN_PROGRESS → CODE_READY → INTEGRATION_READY → VALIDATED → APPROVED; fallos VALIDATION_FAILED, impedimento BLOCKED. Tests usan PASS/FAIL/NOT_RUN/BLOCKED. Claude puede continuar dentro del lote autorizado tras checkpoint, sin aprobación humana ficticia. Codex verifica último commit, creador aprueba manualmente. Ningún lote siguiente comienza sin encargo; solape excepcional solo según workflow.
 
-P-015 binding interacción afecta B1; se puede preparar acción/test inyectado, no cerrar prueba manual sin decisión. P-011/P-016 slots y P-006 compatibilidades afectan B2/B5; P-017 remates se revisan sin F extracción. P-002 perks/economía B4; P-003 mapa/IA/boss B3/B6; P-013 retorno B6; P-007 cierre MVP B8. No cambiar secuencia para esconder pendientes.
+P-015 (interacción F) y P-016 (slots libres) resueltas por D-027. P-011 slots y P-006 compatibilidades afectan B2/B5; P-017 remates se revisan sin F extracción. P-002 perks/economía B4; P-003 mapa/IA/boss B3/B6; P-013 retorno B6; P-007 cierre MVP B8. No cambiar secuencia para esconder pendientes.
 
 [Prompts de lotes](../prompts/BATCH_PROMPTS.md), [índice](PROMPTS_INDEX.md), [estado de entrega](HANDOFF.md), [validación histórica](VALIDATION.md).

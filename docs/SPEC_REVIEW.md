@@ -1,6 +1,6 @@
 # SPEC_REVIEW — decisiones pendientes antes de congelar MVP
 
-**2026-11-22.** Migración v2.1 pendiente de validación. H1–H04 aprobados, no implica aprobación de arte final ni del MVP. [Registro autoritativo](DECISIONS.md).
+**2026-11-22.** Migración v2.1 aprobada 2026-11-23 (D-028). H1–H04 aprobados, no implica aprobación de arte final ni del MVP. [Registro autoritativo](DECISIONS.md).
 
 ## Reglas sincronizadas
 

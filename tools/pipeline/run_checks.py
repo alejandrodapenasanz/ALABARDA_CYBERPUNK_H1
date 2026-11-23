@@ -22,7 +22,8 @@ def main():
         ('schema', [sys.executable, '-X', 'utf8', 'tools/pipeline/validate_manifest.py', 'validation/_templates/TEST_MANIFEST.json']),
         ('manifest_tests', [sys.executable, '-X', 'utf8', 'tools/pipeline/test_manifest.py']),
         ('documents', [sys.executable, '-X', 'utf8', 'tools/pipeline/check_docs.py']),
-        ('whitespace', ['git', 'diff', '--check']),
+        ('godot_static', [sys.executable, '-X', 'utf8', 'tools/pipeline/check_godot_static.py']),
+        ('whitespace', ['git', '-c', 'core.whitespace=cr-at-eol', 'diff', '--check']),
         ('python_version', [sys.executable, '--version']),
         ('dependencies', [sys.executable, '-m', 'pip', 'freeze']),
     ]

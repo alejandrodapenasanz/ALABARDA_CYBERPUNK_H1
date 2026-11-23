@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H10 — Enemigos base: tres arquetipos y patrullas
 
-**Revisión pipeline v2.1 · 2026-11-22 · B3 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H09 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
+**Revisión pipeline v2.1 · 2026-11-22 · B3 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H09 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
 
 ## Objetivo funcional
 

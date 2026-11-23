@@ -1,5 +1,5 @@
 # ALABARDA STUDIOS — GAME VISION
-**Versión:** 1.1 · 2026-11-22 · migración pendiente de validación.
+**Versión:** 1.1 · 2026-11-22 · migración aprobada por el creador 2026-11-23 (D-028).
 **Estado:** decisiones creativas aprobadas; balance y producción artística detallada pendientes.
 
 ## Fantasía
@@ -7,7 +7,7 @@ Boomer shooter FPS 3D para PC/Windows en Godot 4, estética **Modern PSX / Retro
 
 ## Pilares
 1. El combate debe ser divertido sin escasez de munición convencional: reserva infinita, cargadores y recargas animadas.
-2. Dos barras independientes: salud 0–100 con regeneración automática tras espera sin daño y curación manual E; energía 0–150 con pasiva hasta100 y bajas hasta150, compartida entre E y ultimate. Matar no cura HP. F extracción SUPERSEDED; [contrato y cifras provisionales](HEALTH_ENERGY_CONTRACT.md).
+2. Dos barras independientes: salud 0–100 con regeneración automática tras espera sin daño y curación manual E; energía 0–150 solo por bajas (y ascensor), sin pasiva, compartida entre E y ultimate. Matar no cura HP. F extracción SUPERSEDED; [contrato y cifras provisionales](HEALTH_ENERGY_CONTRACT.md).
 3. Sigilo completo: infiltración, detección, combate, ruptura de contacto y búsqueda con memoria. Es reversible salvo si se activa una alarma general, que impide recuperarlo durante el resto del intento.
 4. Progresión física y persistente en guarida: comprar, recibir paquete, transportar, montar/instalar, equipar. El firmware empieza a aplicar efectos al instalar el USB.
 5. Estética homogénea mediante producción híbrida y progresiva: assets gratuitos legales seleccionados/adaptados, props propios, materiales/shaders y protagonistas personalizados; IA como apoyo conceptual.

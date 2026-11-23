@@ -1,20 +1,20 @@
 # ARCHITECTURE — implementación H1–H04 y contratos futuros
 
-**2026-11-22.** H1–H04 APPROVED; B1–B8 NOT_STARTED. Migración documental pendiente de validación; no se han programado los contratos futuros.
+**2026-11-22.** H1–H04 APPROVED; B1–B8 NOT_STARTED. Migración documental aprobada 2026-11-23 (D-028); no se han programado los contratos futuros.
 
 ## Contratos previstos (nombres conceptuales, no archivos existentes)
 
 | Sistema | Propietario / contrato | Entrega futura |
 |---|---|---|
 | HealthSystem | HP0–100, daño válido, muerte única, reloj último daño, autoHP; señales de salud/muerte; curar devuelve HP efectivamente añadido | H06/B1 |
-| EnergySystem | Energía0–150; pasiva hasta100, bajas únicas hasta150; consulta/consumo seguro; señal energía | H08/B2 |
+| EnergySystem | Energía0–150; sin pasiva (D-027), bajas únicas hasta150 y ascensor; consulta/consumo seguro; señal energía | H08/B2 |
 | Coordinación manual E | Calcula curación posible por HP faltante/energía/tasas; aplica y descuenta coste efectivo sin negativos/redondeo gratis; pausa autoHP activa; no dependencia circular entre componentes | H08/B2 |
-| InputController | Acciones distintas: movimiento/dash/slots/curación/interacción; E no contextual; binding interacción pendiente; ignora auto-repeat en doble toque | H05/B1, amplía H07/H08 |
+| InputController | Acciones distintas: movimiento/dash/slots/curación/interacción; E no contextual; interacción en F (D-027); ignora auto-repeat en doble toque | H05/B1, amplía H07/H08 |
 | DashController | Ventana misma tecla y cooldown configurables, una activación por par, dirección/colisiones/estados válidos | H05/B1 |
 | WeaponSlotController | ID/etiqueta/arma/restricciones separados; equipa/guarda/cambia; transición única determinista; sin imponer categorías | H07/B2 |
 | UltimateController | Umbral energético100, captura energía antes de consumir toda, duración según captura; reloj mundo/jugador separado y restauración al morir/terminar | H09/B2 |
 
-HealthSystem no necesita conocer EnergySystem: coordinador consulta ambos y confirma HP/coste en una operación coherente. H06 prueba su interfaz con dobles, no implementa energía ni E. H08 registra orden de eventos de daño, baja, regeneración y curación y verifica simultaneidad; no impone exclusión de pasiva durante E. Evento de baja atribuido al jugador idempotente; H10 conecta IA real. Ascensor H19 repone energía150/HPintacto. Contrato detallado y parámetros: [salud/energía](HEALTH_ENERGY_CONTRACT.md), [balance](BALANCE_PROVISIONAL.md), [controles](CONTROLS.md).
+HealthSystem no necesita conocer EnergySystem: coordinador consulta ambos y confirma HP/coste en una operación coherente. H06 prueba su interfaz con dobles, no implementa energía ni E. H08 registra orden de eventos de daño, baja, regeneración de salud y curación y verifica simultaneidad; no existe pasiva energética (D-027). Evento de baja atribuido al jugador idempotente; H10 conecta IA real. Ascensor H19 repone energía150/HPintacto. Contrato detallado y parámetros: [salud/energía](HEALTH_ENERGY_CONTRACT.md), [balance](BALANCE_PROVISIONAL.md), [controles](CONTROLS.md).
 
 El esquema1 de BalanceProfile H03 no implementa estos contratos. Campos de extracción **SUPERSEDED** para el nuevo diseño se conservan byte a byte ahora; adaptación versionada en H06/H08/H09, sin reescribir PASS históricos. No confundir nombres conceptuales futuros con recursos existentes.
 

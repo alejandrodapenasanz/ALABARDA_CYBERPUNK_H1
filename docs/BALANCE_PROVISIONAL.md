@@ -1,6 +1,6 @@
 # BALANCE_PROVISIONAL — configuración prevista, no balance final
 
-**v2.1 · 2026-11-22.** Reglas según D-023–D-026; valores iniciales de prueba, todavía no trasladados a Resources. Estado migración PENDING_APPROVAL, B1 NOT_STARTED.
+**v2.1 · 2026-11-22.** Reglas según D-023–D-027; valores iniciales de prueba, todavía no trasladados a Resources. Migración aprobada (D-028), B1 NOT_STARTED.
 
 ## Salud y energía
 
@@ -8,26 +8,26 @@
 |---|---:|---|
 | health_max | 100 | APPROVED_RULE |
 | energy_max | 150 | APPROVED_RULE |
-| energy_passive_cap | 100 | APPROVED_RULE |
+| energy_passive_cap | n/a | SUPERSEDED por D-027 (sin pasiva energética) |
 | ultimate_activation_min | 100 | APPROVED_RULE |
 | dead_eye_world_scale | 0.50 | APPROVED_RULE inicial, D-009 |
 | health_auto_regen_delay_s | 5.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | health_auto_regen_hp_per_s | 5.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | health_manual_heal_hp_per_s | 25.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | health_manual_energy_cost_per_s | 25.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
-| energy_passive_regen_per_s | 8.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
+| energy_passive_regen_per_s | 0 | APPROVED_RULE (D-027: energía solo por bajas y ascensor) |
 | energy_per_kill | 15.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | manual_heal_pauses_auto_regen | true | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | ultimate_duration_at_100_s | 6.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | ultimate_duration_at_150_s | 10.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | dash_double_tap_window_s | sin cifra fijada | PENDING_PLAYTEST; configurable, propuesta al implementar H05 |
 
-Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). Energía pasiva **8/s hasta 100**, incluso en combate, sin reducir la almacenada >100; cada baja del jugador **+15 hasta 150**, sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
+Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
 
 ## Relaciones para los tests futuros
 
 - Manual: `hp_real = min(hp_faltante, tasa_hp*dt, energia_disponible*tasa_hp/tasa_energia)`; coste `hp_real*tasa_energia/tasa_hp`. Tasas inválidas/no finitas se rechazan en configuración. Sin redondeo que regale salud, negativos ni consumo con HP lleno. Aislar fuentes de energía en unitarias; integrar simultaneidad en H08.
-- Pasiva: sumar hasta100 solo si vivo y valor<100; nunca aplicar un clamp100 a energía ya sobrecargada. Bajas: sumar una vez y clamp150. 95+15=110,145+15=150.
+- Energía: sin pasiva (D-027); el tiempo nunca la aumenta. Bajas: sumar una vez y clamp150. 95+15=110,145+15=150.
 - Ultimate: `duracion(E_pre)=6+(E_pre-100)*4/50` para100–150, fórmula **provisional**; consumir todo después de capturar valor. Solo duración escala.
 - Automática: espera desde último daño válido; muerto no regenera; manual activa pausa la tasa, no inventa un nuevo retraso al soltar.
 - Una acción por animación; sin doble daño por señales repetidas. Dificultad configurable no cambia créditos persistentes.

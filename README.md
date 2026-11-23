@@ -2,7 +2,7 @@
 
 **Descarga para otro PC:** usa la rama **main** del repositorio y sigue [GITHUB_TRANSFER](docs/GITHUB_TRANSFER.md). Incluye la documentación completa, prompts, herramientas y recursos de prueba redistribuibles. `python -X utf8 tools/pipeline/verify_checkout.py` comprueba la copia antes de editar. B1 sigue sin implementar.
 
-**2026-11-22:** H1–H04 cerrados y aprobados. Migración documental pipeline v2.1 preparada para revisión, **sin aprobación de esta entrega**; B1 NOT_STARTED, sin programar. [Handoff](docs/HANDOFF.md), [informe](docs/PIPELINE_MIGRATION_REPORT.md).
+**2026-11-22:** H1–H04 cerrados y aprobados. **2026-11-23:** migración documental pipeline v2.1 **aprobada por el creador** (D-027/D-028); B1 NOT_STARTED, se desarrollará en la rama `B1`. [Handoff](docs/HANDOFF.md), [informe](docs/PIPELINE_MIGRATION_REPORT.md).
 
 Importa `project.godot` con Godot **4.7.2 estándar**. **F5 inicia la greybox H1**. Para arte abre `scenes/art_reference/modern_psx_lab.tscn` y pulsa **F6**: laboratorio H04, kit propio y muestras experimentales. L cambia luz, 1–4 cámara, A anima brazos, F compara fuentes, X/B retro, 0 restaura D-019. Malorian solo local/opcional, publicación con fallback propio; assets de prueba, no finales.
 

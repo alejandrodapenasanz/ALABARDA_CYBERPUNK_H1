@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H20 — Jefe Yakuza: dos fases y recompensa
 
-**Revisión pipeline v2.1 · 2026-11-22 · B6 · NOT_STARTED.** Migración pendiente de validación; no autoriza iniciar/reabrir este hito. Dependencia: H19 como checkpoint dentro del mismo lote.
+**Revisión pipeline v2.1 · 2026-11-22 · B6 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H19 como checkpoint dentro del mismo lote.
 
 ## Objetivo funcional
 

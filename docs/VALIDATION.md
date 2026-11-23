@@ -1,3 +1,24 @@
+# Decisiones D-027/D-028 y validador estático · 2026-11-23
+
+**Origen:** decisiones expresas del creador en conversación con Claude (PC Claude, sin Godot ni Blender). Solo documentación y herramientas del pipeline; no se modifican scripts de juego, escenas, Resources, assets ni tests Godot.
+
+- **D-027:** interacción con F; ascensor a energía 150 sin tocar HP confirmado; **sin regeneración pasiva de energía** (energía solo por bajas +15 provisional y ascensor); slots 1/2/3 libres sin categoría. Resuelve P-015 y P-016; sustituye la pasiva 8/s de D-024. Sincronizado en AGENTS, DECISIONS, contrato, casos SB (SB-10/17/21 reescritos), CONTROLS, BALANCE y prompts H05–H09, H13–H15, H18, H19, H22.
+- **D-028:** migración v2.1 **aprobada por el creador**; una rama por lote desde `main` (`B1`…`B8`), fusión a `main` tras VALIDATED + APPROVED y nueva verificación en `main`.
+- **Nuevo:** `tools/pipeline/check_godot_static.py` (gdtoolkit 4.5.0), `gdlintrc`, `tools/pipeline/static_baseline.json`; `check_docs.py` exige las reglas D-027; `run_checks.py` incluye el validador estático y usa `core.whitespace=cr-at-eol` como ya documentaba esta validación.
+
+Resultados reales (Windows 11, Python 3.14, venv con `tools/pipeline/requirements.txt`), `python -X utf8 tools/pipeline/run_checks.py`:
+
+| Comprobación | Resultado |
+|---|---|
+| schema (plantilla TEST_MANIFEST) | PASS, exit 0 |
+| manifest_tests | PASS, 16/16 |
+| godot_static | PASS: 18 .gd parsean, 8 .tscn/.tres sin referencias rotas nuevas; 20 hallazgos aceptados del legado con motivo; 1 aviso gdlint (falso positivo en `modern_psx_lab.gd:81`) |
+| whitespace (cr-at-eol) | PASS |
+| documents (verify_checkout) | PASS tras regenerar `checkout_manifest.json` con los ficheros de esta entrega |
+| check_docs (comprobaciones de contenido) | 0 errores de contenido; las de PC original/índice histórico no aplican a un clon |
+
+Control negativo del validador estático: un .gd con error de sintaxis y un .tscn con ruta inexistente, id no declarado y padre inexistente → FAIL con los 4 errores. **Tests Godot: NOT_RUN** (no existen en este PC). B1 NOT_STARTED.
+
 # Transferencia completa a GitHub ? 2026-11-23
 
 Publicaci?n solicitada expresamente para descargar en otro PC y revisar la migraci?n antes de B1. B1 NOT_STARTED; migraci?n PENDING_APPROVAL. C?digo, documentaci?n completa, prompts, plantillas, herramientas, hist?ricos, evidencia y recursos redistribuibles incluidos; exclusiones de modelos enumeradas en [gu?a](GITHUB_TRANSFER.md) y manifiesto portable.

@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro y cumple su orden de lectura. Este catálogo no
 
 # Prompts de lotes B0–B8
 
-**v2.1 · 2026-11-22 · migración pendiente de validación.** Roles/estados, commits y paquetes según [workflow](../docs/DEVELOPMENT_WORKFLOW.md). Plantillas [Claude implementación](_templates/CLAUDE_IMPLEMENT_BATCH.md), [Codex validación](_templates/CODEX_VALIDATE_BATCH.md), [Claude corrección](_templates/CLAUDE_FIX_BATCH.md). No se duplican especificaciones individuales; los enlaces definen contenido/aceptación.
+**v2.1 · 2026-11-22 · migración aprobada por el creador 2026-11-23 (D-028).** Roles/estados, commits y paquetes según [workflow](../docs/DEVELOPMENT_WORKFLOW.md). Plantillas [Claude implementación](_templates/CLAUDE_IMPLEMENT_BATCH.md), [Codex validación](_templates/CODEX_VALIDATE_BATCH.md), [Claude corrección](_templates/CLAUDE_FIX_BATCH.md). No se duplican especificaciones individuales; los enlaces definen contenido/aceptación.
 
 ## B0 — Infraestructura y arte
 
@@ -45,7 +45,7 @@ Prompt para usar **solo tras autorización**:
 Hitos y criterios (fuente única, no duplicada):
 
 - [H07 — Seis armas y loadout libre](H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md)
-- [H08 — Energía pasiva, bajas y curación manual con E](H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md)
+- [H08 — Energía por bajas y curación manual con E](H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md)
 - [H09 — Tres ultimates independientes](H09_TRES_ULTIMATES_INDEPENDIENTES.md)
 
 Regresiones: H1 y laboratorio H03/H04 cuando estén afectados, más lotes anteriores pertinentes. Los hitos especifican casos propios y decisiones bloqueantes. Sin adelantarlos por datos/fixtures; todos los resultados nuevos empiezan NOT_RUN.
