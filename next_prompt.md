@@ -64,4 +64,4 @@ INFORME FINAL (respóndeme con esto):
 6. SHA final de la rama B1 tras tu push.
 ```
 
-Después de Codex: si las automáticas pasan, el creador hace las pruebas manuales M-01 a M-08 descritas en `validation/B01/TEST_HANDOFF.md` (sección F), abriendo `scenes/b1/b1_sandbox.tscn` con F6 (M-08 con F5).
+Después de Codex: si las automáticas pasan, el creador hace las pruebas manuales siguiendo [manual_tests_B1.md](manual_tests_B1.md) y devuelve a Claude el bloque OK/KO del final.
