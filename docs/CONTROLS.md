@@ -5,15 +5,15 @@
 | Acción | Decisión futura | Estado real / límite |
 |---|---|---|
 | Mover | WASD | APROBADA; existe en H1 |
-| Dash | WW / AA / SS / DD | APROBADA; H05; H1 aún usa Q |
+| Dash | WW / AA / SS / DD | APROBADA; implementado en B1 (CODE_READY, NOT_RUN); H1 aún usa Q |
 | Curación | Mantener E, incluso junto a objetos | APROBADA; H08; no existe en H1 |
-| Interacción | F (acción distinta de E, configurable) | APROBADA D-027; H05 |
+| Interacción | F (acción distinta de E, configurable) | APROBADA D-027; implementado en B1 (CODE_READY, NOT_RUN) |
 | Slot 1 | Seleccionar/guardar | APROBADA; slot libre sin categoría (D-027); H07 |
 | Slot 2 | Seleccionar/guardar | Igual; H07 |
 | Slot 3 | Seleccionar/guardar | Igual; H07 |
 | Apuntar/disparar | Ratón/clic izquierdo actuales | Conservar compatibilidad; acciones por arma H07 |
 | Salto/sprint | Espacio/Shift actuales | Continuidad H1; remapeo futuro |
-| Recargar | Binding pendiente | R en H1 repone blancos tras vencer, NO recarga |
+| Recargar | Binding pendiente; el arma fixture B1 recarga sola al vaciarse | R en H1 repone blancos tras vencer, NO recarga |
 | Ultimate | Binding pendiente | No asignar Q/F por deducción; H09 |
 | Menú/pausa/cursor | Escape libera cursor en H1 | No pausa actualmente; detalle pendiente H16/H22 |
 | Extracción | No existe | F mantenida para extraer SUPERSEDED; F pasa a interacción (D-027) |

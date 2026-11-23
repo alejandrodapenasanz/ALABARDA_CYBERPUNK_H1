@@ -20,7 +20,8 @@
 | manual_heal_pauses_auto_regen | true | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | ultimate_duration_at_100_s | 6.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
 | ultimate_duration_at_150_s | 10.0 | PROVISIONAL_VALUE / PENDING_PLAYTEST |
-| dash_double_tap_window_s | sin cifra fijada | PENDING_PLAYTEST; configurable, propuesta al implementar H05 |
+| dash_double_tap_window_s | 0.25 (propuesta H05) | PROVISIONAL_VALUE / PENDING_PLAYTEST; `resources/player/movement_default.tres` |
+| head_hitzone_multiplier | 2.0 (propuesta H06) | PROVISIONAL_VALUE / PENDING_PLAYTEST; `Hitbox.HEAD_MULTIPLIER_PROVISIONAL`; por arma en H07 |
 
 Salud 0–100 y energía 0–150 independientes. Salud automática tras **5 s sin daño** a **5 HP/s**, sin energía; daño reinicia espera, muerto no regenera. E mantenida: **25 HP/s por 25 energía/s**, solo coste de HP recuperado, sin gasto a salud llena, termina al soltar/agotar energía/morir; daño no cancela si sobrevive. Manual activa pausa automática (provisional). **Sin energía pasiva** (D-027): la energía solo sube por bajas confirmadas del jugador, **+15 hasta 150**, y por ascensor; sin curación directa de HP. **Tasas, tiempos y pausa: PROVISIONAL_VALUE / PENDING_PLAYTEST.** F extracción SUPERSEDED. Ascensor: energía 150, HP intacto. Ultimate >=100 energía, consume toda; duración según energía anterior al consumo. [Contrato detallado](HEALTH_ENERGY_CONTRACT.md).
 

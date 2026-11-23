@@ -61,6 +61,10 @@ No ejecutar literalmente marcadores. Para paquetes C/P, resolver rutas absolutas
 
 **Integridad antigua:** runner H03/H04 también comprueba hash de AGENTS contra snapshot anterior. Esta migración lo modifica autorizadamente, pero no altera el log ni las excepciones históricas para hacerlo pasar. Al preparar el baseline documental aprobado para B1, versionar la nueva política de invariantes con referencia al snapshot/diff aprobado; nunca aceptar cambios automáticamente ni borrar checks. Hasta entonces no usar el resultado histórico del runner como PASS de esta edición. La comprobación de conservación propia de v2.1 cubre scripts/escenas/Resources/assets/tests/evidencia e índice. Los futuros refactors autorizados necesitan regresiones de comportamiento y baseline explícito, no restaurar requisitos F por un test legado.
 
+## B1 (H05/H06) · runner del lote
+
+PC Codex, en un worktree limpio del SHA C: `python -X utf8 tools/b1/run_tests.py --godot <console.exe 4.7.2> --output <directorio nuevo>`. Ejecuta versión, importación, `tests/b1/unit` y `tests/b1/integration` (el recuento JUnit debe igualar los `func test_` declarados), un arranque headless de 600 frames del sandbox y la regresión completa H1/H03/H04 vía `tools/h04/run_tests.py`. `--skip-regression` solo para bucles rápidos de corrección. PC Claude: solo `check_godot_static.py`; el resto NOT_RUN.
+
 ## Casos futuros y repetición
 
 [SB-01…SB-29](HEALTH_ENERGY_TEST_CASES.md) y [CT-01…CT-10](CONTROLS.md) son especificaciones NOT_RUN. H06 cubre autoHP y contrato de pausa; H08 energía/E y baja única; H09 ultimates; H10 conexión enemigos; H19 ascensor real; H22 conjunto. No programar H08 para cerrar H06. Economía/inventario/IA/guardado conservan tests de cada prompt: créditos no negativos/doble pago, save corrupto/roundtrip/atomicidad, memoria/oclusiones/alarma, montaje/USB idempotentes y tres dificultades desde H13.

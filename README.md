@@ -6,6 +6,8 @@
 
 Importa `project.godot` con Godot **4.7.2 estándar**. **F5 inicia la greybox H1**. Para arte abre `scenes/art_reference/modern_psx_lab.tscn` y pulsa **F6**: laboratorio H04, kit propio y muestras experimentales. L cambia luz, 1–4 cámara, A anima brazos, F compara fuentes, X/B retro, 0 restaura D-019. Malorian solo local/opcional, publicación con fallback propio; assets de prueba, no finales.
 
+**B1 (CODE_READY, pendiente de validar en Codex):** abre `scenes/b1/b1_sandbox.tscn` y pulsa **F6**: doble toque WW/AA/SS/DD dash, F interactuar, E reservada, clic dispara, salud con regeneración, blancos y zona de daño. F5 sigue siendo H1.
+
 H1 actual: WASD, ratón/clic disparo, Shift sprint, Espacio salto, Q+dirección dash, Esc libera cursor, R repone blancos tras vencer cinco. HP100/respawn; no energía, E ni nuevos controles todavía. [Arquitectura real](docs/ARCHITECTURE.md).
 
 ## Desarrollo siguiente
