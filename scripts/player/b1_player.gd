@@ -4,11 +4,14 @@ extends CharacterBody3D
 ## collisions, double-tap dash) plus a dedicated interaction action on F (D-027).
 ## E is reserved for manual healing (H08) and never triggers interaction, even near objects.
 ## H1 (scripts/player.gd) is intentionally untouched and keeps its Q dash.
+## H06 · Health (0-100, auto regen), body hitbox and a fixture weapon driven by animation states.
+## Death is single and final for this player instance: movement, dash, interaction and fire stop.
 
 signal dashed(direction_action: StringName)
 signal interacted(target: Node)
 signal interaction_focus_changed(target: Node)
 signal move_state_changed(state: int)
+signal died
 
 enum MoveState { GROUNDED, AIRBORNE, DASHING, DISABLED }
 
@@ -30,6 +33,9 @@ var clock: Callable
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
+@onready var health: HealthComponent = $HealthComponent
+@onready var hitbox: Hitbox = $Hitbox
+@onready var weapon: FixtureWeapon = $Head/Camera3D/FixtureWeapon
 
 
 func _init() -> void:
@@ -44,6 +50,12 @@ func _ready() -> void:
             push_warning("B1Player: invalid movement config, using default: %s" % ", ".join(config.validation_errors()))
         config = DEFAULT_CONFIG
     apply_config()
+    health.died.connect(_on_died)
+    weapon.aim_node = camera
+    weapon.shooter = self
+    var excluded: Array[RID] = [get_rid(), hitbox.get_rid()]
+    weapon.exclude = excluded
+    weapon.attack_machine.state_changed.connect(_on_attack_state_changed)
     if capture_mouse_on_ready:
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -137,6 +149,8 @@ func _physics_process(delta: float) -> void:
         dash.cancel()  # blocked by a wall: end the dash instead of pushing into geometry (CT-04)
     _refresh_state()
     _refresh_focus()
+    if input_enabled and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Input.is_action_pressed(InputActions.FIRE):
+        fire()
 
 
 func _refresh_state() -> void:
@@ -157,13 +171,40 @@ func _set_state(state: int) -> void:
     move_state_changed.emit(state)
 
 
+## Starts an attack with the fixture weapon if alive and READY. Cadence comes from its animations.
+func fire() -> bool:
+    if not input_enabled or move_state == MoveState.DISABLED or health.is_dead():
+        return false
+    return weapon.trigger()
+
+
+## Compatibility helper (hazards/tests): applies generic damage through the health component.
+func take_damage(amount: float, type: StringName = DamageInfo.ENVIRONMENT, source: Node = null) -> float:
+    return health.apply_damage(DamageInfo.create(amount, type, source))
+
+
+func is_dead() -> bool:
+    return health.is_dead()
+
+
+func _on_died() -> void:
+    set_disabled(true)
+    weapon.interrupt()
+    died.emit()
+
+
+func _on_attack_state_changed(state: int) -> void:
+    if state == AttackStateMachine.State.READY and not health.is_dead():
+        weapon.reload_if_empty()
+
+
 ## Disables movement, dash and interaction (used on death by H06). Re-enabling restores GROUNDED.
 func set_disabled(disabled: bool) -> void:
     if disabled:
         dash.cancel()
         double_tap.reset()
         _set_state(MoveState.DISABLED)
-    elif move_state == MoveState.DISABLED:
+    elif move_state == MoveState.DISABLED and not health.is_dead():
         _set_state(MoveState.GROUNDED)
 
 

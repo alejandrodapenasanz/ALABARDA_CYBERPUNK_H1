@@ -4,6 +4,8 @@ extends Node3D
 
 const PLAYER_SCENE := preload("res://scenes/player/b1_player.tscn")
 const SWITCH_SCRIPT := preload("res://scripts/interaction/interactable_switch.gd")
+const Hazards := preload("res://scripts/b1/sandbox_hazards.gd")
+const RESTART_AFTER_DEATH_S := 3.0
 
 var player: B1Player
 var console: InteractableSwitch
@@ -11,6 +13,9 @@ var hud_state: Label
 var hud_prompt: Label
 var hud_feedback: Label
 var feedback_left := 0.0
+var health_bar: ProgressBar
+var health_label: Label
+var restart_left := -1.0
 
 
 func _ready() -> void:
@@ -25,7 +30,13 @@ func _ready() -> void:
     console = SWITCH_SCRIPT.new()
     add_child(console)
     console.global_position = Vector3(-4, 1.4, 4)
+    _setup_combat_fixtures()
     _setup_hud()
+    player.health.health_changed.connect(_on_health_changed)
+    player.health.damaged.connect(func(info: DamageInfo, applied: float): _feedback("DAÑO -%d (%s)" % [ceili(applied), info.damage_type], 0.6))
+    player.weapon.fired.connect(_on_weapon_fired)
+    player.died.connect(_on_player_died)
+    _on_health_changed(player.health.health, player.health.max_health)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -38,8 +49,16 @@ func _process(delta: float) -> void:
     if feedback_left <= 0.0:
         hud_feedback.text = ""
     var states := ["SUELO", "AIRE", "DASH", "BLOQUEADO"]
-    hud_state.text = "ESTADO %s   |   DASH %s" % [states[player.move_state],
-            "LISTO" if player.dash.cooldown_left <= 0.0 else "%.1f s" % player.dash.cooldown_left]
+    var attack_states := ["LISTA", "ATAQUE", "RECUPERACIÓN", "RECARGA"]
+    var machine := player.weapon.attack_machine
+    hud_state.text = "ESTADO %s   |   DASH %s   |   ARMA %s %d/%d   |   REGEN %s" % [states[player.move_state],
+            "LISTO" if player.dash.cooldown_left <= 0.0 else "%.1f s" % player.dash.cooldown_left,
+            attack_states[machine.state], machine.ammo, machine.magazine_size,
+            "SÍ" if player.health.is_regenerating() else "no"]
+    if restart_left > 0.0:
+        restart_left -= delta
+        if restart_left <= 0.0:
+            get_tree().reload_current_scene()
 
 
 func _setup_environment() -> void:
@@ -92,6 +111,30 @@ func _setup_range() -> void:
         make_block(Vector3(10, 0.01, 8 - i * 1.0), Vector3(1.2, 0.02, 0.08), Color("3c8999"))  # 1 m marks
 
 
+func _setup_combat_fixtures() -> void:
+    for spec in [[Vector3(-6, 0, -12), 60.0, 0.0, "BLANCO 60"], [Vector3(0, 0, -12), 80.0, 0.0, "BLANCO 80"],
+            [Vector3(6, 0, -12), 150.0, 100.0, "TANQUE 150 + ARM 100"]]:
+        var dummy := TargetDummy.new()
+        dummy.max_health = spec[1]
+        dummy.armor = spec[2]
+        dummy.label = spec[3]
+        dummy.respawn_after_s = 3.0
+        add_child(dummy)
+        dummy.global_position = spec[0]
+    var zone := Hazards.DamageZone.new(Vector3(3, 1, 3))
+    add_child(zone)
+    zone.global_position = Vector3(-12, 0.5, 10)
+    var turret := Hazards.ProjectileTurret.new()
+    turret.target = player
+    add_child(turret)
+    turret.global_position = Vector3(15, 0.6, 15)
+    var marker := Label3D.new()
+    marker.text = "ZONA DE DAÑO 10/s"
+    marker.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+    marker.position = Vector3(-12, 1.6, 10)
+    add_child(marker)
+
+
 func _setup_hud() -> void:
     var layer := CanvasLayer.new()
     add_child(layer)
@@ -99,12 +142,23 @@ func _setup_hud() -> void:
     root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
     root.mouse_filter = Control.MOUSE_FILTER_IGNORE
     layer.add_child(root)
-    hud_state = _label(root, Vector2(24, 16), 20, Color("88dfe7"))
-    hud_prompt = _label(root, Vector2(24, 46), 20, Color("efde99"))
-    hud_feedback = _label(root, Vector2(24, 76), 20, Color("ddfaff"))
-    var help := _label(root, Vector2(24, 112), 16, Color("b6c4d6"))
+    health_bar = ProgressBar.new()
+    health_bar.position = Vector2(24, 16)
+    health_bar.size = Vector2(320, 26)
+    health_bar.show_percentage = false
+    health_bar.max_value = 100.0
+    var fill := StyleBoxFlat.new()
+    fill.bg_color = Color("d63a4a")
+    health_bar.add_theme_stylebox_override("fill", fill)
+    health_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    root.add_child(health_bar)
+    health_label = _label(root, Vector2(32, 16), 18, Color("ffffff"))
+    hud_state = _label(root, Vector2(24, 50), 18, Color("88dfe7"))
+    hud_prompt = _label(root, Vector2(24, 78), 20, Color("efde99"))
+    hud_feedback = _label(root, Vector2(24, 106), 20, Color("ddfaff"))
+    var help := _label(root, Vector2(24, 142), 16, Color("b6c4d6"))
     help.text = "WASD mover  |  doble toque WW/AA/SS/DD dash  |  SHIFT sprint  |  ESPACIO saltar\n" \
-            + "F interactuar  |  E reservada a curación (H08)  |  RATÓN mirar  |  ESC liberar ratón\n" \
+            + "F interactuar  |  E reservada a curación (H08)  |  RATÓN mirar  |  CLIC disparar (recarga automática)  |  ESC liberar ratón\n" \
             + "B1 SANDBOX // greybox de pruebas, no es un nivel"
     var crosshair := _label(root, Vector2.ZERO, 27, Color("ddfaff"))
     crosshair.text = "+"
@@ -124,6 +178,22 @@ func _label(parent: Control, pos: Vector2, font_size: int, color: Color) -> Labe
 
 func _on_focus_changed(target: Node) -> void:
     hud_prompt.text = target.prompt if target is InteractableSwitch else ""
+
+
+func _on_health_changed(current: float, maximum: float) -> void:
+    health_bar.max_value = maximum
+    health_bar.value = current
+    health_label.text = "SALUD  %d / %d" % [ceili(current), int(maximum)]
+
+
+func _on_weapon_fired(result: Dictionary) -> void:
+    if result.applied > 0.0:
+        _feedback("IMPACTO %s  -%d" % ["CABEZA" if result.zone == DamageInfo.ZONE_HEAD else "CUERPO", ceili(result.applied)], 0.5)
+
+
+func _on_player_died() -> void:
+    _feedback("HAS MUERTO  //  el sandbox se reinicia en %d s" % int(RESTART_AFTER_DEATH_S), RESTART_AFTER_DEATH_S + 1.0)
+    restart_left = RESTART_AFTER_DEATH_S
 
 
 func _feedback(message: String, duration: float) -> void:

@@ -1,20 +1,39 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/player/b1_player.gd" id="1"]
 [ext_resource type="Resource" path="res://resources/player/movement_default.tres" id="2"]
+[ext_resource type="Script" path="res://scripts/combat/health_component.gd" id="3"]
+[ext_resource type="Resource" path="res://resources/combat/player_health.tres" id="4"]
+[ext_resource type="Script" path="res://scripts/combat/hitbox.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/combat/fixture_weapon.gd" id="6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
 radius = 0.35
 height = 1.8
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hitbox"]
+radius = 0.4
+height = 1.85
+
 [node name="B1Player" type="CharacterBody3D"]
 collision_layer = 2
-collision_mask = 1
+collision_mask = 5
 script = ExtResource("1")
 config = ExtResource("2")
 
 [node name="Body" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_body")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3")
+config = ExtResource("4")
+
+[node name="Hitbox" type="Area3D" parent="."]
+script = ExtResource("5")
+health_path = NodePath("../HealthComponent")
+
+[node name="Shape" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("CapsuleShape3D_hitbox")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
@@ -24,3 +43,7 @@ current = true
 
 [node name="InteractRay" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -2.5)
+
+[node name="FixtureWeapon" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32, -0.28, -0.55)
+script = ExtResource("6")
