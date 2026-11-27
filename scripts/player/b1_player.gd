@@ -17,6 +17,7 @@ enum MoveState { GROUNDED, AIRBORNE, DASHING, DISABLED }
 
 const DEFAULT_CONFIG := preload("res://resources/player/movement_default.tres")
 const INTERACTABLE_GROUP := &"interactable"
+const WallGuard = preload("res://scripts/player/weapon_wall_guard.gd")
 
 @export var config: PlayerMovementConfig
 @export var capture_mouse_on_ready := true
@@ -27,6 +28,7 @@ var double_tap := DoubleTapDetector.new()
 var input_enabled := true
 var focused_interactable: Node = null
 var pitch := 0.0
+var wall_guard: WallGuard
 ## Injectable clock (seconds) so tests can control the double-tap window deterministically.
 var clock: Callable
 
@@ -56,6 +58,7 @@ func _ready() -> void:
     var excluded: Array[RID] = [get_rid(), hitbox.get_rid()]
     weapon.exclude = excluded
     weapon.attack_machine.state_changed.connect(_on_attack_state_changed)
+    wall_guard = WallGuard.new(self, weapon, camera)
     if capture_mouse_on_ready:
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -88,9 +91,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func look(relative: Vector2) -> void:
-    rotate_y(-relative.x * config.mouse_sensitivity)
-    pitch = clampf(pitch - relative.y * config.mouse_sensitivity, -1.45, 1.45)
-    camera.rotation.x = pitch
+    var target_pitch := clampf(pitch - relative.y * config.mouse_sensitivity, -1.45, 1.45)
+    wall_guard.turn(-relative.x * config.mouse_sensitivity, target_pitch - pitch)
+    pitch = camera.rotation.x
 
 
 ## Feeds a direction key press to the double-tap detector. Returns true if a dash started.
@@ -118,6 +121,7 @@ func can_dash() -> bool:
 
 
 func _physics_process(delta: float) -> void:
+    wall_guard.sync_shape()
     dash.tick(delta)
     if not is_on_floor():
         velocity.y -= config.gravity * delta
