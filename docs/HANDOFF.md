@@ -1,22 +1,30 @@
-# HANDOFF — B1: automáticas PASS, manuales pendientes
+# HANDOFF — B1: pared del arma pendiente de corregir
 
-**2026-11-27 · rama B1 · INTEGRATION_READY. No VALIDATED ni APPROVED.** El creador encargó exclusivamente pruebas automáticas y asignó M-01…M-08 a su revisión personal. H1–H04 conservan sus aprobaciones históricas; B2 no iniciado y main sin fusionar.
+**2026-11-27 · rama B1 · VALIDATION_FAILED por M-02-WALL. No VALIDATED ni APPROVED.** El creador comunicó siete manuales OK y paredes KO: el cuerpo se detiene, pero el arma atraviesa el muro. [Resultados originales y aclaraciones](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md). Las pruebas manuales las realizó el creador, no Codex.
 
-## Estado y commits exactos
+## Continuar con Claude: BUG-B1-02
 
-- Candidato inicial: `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete de entrada: `f951cb6892e2867f28ceb3edebb823377c6ecd8f`.
-- Intento 01 (2026-11-23): FAIL en descubrimiento de integración, exit 105 por inferencia de tipos en el test de combate. Importación, 37 unitarias, smoke y regresión PASS.
-- Fix y **candidato realmente probado en el intento 02**: `94e4880b03b60d1517917d11ab98dce786499d69`. Una línea de tipado del test y solo su hash portable; sin cambios de gameplay/aserciones.
-- Intento 02 (2026-11-27): **B1-STATIC, IMPORT, UNIT 37/37, INTEGRATION 28/28, SMOKE y REGRESSION PASS**. H03/H04: 20 positivos y control negativo esperado; H1: 34 PASS / 0 FAIL / 1 NOT_RUN headless.
-- [BUG-B1-01](../validation/B01/bugs/BUG-B1-01.md) cerrado técnicamente por retest. [Resultados y comandos](../validation/B01/TEST_RESULTS.md), [manifest vigente](../validation/B01/TEST_MANIFEST.json), [evidencia del intento 02](../validation/B01/evidence/attempt_02/summary.json). El commit posterior del paquete se comunica en el informe final; no se atribuyen ejecuciones al SHA del paquete.
+Preparar el fix de [BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md) en B1 conforme a **D-030**: conservar posición, escala, encuadre y apariencia del arma, impidiendo que atraviese la pared al tocarla. Hay que coordinar contacto físico con movimiento y giro; no basta reducir/acercar el arma ni cambiar el render para ocultar la penetración. Supera una corrección local y vuelve a Claude según AGENTS. No se ha implementado ninguna modificación del arma.
 
-Entorno: Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. Solo headless. Los candidatos estaban limpios antes de importar; Godot generó 24 sidecars .gd.uid no versionados y caché, sin modificar fuentes versionadas. No se han hecho pruebas manuales, capturas, export ni ejecución de Blender.
+El diagnóstico geométrico `49ecd30a5b78ef18a85390e8929baf132d6b78ff` añadió un test que falló (mesh fuera de la cápsula). La aclaración del creador descartó usar contención en el cuerpo como criterio: se retiró con `71ce9a24f574b888fe2f9b8ca1c641470703b96a`, conservando [logs/JUnit](../validation/B01/evidence/diagnostic_03/README.md). Runtime, escenas, tests y baseline portable quedaron exactamente como `79d63e3`; esta retirada no corrige el bug manual. Automáticas vigentes: 37 unitarias y 28 de integración, no 29.
 
-## Siguiente paso: creador
+## Resultados y trazabilidad
 
-Seguir [manual_tests_B1.md](../manual_tests_B1.md) sobre `94e4880b03b60d1517917d11ab98dce786499d69` (el paquete posterior solo añade documentación/evidencia). Abrir `scenes/b1/b1_sandbox.tscn` y F6 para B1; F5 sigue abriendo H1. Completar M-01…M-08 y devolver el bloque OK/KO con el SHA. Todas están **NOT_RUN: las realiza el creador**; las críticas pendientes impiden declarar VALIDATED. No fusionar a main ni iniciar B2 por este informe.
+- C inicial `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete inicial `f951cb6892e2867f28ceb3edebb823377c6ecd8f`. Intento 01: integración no descubre los tests, exit 105.
+- Fix local `94e4880b03b60d1517917d11ab98dce786499d69`: tipado World del test. Intento 02: STATIC, IMPORT, UNIT 37/37, INTEGRATION 28/28, SMOKE 600 frames y REGRESSION PASS. H03/H04: 20 positivos y control negativo esperado; H1: 34 PASS / 0 FAIL / 1 NOT_RUN headless. [BUG-B1-01](../validation/B01/bugs/BUG-B1-01.md) cerrado técnicamente.
+- Paquete al recibir las manuales: `79d63e3d6b5c0ea87f88dac55e33f11ddef9d7c1`, runtime idéntico a C94e4880, sin cambios versionados. El creador no escribió el SHA de su sesión: la asociación al checkout es contexto inspeccionado, no una confirmación independiente.
+- M-01 PASS, ventana «bien»; M-02 FAIL; M-03/M-04/M-05/M-06/M-07 PASS comunicados; M-08 PASS tras aclarar Q histórico en F5. B1 en F6 usa WW/AA/SS/DD. Balance sigue provisional.
+- [TEST_RESULTS](../validation/B01/TEST_RESULTS.md), [manifest](../validation/B01/TEST_MANIFEST.json) y [paquete](../validation/B01/TEST_HANDOFF.md). Manifest en VALIDATION_FAILED: valida esquema, no debe presentarse como transferencia --ready hasta el próximo fix.
 
-Para repetir las automáticas, usar un worktree nuevo de ese SHA, comprobar el paquete con `validate_manifest.py --ready --candidate <ruta>` y ejecutar el runner según [TEST_HANDOFF](../validation/B01/TEST_HANDOFF.md). Evidencia nueva fuera del candidato; conservar los intentos 00, 01 y 02. No reutilizar los candidatos ya importados como si continuaran limpios.
+Entorno automático real: Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. Solo headless. Godot generó 24 sidecars .gd.uid y caché; se conservan los archivos locales. No ejecución manual, gráfica, export ni Blender por Codex.
+
+## Petición futura: cámara al morir
+
+**D-029**, expresamente solicitada para dejar anotada: transición a tercera persona, alejamiento y pequeña elevación de cámara, mostrando el cuerpo del protagonista tumbado. No implementar ahora ni bloquear la cámara actual por inferencia. Distancia, duración y técnica del cuerpo/animación pendientes; continuidad anotada en GAME_DESIGN, ART_BIBLE y prompts H19/H23, sin iniciar esos hitos.
+
+## Después del fix
+
+Claude entrega nuevo C y paquete completo en B1. Codex comprueba --ready en worktree limpio y repite automáticas/regresiones, con evidencia nueva fuera del candidato. El creador repite M-02 y las manuales afectadas (movimiento/cámara/disparo), indicando SHA. No reutilizar como limpios los worktrees importados ni sobrescribir intentos previos. B2 sigue NOT_STARTED; main no se fusiona; aprobación final pendiente.
 
 ## Contexto histórico de la migración y preparación previa
 

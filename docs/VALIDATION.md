@@ -1,3 +1,13 @@
+# B1 · revisión manual del creador y BUG-B1-02 · 2026-11-27
+
+**VALIDATION_FAILED:** M-02-WALL FAIL (el arma atraviesa paredes); M-01/M-03/M-04/M-05/M-06/M-07/M-08 PASS comunicados por el creador. [Fuente y aclaraciones](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md). SHA de la sesión no declarado por el creador; checkout inspeccionado `79d63e3`, runtime idéntico a C `94e4880`. El PASS automático previo se conserva con su SHA y no constituye aprobación manual.
+
+[BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md) abierto para Claude. D-030 exige mantener posición/aspecto del arma y prevenir penetración al tocar la pared. Diagnóstico automático sobre `49ecd30`: import PASS, unitarias 37/37, integración 29 con 1 fallo geométrico (exit 100), smoke PASS; regresión y estático NOT_RUN en este diagnóstico. [Evidencia íntegra](../validation/B01/evidence/diagnostic_03/README.md). La prueba de contención del arma en la cápsula se retiró con `71ce9a2` tras la aclaración; no es un fix del bug. Runtime/tests restablecidos sin cambiar el arma.
+
+D-029 deja documentada la cámara futura de muerte: tercera persona, alejamiento y elevación leves, cuerpo tumbado. La cámara actual puede girar muerto; M-07 no exigía bloquearla. H1 en F5 conserva Q, con resto de funcionamiento confirmado; B1 en F6 usa doble toque. No hay aprobación final, merge a main ni inicio de B2. Próximo paso: fix Claude y nueva validación sobre su SHA, incluida revisión humana de paredes y aspectos afectados.
+
+## Validación automática anterior conservada
+
 # B1 · pruebas automáticas Codex · 2026-11-27
 
 **Automáticas PASS sobre `94e4880b03b60d1517917d11ab98dce786499d69`; lote INTEGRATION_READY. No VALIDATED ni APPROVED: M-01…M-08 NOT_RUN, las realiza el creador.** [Informe por intento, comandos y versiones](../validation/B01/TEST_RESULTS.md), [paquete](../validation/B01/TEST_HANDOFF.md).

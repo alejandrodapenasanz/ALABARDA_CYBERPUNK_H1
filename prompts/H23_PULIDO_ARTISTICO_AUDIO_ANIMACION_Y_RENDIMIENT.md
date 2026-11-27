@@ -10,6 +10,10 @@ Aplicar ART_BIBLE y D-017, Modern PSX / Retro Industrial Cyberpunk, en los 3 pis
 
 Feedback distinto de daño, regeneración HP, E, baja/energía y ultimate. Remates solo tras resolver P-017, nunca recrear F extracción. Conservar salud roja/energía azul y legibilidad de ambas barras.
 
+## Continuidad futura: muerte del protagonista (D-029)
+
+El creador pidió el 2026-11-27 que al morir se pase de primera a tercera persona, alejando y elevando un poco la cámara para mostrar el cuerpo tumbado. Incorporar esta dependencia al plan cuando se encargue el desarrollo correspondiente: cuerpo completo, transición, obstáculos y revisión visual. Distancia, duración y técnica de animación/ragdoll siguen sin decidir; no implementar por la mera lectura de este prompt ni como corrección B1. [Decisión y fuente](../docs/DECISIONS.md).
+
 ## Roles, checkpoint y alcance
 
 Claude implementa solo los hitos del lote autorizado, con revisión y checkpoint por hito (interfaces, archivos, tests, dependencias, bugs y commit separado cuando sea posible). **PC Claude sin Godot ni Blender**: prepara tests/escenas/datos y ejecuta solo verificaciones disponibles sin motor; Godot queda NOT_RUN. No confundir CODE_READY con VALIDATED.

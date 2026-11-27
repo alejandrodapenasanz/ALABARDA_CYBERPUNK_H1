@@ -1,0 +1,62 @@
+{
+  "recorded_at_utc": "2026-11-27T15:23:19.800360+00:00",
+  "purpose": "Geometric diagnosis only; proposed body-containment criterion withdrawn after creator clarification. Not an acceptance test for the requested weapon collision.",
+  "tested_commit": "49ecd30a5b78ef18a85390e8929baf132d6b78ff",
+  "revert_commit": "71ce9a24f574b888fe2f9b8ca1c641470703b96a",
+  "full_regression": "NOT_RUN in this diagnostic (--skip-regression)",
+  "static": "NOT_RUN in this diagnostic",
+  "python": {
+    "argv": [
+      "C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe",
+      "--version"
+    ],
+    "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+    "exit_code": 0,
+    "stdout": "Python 3.13.15\n",
+    "stderr": ""
+  },
+  "windows": {
+    "argv": [
+      "powershell",
+      "-NoProfile",
+      "-Command",
+      "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | ConvertTo-Json"
+    ],
+    "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+    "exit_code": 0,
+    "stdout": "{\n    \"Caption\":  \"Microsoft Windows 11 Home\",\n    \"Version\":  \"10.0.26300\",\n    \"BuildNumber\":  \"26300\"\n}\n",
+    "stderr": ""
+  },
+  "gdunit_plugin": "[plugin]\n\nname=\"gdUnit4\"\ndescription=\"Unit Testing Framework for Godot Scripts\"\nauthor=\"Mike Schulze\"\nversion=\"6.2.3\"\nscript=\"plugin.gd\"\n",
+  "post_import_status": {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "C:\\dev\\ALABARDA_B1_C_49ecd30",
+    "exit_code": 0,
+    "stdout": "?? scripts/b1/b1_sandbox.gd.uid\n?? scripts/b1/sandbox_hazards.gd.uid\n?? scripts/combat/attack_state_machine.gd.uid\n?? scripts/combat/damage_info.gd.uid\n?? scripts/combat/damage_projectile.gd.uid\n?? scripts/combat/fixture_weapon.gd.uid\n?? scripts/combat/health_component.gd.uid\n?? scripts/combat/health_config.gd.uid\n?? scripts/combat/hitbox.gd.uid\n?? scripts/combat/hitscan.gd.uid\n?? scripts/combat/target_dummy.gd.uid\n?? scripts/core/physics_layers.gd.uid\n?? scripts/interaction/interactable_switch.gd.uid\n?? scripts/player/b1_player.gd.uid\n?? scripts/player/dash_controller.gd.uid\n?? scripts/player/double_tap_detector.gd.uid\n?? scripts/player/input_actions.gd.uid\n?? scripts/player/player_movement_config.gd.uid\n?? tests/b1/integration/combat_test.gd.uid\n?? tests/b1/integration/player_movement_test.gd.uid\n?? tests/b1/support/test_world.gd.uid\n?? tests/b1/unit/dash_and_config_test.gd.uid\n?? tests/b1/unit/double_tap_test.gd.uid\n?? tests/b1/unit/health_component_test.gd.uid\n",
+    "stderr": ""
+  },
+  "runtime_tests_baseline_restored": {
+    "argv": [
+      "git",
+      "diff",
+      "--exit-code",
+      "79d63e3d6b5c0ea87f88dac55e33f11ddef9d7c1",
+      "HEAD",
+      "--",
+      "scripts",
+      "scenes",
+      "tests",
+      "resources",
+      "project.godot",
+      "tools/pipeline/checkout_manifest.json"
+    ],
+    "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

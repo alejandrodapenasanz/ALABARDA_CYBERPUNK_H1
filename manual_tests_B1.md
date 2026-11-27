@@ -9,6 +9,8 @@ Arriba a la izquierda verás la barra de salud y una línea de estado: `ESTADO`,
 
 En cada prueba marca **OK** o **KO**. Si es KO, escribe una línea con lo que pasó.
 
+Revisión recibida el 2026-11-27: siete OK y paredes KO. [Resultados](validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md), [BUG-B1-02 abierto](validation/B01/bugs/BUG-B1-02.md). El próximo retest requiere primero su fix; no se ha cambiado el arma.
+
 ---
 
 ## 1. Dash por doble toque (M-01)
@@ -24,7 +26,8 @@ En cada prueba marca **OK** o **KO**. Si es KO, escribe una línea con lo que pa
 ## 2. Dash contra paredes (M-02)
 1. Ponte a 2 m del muro gris del carril de la derecha, mirándolo, y haz W W varias veces.
 2. Repite contra un muro exterior.
-→ Nunca lo atraviesas y `ESTADO` vuelve a `SUELO`.
+3. Tras el fix, comprueba también acercarte de lado, girar junto al muro y disparar/recargar cerca de él.
+→ Ni tú ni el arma atravesáis el muro. `ESTADO` vuelve a `SUELO`. El arma conserva su posición, tamaño aparente, encuadre y aspecto (D-030).
 
 - [ ] OK  - [ ] KO → ______
 
@@ -70,7 +73,7 @@ En cada prueba marca **OK** o **KO**. Si es KO, escribe una línea con lo que pa
 ## 8. H1 sigue igual (M-08) · con **F5**
 1. Muévete y haz dash con **Q**.
 2. Elimina los 5 blancos y pulsa **R** para reiniciar.
-→ Todo igual que antes de B1.
+→ Todo igual que antes de B1. **Q es intencional en H1 (F5)**; el doble toque corresponde al sandbox B1 (F6).
 
 - [ ] OK  - [ ] KO → ______
 

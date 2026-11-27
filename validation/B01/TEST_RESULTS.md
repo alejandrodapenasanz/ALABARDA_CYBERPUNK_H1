@@ -94,8 +94,52 @@ No se tomaron capturas ni se ejecutó interacción manual. Las fichas `manual/*.
 
 **BUG-B1-01**: tipado de `world` en la suite de combate. Fix `94e4880b03b60d1517917d11ab98dce786499d69`: `Node3D` → `World`, con actualización explícita únicamente del hash de ese test en la baseline portable. Ninguna aserción relajada, ningún cambio de gameplay ni de H1/H03/H04. Intento 02: descubrimiento y 28 casos PASS; todas las automáticas y regresiones repetidas. [Informe y cierre técnico](bugs/BUG-B1-01.md). Sin fallos estructurales detectados por estas pruebas.
 
-## Veredicto técnico y siguiente paso
+## Veredicto técnico del intento 02 · anterior a la revisión manual
 
 **Automáticas PASS sobre `94e4880b03b60d1517917d11ab98dce786499d69`.** Estado del lote: **INTEGRATION_READY**, con manuales críticas pendientes; **no VALIDATED ni APPROVED**. El candidato original conserva su FAIL.
 
 El creador hará M-01…M-08 con [manual_tests_B1.md](../../manual_tests_B1.md) sobre el candidato corregido y enviará el bloque OK/KO. No hay aprobación manual inferida, no se fusiona a main y no se inicia B2.
+
+## Revisión manual posterior del creador · 2026-11-27
+
+[Informe original, aclaraciones y contexto del SHA](evidence/manual_review_20261127/CREATOR_RESULTS.md). Checkout inspeccionado al recibirlo: `79d63e3d6b5c0ea87f88dac55e33f11ddef9d7c1`, runtime igual a C `94e4880`; el creador no escribió el SHA de la sesión. Codex no ejecutó manuales ni obtuvo capturas. Los NOT_RUN anteriores permanecen como historial real.
+
+| ID | Resultado comunicado | Observación |
+|---|---|---|
+| M-01-DASH | PASS | OK, ventana bien; balance general aún provisional |
+| M-02-WALL | FAIL | Cuerpo detenido, arma atraviesa pared; BUG-B1-02 |
+| M-03-MOVE | PASS | OK del creador |
+| M-04-INTERACT | PASS | F/E OK |
+| M-05-REGEN | PASS | OK; no tiempos medidos aportados |
+| M-06-COMBAT | PASS | Disparo OK |
+| M-07-DEATH | PASS en alcance B1 | Bloqueo del jugador OK, cámara gira; futura tercera persona registrada en D-029 |
+| M-08-H1 | PASS tras aclaración | Q histórico esperado; movimiento, cinco blancos y R confirmados |
+
+## Diagnóstico 03 · prueba geométrica retirada, sin fix de gameplay
+
+SHA probado: `49ecd30a5b78ef18a85390e8929baf132d6b78ff`, worktree limpio `C:/dev/ALABARDA_B1_C_49ecd30`; [--ready PASS](evidence/diagnostic_03/preflight/manifest_ready.stdout.log), exit 0 antes de importar. Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15, Windows 11 Home 10.0.26300. [Metadatos](evidence/diagnostic_03/metadata.json).
+
+| ID | Exit | Resultado | Recuento / alcance |
+|---|---:|---|---|
+| B1-STATIC | — | NOT_RUN | No ejecutado en el diagnóstico |
+| B1-IMPORT | 0 | PASS | Importación headless |
+| B1-UNIT | 0 | PASS | 37 tests, 0 fallos/errores/omitidos |
+| B1-INTEGRATION | 100 | FAIL | 29 tests, 1 fallo geométrico nuevo, 0 errores/omitidos; los 28 anteriores PASS |
+| B1-SMOKE | 0 | PASS | 600 frames headless |
+| B1-REGRESSION | — | NOT_RUN | Se usó --skip-regression; no es una entrega validada |
+
+Comando real (cwd del candidato):
+
+```powershell
+& C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe -X utf8 tools/b1/run_tests.py --godot C:/Users/aleja/Downloads/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe --output C:/dev/ALABARDA_B1_MANUAL_20261127/attempt_03 --skip-regression
+```
+
+Runner exit 1; [argv/cwd/fechas](evidence/diagnostic_03/preflight/runner.json), [summary](evidence/diagnostic_03/summary.json), [JUnit](evidence/diagnostic_03/b1_integration_reports/report_1/results.xml). Distancia máxima a la línea central de la cápsula 1,188606 frente a radio 0,35. Esto comprueba que el modelo sobresale, no una colisión real con pared.
+
+Tras D-030, que exige conservar posición y aspecto, se retiró ese criterio experimental mediante `71ce9a24f574b888fe2f9b8ca1c641470703b96a`. No se modificó el arma en ningún momento. Se conserva el fallo y no se lo reetiqueta PASS; **BUG-B1-02 sigue abierto**. La igualdad de runtime, escenas, tests y baseline con el paquete `79d63e3` se comprobó por `git diff --exit-code` (exit 0 en metadata). La suite vigente vuelve a 28 casos de integración; no se atribuye una ejecución nueva al SHA del revert.
+
+## Veredicto vigente y continuidad
+
+**Automáticas de aceptación anteriores: PASS sobre C `94e4880b03b60d1517917d11ab98dce786499d69` (intento 02). Revisión manual: FAIL por M-02. Estado del lote: VALIDATION_FAILED**, no VALIDATED ni APPROVED. BUG-B1-01 cerrado técnicamente; [BUG-B1-02](bugs/BUG-B1-02.md) abierto para Claude, sin fix todavía. La implementación requerida supera una corrección local de Codex.
+
+D-029 deja anotada la cámara de muerte futura; D-030 obliga a conservar posición/aspecto del arma y resolver físicamente su contacto con paredes. Tras fix de Claude: nuevo candidato, automáticas/regresiones y retest manual afectado con SHA. Sin merge a main ni inicio de B2.

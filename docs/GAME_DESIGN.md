@@ -1,6 +1,6 @@
 # GAME_DESIGN — reglas funcionales vigentes
 
-**v1.0 · 2026-11-22.** Diseño aprobado/solicitado no significa implementado. B1–B8 NOT_STARTED; migración aprobada por el creador 2026-11-23 (D-028). [Decisiones](DECISIONS.md), [arquitectura real](ARCHITECTURE.md).
+**v1.0 · 2026-11-22.** Diseño aprobado/solicitado no significa implementado. B1 en VALIDATION_FAILED por BUG-B1-02; B2–B8 NOT_STARTED; migración aprobada por el creador 2026-11-23 (D-028). [Decisiones](DECISIONS.md), [arquitectura real](ARCHITECTURE.md).
 
 ## Combate y loadout [APROBADO]
 
@@ -18,6 +18,16 @@ Duración ultimate **6 s a100 / 10 s a150**, interpolación lineal **PROVISIONAL
 ## Movimiento e inputs
 
 WASD y dash WW/AA/SS/DD dentro de ventana configurable; cooldown, un dash por par, sin auto-repeat ni parejas mixtas. Disponible en todos los builds. 1/2/3 equipa slot, mismo equipado guarda, otro cambia directo. 1/2/3 son slots libres sin categoría (D-027); duplicados/vacíos P-011. E siempre curación; interacción con F (D-027). Tabla única y casos [CONTROLS](CONTROLS.md). H1 conserva Q dash/R reset y no se modifica en esta migración.
+
+## Muerte: presentación futura (D-029)
+
+Petición expresa del creador, 2026-11-27: al morir, transición de primera a tercera persona; cámara que se aleja y sube un poco mostrando al protagonista tumbado en el suelo. Dirección aprobada para el futuro, no implementada en B1. La cámara B1 todavía permite mirar muerto; movimiento, dash, interacción y disparo se bloquean. No hay instrucción de bloquear ahora el ratón.
+
+Distancia/tiempos, colisiones de cámara y técnica para mostrar el cuerpo quedan pendientes de concretar; no se presupone ragdoll ni animación específica. Registrar la dependencia de cuerpo completo y presentación en H19/H23 sin iniciar esos hitos. No cambia la política de derrota/progreso.
+
+## Arma B1 frente a paredes (D-030)
+
+Conservar posición, escala, encuadre y aspecto del arma; cuando toque la pared no puede atravesarla. BUG-B1-02 permanece abierto: el cuerpo se detiene pero el mesh sobresale sin prevención de penetración. Claude debe resolver su interacción física con movimiento y cámara. Reducir, desplazar, ocultar o superponer el arma sobre la pared no satisface el requisito.
 
 ## IA y sigilo [APROBADO]
 
