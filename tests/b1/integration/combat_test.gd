@@ -5,7 +5,7 @@ extends GdUnitTestSuite
 const World = preload("res://tests/b1/support/test_world.gd")
 const Weapon = preload("res://scripts/combat/fixture_weapon.gd")
 
-var world: Node3D
+var world: World
 
 
 func before_test() -> void:
