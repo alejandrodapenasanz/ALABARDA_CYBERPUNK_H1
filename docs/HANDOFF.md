@@ -1,20 +1,26 @@
-# HANDOFF — migración pipeline v2.1
+# HANDOFF — B1: automáticas PASS, manuales pendientes
 
-**2026-11-23: entrega documental APROBADA por el creador (D-027/D-028). B1 NOT_STARTED; se desarrollará en la rama `B1` creada desde `main`.** H1–H04 conservan sus aprobaciones; no se programa gameplay ni se repiten H03/H04 durante esta tarea. [Informe completo](PIPELINE_MIGRATION_REPORT.md), [validación](VALIDATION.md), [documentos anteriores](history/pre_pipeline_v2_1/manifest.json).
+**2026-11-27 · rama B1 · INTEGRATION_READY. No VALIDATED ni APPROVED.** El creador encargó exclusivamente pruebas automáticas y asignó M-01…M-08 a su revisión personal. H1–H04 conservan sus aprobaciones históricas; B2 no iniciado y main sin fusionar.
 
-## Estado actual · B1 INTEGRATION_READY · 2026-11-23
+## Estado y commits exactos
 
-Claude ha programado B1 en la rama `B1`: H05 (`7e293e3`) y H06 (`8cc5996`) en `CODE_READY`; candidato **C = `bfe7071b63e756200f4e1ea94160175bc6294644`**; paquete en [validation/B01](../validation/B01/TEST_HANDOFF.md). Solo se ha ejecutado análisis estático y pipeline (PASS); **todos los tests Godot NOT_RUN**. Nada VALIDATED ni APPROVED. Sandbox jugable: `scenes/b1/b1_sandbox.tscn` (F6); F5 sigue siendo H1 sin cambios.
+- Candidato inicial: `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete de entrada: `f951cb6892e2867f28ceb3edebb823377c6ecd8f`.
+- Intento 01 (2026-11-23): FAIL en descubrimiento de integración, exit 105 por inferencia de tipos en el test de combate. Importación, 37 unitarias, smoke y regresión PASS.
+- Fix y **candidato realmente probado en el intento 02**: `94e4880b03b60d1517917d11ab98dce786499d69`. Una línea de tipado del test y solo su hash portable; sin cambios de gameplay/aserciones.
+- Intento 02 (2026-11-27): **B1-STATIC, IMPORT, UNIT 37/37, INTEGRATION 28/28, SMOKE y REGRESSION PASS**. H03/H04: 20 positivos y control negativo esperado; H1: 34 PASS / 0 FAIL / 1 NOT_RUN headless.
+- [BUG-B1-01](../validation/B01/bugs/BUG-B1-01.md) cerrado técnicamente por retest. [Resultados y comandos](../validation/B01/TEST_RESULTS.md), [manifest vigente](../validation/B01/TEST_MANIFEST.json), [evidencia del intento 02](../validation/B01/evidence/attempt_02/summary.json). El commit posterior del paquete se comunica en el informe final; no se atribuyen ejecuciones al SHA del paquete.
 
-**Siguiente paso, PC Codex:**
+Entorno: Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. Solo headless. Los candidatos estaban limpios antes de importar; Godot generó 24 sidecars .gd.uid no versionados y caché, sin modificar fuentes versionadas. No se han hecho pruebas manuales, capturas, export ni ejecución de Blender.
 
-1. `git fetch origin` y `git -c core.longpaths=true worktree add --detach <dir-nuevo> bfe7071b63e756200f4e1ea94160175bc6294644` (sin longpaths falla por rutas largas de assets).
-2. Leer `AGENTS.md`, [CODEX_VALIDATE_BATCH](../prompts/_templates/CODEX_VALIDATE_BATCH.md) y [TEST_HANDOFF B1](../validation/B01/TEST_HANDOFF.md).
-3. Desde la copia de `B1` (con el paquete): `python -X utf8 tools/pipeline/validate_manifest.py validation/B01/TEST_MANIFEST.json --ready --candidate <dir-nuevo>`.
-4. En `<dir-nuevo>`: `python -X utf8 tools/b1/run_tests.py --godot <Godot_v4.7.2-stable_win64_console.exe> --output <evidencia nueva fuera del candidato>`.
-5. Pruebas manuales M-02, M-04, M-05 y M-07; registrar en `validation/B01/TEST_RESULTS.md` (intento 01). Fallos pequeños y locales: fix en `B1` con nuevo SHA; estructurales: BUG_REPORT para Claude.
+## Siguiente paso: creador
 
-**Después, creador:** M-01, M-03, M-06 y M-08 y checklist I del handoff. Con VALIDATED + APPROVED, fusionar `B1` en `main`, repetir la verificación en `main` y crear `B2` desde ese `main` (D-028).
+Seguir [manual_tests_B1.md](../manual_tests_B1.md) sobre `94e4880b03b60d1517917d11ab98dce786499d69` (el paquete posterior solo añade documentación/evidencia). Abrir `scenes/b1/b1_sandbox.tscn` y F6 para B1; F5 sigue abriendo H1. Completar M-01…M-08 y devolver el bloque OK/KO con el SHA. Todas están **NOT_RUN: las realiza el creador**; las críticas pendientes impiden declarar VALIDATED. No fusionar a main ni iniciar B2 por este informe.
+
+Para repetir las automáticas, usar un worktree nuevo de ese SHA, comprobar el paquete con `validate_manifest.py --ready --candidate <ruta>` y ejecutar el runner según [TEST_HANDOFF](../validation/B01/TEST_HANDOFF.md). Evidencia nueva fuera del candidato; conservar los intentos 00, 01 y 02. No reutilizar los candidatos ya importados como si continuaran limpios.
+
+## Contexto histórico de la migración y preparación previa
+
+Los apartados siguientes conservan el contexto anterior a B1 y sus instrucciones condicionales. El estado actual y el siguiente paso son los descritos arriba.
 
 ## Qué está preparado
 

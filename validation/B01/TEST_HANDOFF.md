@@ -1,22 +1,25 @@
 # TEST_HANDOFF — B1 (H05, H06)
 
-Documento autónomo para validar B1 en el PC Codex y para la revisión del creador. Los IDs coinciden con [TEST_MANIFEST.json](TEST_MANIFEST.json) y [TEST_RESULTS.md](TEST_RESULTS.md). **Ninguna prueba Godot se ha ejecutado**: el PC Claude no tiene Godot ni Blender.
+Documento autónomo para repetir las pruebas y para la revisión del creador. Los IDs coinciden con [TEST_MANIFEST.json](TEST_MANIFEST.json) y [TEST_RESULTS.md](TEST_RESULTS.md). **2026-11-27: automáticas PASS sobre el candidato corregido `94e4880`; M-01…M-08 NOT_RUN, las realiza el creador.** No se declara VALIDATED ni APPROVED. El fallo original de descubrimiento de la suite queda conservado en el intento 01 y [BUG-B1-01](bugs/BUG-B1-01.md).
 
 ## A. Identificación
 
 | Campo | Valor |
 |---|---|
 | Lote / hitos | B1 · H05 Núcleo de jugador, interacción y movimiento · H06 Daño, salud, hitzones y estados de ataque |
-| Fecha / autor | 2026-11-23 · Claude (PC Claude, sin Godot/Blender) |
+| Fecha / autor | Entrega Claude 2026-11-23; ejecución automática y actualización Codex 2026-11-27 |
 | Rama | `B1` (creada desde `main`, D-028) |
-| **Candidato C (código y tests a probar)** | `bfe7071b63e756200f4e1ea94160175bc6294644` |
-| Paquete P | commit siguiente en `B1` que añade `validation/B01/`; su SHA se comunica en el mensaje de entrega (un fichero no puede contener su propio SHA) |
+| **Candidato C corregido y probado** | `94e4880b03b60d1517917d11ab98dce786499d69` |
+| Candidato original / paquete de entrada | `bfe7071b63e756200f4e1ea94160175bc6294644` / `f951cb6892e2867f28ceb3edebb823377c6ecd8f` |
+| Paquete P de resultados | commit posterior al fix en `B1`, comunicado en el informe final; no se incluye su propio SHA dentro de sí mismo |
 | Commit aprobado anterior | `796255711fd04c4e6a6d061fba718e86db8cf099` (`main`, migración v2.1 aprobada, D-028) |
-| Estado | `INTEGRATION_READY` (H05 y H06 `CODE_READY`; nada `VALIDATED` ni `APPROVED`) |
+| Estado | `INTEGRATION_READY`: automáticas PASS, manuales críticas pendientes; nada `VALIDATED` ni `APPROVED` |
 | Entorno esperado | Windows 11 · Godot 4.7.2.stable.official.ed1daf0bf (console) · GL Compatibility · Python 3.11+ · GdUnit4 6.2.3 vendorizado · Blender no necesario |
 | Sistemas afectados | Nuevo jugador B1, input map en runtime, salud/daño/hitboxes, arma fixture, sandbox B1. **H1 sin cambios** |
 
 Commits por hito dentro de `B1`: `7e293e3` H05 · `8cc5996` H06 · `bfe7071` candidato (runner, documentación técnica, manifest portable).
+
+Fix `94e4880`: tipar `world` como el script `World` en el test de combate y actualizar únicamente su hash portable. Sin cambios de gameplay ni de aserciones. Resultados: intento 01 FAIL en C original (2026-11-23); intento 02 PASS en el fix (2026-11-27). Windows real del segundo intento: 11 Home 10.0.26300; Python 3.13.15; Godot/GdUnit coinciden con el entorno esperado.
 
 ## B. Funcionalidad entregada
 
@@ -61,7 +64,7 @@ Eliminados: ninguno. **No modificados**: `scenes/main.tscn`, `scripts/player.gd`
 | B1-SMOKE | integration · sí | `${GODOT_BIN} --headless --path . --fixed-fps 60 --quit-after 600 res://scenes/b1/b1_sandbox.tscn` | exit 0 sin errores de motor | error/timeout | 180 s | IMPORT |
 | B1-REGRESSION | regression · sí | `python -X utf8 tools/h04/run_tests.py --godot ${GODOT_BIN} --output ${EVIDENCE_DIR}/regression` | `summary.json` PASS; `RESULT passed=34 failed=0 not_run=1` en H1 | cualquier entrada FAIL | 900 s | IMPORT |
 
-Cobertura de los tests (todos `NOT_RUN`):
+Cobertura de los tests (ejecutados en el intento 02; todos PASS):
 
 - `double_tap_test.gd` (10): CT-01 cuatro direcciones; CT-02 ventana lenta, límite inclusivo, parejas mixtas, mixta seguida de la misma tecla; CT-03 echo/soltar ignorados, tecla mantenida, triple toque = un dash; entradas inválidas y reloj hacia atrás.
 - `dash_and_config_test.gd` (10): duración, cooldown, dirección aplanada/validada, estado bloqueado sin consumir cooldown, delta inválido; config por defecto válida e inválidas rechazadas; acciones con teclas aprobadas; E≠F; sin binding inventado para recarga/ultimate/pausa.
@@ -73,20 +76,20 @@ Cobertura de los tests (todos `NOT_RUN`):
 
 ## F. Pruebas manuales Godot
 
-Todas en `scenes/b1/b1_sandbox.tscn`: abrir la escena en el editor y pulsar **F6** (F5 sigue lanzando H1). Fichas completas en el manifest; resumen:
+Todas NOT_RUN: **las realiza el creador**, por instrucción expresa de este encargo. Abrir `scenes/b1/b1_sandbox.tscn` y pulsar **F6** (F5 sigue lanzando H1). Fichas completas en el manifest y guía [manual_tests_B1.md](../../manual_tests_B1.md); resumen:
 
 | ID | Quién | Qué | Pasos clave | Esperado / fallo |
 |---|---|---|---|---|
 | M-01-DASH | Creador | CT-01..03 y sensación de la ventana 0,25 s | 1. Caminar suelto y con W mantenida 5 s. 2. WW, AA, SS, DD. 3. W luego A. 4. Par durante cooldown. 5. Girar 90° y WW. 6. Valorar la ventana | Un dash por par en la dirección de la vista; nunca al caminar / dash accidental o doble |
-| M-02-WALL | Codex | CT-04 | Dash repetido contra el muro gris (10, 1.5, -2) y un muro perimetral | Se detiene y vuelve a SUELO / atraviesa o se queda en DASH |
+| M-02-WALL | Creador | CT-04 | Dash repetido contra el muro gris (10, 1.5, -2) y un muro perimetral | Se detiene y vuelve a SUELO / atraviesa o se queda en DASH |
 | M-03-MOVE | Creador | CT-05 | Marcas de 1 m andando y con Shift, salto al bloque bajo, tope de cámara | Igual o mejor que H1 / tirones o cámara invertida |
-| M-04-INTERACT | Codex | CT-06 / SB-15 | Ante la consola (-4, 1.4, 4): E sin efecto + aviso; F la pone verde; a más de 2,5 m F no hace nada | F alterna, E nunca / E activa |
-| M-05-REGEN | Codex | SB-02..05 | Zona roja hasta 70, salir, cronometrar REGEN SÍ (~5 s), subir a 100, reentrar a mitad | 5 s de espera, ~6 s de 70 a 100, reinicio con daño / regenera antes o supera 100 |
+| M-04-INTERACT | Creador | CT-06 / SB-15 | Ante la consola (-4, 1.4, 4): E sin efecto + aviso; F la pone verde; a más de 2,5 m F no hace nada | F alterna, E nunca / E activa |
+| M-05-REGEN | Creador | SB-02..05 | Zona roja hasta 70, salir, cronometrar REGEN SÍ (~5 s), subir a 100, reentrar a mitad | 5 s de espera, ~6 s de 70 a 100, reinicio con daño / regenera antes o supera 100 |
 | M-06-COMBAT | Creador | Hitzones, armadura, cadencia, recarga | Cuerpo y cabeza al blanco de 60; vaciar el cargador; tanque | -35/-70, ARM antes que HP, recarga a los 12 disparos / zona errónea o sin recarga |
-| M-07-DEATH | Codex | SB-06/SB-26 | Torreta (15, 0.6, 15) + zona roja hasta 0; intentar moverse, disparar y F | HAS MUERTO una vez, BLOQUEADO, sin regenerar, reinicio a 3 s / se mueve o dispara muerto |
+| M-07-DEATH | Creador | SB-06/SB-26 | Torreta (15, 0.6, 15) + zona roja hasta 0; intentar moverse, disparar y F | HAS MUERTO una vez, BLOQUEADO, sin regenerar, reinicio a 3 s / se mueve o dispara muerto |
 | M-08-H1 | Creador | Regresión H1 | F5: Q dash, cinco blancos, R | Igual que antes de B1 |
 
-Captura o nota en `evidence/attempt_01/manual/<ID>.md|png`. Sin captura real: `NOT_RUN` con motivo.
+Los registros de esta ejecución en `evidence/attempt_01/manual/` y `evidence/attempt_02/manual/` indican NOT_RUN y no contienen capturas. Guardar la futura revisión humana en un directorio nuevo para no sobrescribir estos intentos.
 
 ## G. Regresiones
 
@@ -97,12 +100,12 @@ Captura o nota en `evidence/attempt_01/manual/<ID>.md|png`. Sin captura real: `N
 
 ## H. Problemas conocidos y límites
 
-- Sin ejecución en motor: **todo puede fallar en Godot** aunque el análisis estático pase. Riesgos concretos a vigilar: emisión de `animation_finished` dentro de `AnimationPlayer.advance()` en modo manual (tests de `combat_test.gd`), entrega de eventos con `Input.parse_input_event` en GdUnit headless, posibles avisos del analizador de Godot no detectados por gdtoolkit.
+- Automáticas ejecutadas en Godot 4.7.2: 37 unitarias y 28 de integración PASS en el fix. La suite cubrió `AnimationPlayer.advance()` e inputs inyectados; estos resultados headless no sustituyen sensación, interacción física, arte ni pruebas manuales. El análisis estático no detectó el error de inferencia que sí detectó Godot; fallo y corrección trazados en BUG-B1-01.
 - Fixtures, no producto: arma de prueba y blancos con primitivas; geometría greybox; recarga automática; reinicio del sandbox a los 3 s.
 - Valores provisionales (PENDING_PLAYTEST): ventana 0,25 s, cabeza x2,0, velocidades/dash de H1, regeneración 5 s / 5 HP/s.
 - El salto se repite si se mantiene Espacio (igual que H1). El dash aéreo está permitido (`allow_air_dash = true`, como H1); cambiarlo es una decisión de diseño.
 - Worktree en Windows: usar `git -c core.longpaths=true worktree add …`; sin esa opción el checkout falla por rutas largas de assets (comprobado en el PC Claude).
-- Sin bugs abiertos (no hay ejecución que los revele). Ningún BUG_REPORT.
+- BUG-B1-01 cerrado técnicamente tras el retest del fix; no quedan fallos abiertos detectados por estas automáticas. Manuales pendientes.
 
 ## I. Checklist del creador
 
@@ -116,8 +119,8 @@ Captura o nota en `evidence/attempt_01/manual/<ID>.md|png`. Sin captura real: `N
 
 ## J. Aceptación
 
-- **VALIDATED** (Codex): B1-IMPORT, B1-UNIT (37/37), B1-INTEGRATION (28/28), B1-SMOKE y B1-REGRESSION en PASS sobre `bfe7071…` exacto; M-02, M-04, M-05 y M-07 observados sin fallo; sin regresiones críticas.
-- **APPROVED** (creador): además M-01, M-03, M-06 y M-08 aceptados expresamente.
+- Las automáticas PASS sobre `94e4880b03b60d1517917d11ab98dce786499d69` no bastan para declarar VALIDATED. Según el encargo actual, el creador ejecuta **M-01…M-08**; todas siguen NOT_RUN y las críticas impiden cerrar la validación.
+- **APPROVED** requiere la aceptación expresa del creador sobre el SHA probado y la revisión manual completa. No se concede en este paquete.
 - Bloquea VALIDATED: cualquier test crítico FAIL o NOT_RUN, SHA distinto o regresión H1/H03/H04. Bloquea APPROVED: rechazo de sensación/legibilidad o pendientes que el creador considere necesarios.
 - Fallos → `VALIDATION_FAILED` con BUG_REPORT; correcciones pequeñas y locales puede hacerlas Codex en `B1` con nuevo SHA; estructurales vuelven a Claude.
 

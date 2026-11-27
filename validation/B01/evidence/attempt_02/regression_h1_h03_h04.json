@@ -1,0 +1,20 @@
+{
+  "label": "regression_h1_h03_h04",
+  "date": "2026-11-27T09:09:07.695200+01:00",
+  "cwd": "C:\\dev\\ALABARDA_B1_C_94e4880",
+  "argv": [
+    "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "tools/h04/run_tests.py",
+    "--godot",
+    "C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+    "--output",
+    "C:\\dev\\ALABARDA_B1_EVIDENCE_20261123\\attempt_02\\regression"
+  ],
+  "powershell": "& 'C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe' '-X' 'utf8' 'tools/h04/run_tests.py' '--godot' 'C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe' '--output' 'C:\\dev\\ALABARDA_B1_EVIDENCE_20261123\\attempt_02\\regression'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26300-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

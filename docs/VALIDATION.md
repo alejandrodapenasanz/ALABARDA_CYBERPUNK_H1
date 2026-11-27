@@ -1,3 +1,15 @@
+# B1 · pruebas automáticas Codex · 2026-11-27
+
+**Automáticas PASS sobre `94e4880b03b60d1517917d11ab98dce786499d69`; lote INTEGRATION_READY. No VALIDATED ni APPROVED: M-01…M-08 NOT_RUN, las realiza el creador.** [Informe por intento, comandos y versiones](../validation/B01/TEST_RESULTS.md), [paquete](../validation/B01/TEST_HANDOFF.md).
+
+El candidato original `bfe7071b63e756200f4e1ea94160175bc6294644` se probó el 2026-11-23: análisis estático, importación, 37 unitarias, smoke y regresión PASS; integración FAIL, exit 105 durante el descubrimiento, sin JUnit. Se conserva el intento 01. [BUG-B1-01](../validation/B01/bugs/BUG-B1-01.md): `world: Node3D` impedía inferir retornos del script World. Corrección local `94e4880`: una línea de tipado y solo el hash de ese test en la baseline portable; sin modificar aserciones ni gameplay.
+
+Intento 02, worktree nuevo y limpio antes de importar, Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15: B1-STATIC PASS (42 scripts/12 recursos); IMPORT PASS; UNIT **37/37**; INTEGRATION **28/28**; SMOKE **600 frames**; REGRESSION PASS, H03 **8+8** y H04 **4**, control negativo esperado exit **100**, H1 **passed=34 failed=0 not_run=1**. Todas las seis comprobaciones automáticas finales salen con exit 0; no errores ni omitidos en las suites positivas.
+
+[Resumen completo](../validation/B01/evidence/attempt_02/summary.json), [regresión](../validation/B01/evidence/attempt_02/regression/regression/summary.json), [análisis estático](../validation/B01/evidence/attempt_02/preflight/static.stdout.log). Los JSON registran argv/cwd/fecha/exit; logs y JUnit conservados con hashes. Godot generó 24 .gd.uid no versionados tras importar; los archivos versionados no cambiaron. No ejecución manual, gráfica, export ni Blender. El creador continúa con [manual_tests_B1.md](../manual_tests_B1.md).
+
+## Registros anteriores conservados
+
 # B1 (H05, H06) · INTEGRATION_READY · 2026-11-23
 
 Claude programó B1 en la rama `B1` sin Godot. Candidato C `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete [validation/B01](../validation/B01/TEST_HANDOFF.md). En un worktree limpio de C: `check_godot_static.py` PASS (42 .gd, 12 .tscn/.tres), `verify_checkout.py` PASS (2871 ficheros), `verify_integrity.py` PASS (H1/H03/H04 intactos), `validate_manifest.py --ready` PASS. **B1-IMPORT, B1-UNIT (37), B1-INTEGRATION (28), B1-SMOKE, B1-REGRESSION y M-01…M-08: NOT_RUN** hasta Codex/creador. Resultados históricos posteriores intactos.

@@ -1,0 +1,39 @@
+{
+  "label": "unit",
+  "date": "2026-11-23T19:13:47.492825+01:00",
+  "cwd": "C:\\dev\\ALABARDA_B1_C_bfe7071",
+  "argv": [
+    "C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+    "--headless",
+    "--path",
+    "C:\\dev\\ALABARDA_B1_C_bfe7071",
+    "-s",
+    "res://addons/gdUnit4/bin/GdUnitCmdTool.gd",
+    "-a",
+    "res://tests/h03/unit",
+    "--ignoreHeadlessMode",
+    "-rd",
+    "C:\\dev\\ALABARDA_B1_EVIDENCE_20261123\\attempt_01\\regression\\regression\\unit_reports"
+  ],
+  "powershell": "& 'C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe' '--headless' '--path' 'C:\\dev\\ALABARDA_B1_C_bfe7071' '-s' 'res://addons/gdUnit4/bin/GdUnitCmdTool.gd' '-a' 'res://tests/h03/unit' '--ignoreHeadlessMode' '-rd' 'C:\\dev\\ALABARDA_B1_EVIDENCE_20261123\\attempt_01\\regression\\regression\\unit_reports'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "engine_errors": [],
+  "status": "PASS",
+  "junit": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "names": [
+      "test_framework_positive",
+      "test_load_resource_and_approved_rules",
+      "test_invalid_numeric_data",
+      "test_missing_unknown_and_approved_rule_changes",
+      "test_relationships_and_integer_counts",
+      "test_clamps_and_nonfinite_values",
+      "test_missing_wrong_type_and_invalid_resource",
+      "test_instances_do_not_share_mutable_defaults"
+    ]
+  }
+}

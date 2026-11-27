@@ -1,13 +1,13 @@
 # ROADMAP — H02–H24 y lotes B0–B8
 
-**2026-11-22 · agrupación solicitada v2.1; migración aprobada por el creador 2026-11-23 (D-028).** No se renumera ni implementa ningún hito. H1–H04 cerrados por el creador; B1 NOT_STARTED, se desarrollará en la rama `B1` con encargo expreso.
+**Actualizado 2026-11-27 · agrupación v2.1; migración aprobada 2026-11-23 (D-028).** H1–H04 conservan su cierre histórico. B1 está en su rama con automáticas PASS sobre `94e4880`, pendiente de todas las manuales del creador; no VALIDATED ni APPROVED. B2 no iniciado.
 
 ## Lotes y dependencias
 
 | Lote | Hitos | Objetivo | Depende de | Estado lote |
 |---|---|---|---|---|
 | B0 | H03, H04 | Infraestructura y arte | H02 | APPROVED histórico H03/H04 |
-| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | INTEGRATION_READY (C `bfe7071`, tests Godot NOT_RUN) |
+| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | INTEGRATION_READY (C `94e4880`, automáticas PASS; M-01…M-08 NOT_RUN, las realiza el creador) |
 | B2 | H07, H08, H09 | Armas, energía y ultimates | B1 | NOT_STARTED |
 | B3 | H10, H11, H12 | Enemigos, percepción y sigilo | B2 | NOT_STARTED |
 | B4 | H13, H14, H15 | Persistencia, firmware y economía | B3 | NOT_STARTED |

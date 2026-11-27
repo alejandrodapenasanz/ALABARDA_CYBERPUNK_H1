@@ -1,0 +1,13 @@
+{
+  "label": "bundle_integrity",
+  "started_at_utc": "2026-11-27T08:17:20.185144+00:00",
+  "ended_at_utc": "2026-11-27T08:17:20.452807+00:00",
+  "cwd": "C:/dev/ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "C:/dev/ALABARDA_B1_EVIDENCE_20261123/verify_delivery.py"
+  ],
+  "exit_code": 0
+}

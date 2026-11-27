@@ -1,0 +1,17 @@
+{
+  "label": "manifest_ready",
+  "started_at_utc": "2026-11-27T08:17:51.224647+00:00",
+  "ended_at_utc": "2026-11-27T08:17:51.548105+00:00",
+  "cwd": "C:/dev/ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "tools/pipeline/validate_manifest.py",
+    "validation/B01/TEST_MANIFEST.json",
+    "--ready",
+    "--candidate",
+    "C:/dev/ALABARDA_B1_VERIFY_94e4880"
+  ],
+  "exit_code": 0
+}
