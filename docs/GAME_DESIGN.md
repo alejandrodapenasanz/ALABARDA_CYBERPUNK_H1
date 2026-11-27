@@ -1,6 +1,6 @@
 # GAME_DESIGN — reglas funcionales vigentes
 
-**v1.0 · 2026-11-22.** Diseño aprobado/solicitado no significa implementado. B1 en VALIDATION_FAILED por BUG-B1-02; B2–B8 NOT_STARTED; migración aprobada por el creador 2026-11-23 (D-028). [Decisiones](DECISIONS.md), [arquitectura real](ARCHITECTURE.md).
+**v1.0 · 2026-11-22.** Diseño aprobado/solicitado no significa implementado. B1 en INTEGRATION_READY tras fix técnico de BUG-B1-02; B2–B8 NOT_STARTED; migración aprobada por el creador 2026-11-23 (D-028). [Decisiones](DECISIONS.md), [arquitectura real](ARCHITECTURE.md).
 
 ## Combate y loadout [APROBADO]
 
@@ -27,7 +27,7 @@ Distancia/tiempos, colisiones de cámara y técnica para mostrar el cuerpo queda
 
 ## Arma B1 frente a paredes (D-030)
 
-Conservar posición, escala, encuadre y aspecto del arma; cuando toque la pared no puede atravesarla. BUG-B1-02 permanece abierto: el cuerpo se detiene pero el mesh sobresale sin prevención de penetración. Claude debe resolver su interacción física con movimiento y cámara. Reducir, desplazar, ocultar o superponer el arma sobre la pared no satisface el requisito.
+Conservar posición, escala, encuadre y aspecto del arma; cuando toque la pared no puede atravesarla. BUG-B1-02 tiene fix técnico `1401e05`, encargado directamente a Codex: una envolvente física cubre el arma y sus poses de animación; el movimiento y el giro se detienen antes de penetrar. Al tocar una pared hay que apartarse o girar en dirección libre. Pendiente de retest visual del creador. Reducir, desplazar, ocultar o superponer el arma sobre la pared no satisface el requisito.
 
 ## IA y sigilo [APROBADO]
 

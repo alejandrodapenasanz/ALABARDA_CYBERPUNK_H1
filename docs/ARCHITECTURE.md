@@ -1,6 +1,6 @@
-# ARCHITECTURE — implementación H1–H04, B1 (CODE_READY) y contratos futuros
+# ARCHITECTURE — implementación H1–H04, B1 (INTEGRATION_READY) y contratos futuros
 
-**2026-11-22.** H1–H04 APPROVED; B1–B8 NOT_STARTED. Migración documental aprobada 2026-11-23 (D-028); no se han programado los contratos futuros.
+**2026-11-27.** H1–H04 APPROVED; B1 INTEGRATION_READY, automáticas PASS y retest manual pendiente; B2–B8 NOT_STARTED. Migración documental aprobada 2026-11-23 (D-028); no se han programado los contratos futuros.
 
 ## Contratos previstos (nombres conceptuales, no archivos existentes)
 
@@ -18,15 +18,16 @@ HealthSystem no necesita conocer EnergySystem: coordinador consulta ambos y conf
 
 El esquema1 de BalanceProfile H03 no implementa estos contratos. Campos de extracción **SUPERSEDED** para el nuevo diseño se conservan byte a byte ahora; adaptación versionada en H06/H08/H09, sin reescribir PASS históricos. No confundir nombres conceptuales futuros con recursos existentes.
 
-## Implementación B1 (H05/H06) · 2026-11-23 · CODE_READY, tests Godot NOT_RUN
+## Implementación B1 (H05/H06) · 2026-11-27 · automáticas PASS, retest manual pendiente
 
-Código escrito en el PC Claude sin Godot; solo análisis estático (`check_godot_static.py`) ejecutado. Hasta que Codex valide el SHA, nada de esta sección está comprobado en motor. H1 (`scenes/main.tscn`, `scripts/player.gd`, `scripts/enemy.gd`) **no cambia**: F5 sigue siendo H1 con Q dash y respawn; la regresión H1 sigue vigente.
+Código inicial escrito por Claude; Codex ejecutó las automáticas y, por encargo directo del creador, corrigió BUG-B1-02 en `1401e05269fc4919f3658788e7de48bc5a4aa148`. Intento 05: 37 unitarias, 35 de integración y regresiones PASS en Godot 4.7.2. La aceptación manual del fix sigue pendiente. H1 (`scenes/main.tscn`, `scripts/player.gd`, `scripts/enemy.gd`) **no cambia**: F5 sigue siendo H1 con Q dash y respawn; la regresión H1 sigue vigente.
 
 | Contrato | Archivo real | Notas |
 |---|---|---|
 | InputController | `scripts/player/input_actions.gd` (InputActions) | Registra acciones en runtime sin sobrescribir remapeos: WASD, Shift, Espacio, **F interact**, **E heal reservada** (sin consumidor hasta H08), clic fire. Sin binding para recarga/ultimate/pausa |
 | DashController | `scripts/player/double_tap_detector.gd`, `scripts/player/dash_controller.gd` | Lógica pura con reloj explícito: misma tecla dentro de ventana, ignora echo y parejas mixtas, un dash por par; duración/cooldown; el jugador aplica la velocidad con move_and_slide y cancela si una pared lo frena |
 | Jugador | `scenes/player/b1_player.tscn` + `scripts/player/b1_player.gd` (B1Player) | CharacterBody3D, Head/Camera3D, InteractRay, HealthComponent, Hitbox y FixtureWeapon. Estados GROUNDED/AIRBORNE/DASHING/DISABLED. Reloj inyectable para tests |
+| Colisión del arma | `scripts/player/weapon_wall_guard.gd` | Envolvente convexa de las cajas y poses lineales de la fixture, CollisionShape3D hijo directo del CharacterBody3D. `move_and_slide` resuelve traslación; barrido angular conservador limita yaw/pitch antes de entrar en paredes. Sin tocar modelo, transform relativo, materiales, animaciones ni Hitbox de daño. Específico de la fixture B1; nuevas armas/animaciones requieren adaptar y probar su volumen |
 | Config movimiento | `scripts/player/player_movement_config.gd`, `resources/player/movement_default.tres` | Valores H1 + `double_tap_window_s=0.25` propuesta; todo PROVISIONAL_VALUE |
 | Interacción | `scripts/interaction/interactable_switch.gd` | Contrato: grupo `interactable` + `interact(actor)`. Rayo desde cámara, la primera colisión gana (las paredes bloquean) |
 | HealthSystem | `scripts/combat/health_component.gd` (HealthComponent), `scripts/combat/health_config.gd`, `resources/combat/player_health.tres` | 0..max, muerte única, armadura, vulnerabilidad/inmunidad por tipo, autoHP tras 5 s a 5 HP/s. `heal()` devuelve HP efectivo; `set_regen_paused(&"manual_heal")` es el contrato para H08. Sin energía |
@@ -34,7 +35,7 @@ Código escrito en el PC Claude sin Godot; solo análisis estático (`check_godo
 | Estados de ataque | `scripts/combat/attack_state_machine.gd`, `scripts/combat/fixture_weapon.gd` | READY/ATTACK/RECOVERY/RELOAD solo por AnimationPlayer (method track en el frame de impacto, `animation_finished`); sin temporizador de cadencia. Arma fixture, no H07; recarga automática al vaciar |
 | Fixtures | `scripts/combat/target_dummy.gd`, `scripts/b1/sandbox_hazards.gd`, `scripts/b1/b1_sandbox.gd`, `scenes/b1/b1_sandbox.tscn` | Sandbox F6: blancos 60/80/150+armadura 100, zona de daño 10/s, torreta de proyectiles, consola interactuable, barra de salud roja. No es un nivel ni IA (H10) |
 
-Capas físicas (`scripts/core/physics_layers.gd`): 1 mundo, 2 jugador, 3 cuerpos enemigos/blancos, 4 hitboxes. Tests: `tests/b1/unit` (37), `tests/b1/integration` (28), soporte `tests/b1/support/test_world.gd`; runner `tools/b1/run_tests.py`.
+Capas físicas (`scripts/core/physics_layers.gd`): 1 mundo, 2 jugador, 3 cuerpos enemigos/blancos, 4 hitboxes. Tests: `tests/b1/unit` (37), `tests/b1/integration` (35: 28 anteriores + 7 en `weapon_wall_test.gd`), soporte `tests/b1/support/test_world.gd`; runner `tools/b1/run_tests.py`.
 
 ## Pipeline de documentación y validación
 

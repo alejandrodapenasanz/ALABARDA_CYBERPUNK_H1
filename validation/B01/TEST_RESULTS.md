@@ -138,8 +138,43 @@ Runner exit 1; [argv/cwd/fechas](evidence/diagnostic_03/preflight/runner.json), 
 
 Tras D-030, que exige conservar posición y aspecto, se retiró ese criterio experimental mediante `71ce9a24f574b888fe2f9b8ca1c641470703b96a`. No se modificó el arma en ningún momento. Se conserva el fallo y no se lo reetiqueta PASS; **BUG-B1-02 sigue abierto**. La igualdad de runtime, escenas, tests y baseline con el paquete `79d63e3` se comprobó por `git diff --exit-code` (exit 0 en metadata). La suite vigente vuelve a 28 casos de integración; no se atribuye una ejecución nueva al SHA del revert.
 
-## Veredicto vigente y continuidad
+## Veredicto anterior al encargo directo de corregir el arma
 
 **Automáticas de aceptación anteriores: PASS sobre C `94e4880b03b60d1517917d11ab98dce786499d69` (intento 02). Revisión manual: FAIL por M-02. Estado del lote: VALIDATION_FAILED**, no VALIDATED ni APPROVED. BUG-B1-01 cerrado técnicamente; [BUG-B1-02](bugs/BUG-B1-02.md) abierto para Claude, sin fix todavía. La implementación requerida supera una corrección local de Codex.
 
 D-029 deja anotada la cámara de muerte futura; D-030 obliga a conservar posición/aspecto del arma y resolver físicamente su contacto con paredes. Tras fix de Claude: nuevo candidato, automáticas/regresiones y retest manual afectado con SHA. Sin merge a main ni inicio de B2.
+
+## Intento 04 · reproducción del bug de pared · 2026-11-27
+
+SHA `f9f215b59b99e1d7b967db274db977de5f7727b4`, candidato limpio `C:/dev/ALABARDA_B1_C_f9f215b`, [manifest --ready PASS](evidence/attempt_04/preflight/manifest_ready.stdout.log) antes de importar. Añade siete pruebas de colisión real sin cambiar el arma ni gameplay.
+
+[Runner](evidence/attempt_04/preflight/runner.json), exit 1, con `--skip-regression`: import PASS/0, unitarias 37/37 PASS/0, integración FAIL/100, smoke 600 frames PASS/0; estático y regresión completa NOT_RUN en este intento. [Summary](evidence/attempt_04/summary.json). Integración: 29 de 35 casos ejecutados, un caso fallido con dos aserciones, 0 errores/omitidos JUnit; los otros seis no se ejecutaron por fail-fast (no confundir ese cero de skipped con cobertura completa).
+
+Para comprobar los siete nuevos casos se ejecutó únicamente `weapon_wall_test.gd` con `-c` en el mismo candidato importado: [argv/cwd/exit](evidence/attempt_04/red_full/new_wall_suite.json), [JUnit](evidence/attempt_04/red_full/reports/report_1/results.xml). Exit 100; 7 casos, 5 fallidos/2 PASS, 10 aserciones fallidas, 0 errores/omitidos. Posición/animación original y pasillo estrecho ya pasaban; cinco situaciones de contacto reproducían el fallo.
+
+## Intento 05 · fix de pared solicitado a Codex · automáticas PASS
+
+SHA probado **`1401e05269fc4919f3658788e7de48bc5a4aa148`**, candidato nuevo `C:/dev/ALABARDA_B1_C_1401e05`; [manifest --ready](evidence/attempt_05/preflight/manifest_ready.stdout.log) PASS, exit 0 con árbol limpio antes de importar. El creador solicitó directamente «solucionalo» tras la devolución anterior, manteniendo D-030. Fix: guard físico del arma/poses y barrido del giro. Las escenas y `fixture_weapon.gd` siguen idénticos; los tests del intento 04 no cambian.
+
+Entorno real: **Windows 11 Home 10.0.26300; Godot 4.7.2.stable.official.ed1daf0bf; GdUnit4 6.2.3; Python 3.13.15**. [Versiones, inventario posterior y comparación](evidence/attempt_05/metadata.json). Solo headless, sin manuales, export ni Blender. Godot genera sidecars/caché tras importar; no cambia fuentes versionadas. Logs/JUnit copiados y cotejados por hash.
+
+| ID | Exit | Resultado | Recuento / evidencia |
+|---|---:|---|---|
+| B1-STATIC | 0 | PASS | 44 scripts, 12 recursos; 20 hallazgos aceptados y aviso H04 previo. [Comando/salida](evidence/attempt_05/preflight/static.json) |
+| B1-IMPORT | 0 | PASS | Sin errores del motor. [Comando](evidence/attempt_05/import.json) |
+| B1-UNIT | 0 | PASS | 37/37, 0 fallos/errores/omitidos. [JUnit/argv](evidence/attempt_05/b1_unit.json) |
+| B1-INTEGRATION | 0 | PASS | 35/35 = 28 anteriores + 7 de paredes, 0 fallos/errores/omitidos. [JUnit/argv](evidence/attempt_05/b1_integration.json) |
+| B1-SMOKE | 0 | PASS | 600 frames headless. [Comando](evidence/attempt_05/b1_sandbox_smoke.json) |
+| B1-REGRESSION | 0 | PASS | H03 8+8, H04 4; negativo esperado exit 100; H1 34 PASS / 0 FAIL / 1 NOT_RUN. [Comando](evidence/attempt_05/regression_h1_h03_h04.json), [H1/H03](evidence/attempt_05/regression/regression/summary.json) |
+
+Comando principal (cwd del candidato):
+
+```powershell
+& C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe -X utf8 tools/b1/run_tests.py --godot C:/Users/aleja/Downloads/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe --output C:/dev/ALABARDA_B1_WALL_FIX_20261127/attempt_05
+```
+
+Runner exit 0, [invocación/fechas](evidence/attempt_05/preflight/runner.json), [summary](evidence/attempt_05/summary.json). Sin --skip-regression ni --graphics. [BUG-B1-02](bugs/BUG-B1-02.md) tiene fix técnico PASS, pendiente de retest del creador.
+
+## Veredicto vigente tras el fix
+
+**Automáticas PASS sobre `1401e05269fc4919f3658788e7de48bc5a4aa148`. INTEGRATION_READY; no VALIDATED ni APPROVED.** M-01…M-08 en este candidato: NOT_RUN, «las realiza el creador»; fichas en `evidence/attempt_05/manual/`. Los siete OK y M-02 KO de la revisión anterior conservan su contexto y no se atribuyen a este nuevo SHA. Repetir paredes (M-02) y revisar movimiento/cámara/disparo afectados (M-03/M-06), indicando SHA. La cámara puede limitar su giro junto al muro para que el arma mantenga su posición sin penetrarlo; sensación/aceptación pendientes. Sin merge a main ni inicio de B2.

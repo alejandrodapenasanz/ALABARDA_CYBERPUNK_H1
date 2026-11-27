@@ -67,6 +67,8 @@ PC Codex, en un worktree limpio del SHA C: `python -X utf8 tools/b1/run_tests.py
 
 ## Casos futuros y repetición
 
+Cobertura B1 tras BUG-B1-02 (2026-11-27): 37 unitarias y 35 de integración. `weapon_wall_test.gd` aporta siete casos contra geometría física sin exigir que el arma quepa en la cápsula del jugador: contacto durante movimiento/giro/animaciones, retirada, pasillo estrecho y transform visual intacto. GdUnit CLI usa fail-fast por defecto; para diagnosticar todos los fallos de una suite concreta se puede usar `-c`. Contar los `testcase` realmente escritos en JUnit: los casos posteriores a un fallo pueden no ejecutarse ni aparecer como skipped. Conservar esa diferencia respecto al total declarado.
+
 [SB-01…SB-29](HEALTH_ENERGY_TEST_CASES.md) y [CT-01…CT-10](CONTROLS.md) son especificaciones NOT_RUN. H06 cubre autoHP y contrato de pausa; H08 energía/E y baja única; H09 ultimates; H10 conexión enemigos; H19 ascensor real; H22 conjunto. No programar H08 para cerrar H06. Economía/inventario/IA/guardado conservan tests de cada prompt: créditos no negativos/doble pago, save corrupto/roundtrip/atomicidad, memoria/oclusiones/alarma, montaje/USB idempotentes y tres dificultades desde H13.
 
 Tras bug: conservar intento fallido, crear nuevo C y P, repetir caso del bug más regresiones justificadas; pruebas completas solo si afecta transversalmente. Sin reciclar capturas ni contadores. Informe incluye datos/fecha/OS/hardware/versiones/comando/exit/cwd/SHA, logs completos, limitaciones y checklist humana. Export Windows al cierre del MVP y cuando afecte exportación; no exigido ahora.

@@ -9,7 +9,7 @@ Arriba a la izquierda verás la barra de salud y una línea de estado: `ESTADO`,
 
 En cada prueba marca **OK** o **KO**. Si es KO, escribe una línea con lo que pasó.
 
-Revisión recibida el 2026-11-27: siete OK y paredes KO. [Resultados](validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md), [BUG-B1-02 abierto](validation/B01/bugs/BUG-B1-02.md). El próximo retest requiere primero su fix; no se ha cambiado el arma.
+Revisión recibida el 2026-11-27: siete OK y paredes KO. [Resultados](validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md), [BUG-B1-02 abierto](validation/B01/bugs/BUG-B1-02.md). Fix técnico disponible en `1401e05`, con automáticas PASS. Detén la partida anterior y vuelve a ejecutar F6 para cargarlo. Repite paredes y revisa movimiento/cámara/disparo; posición, aspecto y animaciones del arma se conservan.
 
 ---
 

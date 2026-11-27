@@ -1,30 +1,28 @@
-# HANDOFF — B1: pared del arma pendiente de corregir
+# HANDOFF — B1: colisión del arma corregida, retest visual pendiente
 
-**2026-11-27 · rama B1 · VALIDATION_FAILED por M-02-WALL. No VALIDATED ni APPROVED.** El creador comunicó siete manuales OK y paredes KO: el cuerpo se detiene, pero el arma atraviesa el muro. [Resultados originales y aclaraciones](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md). Las pruebas manuales las realizó el creador, no Codex.
+**2026-11-27 · B1 · INTEGRATION_READY. No VALIDATED ni APPROVED.** El creador pidió expresamente a Codex corregir el arma después de la devolución inicial a Claude y aportó una captura del fallo. Esta instrucción autoriza el fix de BUG-B1-02 en B1; no otro lote.
 
-## Continuar con Claude: BUG-B1-02
+## Fix disponible en el directorio de trabajo
 
-Preparar el fix de [BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md) en B1 conforme a **D-030**: conservar posición, escala, encuadre y apariencia del arma, impidiendo que atraviese la pared al tocarla. Hay que coordinar contacto físico con movimiento y giro; no basta reducir/acercar el arma ni cambiar el render para ocultar la penetración. Supera una corrección local y vuelve a Claude según AGENTS. No se ha implementado ninguna modificación del arma.
+Candidato probado **`1401e05269fc4919f3658788e7de48bc5a4aa148`**. `scripts/player/weapon_wall_guard.gd` añade al cuerpo del jugador una forma convexa que cubre el arma en todas sus poses de retroceso/recuperación/recarga. El movimiento colisiona mediante `move_and_slide`; el giro comprueba el volumen barrido antes de aplicarse. Al contacto se limita el movimiento/giro que penetraría, permitiendo apartarse y deslizarse.
 
-El diagnóstico geométrico `49ecd30a5b78ef18a85390e8929baf132d6b78ff` añadió un test que falló (mesh fuera de la cápsula). La aclaración del creador descartó usar contención en el cuerpo como criterio: se retiró con `71ce9a24f574b888fe2f9b8ca1c641470703b96a`, conservando [logs/JUnit](../validation/B01/evidence/diagnostic_03/README.md). Runtime, escenas, tests y baseline portable quedaron exactamente como `79d63e3`; esta retirada no corrige el bug manual. Automáticas vigentes: 37 unitarias y 28 de integración, no 29.
+**Posición, escala, modelo, materiales, encuadre relativo y animaciones originales conservados (D-030).** No cambios de escenas ni de `fixture_weapon.gd`. El jugador puede notar el límite de giro junto al muro: es la respuesta física que permite conservar el arma en su posición. La sensación sigue pendiente de revisión humana. D-029 (cámara de muerte futura) permanece anotada, sin implementar.
 
-## Resultados y trazabilidad
+## Pruebas y commits
 
-- C inicial `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete inicial `f951cb6892e2867f28ceb3edebb823377c6ecd8f`. Intento 01: integración no descubre los tests, exit 105.
-- Fix local `94e4880b03b60d1517917d11ab98dce786499d69`: tipado World del test. Intento 02: STATIC, IMPORT, UNIT 37/37, INTEGRATION 28/28, SMOKE 600 frames y REGRESSION PASS. H03/H04: 20 positivos y control negativo esperado; H1: 34 PASS / 0 FAIL / 1 NOT_RUN headless. [BUG-B1-01](../validation/B01/bugs/BUG-B1-01.md) cerrado técnicamente.
-- Paquete al recibir las manuales: `79d63e3d6b5c0ea87f88dac55e33f11ddef9d7c1`, runtime idéntico a C94e4880, sin cambios versionados. El creador no escribió el SHA de su sesión: la asociación al checkout es contexto inspeccionado, no una confirmación independiente.
-- M-01 PASS, ventana «bien»; M-02 FAIL; M-03/M-04/M-05/M-06/M-07 PASS comunicados; M-08 PASS tras aclarar Q histórico en F5. B1 en F6 usa WW/AA/SS/DD. Balance sigue provisional.
-- [TEST_RESULTS](../validation/B01/TEST_RESULTS.md), [manifest](../validation/B01/TEST_MANIFEST.json) y [paquete](../validation/B01/TEST_HANDOFF.md). Manifest en VALIDATION_FAILED: valida esquema, no debe presentarse como transferencia --ready hasta el próximo fix.
+- Regresión nueva `f9f215b59b99e1d7b967db274db977de5f7727b4`: siete casos de paredes/giros/animaciones/encuadre/pasillo. Antes del fix, cinco fallan y dos pasan al ejecutarlos con `-c`; evidencia del intento 04 conservada. El runner normal se detuvo en el primer caso fallido: 29 de 35 ejecutados, un caso con dos aserciones fallidas, seis sin ejecutar.
+- Fix `1401e05269fc4919f3658788e7de48bc5a4aa148`: solo jugador B1, nuevo guard de colisión y hashes explícitos del manifest portable. Los tests entre rojo y verde son idénticos.
+- **Intento 05: STATIC PASS (44 scripts/12 recursos), IMPORT PASS, UNIT 37/37, INTEGRATION 35/35, SMOKE 600 frames PASS, REGRESSION PASS.** H03 8+8, H04 4, control negativo esperado exit 100; H1 34 PASS / 0 FAIL / 1 NOT_RUN headless. Todos los seis checks finales exit 0.
+- Entorno real: Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. Candidatos limpios antes de importar; sidecars/cachés generados después conservados. Sin manuales, Blender ni export por Codex.
+- [Resultados/comandos](../validation/B01/TEST_RESULTS.md), [manifest vigente](../validation/B01/TEST_MANIFEST.json), [evidencia 05](../validation/B01/evidence/attempt_05/summary.json), [BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md): fix técnico PASS, retest creador pendiente.
 
-Entorno automático real: Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. Solo headless. Godot generó 24 sidecars .gd.uid y caché; se conservan los archivos locales. No ejecución manual, gráfica, export ni Blender por Codex.
+Historial: candidato original `bfe7071` con error de descubrimiento; fix de tipado `94e4880`, intento 02 PASS (37+28), paquete `79d63e3`. [Revisión manual anterior](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md): siete OK y paredes KO; SHA de sesión no escrito por el creador. El diagnóstico geométrico `49ecd30` fue retirado por `71ce9a2`; registros preservados en `diagnostic_03`. No se presenta esa prueba descartada como solución.
 
-## Petición futura: cámara al morir
+## Siguiente paso: creador
 
-**D-029**, expresamente solicitada para dejar anotada: transición a tercera persona, alejamiento y pequeña elevación de cámara, mostrando el cuerpo del protagonista tumbado. No implementar ahora ni bloquear la cámara actual por inferencia. Distancia, duración y técnica del cuerpo/animación pendientes; continuidad anotada en GAME_DESIGN, ART_BIBLE y prompts H19/H23, sin iniciar esos hitos.
+Detener la ejecución anterior y volver a abrir `scenes/b1/b1_sandbox.tscn` con F6 para cargar el fix. Repetir M-02: aproximación frontal/lateral, dash, giro y disparo/recarga junto a muros y esquinas; revisar también M-03/M-06 (movimiento/cámara/disparo). Confirmar que el arma mantiene su aspecto y no penetra. Indicar SHA de la sesión. El PASS técnico no reemplaza esa revisión ni concede aprobación final.
 
-## Después del fix
-
-Claude entrega nuevo C y paquete completo en B1. Codex comprueba --ready en worktree limpio y repite automáticas/regresiones, con evidencia nueva fuera del candidato. El creador repite M-02 y las manuales afectadas (movimiento/cámara/disparo), indicando SHA. No reutilizar como limpios los worktrees importados ni sobrescribir intentos previos. B2 sigue NOT_STARTED; main no se fusiona; aprobación final pendiente.
+F5 sigue lanzando H1 con Q; B1 F6 usa doble toque. No merge a main ni inicio de B2. Para repetir automáticas: worktree nuevo de C, manifest --ready, runner y estático, evidencia nueva fuera del candidato. Conservar todos los intentos; no usar los árboles importados como limpios.
 
 ## Contexto histórico de la migración y preparación previa
 

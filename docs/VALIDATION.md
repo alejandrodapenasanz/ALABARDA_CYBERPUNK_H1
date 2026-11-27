@@ -1,3 +1,13 @@
+# B1 · fix de pared del arma solicitado a Codex · 2026-11-27
+
+**Automáticas PASS sobre `1401e05269fc4919f3658788e7de48bc5a4aa148`; INTEGRATION_READY, retest manual pendiente.** Tras aportar captura y encargar a Codex «solucionalo», se implementó una envolvente de colisión del arma y sus poses, con comprobación del barrido angular. Posición, escala, modelo, materiales y animaciones conservados; escenas y fixture sin cambios.
+
+Regresión nueva `f9f215b59b99e1d7b967db274db977de5f7727b4`: [intento 04](../validation/B01/evidence/attempt_04/summary.json) FAIL antes del fix. Runner: 29/35 casos ejecutados, un caso fallido (dos aserciones), seis no ejecutados por fail-fast. [Suite nueva completa con -c](../validation/B01/evidence/attempt_04/red_full/reports/report_1/results.xml): 7 casos, 5 fallidos/2 PASS, 10 aserciones fallidas. Ninguna aserción cambiada entre ese SHA y el fix.
+
+[Intento 05](../validation/B01/evidence/attempt_05/summary.json): STATIC PASS (44 scripts/12 recursos), IMPORT PASS, UNIT 37/37, INTEGRATION 35/35, SMOKE 600 frames PASS; REGRESSION H1/H03/H04 PASS (H1 34/0/1, H03 8+8, H04 4, negativo esperado exit 100). Seis checks exit 0. Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. SHA/limpieza verificados antes de importar; luego sidecars/cachés generados, fuentes versionadas intactas. [BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md): fix técnico PASS, pendiente del creador en M-02 y revisión de movimiento/cámara/disparo. No VALIDATED/APPROVED, manuales nuevas NOT_RUN, sin merge ni B2.
+
+## Revisión y diagnóstico anteriores conservados
+
 # B1 · revisión manual del creador y BUG-B1-02 · 2026-11-27
 
 **VALIDATION_FAILED:** M-02-WALL FAIL (el arma atraviesa paredes); M-01/M-03/M-04/M-05/M-06/M-07/M-08 PASS comunicados por el creador. [Fuente y aclaraciones](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md). SHA de la sesión no declarado por el creador; checkout inspeccionado `79d63e3`, runtime idéntico a C `94e4880`. El PASS automático previo se conserva con su SHA y no constituye aprobación manual.

@@ -1,13 +1,13 @@
 # ROADMAP — H02–H24 y lotes B0–B8
 
-**Actualizado 2026-11-27 · agrupación v2.1; migración aprobada 2026-11-23 (D-028).** H1–H04 conservan su cierre histórico. B1 está en VALIDATION_FAILED por M-02 (arma atraviesa paredes); automáticas PASS sobre `94e4880` y siete manuales OK comunicadas. BUG-B1-02 vuelve a Claude conservando posición/aspecto del arma (D-030); no VALIDATED ni APPROVED. B2 no iniciado.
+**Actualizado 2026-11-27 · agrupación v2.1; migración aprobada 2026-11-23 (D-028).** H1–H04 conservan su cierre histórico. B1 está en INTEGRATION_READY tras fix `1401e05` de BUG-B1-02, encargado directamente a Codex. Automáticas PASS (37 unitarias/35 integración); retest del creador pendiente, conservando posición/aspecto del arma (D-030). No VALIDATED ni APPROVED. B2 no iniciado.
 
 ## Lotes y dependencias
 
 | Lote | Hitos | Objetivo | Depende de | Estado lote |
 |---|---|---|---|---|
 | B0 | H03, H04 | Infraestructura y arte | H02 | APPROVED histórico H03/H04 |
-| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | VALIDATION_FAILED (C `94e4880`, automáticas PASS; manual M-02 FAIL, otros siete OK; BUG-B1-02 abierto) |
+| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | INTEGRATION_READY (C `1401e05`, automáticas PASS 37+35; fix de M-02 con retest visual pendiente) |
 | B2 | H07, H08, H09 | Armas, energía y ultimates | B1 | NOT_STARTED |
 | B3 | H10, H11, H12 | Enemigos, percepción y sigilo | B2 | NOT_STARTED |
 | B4 | H13, H14, H15 | Persistencia, firmware y economía | B3 | NOT_STARTED |
