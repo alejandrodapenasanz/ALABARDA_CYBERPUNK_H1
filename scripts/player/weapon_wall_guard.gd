@@ -7,7 +7,7 @@ const ANGLE_STEP := 0.02
 const CONTACT_BACKOFF := 0.001
 
 var body: CharacterBody3D
-var weapon: FixtureWeapon
+var weapon: HitscanWeapon
 var camera: Camera3D
 var collider: CollisionShape3D
 var points := PackedVector3Array()
@@ -15,7 +15,7 @@ var sweep := ConvexPolygonShape3D.new()
 var query := PhysicsShapeQueryParameters3D.new()
 
 
-func _init(player: CharacterBody3D, fixture: FixtureWeapon, view: Camera3D) -> void:
+func _init(player: CharacterBody3D, fixture: HitscanWeapon, view: Camera3D) -> void:
     body = player
     weapon = fixture
     camera = view

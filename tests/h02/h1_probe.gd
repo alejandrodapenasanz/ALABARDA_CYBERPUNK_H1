@@ -56,7 +56,7 @@ func aim(enemy) -> void:
     player.camera.look_at(enemy.global_position + Vector3(0, 0.9, 0), Vector3.UP)
 
 func _run() -> void:
-    game = load("res://scenes/main.tscn").instantiate()
+    game = load("res://tests/fixtures/h1/main.tscn").instantiate()
     root.add_child(game)
     current_scene = game
     player = game.player
