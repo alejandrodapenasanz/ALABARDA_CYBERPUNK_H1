@@ -2802,7 +2802,7 @@
     "scripts/player/double_tap_detector.gd": "92042968ed1cb233330660f01765459a6732a60db8a98f402d58b04df5c553f7",
     "scripts/player/input_actions.gd": "c862d91d4319ff5ab980aa354868515c9aed777564e0e253da281d0b88aa9226",
     "scripts/player/player_movement_config.gd": "a7cca1a9abc85347a0cf06021a9ce02b907fe8906da4e158149bc47f822a74bf",
-    "tests/b1/integration/combat_test.gd": "aa40f887823d31ab74d4d36567c72665b0aad69aa178feaf265f0b2268e82a82",
+    "tests/b1/integration/combat_test.gd": "3e6db776665254cb31444e81893e6d1f515858ba95e2d87d897456d9ab0b2299",
     "tests/b1/integration/player_movement_test.gd": "5189728e271c81f02f9b9e737bfa01d2d363ed7356ed2149d10951364d5e7eb1",
     "tests/b1/support/test_world.gd": "756aba0a3b031f2dbd9ff2e4e7bc17b0301f8a47431bf73f7b09f629f46ca9a4",
     "tests/b1/unit/dash_and_config_test.gd": "4403a46550fbf7c3ec629b286c535b0692e25e99af517556f76b79451df8ac21",
