@@ -1,46 +1,28 @@
-# B1 aprobado e integrado — 2026-11-28
+# Validación del juego integrado — 2026-11-28
 
-El creador confirmó el arreglo y aprobó B1; [aprobación](../validation/B01/APPROVAL.md), D-031. Integración autorizada como runtime normal, entrada F5, sin implementación B1 paralela. Candidato **`5a622069c4267821ba5e5a16b6404a60ed7ad6a8`** probado en copia limpia: STATIC 45 scripts/12 recursos, IMPORT, 37 unitarias, 38 integración, smoke 600 frames y H1/H03/H04 PASS; todos exit 0. H1 histórico 34 PASS/0 FAIL/1 NOT_RUN headless, H03 8+8, H04 4, negativo esperado exit 100. Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15, Windows 11 Home 10.0.26300.
+B1 (H05/H06) APPROVED por el creador, incluido el arreglo de paredes (D-031). F5 usa el jugador y combate compartidos. Merge probado **`be3a94fb9118664ebc95919398a020a968b16074`**, publicado en main; rama B1 eliminada local/remota. B2 todavía no está implementado; encargo en [next_prompt.md](../next_prompt.md).
 
-[Integración y publicación](../validation/B01/INTEGRATION.md), [evidencia](../validation/B01/evidence/integration_01/summary.json). Se conservan comportamiento/aserciones anteriores, se añaden tres casos de entrada F5 y se archivan reportes redundantes con hashes. El encargo B2 está preparado en [next_prompt.md](../next_prompt.md), sin implementarlo aquí. Verificación posterior a merge **`be3a94fb9118664ebc95919398a020a968b16074`**: mismas suites y recuentos PASS, todos los checks principales exit 0; [evidencia](../validation/B01/evidence/post_merge/summary.json). Merge publicado en main y rama B1 eliminada local/remota. El commit posterior de evidencia no modifica gameplay.
+| Comprobación del merge | Resultado real |
+|---|---|
+| Estático e importación | PASS, exit 0; 45 scripts y 12 recursos; hallazgos legados documentados |
+| Unitarias | PASS, exit 0; 37/37, sin fallos/errores/omitidos |
+| Integración | PASS, exit 0; 38/38, incluidas paredes y entrada principal |
+| Arranque configurado F5 | PASS, exit 0; 600 frames headless |
+| Regresión H1/H03/H04 | PASS, exit 0; H1 34/0/1 NOT_RUN headless, H03 8+8, H04 4; control negativo esperado exit 100 |
 
-## Historial anterior conservado
+Versiones reales: Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15, Windows 11 Home 10.0.26300. Estos resultados pertenecen al SHA indicado; la limpieza posterior no los presenta como nuevas ejecuciones.
 
-# B1 · fix de pared del arma solicitado a Codex · 2026-11-27
+El creador pidió retirar los archivos del lote cerrado (D-032): paquete de validación, informes, diagnósticos, ZIP y manuales B1. Se conserva su contenido íntegro en Git, commit **`1e30b5c1aa1ed8f949059ead5517e6c095c3d436`**: [aprobación](https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1/blob/1e30b5c1aa1ed8f949059ead5517e6c095c3d436/validation/B01/APPROVAL.md), [comandos/JUnit del merge](https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1/tree/1e30b5c1aa1ed8f949059ead5517e6c095c3d436/validation/B01/evidence/post_merge), [fallos y resultados anteriores](https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1/blob/1e30b5c1aa1ed8f949059ead5517e6c095c3d436/validation/B01/TEST_RESULTS.md), [informe de integración](https://github.com/alejandrodapenasanz/ALABARDA_CYBERPUNK_H1/blob/1e30b5c1aa1ed8f949059ead5517e6c095c3d436/validation/B01/INTEGRATION.md). No hay otra copia de ese paquete en el árbol actual.
 
-**Automáticas PASS sobre `1401e05269fc4919f3658788e7de48bc5a4aa148`; INTEGRATION_READY, retest manual pendiente.** Tras aportar captura y encargar a Codex «solucionalo», se implementó una envolvente de colisión del arma y sus poses, con comprobación del barrido angular. Posición, escala, modelo, materiales y animaciones conservados; escenas y fixture sin cambios.
+Se mantienen las suites comunes `tests/gameplay` y las regresiones H1/H03/H04. La limpieza solo retira documentación/evidencia cerrada y actualiza enlaces, inventario y comentarios; no altera lógica, escenas, recursos, aspecto del arma ni aserciones. No ejecuta manuales ni inicia B2.
 
-Regresión nueva `f9f215b59b99e1d7b967db274db977de5f7727b4`: [intento 04](../validation/B01/evidence/attempt_04/summary.json) FAIL antes del fix. Runner: 29/35 casos ejecutados, un caso fallido (dos aserciones), seis no ejecutados por fail-fast. [Suite nueva completa con -c](../validation/B01/evidence/attempt_04/red_full/reports/report_1/results.xml): 7 casos, 5 fallidos/2 PASS, 10 aserciones fallidas. Ninguna aserción cambiada entre ese SHA y el fix.
+## Comprobación de la limpieza — 2026-11-28
 
-[Intento 05](../validation/B01/evidence/attempt_05/summary.json): STATIC PASS (44 scripts/12 recursos), IMPORT PASS, UNIT 37/37, INTEGRATION 35/35, SMOKE 600 frames PASS; REGRESSION H1/H03/H04 PASS (H1 34/0/1, H03 8+8, H04 4, negativo esperado exit 100). Seis checks exit 0. Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15. SHA/limpieza verificados antes de importar; luego sidecars/cachés generados, fuentes versionadas intactas. [BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md): fix técnico PASS, pendiente del creador en M-02 y revisión de movimiento/cámara/disparo. No VALIDATED/APPROVED, manuales nuevas NOT_RUN, sin merge ni B2.
+Desde `C:/dev/ALABARDA_CYBERPUNK_H1`, Python 3.13.15: `python -X utf8 tools/pipeline/verify_checkout.py` → PASS, exit 0, 2.903 archivos/684 enlaces; `python -X utf8 tools/pipeline/run_checks.py --output C:/dev/ALABARDA_CLEANUP_20261128/checks_01` → PASS, exit 0. Esquema, 16 tests del manifest, documentos, estático (45 scripts/12 recursos, aviso H04 previo), whitespace y versiones/dependencias: todos exit 0. Logs de esta operación fuera del proyecto, sin crear otro paquete B1.
 
-## Revisión y diagnóstico anteriores conservados
+Auditoría del diff: exactamente 558 archivos retirados del paquete/manual; escenas/recursos sin cambios; código GDScript idéntico al excluir comentarios, runner Python con el mismo AST al excluir su docstring. Se conservan 37 unitarias y 38 de integración con las mismas aserciones. No se repiten pruebas Godot ni manuales para esta limpieza documental; los PASS de gameplay anteriores mantienen su SHA.
 
-# B1 · revisión manual del creador y BUG-B1-02 · 2026-11-27
-
-**VALIDATION_FAILED:** M-02-WALL FAIL (el arma atraviesa paredes); M-01/M-03/M-04/M-05/M-06/M-07/M-08 PASS comunicados por el creador. [Fuente y aclaraciones](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md). SHA de la sesión no declarado por el creador; checkout inspeccionado `79d63e3`, runtime idéntico a C `94e4880`. El PASS automático previo se conserva con su SHA y no constituye aprobación manual.
-
-[BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md) abierto para Claude. D-030 exige mantener posición/aspecto del arma y prevenir penetración al tocar la pared. Diagnóstico automático sobre `49ecd30`: import PASS, unitarias 37/37, integración 29 con 1 fallo geométrico (exit 100), smoke PASS; regresión y estático NOT_RUN en este diagnóstico. [Evidencia íntegra](../validation/B01/evidence/diagnostic_03/README.md). La prueba de contención del arma en la cápsula se retiró con `71ce9a2` tras la aclaración; no es un fix del bug. Runtime/tests restablecidos sin cambiar el arma.
-
-D-029 deja documentada la cámara futura de muerte: tercera persona, alejamiento y elevación leves, cuerpo tumbado. La cámara actual puede girar muerto; M-07 no exigía bloquearla. H1 en F5 conserva Q, con resto de funcionamiento confirmado; B1 en F6 usa doble toque. No hay aprobación final, merge a main ni inicio de B2. Próximo paso: fix Claude y nueva validación sobre su SHA, incluida revisión humana de paredes y aspectos afectados.
-
-## Validación automática anterior conservada
-
-# B1 · pruebas automáticas Codex · 2026-11-27
-
-**Automáticas PASS sobre `94e4880b03b60d1517917d11ab98dce786499d69`; lote INTEGRATION_READY. No VALIDATED ni APPROVED: M-01…M-08 NOT_RUN, las realiza el creador.** [Informe por intento, comandos y versiones](../validation/B01/TEST_RESULTS.md), [paquete](../validation/B01/TEST_HANDOFF.md).
-
-El candidato original `bfe7071b63e756200f4e1ea94160175bc6294644` se probó el 2026-11-23: análisis estático, importación, 37 unitarias, smoke y regresión PASS; integración FAIL, exit 105 durante el descubrimiento, sin JUnit. Se conserva el intento 01. [BUG-B1-01](../validation/B01/bugs/BUG-B1-01.md): `world: Node3D` impedía inferir retornos del script World. Corrección local `94e4880`: una línea de tipado y solo el hash de ese test en la baseline portable; sin modificar aserciones ni gameplay.
-
-Intento 02, worktree nuevo y limpio antes de importar, Windows 11 Home 10.0.26300, Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15: B1-STATIC PASS (42 scripts/12 recursos); IMPORT PASS; UNIT **37/37**; INTEGRATION **28/28**; SMOKE **600 frames**; REGRESSION PASS, H03 **8+8** y H04 **4**, control negativo esperado exit **100**, H1 **passed=34 failed=0 not_run=1**. Todas las seis comprobaciones automáticas finales salen con exit 0; no errores ni omitidos en las suites positivas.
-
-[Resumen completo](../validation/B01/evidence/attempt_02/summary.json), [regresión](../validation/B01/evidence/attempt_02/regression/regression/summary.json), [análisis estático](../validation/B01/evidence/attempt_02/preflight/static.stdout.log). Los JSON registran argv/cwd/fecha/exit; logs y JUnit conservados con hashes. Godot generó 24 .gd.uid no versionados tras importar; los archivos versionados no cambiaron. No ejecución manual, gráfica, export ni Blender. El creador continúa con [manual_tests_B1.md](../manual_tests_B1.md).
-
-## Registros anteriores conservados
-
-# B1 (H05, H06) · INTEGRATION_READY · 2026-11-23
-
-Claude programó B1 en la rama `B1` sin Godot. Candidato C `bfe7071b63e756200f4e1ea94160175bc6294644`; paquete [validation/B01](../validation/B01/TEST_HANDOFF.md). En un worktree limpio de C: `check_godot_static.py` PASS (42 .gd, 12 .tscn/.tres), `verify_checkout.py` PASS (2871 ficheros), `verify_integrity.py` PASS (H1/H03/H04 intactos), `validate_manifest.py --ready` PASS. **B1-IMPORT, B1-UNIT (37), B1-INTEGRATION (28), B1-SMOKE, B1-REGRESSION y M-01…M-08: NOT_RUN** hasta Codex/creador. Resultados históricos posteriores intactos.
+## Historial anterior a B1
 
 # Decisiones D-027/D-028 y validador estático · 2026-11-23
 

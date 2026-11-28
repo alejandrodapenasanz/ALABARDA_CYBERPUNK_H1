@@ -1,5 +1,5 @@
 extends RefCounted
-## B1 fixture only: solid animation envelope, attached to the player's body, not to its hitbox.
+## Current HitscanWeapon geometry/poses only: solid animation envelope attached to the player's body.
 ## Keeps the weapon's transform/materials/animations unchanged. Movement uses move_and_slide;
 ## look checks the swept volume so a large mouse delta cannot rotate through a thin wall.
 

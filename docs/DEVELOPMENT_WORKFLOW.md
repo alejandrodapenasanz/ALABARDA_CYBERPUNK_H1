@@ -31,11 +31,13 @@ Cada hito tiene checkpoint propio y el lote agrega su estado. Dentro de un lote 
 
 1. Creador autoriza lote/alcance y entrega repo con documentación vigente. Leer AGENTS y prompts individuales; comprobar dependencias/pendientes. Registrar diagnóstico antes de editar.
 2. Claude programa por hitos, conserva rutas/funcionalidades, datos configurables y pruebas de borde. Checkpoint: funcionalidad, archivos, interfaces, tests preparados/ejecutados, decisiones, bugs, dependencias y SHA si existe. Commits separados por hito cuando sea posible.
-3. Preparar paquete `validation/BXX/` (B01 para lote B1; B00 para B0, etc.): TEST_HANDOFF.md, TEST_MANIFEST.json, TEST_RESULTS.md, evidence/. Añadir bugs/ si hay incidencias. La plantilla contiene campos a completar; **no es INTEGRATION_READY**.
+3. Durante un lote activo, preparar paquete `validation/BXX/` (B01 para lote B1; B00 para B0, etc.): TEST_HANDOFF.md, TEST_MANIFEST.json, TEST_RESULTS.md, evidence/. Añadir bugs/ si hay incidencias. La plantilla contiene campos a completar; **no es INTEGRATION_READY**.
 4. Codex verifica manifest, commit, herramientas y recursos antes de ejecutar. Si SHA difiere, **parar la validación** y registrar BLOCKED; no probar otro árbol bajo el SHA solicitado. Importar, ejecutar tests, inspeccionar logs/JUnit, regresiones y probes pertinentes. Capturas solo reales; headless no demuestra imagen ni rendimiento GPU.
 5. Un fix local pequeño puede hacerlo Codex con commit nuevo y repetición de pruebas afectadas. Si requiere rediseñar interfaces, ampliar alcance o reescribir sistemas, devolver BUG_REPORT y plantilla CLAUDE_FIX_BATCH. No imponer umbral de líneas como sustituto del criterio técnico.
 6. Claude corrige y añade caso de regresión cuando corresponda; nuevo candidato/paquete. Codex repite caso fallido, integración y regresiones afectadas. Conservar cada intento y resultados del anterior.
 7. Entregar checklist humano y pasos concretos. Solo el creador concede APPROVED. Actualizar VALIDATION/HANDOFF/ROADMAP, y fusionar a estable únicamente el candidato aprobado. No empezar otro lote por iniciativa del agente.
+
+El creador autorizó en D-032 retirar del árbol actual el paquete cerrado de B1 y su manual de raíz. Su evidencia se conserva en el commit `1e30b5c1aa1ed8f949059ead5517e6c095c3d436`. No reconstruirlo para nuevas tareas: B2 prepara su propio paquete y mantiene las regresiones comunes.
 
 ## Git: sincronización reproducible entre los dos PC
 

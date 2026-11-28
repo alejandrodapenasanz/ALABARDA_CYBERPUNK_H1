@@ -4,7 +4,7 @@ Abre `project.godot` con **Godot 4.7.2 estándar** y pulsa **F5**. La entrada no
 
 Controles actuales: WASD, dash WW/AA/SS/DD, Shift, Espacio, ratón/clic, F interactuar y Esc liberar cursor. El arma recarga al vaciarse. E/energía, seis armas/slots y ultimates se implementarán en B2. La arena actual es de entrenamiento; no es el contrato final Yakuza.
 
-**B1 APPROVED por el creador.** [Aprobación](validation/B01/APPROVAL.md), [integración y pruebas](validation/B01/INTEGRATION.md). La rama estable es `main`. Para encargar B2 a Claude, copia [next_prompt.md](next_prompt.md); B2 no se ha implementado en este cierre.
+**B1 APPROVED por el creador.** [Decisiones y aprobación](docs/DECISIONS.md), [pruebas del juego integrado](docs/VALIDATION.md). La rama estable es `main`. Para encargar B2 a Claude, copia [next_prompt.md](next_prompt.md); B2 no se ha implementado en este cierre.
 
 El repositorio incluye escenas, scripts, Resources, shaders, assets redistribuibles, fuentes artísticas propias, GdUnit4, documentación y pruebas útiles. Godot regenera `.godot` al importar: no necesita la caché ni las rutas de este PC. [Guía para otro ordenador](docs/GITHUB_TRANSFER.md).
 
@@ -16,4 +16,4 @@ python -X utf8 tools/gameplay/run_tests.py --godot <ruta_console.exe> --output <
 
 Resuelve los marcadores antes de ejecutar. Cobertura integrada: 37 unitarias y 38 de integración, smoke de la entrada F5 y regresión H1/H03/H04. H1 antiguo solo está en `tests/fixtures/h1`; el laboratorio visual permanece en `scenes/art_reference/modern_psx_lab.tscn` para F6.
 
-Lee [AGENTS](AGENTS.md), [HANDOFF](docs/HANDOFF.md), [arquitectura](docs/ARCHITECTURE.md) y [roadmap](docs/ROADMAP.md). Los históricos de validación se conservan por SHA; los reportes HTML duplicados están archivados y fuera de la importación de Godot.
+Lee [AGENTS](AGENTS.md), [HANDOFF](docs/HANDOFF.md), [arquitectura](docs/ARCHITECTURE.md) y [roadmap](docs/ROADMAP.md). Los archivos de entrega de B1 ya se retiraron del árbol de trabajo; su historial y evidencia siguen en Git. Las suites actuales protegen el juego integrado.

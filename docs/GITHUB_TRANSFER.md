@@ -23,10 +23,10 @@ No hay dependencia de rutas absolutas de este PC en el runtime. Los logs histór
 
 Se incluyen código, escenas, Resources, shaders, assets redistribuibles y atribuciones, fuentes Blender propias H04, GdUnit4 6.2.3, pruebas útiles, prompts, plantillas, documentos y evidencia por SHA. Inventario/hashes de la transferencia en [checkout_manifest.json](../tools/pipeline/checkout_manifest.json). Compruébalo antes de editar; no regeneres hashes automáticamente para ocultar cambios.
 
-Python solo hace falta para los runners y verificaciones, no para abrir Godot. Dependencias en `tools/pipeline/requirements.txt` (usar un venv). Comandos en [TEST_STRATEGY](TEST_STRATEGY.md); [resultados reales](../validation/B01/INTEGRATION.md).
+Python solo hace falta para los runners y verificaciones, no para abrir Godot. Dependencias en `tools/pipeline/requirements.txt` (usar un venv). Comandos en [TEST_STRATEGY](TEST_STRATEGY.md); [resultados reales](VALIDATION.md).
 
 No se versionan cachés `.godot`, `__pycache__`, entornos Python, ejecutables instalados ni credenciales. Las muestras locales excluidas por licencia/trazabilidad (Malorian, PSXAmmoBoxes y Electronics no verificadas) mantienen las restricciones de [ASSET_REGISTRY](ASSET_REGISTRY.md); no son dependencias del juego. El laboratorio contiene fallback propio. Todos los recursos necesarios para importar y ejecutar están publicados.
 
 ## Empezar B2
 
-Leer [HANDOFF](HANDOFF.md) y entregar [next_prompt.md](../next_prompt.md) a Claude. El prompt crea B2 desde el main actualizado y exige extender el mismo runtime. H07/H08/H09 son el siguiente encargo, no una consecuencia automática de abrir el proyecto. H1 queda solo como fixture de regresión; B1 se conserva como historial de validación, no como rama o implementación paralela.
+Leer [HANDOFF](HANDOFF.md) y entregar [next_prompt.md](../next_prompt.md) a Claude. El prompt crea B2 desde el main actualizado y exige extender el mismo runtime. H07/H08/H09 son el siguiente encargo, no una consecuencia automática de abrir el proyecto. H1 queda solo como fixture de regresión; el paquete cerrado de B1 solo se conserva en el historial Git, según D-032. No recrear carpetas ni manuales del lote cerrado.

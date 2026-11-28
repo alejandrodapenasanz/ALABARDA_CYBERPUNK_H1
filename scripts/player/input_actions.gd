@@ -1,9 +1,9 @@
 class_name InputActions
 extends RefCounted
-## H05 · Input map of the B1 player, registered at runtime so H1 (scenes/main.tscn, which reads
-## raw keys and keeps Q dash) is untouched. Bindings follow docs/CONTROLS.md:
+## Shared player input map, registered at runtime. The historical H1 test fixture
+## keeps raw keys and Q dash. Current bindings follow docs/CONTROLS.md:
 ## WASD move, double tap dash (D-025), Shift sprint, Space jump, F interact (D-027),
-## E reserved for manual healing (H08, not implemented in B1), left click fire.
+## E reserved for manual healing (H08, not yet implemented), left click fire.
 ## Reload, ultimate and pause have NO approved binding: they are deliberately not registered.
 
 const MOVE_FORWARD := &"move_forward"

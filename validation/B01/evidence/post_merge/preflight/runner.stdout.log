@@ -1,7 +1,0 @@
-version: PASS exit=0
-import: PASS exit=0
-gameplay_unit: PASS exit=0
-gameplay_integration: PASS exit=0
-game_smoke: PASS exit=0
-regression_h1_h03_h04: PASS exit=0
-PASS C:\dev\ALABARDA_B1_INTEGRATION_20261127\post_merge\summary.json

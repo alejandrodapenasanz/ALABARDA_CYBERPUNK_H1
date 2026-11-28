@@ -1,8 +1,0 @@
-{
-  "bundle_integrity.json": "23e1b8c12932a5b8d6cf8fb69d4b6b3886994ae08faded2a65fe6e135d235adc",
-  "bundle_integrity.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "bundle_integrity.stdout.log": "dff3d44631fae0fdd13d326712ec3ffad428b2bc270b14692f5fe196c88b48e9",
-  "manifest_ready.json": "430f849ad1a64b8e862f61e6a8bb12c733960c5a5cba899995851695330f2d98",
-  "manifest_ready.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "manifest_ready.stdout.log": "4a782d3585273f62da3f26754c8f52cc9211d9479ea5652333c42792db01cf90"
-}

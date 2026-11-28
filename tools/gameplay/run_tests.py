@@ -1,4 +1,4 @@
-"""Gameplay runner (PC Codex): import, B1 unit/integration suites, default scene smoke run and full H1/H03/H04 regression.
+"""Gameplay runner (PC Codex): import, shared unit/integration suites, default scene smoke run and full H1/H03/H04 regression.
 
 Usage (PowerShell, cwd = repository root of candidate C):
   python -X utf8 tools/gameplay/run_tests.py --godot <Godot_v4.7.2-stable_win64_console.exe> --output <new empty dir>

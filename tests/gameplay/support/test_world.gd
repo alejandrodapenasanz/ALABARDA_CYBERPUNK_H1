@@ -1,5 +1,5 @@
 extends Node3D
-## B1 test support (not a suite): a floor, optional walls and helpers for deterministic integration tests.
+## Shared test support (not a suite): a floor, optional walls and helpers for deterministic integration tests.
 
 const PLAYER_SCENE := preload("res://scenes/player/player.tscn")
 

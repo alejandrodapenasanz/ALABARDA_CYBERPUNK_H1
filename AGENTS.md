@@ -1,8 +1,8 @@
 # ALABARDA STUDIOS — Instrucciones permanentes para Claude y Codex
 
-**Versión 0.7 · pipeline v2.1 · 2026-11-28.** Migración aprobada por el creador (D-027/D-028). La aprobación de la migración no inicia lotes: cada lote requiere encargo expreso y se desarrolla en su rama (`B1`, `B2`…) desde `main`. H1–H04 conservan sus aprobaciones históricas.
+**Versión 0.8 · pipeline v2.1 · 2026-11-28.** Migración aprobada por el creador (D-027/D-028). La aprobación de la migración no inicia lotes: cada lote requiere encargo expreso y se desarrolla en su rama (`B1`, `B2`…) desde `main`. H1–H04 conservan sus aprobaciones históricas.
 
-**Estado vigente:** B1 (H05/H06) APPROVED por el creador, integrado en el flujo normal (`scenes/main.tscn`, F5). Jugador compartido `PlayerController`; suites `tests/gameplay`, runner `tools/gameplay/run_tests.py`. B2 se encarga mediante `next_prompt.md`, sin ejecutarlo por su mera existencia. D-031 autoriza merge a main y retirada de B1; la rama estable se llama **main**. El código futuro amplía el juego actual, no un runtime paralelo por lote. `validation/B01` conserva el historial, no una segunda implementación.
+**Estado vigente:** B1 (H05/H06) APPROVED por el creador, integrado en el flujo normal (`scenes/main.tscn`, F5). Jugador compartido `PlayerController`; suites `tests/gameplay`, runner `tools/gameplay/run_tests.py`. B2 se encarga mediante `next_prompt.md`, sin ejecutarlo por su mera existencia. D-031 autoriza merge a main y retirada de B1; la rama estable se llama **main**. El código futuro amplía el juego actual, no un runtime paralelo por lote. D-032 retira los archivos de entrega B1 del árbol actual: su aprobación y evidencia se conservan en Git, commit `1e30b5c1aa1ed8f949059ead5517e6c095c3d436`; no recrear esa carpeta ni el manual de raíz. Las regresiones útiles viven en `tests/gameplay`.
 
 ## 0. Lectura obligatoria por conversación o lote
 

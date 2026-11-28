@@ -1,33 +1,23 @@
-# HANDOFF — B1 aprobado e integrado; preparado el encargo B2
+# HANDOFF — juego integrado; siguiente encargo B2
 
-**2026-11-28.** El creador confirmó el arreglo de paredes, aprobó B1 y encargó integrar todo en el flujo normal, limpiar elementos innecesarios, publicar el proyecto completo, fusionar a main y eliminar B1. Confirmó conservar el nombre **main**. [Fuente](../validation/B01/APPROVAL.md), D-031. B2 todavía no está implementado.
+**2026-11-28.** B1 (H05/H06) APPROVED por el creador e integrado en main. La rama B1 ya está eliminada local/remota. [Decisiones D-031/D-032](DECISIONS.md), [resultados y evidencia histórica](VALIDATION.md). B2 no se ha implementado.
 
-## Entrada y código que debe ampliar Claude
+## Código que debe ampliar Claude
 
-F5 → `scenes/main.tscn` → `scripts/main.gd`. Jugador único: `scenes/player/player.tscn`, `scripts/player/player_controller.gd` (PlayerController). Combate compartido: `scripts/combat/`, con HitscanWeapon provisional, salud/daño/hitboxes y estados por animación. Interacción en `scripts/interaction/`; peligros de arena en `scripts/world/environment_hazards.gd`.
+F5 → `scenes/main.tscn` → `scripts/main.gd`. Jugador compartido: `scenes/player/player.tscn` y `scripts/player/player_controller.gd` (PlayerController). Combate en `scripts/combat/`, interacción en `scripts/interaction/`, peligros de la arena en `scripts/world/`.
 
-Se conservan el modelo/posición del arma y su prevención de penetración, dash doble toque, F/E separados y salud/regeneración aprobados. La arena actual se abre con F5, sin rótulos B1 ni instrucciones internas de hitos. Futuras armas/energía/ultimates deben integrarse aquí. No reconstruir otro jugador/sandbox por lote.
+Conservar movimiento/dash doble toque, F/E separados, salud/regeneración y colisión del arma aprobados. No cambiar posición/aspecto del arma para esconder penetración. Nuevas armas/animaciones requieren adaptar su volumen de colisión y las pruebas. Ampliar este flujo normal.
 
-## Aprobación, integración y pruebas
+## Estado de la entrega
 
-- B1 aprobado sobre runtime `1401e05269fc4919f3658788e7de48bc5a4aa148`, paquete `a0c9820`; el creador confirmó «Perfecto, funciona» y «B1 queda aprobado». BUG-B1-02 cerrado con esa confirmación.
-- Candidato de integración **`5a622069c4267821ba5e5a16b6404a60ed7ad6a8`**, probado en worktree limpio: estático 45 scripts/12 recursos, importación, 37 unitarias, 38 integración, smoke 600 frames de la entrada configurada y regresiones H1/H03/H04 PASS. Mismo Godot 4.7.2, GdUnit4 6.2.3, Python 3.13.15 y Windows 11 Home 10.0.26300.
-- [INTEGRATION](../validation/B01/INTEGRATION.md) registra comandos/evidencia y la verificación posterior al merge. Los resultados manuales anteriores no se inventan como ejecuciones nuevas de la integración.
-- Suites normales: `tests/gameplay/unit`, `tests/gameplay/integration`, runner `tools/gameplay/run_tests.py`. Se añadieron tres casos de conexión real de escena principal. H1 antiguo solo en `tests/fixtures/h1`; el probe mantiene sus 34 comprobaciones.
+Merge `be3a94fb9118664ebc95919398a020a968b16074`: 37 unitarias, 38 integración, importación, estático, entrada F5 y regresiones H1/H03/H04 PASS. Suites comunes en `tests/gameplay`, runner `tools/gameplay/run_tests.py`. H1 antiguo solo en `tests/fixtures/h1` como regresión histórica.
 
-## Limpieza y transferencia
+D-032 retira del árbol de trabajo 558 archivos en total: el paquete B1 y el manual de raíz, incluidos informes, diagnósticos y ZIP. La evidencia y aprobación se consultan en Git, commit `1e30b5c1aa1ed8f949059ead5517e6c095c3d436`; no recrear sus carpetas ni manuales. Las pruebas comunes siguen siendo necesarias para el juego y B2.
 
-Retiradas rutas de runtime `scripts/b1`, `scenes/b1`, el jugador con nombre de lote y el runner/suites separados. Se preservaron los UIDs existentes y se versionaron para otros PC. Regresiones útiles conservadas. Se retiraron 148 HTML/CSS/logos generados duplicados del árbol visible, archivados byte a byte con hashes; logs/JUnit/JSON intactos. `validation/.gdignore` excluye evidencia de la importación del motor.
-
-Repositorio completo para abrir `project.godot` en otro PC; [GITHUB_TRANSFER](GITHUB_TRANSFER.md) explica instalación/importación. No hacen falta cachés locales ni Blender para abrirlo. Comprobar disponibilidad real de herramientas antes de declarar ausencias o PASS.
+El proyecto completo sigue disponible para importar `project.godot` en otro PC: [GITHUB_TRANSFER](GITHUB_TRANSFER.md). Verificar las herramientas reales; la falta de Godot se declara solo si se comprueba.
 
 ## Siguiente encargo
 
-Copiar [next_prompt.md](../next_prompt.md) en Claude: B2 = H07/H08/H09, rama nueva desde main actualizado, checkpoints y paquete `validation/B02`. Leer AGENTS/contratos/prompts completos. La creación del texto no ejecuta B2.
+Copiar [next_prompt.md](../next_prompt.md) en Claude: B2 = H07/H08/H09, nueva rama desde main actualizado, checkpoints y paquete propio. Actualizar main y registrar su SHA real. La existencia del prompt no ejecuta el lote.
 
-Respetar pendientes P-001/P-005/P-006/P-011/P-017: bindings, duplicados/vacíos, compatibilidad y balance no se deciden por intuición. D-029 (cámara futura de muerte en tercera persona elevada y cuerpo tumbado) queda fuera de B2. D-030 prohíbe esconder penetración cambiando arbitrariamente el encuadre o render del arma; nuevas geometrías/animaciones requieren ampliar la colisión y tests.
-
-
-## Publicación terminada
-
-Merge `be3a94fb9118664ebc95919398a020a968b16074` probado en copia limpia y publicado en main: 37 unitarias, 38 integración, arranque normal y regresiones PASS. B1 eliminada local y remotamente después del push; historial conservado en main. [Evidencia posterior a merge](../validation/B01/evidence/post_merge/summary.json). La documentación/evidencia posterior no cambia el runtime probado. El otro PC debe actualizar main y usar su SHA real como base de B2; el directorio principal de Codex ya está en main.
+Pendientes P-001/P-005/P-006/P-011/P-017: bindings, duplicados/vacíos, compatibilidades y balance no se deciden por intuición. D-029 conserva la petición futura de cámara de muerte en tercera persona elevada con el cuerpo tumbado, fuera de B2.

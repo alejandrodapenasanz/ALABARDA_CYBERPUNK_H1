@@ -1,6 +1,0 @@
-version: PASS exit=0
-import: PASS exit=0
-b1_unit: PASS exit=0
-b1_integration: FAIL exit=100
-b1_sandbox_smoke: PASS exit=0
-FAIL C:\dev\ALABARDA_B1_WALL_FIX_20261127\attempt_04\summary.json

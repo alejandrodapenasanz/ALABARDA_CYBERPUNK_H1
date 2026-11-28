@@ -1,6 +1,6 @@
 class_name PhysicsLayers
 extends RefCounted
-## B1 · Physics layer bit values used by the B1 player/combat scenes.
+## Physics layer bit values shared by player and combat scenes.
 ## Layer 1 world is Godot's default, so H1/H04 geometry keeps working unchanged.
 
 const WORLD := 1          # layer 1: static geometry, interactables

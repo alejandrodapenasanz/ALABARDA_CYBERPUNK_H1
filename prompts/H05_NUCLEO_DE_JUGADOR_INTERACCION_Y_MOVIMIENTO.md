@@ -30,7 +30,7 @@ Fuera de alcance: hitos ajenos al lote, reinterpretar propuestas como aprobadas,
 
 Código/escenas/Resources/tests del sistema de este hito según [ARCHITECTURE](../docs/ARCHITECTURE.md); documentar rutas reales antes de editar, no asumir módulos futuros existentes. Actualizar arquitectura implementada, decisiones afectadas, VALIDATION, HANDOFF y ROADMAP sin alterar evidencia histórica. Registrar assets modificados antes de integrar.
 
-Paquete: `validation/B01/` con TEST_HANDOFF.md, TEST_MANIFEST.json conforme al esquema1.0.0, TEST_RESULTS.md y evidence/. [Plantillas](../docs/PROMPTS_INDEX.md). Incluir errores conocidos, regresiones, checklist humana y recuperación al commit aprobado. H02–H04 ya cerrados conservan evidencia histórica; no fabricar un paquete retroactivo ni ejecutar sus tareas por esta actualización.
+Entrega cerrada y aprobada. El paquete original se consulta desde [VALIDATION](../docs/VALIDATION.md) en el historial Git; D-032 retiró sus archivos del árbol actual. No recrearlo ni volver a ejecutar este encargo. Conservar las regresiones comunes y las especificaciones del sistema para los lotes siguientes.
 
 ## Aceptación
 

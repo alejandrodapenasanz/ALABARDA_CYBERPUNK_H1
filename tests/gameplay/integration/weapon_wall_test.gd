@@ -1,5 +1,5 @@
 extends GdUnitTestSuite
-## BUG-B1-02 / D-030: real walls must stop the visible weapon without changing its framing.
+## D-030: real walls must stop the visible weapon without changing its framing.
 
 const World = preload("res://tests/gameplay/support/test_world.gd")
 

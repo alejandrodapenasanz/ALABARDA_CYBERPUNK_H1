@@ -15,7 +15,7 @@ Lee AGENTS.md íntegro y todo su orden de lectura. Aplica prompts/_templates/CLA
 - prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md
 - prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md
 - prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md
-Consulta especialmente HANDOFF, ARCHITECTURE, DECISIONS, CONTROLS, GAME_DESIGN, HEALTH_ENERGY_CONTRACT, HEALTH_ENERGY_TEST_CASES, BALANCE_PROVISIONAL, TEST_STRATEGY y validation/B01/APPROVAL.md e INTEGRATION.md. Lee ART_BIBLE y ASSET_REGISTRY antes de afectar visuales o assets.
+Consulta especialmente HANDOFF, ARCHITECTURE, DECISIONS, CONTROLS, GAME_DESIGN, HEALTH_ENERGY_CONTRACT, HEALTH_ENERGY_TEST_CASES, BALANCE_PROVISIONAL, TEST_STRATEGY y las decisiones D-031/D-032. La aprobación y las pruebas de la base están resumidas en docs/VALIDATION.md; no recrees el paquete B1 ni su manual retirados. Lee ART_BIBLE y ASSET_REGISTRY antes de afectar visuales o assets.
 
 Comprueba las herramientas reales de este PC. El repositorio incluye el proyecto completo: puedes importar project.godot y abrir Godot si lo tienes instalado. Versión probada: Godot 4.7.2 estándar/Compatibility; GdUnit4 6.2.3 incluido. No asumas que falta el motor por una descripción antigua ni inventes ejecuciones. Si no está disponible, ejecuta Python/estático y deja las pruebas de motor NOT_RUN para Codex. Blender no hace falta para abrir el juego; úsalo solo si está disponible y el trabajo autorizado lo requiere.
 

@@ -21,18 +21,14 @@ Regresiones: H1 y laboratorio H03/H04 cuando estén afectados, más lotes anteri
 
 ## B1 — Jugador, interacción, movimiento, salud y daño
 
-Estado: APPROVED por el creador; integrado en el juego normal (D-031). El prompt siguiente se conserva como historial, no es un nuevo encargo. Dependencia: B0. Paquete al implementar: `validation/B01/`.
+Estado: APPROVED e integrado en el juego normal (D-031). Entrega cerrada; paquete y manual retirados por D-032. Aprobación y resultados en [VALIDATION](../docs/VALIDATION.md); no reabrir ni recrear su carpeta por leer este catálogo.
 
-Prompt para usar **solo tras autorización**:
-
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B1, hitos H05, H06, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B01/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B2. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
-
-Hitos y criterios (fuente única, no duplicada):
+Especificaciones conservadas del núcleo actual:
 
 - [H05 — Núcleo de jugador, interacción y movimiento](H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md)
 - [H06 — Daño, salud, hitzones y estados de ataque](H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md)
 
-Regresiones: H1 y laboratorio H03/H04 cuando estén afectados, más lotes anteriores pertinentes. Los hitos especifican casos propios y decisiones bloqueantes. Sin adelantarlos por datos/fixtures; todos los resultados nuevos empiezan NOT_RUN.
+Sus regresiones forman parte de `tests/gameplay` y del runner común `tools/gameplay/run_tests.py`.
 
 ## B2 — Armas, energía y ultimates
 
