@@ -1,0 +1,748 @@
+{
+  "reason": "Creator-authorized cleanup after B1 approval: duplicate generated HTML/CSS/logos archived losslessly; logs, JUnit and JSON retained.",
+  "archive": "generated_reports.zip",
+  "archive_sha256": "757b0181ffc891d31868d148fd40211f3d3f1a03f3e85b33626b266923a4c7f4",
+  "source_package": "a0c98203f56f66a43beb58eb9859e65a66a72c86",
+  "files": [
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/index.html",
+      "bytes": 7950,
+      "sha256": "7b499de4391d2927afd354b6d56769f00c0dbe3821dc82a6190cef38cc9da1aa"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/path/tests.b1.unit.html",
+      "bytes": 6016,
+      "sha256": "dd907703e7aeeba21e4c5bda501ce754fb02948c538a5f41eace438ce001e11d"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/test_suites/tests.b1.unit.dash_and_config_test.html",
+      "bytes": 8275,
+      "sha256": "8267689a932d5f9310f8355bfe243cc3d5089a12074375bf409b2f5995b1a7f3"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/test_suites/tests.b1.unit.double_tap_test.html",
+      "bytes": 8217,
+      "sha256": "22c675e6036354a19c32e2faaecff69e0a5f24e1f4c1c11502dfb14a1a186d3e"
+    },
+    {
+      "path": "attempt_01/b1_unit_reports/report_1/test_suites/tests.b1.unit.health_component_test.html",
+      "bytes": 10545,
+      "sha256": "1637dfaaf152001e8605c8fac285ab277b96c286681043e3585043a8579819fb"
+    },
+    {
+      "path": "attempt_01/regression/integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_01/regression/integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_01/regression/integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_01/regression/integration_reports/report_1/index.html",
+      "bytes": 6130,
+      "sha256": "3247a733807bbf3e39d9d9177cd1083281f169bd3d05bf716878b3f27414e1b7"
+    },
+    {
+      "path": "attempt_01/regression/integration_reports/report_1/path/tests.h04.integration.html",
+      "bytes": 4203,
+      "sha256": "d198ac92e2e3b99fd3ca572c611c5b1048f0b560fccfa58fce602f3f6d5e855f"
+    },
+    {
+      "path": "attempt_01/regression/integration_reports/report_1/test_suites/tests.h04.integration.lookdev_test.html",
+      "bytes": 6331,
+      "sha256": "43440bb0da63900e26ab40ef4cb18706bb0db32eb3fa6aa038b3af04e755fb6b"
+    },
+    {
+      "path": "attempt_01/regression/regression/integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_01/regression/regression/integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_01/regression/regression/integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_01/regression/regression/integration_reports/report_1/index.html",
+      "bytes": 6142,
+      "sha256": "f798b84eb4bfbbf71004beb06b0875c57158010132a0b7d9007c876c978b581a"
+    },
+    {
+      "path": "attempt_01/regression/regression/integration_reports/report_1/path/tests.h03.integration.html",
+      "bytes": 4215,
+      "sha256": "1e35714a29530403d82f27160edec18ba4b6eb96f14fb28bdd79cc242fcb1435"
+    },
+    {
+      "path": "attempt_01/regression/regression/integration_reports/report_1/test_suites/tests.h03.integration.art_reference_test.html",
+      "bytes": 7589,
+      "sha256": "87a2350c471bf5d35683cb9f8238df8c75c77e26960ef22202a704886c3f646d"
+    },
+    {
+      "path": "attempt_01/regression/regression/negative_control_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_01/regression/regression/negative_control_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_01/regression/regression/negative_control_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_01/regression/regression/negative_control_reports/report_1/index.html",
+      "bytes": 6165,
+      "sha256": "5eeee3c71e57f08fda7c8c150a1374d40ad4b1d0fafe3a23199588a05fe6f808"
+    },
+    {
+      "path": "attempt_01/regression/regression/negative_control_reports/report_1/path/tests.h03.controlled_failure.html",
+      "bytes": 4245,
+      "sha256": "d83afd03f3d65959f77af016283c7024ac15494559cb823c9830dfe9218b4f43"
+    },
+    {
+      "path": "attempt_01/regression/regression/negative_control_reports/report_1/test_suites/tests.h03.controlled_failure.expected_failure_test.html",
+      "bytes": 5470,
+      "sha256": "c5820c3325402b4e1f2ac03039ad4f977381f628a07547f05cc73003452597b8"
+    },
+    {
+      "path": "attempt_01/regression/regression/unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_01/regression/regression/unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_01/regression/regression/unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_01/regression/regression/unit_reports/report_1/index.html",
+      "bytes": 6107,
+      "sha256": "a705fefe278dc53e985785df05553ad86d43f091649881cc38e42cb0f44a5590"
+    },
+    {
+      "path": "attempt_01/regression/regression/unit_reports/report_1/path/tests.h03.unit.html",
+      "bytes": 4173,
+      "sha256": "44cd528a00c11734a42c862b616a20cd85f42ec00bb4117d5d0f6ab6066f310d"
+    },
+    {
+      "path": "attempt_01/regression/regression/unit_reports/report_1/test_suites/tests.h03.unit.balance_test.html",
+      "bytes": 7536,
+      "sha256": "30aa5412d77e55adaa456735e736ccca6bc99efbc10de2e2e1fc15698701fa5e"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/index.html",
+      "bytes": 7063,
+      "sha256": "e90fc1c8acd1cdc11c137b5c7849f51aec005e617aaceebda05be901d0c26e1c"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/path/tests.b1.integration.html",
+      "bytes": 5135,
+      "sha256": "f47f2de700fe076589a60ca0a92a70acd33b37a62d5554038fbde0a5cad30d8a"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/test_suites/tests.b1.integration.combat_test.html",
+      "bytes": 9580,
+      "sha256": "5d2b3a6320063d4e3b7ebf834c7ae30257d05423510ee006d9560858561fae59"
+    },
+    {
+      "path": "attempt_02/b1_integration_reports/report_1/test_suites/tests.b1.integration.player_movement_test.html",
+      "bytes": 9646,
+      "sha256": "bd4c886629dbee72e243e011f5b7b1fffb3a8018d39df0bd6d6e36560910cea5"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/index.html",
+      "bytes": 7950,
+      "sha256": "f5337a6078e31ac11b35954034becbeb04a6a633b82789826da82f29f69879d6"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/path/tests.b1.unit.html",
+      "bytes": 6016,
+      "sha256": "f96518559229c9970cd7d266652d980fe9e488547669a2a642b1d3e4a428566f"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/test_suites/tests.b1.unit.dash_and_config_test.html",
+      "bytes": 8275,
+      "sha256": "24b18d86761a462b07faf9240bf5664b9cec62babc3f9327f315f6c6ab487e56"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/test_suites/tests.b1.unit.double_tap_test.html",
+      "bytes": 8217,
+      "sha256": "19fa8d77b3c6fc777ab4051423101e608695cdcdeed18995fb4074a0f9e0a525"
+    },
+    {
+      "path": "attempt_02/b1_unit_reports/report_1/test_suites/tests.b1.unit.health_component_test.html",
+      "bytes": 10545,
+      "sha256": "c06fe568d0b70fb30ec5a7ea7f40b436fa036fb46da11c359cee37e1c293e1c0"
+    },
+    {
+      "path": "attempt_02/regression/integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_02/regression/integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_02/regression/integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_02/regression/integration_reports/report_1/index.html",
+      "bytes": 6130,
+      "sha256": "08d7be8fc50a788d862eeec539fe2b8d1b3b58f7b1c29231443c42ce316968c1"
+    },
+    {
+      "path": "attempt_02/regression/integration_reports/report_1/path/tests.h04.integration.html",
+      "bytes": 4203,
+      "sha256": "62acc36301686565f19e9a523a31c73d2aa3e831afcdb6a8937e0ee6baa3937e"
+    },
+    {
+      "path": "attempt_02/regression/integration_reports/report_1/test_suites/tests.h04.integration.lookdev_test.html",
+      "bytes": 6331,
+      "sha256": "0d9b803a56c5e5973b2973807d05e15d0951e228f56d977257cbf78ec8cde4e7"
+    },
+    {
+      "path": "attempt_02/regression/regression/integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_02/regression/regression/integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_02/regression/regression/integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_02/regression/regression/integration_reports/report_1/index.html",
+      "bytes": 6142,
+      "sha256": "09c6e8512deb174588c7b18a453c0cb4d4095f261d273a55878ae54c666ba22d"
+    },
+    {
+      "path": "attempt_02/regression/regression/integration_reports/report_1/path/tests.h03.integration.html",
+      "bytes": 4215,
+      "sha256": "d93fbe4975d76fc459cd196fe02b10c72cb6328a6d28019d41728b99febea076"
+    },
+    {
+      "path": "attempt_02/regression/regression/integration_reports/report_1/test_suites/tests.h03.integration.art_reference_test.html",
+      "bytes": 7589,
+      "sha256": "804fbed4218f8ea2ff8ea1c5b68012a29303fb62d78cac67a4c97e90fc6a4075"
+    },
+    {
+      "path": "attempt_02/regression/regression/negative_control_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_02/regression/regression/negative_control_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_02/regression/regression/negative_control_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_02/regression/regression/negative_control_reports/report_1/index.html",
+      "bytes": 6165,
+      "sha256": "569cf0307735272992211c1b6e7ddff00dc26af8a1167272cd0342fa3b27e0aa"
+    },
+    {
+      "path": "attempt_02/regression/regression/negative_control_reports/report_1/path/tests.h03.controlled_failure.html",
+      "bytes": 4245,
+      "sha256": "5abbf87547eb2f99d922365e4b3051dfe2b693b32fe7c24e73e35b3901ed4785"
+    },
+    {
+      "path": "attempt_02/regression/regression/negative_control_reports/report_1/test_suites/tests.h03.controlled_failure.expected_failure_test.html",
+      "bytes": 5470,
+      "sha256": "eeea6fae69474d5d290c8cfb593ed768afab312389c8fa4d7293fa70f8224988"
+    },
+    {
+      "path": "attempt_02/regression/regression/unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_02/regression/regression/unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_02/regression/regression/unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_02/regression/regression/unit_reports/report_1/index.html",
+      "bytes": 6107,
+      "sha256": "da48ce964f72f3a8e5d4d920b7f35c51092e492175d0fa331a53fee3f3da9b6e"
+    },
+    {
+      "path": "attempt_02/regression/regression/unit_reports/report_1/path/tests.h03.unit.html",
+      "bytes": 4173,
+      "sha256": "5fb11a9a2d4fcfa5b16fecb7837c4c58e71b3fdb96f07193b595bc24534450c8"
+    },
+    {
+      "path": "attempt_02/regression/regression/unit_reports/report_1/test_suites/tests.h03.unit.balance_test.html",
+      "bytes": 7536,
+      "sha256": "d71abb51a9675be933cbeebcfd68dee95cdbf81d9fd75fd8c8f41d5ff7c44ae4"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/index.html",
+      "bytes": 7980,
+      "sha256": "034fe9073f9113ea00cf5723fbdb826b6fd3985177f74a875c5a819df79f8389"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/path/tests.b1.integration.html",
+      "bytes": 6054,
+      "sha256": "44ec3809ebcdd3a7126c9727f8016d8ee7044dadbc548a8f9533c266882b7f3b"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/test_suites/tests.b1.integration.combat_test.html",
+      "bytes": 9580,
+      "sha256": "5f12db9a12e16ed441c8192afc16930731ef445bf2952c73dc4455466f2347ea"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/test_suites/tests.b1.integration.player_movement_test.html",
+      "bytes": 9646,
+      "sha256": "0350f31fd1b426b5f2c442d133ad4d49532e0cd152b993aa2fdd0a33e2fe7197"
+    },
+    {
+      "path": "attempt_04/b1_integration_reports/report_1/test_suites/tests.b1.integration.weapon_wall_test.html",
+      "bytes": 5844,
+      "sha256": "3d8c472743fbe9606c538df080be0029e5e795c367a72ab1a1ea0b09d617b435"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/index.html",
+      "bytes": 7950,
+      "sha256": "c8452c64cae8693b98ecfdb8f5cd8f4e8e603e7fef4c7fa590059f65ffcc7d8b"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/path/tests.b1.unit.html",
+      "bytes": 6016,
+      "sha256": "38ae2dacf58356a2b738e329272c7075778ed5377597e2583d745e5362381820"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/test_suites/tests.b1.unit.dash_and_config_test.html",
+      "bytes": 8275,
+      "sha256": "ea9e03dff7fb820f4d8dca6f975e2df4d5c82a71fb0c3cfb94965afd5bd0ff84"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/test_suites/tests.b1.unit.double_tap_test.html",
+      "bytes": 8217,
+      "sha256": "7b2961cf9ed5db94bd9f7bda919caf78b680b93df8d9b68f9871ade0899b2925"
+    },
+    {
+      "path": "attempt_04/b1_unit_reports/report_1/test_suites/tests.b1.unit.health_component_test.html",
+      "bytes": 10545,
+      "sha256": "1b8ace302910f2e690013632a9cf529a079d6836b97388b2bed09f51acd2ff1a"
+    },
+    {
+      "path": "attempt_04/red_full/reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_04/red_full/reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_04/red_full/reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_04/red_full/reports/report_1/index.html",
+      "bytes": 6142,
+      "sha256": "a12e3d996fd35c9de7d17592ab2f3e8ecf6148cf01d73cbc7032aff8198d8503"
+    },
+    {
+      "path": "attempt_04/red_full/reports/report_1/path/tests.b1.integration.html",
+      "bytes": 4213,
+      "sha256": "e47e5f4fc1d878cd1ff603fa71050fe9a89aff3d0db600b49ce238ea269eeb2f"
+    },
+    {
+      "path": "attempt_04/red_full/reports/report_1/test_suites/tests.b1.integration.weapon_wall_test.html",
+      "bytes": 9918,
+      "sha256": "e94a74c7b8255aba35851e3d7d4120a26c9b51449d122ccebf5be89f3f1744ed"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/index.html",
+      "bytes": 7982,
+      "sha256": "6ff82f49fe78d3eb7b4799b31b9f9c426d672910afa4583b82501f030ab5bab3"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/path/tests.b1.integration.html",
+      "bytes": 6055,
+      "sha256": "3668bb358c240ab2df414ba6de61ac5fe32312cf168cfd7d48989111d93dd7fb"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/test_suites/tests.b1.integration.combat_test.html",
+      "bytes": 9580,
+      "sha256": "444b625e4bed36d30c0d809ecd9fec761161a8ded954f07df670786c0bbe8324"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/test_suites/tests.b1.integration.player_movement_test.html",
+      "bytes": 9646,
+      "sha256": "9b3a2e873db172ceb0dfc446a7b183a99891de093fe117242267a3b7e3bb262f"
+    },
+    {
+      "path": "attempt_05/b1_integration_reports/report_1/test_suites/tests.b1.integration.weapon_wall_test.html",
+      "bytes": 7419,
+      "sha256": "fa08b3711d69cbfd806e62b37241e817804bfdd3c18e1b04b0385d568f2e309c"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/index.html",
+      "bytes": 7950,
+      "sha256": "6fd66c14eb0b2eee90a91f03da82575265f2e8dd370f4d2c235a7477a955c7be"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/path/tests.b1.unit.html",
+      "bytes": 6016,
+      "sha256": "9fe9f08987885cbf989ae35444b96f64df31799e408bd270f7e206f8694c50d5"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/test_suites/tests.b1.unit.dash_and_config_test.html",
+      "bytes": 8275,
+      "sha256": "e364b970a217e3fb1454e1408cf34dea214d43c8f4a57934525fe796fc29c2d8"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/test_suites/tests.b1.unit.double_tap_test.html",
+      "bytes": 8217,
+      "sha256": "aa80e6a4fbf567428094ecbb0fdd2c3661864d4198545fc65ee7d005b2dc39ca"
+    },
+    {
+      "path": "attempt_05/b1_unit_reports/report_1/test_suites/tests.b1.unit.health_component_test.html",
+      "bytes": 10545,
+      "sha256": "bb5fbd94405e944ba0f4c7c60460e794110587b73e925d28a2c1fd9adcc14a14"
+    },
+    {
+      "path": "attempt_05/regression/integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_05/regression/integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_05/regression/integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_05/regression/integration_reports/report_1/index.html",
+      "bytes": 6130,
+      "sha256": "f3b323486ed7b2047588c3f3b9d72c09d660e5d29c291ec3afbfac5b39eedaf2"
+    },
+    {
+      "path": "attempt_05/regression/integration_reports/report_1/path/tests.h04.integration.html",
+      "bytes": 4203,
+      "sha256": "d34a8d2223f161aea157873d9a48021842cfa15f2ad1c0c308ab04ef7f2f95ea"
+    },
+    {
+      "path": "attempt_05/regression/integration_reports/report_1/test_suites/tests.h04.integration.lookdev_test.html",
+      "bytes": 6331,
+      "sha256": "482a023783cffc809b24c8e872518bfdb1f2ca30d12bdc1e6d5b7075c38751e7"
+    },
+    {
+      "path": "attempt_05/regression/regression/integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_05/regression/regression/integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_05/regression/regression/integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_05/regression/regression/integration_reports/report_1/index.html",
+      "bytes": 6142,
+      "sha256": "7df2421bb536e21915d2d47444df9547baf5ff0d17617f3bf2090a367f793c96"
+    },
+    {
+      "path": "attempt_05/regression/regression/integration_reports/report_1/path/tests.h03.integration.html",
+      "bytes": 4215,
+      "sha256": "618fe6583f308d221aaaccac270893a775381df11a1e1250a49a43cd337448c0"
+    },
+    {
+      "path": "attempt_05/regression/regression/integration_reports/report_1/test_suites/tests.h03.integration.art_reference_test.html",
+      "bytes": 7589,
+      "sha256": "703a0e4d0356920b17f4b82e67fa3e5f054b721ef7593df43138d2c112608b51"
+    },
+    {
+      "path": "attempt_05/regression/regression/negative_control_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_05/regression/regression/negative_control_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_05/regression/regression/negative_control_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_05/regression/regression/negative_control_reports/report_1/index.html",
+      "bytes": 6165,
+      "sha256": "1700be5119b8f35e31db2b3a46c7ba3db73f721a0184eec6b21a2d5890f9f563"
+    },
+    {
+      "path": "attempt_05/regression/regression/negative_control_reports/report_1/path/tests.h03.controlled_failure.html",
+      "bytes": 4245,
+      "sha256": "bfe2d8e7794962e4d6e2768a2624e7f73be826d08384174f3b5aae50b9a177d4"
+    },
+    {
+      "path": "attempt_05/regression/regression/negative_control_reports/report_1/test_suites/tests.h03.controlled_failure.expected_failure_test.html",
+      "bytes": 5470,
+      "sha256": "de1d1f0e9925614f2581e5a90976e9e57a811f9dedfd47a2a3485075c6c5eb10"
+    },
+    {
+      "path": "attempt_05/regression/regression/unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "attempt_05/regression/regression/unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "attempt_05/regression/regression/unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "attempt_05/regression/regression/unit_reports/report_1/index.html",
+      "bytes": 6107,
+      "sha256": "0f1c93d2c292a812688d8a282a55a3748851c0efb7aa139458c68941ac6a7568"
+    },
+    {
+      "path": "attempt_05/regression/regression/unit_reports/report_1/path/tests.h03.unit.html",
+      "bytes": 4173,
+      "sha256": "ac8c23679378bd4831e8ec1b74c67f2454e01d7cd160483d7f9096566158d9c7"
+    },
+    {
+      "path": "attempt_05/regression/regression/unit_reports/report_1/test_suites/tests.h03.unit.balance_test.html",
+      "bytes": 7536,
+      "sha256": "8466bd6bb7626a85bc30e6bd42635b3d14ae62b037c8cc0d6861362b436bf4af"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/index.html",
+      "bytes": 7059,
+      "sha256": "5f4b2b5489e967803d648cdde8e892ae27138c445574d7649d8c856bcf39d19a"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/path/tests.b1.integration.html",
+      "bytes": 5132,
+      "sha256": "8e97d6ba242e6ce2d19dbcceb6b04935f9a185c272cdabfaed18b76a1bd99493"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/test_suites/tests.b1.integration.combat_test.html",
+      "bytes": 10253,
+      "sha256": "4514b75e8f60f4cfd1565a6786943dd9a9893986b60d63b9788086996a8810ad"
+    },
+    {
+      "path": "diagnostic_03/b1_integration_reports/report_1/test_suites/tests.b1.integration.player_movement_test.html",
+      "bytes": 9646,
+      "sha256": "7c18a318b9f399e45b66a2f9cb852e153af66b52c68c96c5a3fcf038b5a51dd9"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/css/breadcrumb.css",
+      "bytes": 1056,
+      "sha256": "68d42eb10ac6533e36378969cbaa94535ff75d7977d9d90fa5939736d04ceb3a"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/css/logo.png",
+      "bytes": 49775,
+      "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/css/styles.css",
+      "bytes": 6733,
+      "sha256": "03b4882981f58bce30961b5e7bb7f7b4a46fbdb12ff2c3a2ffbc56f795731c0a"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/index.html",
+      "bytes": 7950,
+      "sha256": "e9b767592fd37a0ad71b782b8385326f4570d48b1f0862a4b89351391bdab8c2"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/path/tests.b1.unit.html",
+      "bytes": 6016,
+      "sha256": "033f5f2bd35a9c4ec8f772c28ed75f43d57464ca211c9795f01d7a020e579bb6"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/test_suites/tests.b1.unit.dash_and_config_test.html",
+      "bytes": 8275,
+      "sha256": "2fa9ef1f30062e3e8c05d3bb6bf4f48252ab8838544936f50f017111c44e39cd"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/test_suites/tests.b1.unit.double_tap_test.html",
+      "bytes": 8217,
+      "sha256": "16b74e049f51fb0075a44a32d8dd2ed927e2159fa3fc87a9b91f0502b5cd053e"
+    },
+    {
+      "path": "diagnostic_03/b1_unit_reports/report_1/test_suites/tests.b1.unit.health_component_test.html",
+      "bytes": 10545,
+      "sha256": "5b8b31c85a59dffa7a12ae978cac1527465a05ce6ba922c6ddbb917aeb94558f"
+    }
+  ]
+}

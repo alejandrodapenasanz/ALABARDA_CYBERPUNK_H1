@@ -1,0 +1,13 @@
+{
+  "label": "static",
+  "started_at_utc": "2026-11-27T15:27:13.962431+00:00",
+  "ended_at_utc": "2026-11-27T15:27:17.309491+00:00",
+  "cwd": "C:/dev/ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "tools/pipeline/check_godot_static.py"
+  ],
+  "exit_code": 0
+}

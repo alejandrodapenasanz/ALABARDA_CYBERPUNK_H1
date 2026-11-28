@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "diagnostic_raw_artifacts_verified": 41,
+  "local_links_checked": 354,
+  "manual_results": {
+    "PASS": 7,
+    "FAIL": 1
+  },
+  "runtime_and_tests_match_C94e4880": true,
+  "weapon_position_appearance_animations_unchanged": true
+}

@@ -1,51 +1,28 @@
-# HANDOFF — migración pipeline v2.1
+# HANDOFF — B1 aprobado e integrado; preparado el encargo B2
 
-**2026-11-23: entrega documental APROBADA por el creador (D-027/D-028). B1 NOT_STARTED; se desarrollará en la rama `B1` creada desde `main`.** H1–H04 conservan sus aprobaciones; no se programa gameplay ni se repiten H03/H04 durante esta tarea. [Informe completo](PIPELINE_MIGRATION_REPORT.md), [validación](VALIDATION.md), [documentos anteriores](history/pre_pipeline_v2_1/manifest.json).
+**2026-11-28.** El creador confirmó el arreglo de paredes, aprobó B1 y encargó integrar todo en el flujo normal, limpiar elementos innecesarios, publicar el proyecto completo, fusionar a main y eliminar B1. Confirmó conservar el nombre **main**. [Fuente](../validation/B01/APPROVAL.md), D-031. B2 todavía no está implementado.
 
-## Qué está preparado
+## Entrada y código que debe ampliar Claude
 
-AGENTS para ambos roles; [workflow](DEVELOPMENT_WORKFLOW.md) con lotes/estados/Git/SHA;23 prompts individuales, [catálogo B0–B8](../prompts/BATCH_PROMPTS.md); plantillas Claude implementar/fix, Codex validar y handoff/manifest/resultados/bug. Schema versionado y verificador de paquetes; no ejecutor universal de comandos. [Índice](PROMPTS_INDEX.md).
+F5 → `scenes/main.tscn` → `scripts/main.gd`. Jugador único: `scenes/player/player.tscn`, `scripts/player/player_controller.gd` (PlayerController). Combate compartido: `scripts/combat/`, con HitscanWeapon provisional, salud/daño/hitboxes y estados por animación. Interacción en `scripts/interaction/`; peligros de arena en `scripts/world/environment_hazards.gd`.
 
-Salud0–100/energía0–150, autoHP, E, bajas/ultimates/ascensor sincronizados (sin pasiva energética, D-027); [contrato](HEALTH_ENERGY_CONTRACT.md), [balance provisional](BALANCE_PROVISIONAL.md),29 casos SB y10 CT. F extracción SUPERSEDED. No se cambian scripts, escenas, Resources, assets, tests Godot ni fuentes Blender. Resource H03 aún legado: adaptación futura explícita en B1/B2; sus PASS no prueban el diseño nuevo.
+Se conservan el modelo/posición del arma y su prevención de penetración, dash doble toque, F/E separados y salud/regeneración aprobados. La arena actual se abre con F5, sin rótulos B1 ni instrucciones internas de hitos. Futuras armas/energía/ultimates deben integrarse aquí. No reconstruir otro jugador/sandbox por lote.
 
-## Estado ejecutable conservado
+## Aprobación, integración y pruebas
 
-Godot4.7.2 estándar/Compatibility. Importar project.godot: **F5 greybox H1**; abrir `scenes/art_reference/modern_psx_lab.tscn` y **F6 laboratorio H04**. H1 usa WASD/ratón/clic, Shift, Espacio, Q dash, Esc cursor y R tras cinco blancos. E/energía/nuevo doble toque/slots aún no existen.
+- B1 aprobado sobre runtime `1401e05269fc4919f3658788e7de48bc5a4aa148`, paquete `a0c9820`; el creador confirmó «Perfecto, funciona» y «B1 queda aprobado». BUG-B1-02 cerrado con esa confirmación.
+- Candidato de integración **`5a622069c4267821ba5e5a16b6404a60ed7ad6a8`**, probado en worktree limpio: estático 45 scripts/12 recursos, importación, 37 unitarias, 38 integración, smoke 600 frames de la entrada configurada y regresiones H1/H03/H04 PASS. Mismo Godot 4.7.2, GdUnit4 6.2.3, Python 3.13.15 y Windows 11 Home 10.0.26300.
+- [INTEGRATION](../validation/B01/INTEGRATION.md) registra comandos/evidencia y la verificación posterior al merge. Los resultados manuales anteriores no se inventan como ejecuciones nuevas de la integración.
+- Suites normales: `tests/gameplay/unit`, `tests/gameplay/integration`, runner `tools/gameplay/run_tests.py`. Se añadieron tres casos de conexión real de escena principal. H1 antiguo solo en `tests/fixtures/h1`; el probe mantiene sus 34 comprobaciones.
 
-Laboratorio:1–4 cámaras, A brazos, F fuentes, L tres luces, X/B retro,0 restaura D-019:nearest+mips, atmósfera,1280×720,retroOFF,sombrasON,nieblaOFF. HomeVideo aceptada en contexto probado; kit H04/muestras experimentales, no finales. Malorian opcional local excluida del público, fallback propio; rig separado. Reutilizar kit/registry/biblia antes de producir visuales.
+## Limpieza y transferencia
 
-## Git y transferencia a otro PC
+Retiradas rutas de runtime `scripts/b1`, `scenes/b1`, el jugador con nombre de lote y el runner/suites separados. Se preservaron los UIDs existentes y se versionaron para otros PC. Regresiones útiles conservadas. Se retiraron 148 HTML/CSS/logos generados duplicados del árbol visible, archivados byte a byte con hashes; logs/JUnit/JSON intactos. `validation/.gdignore` excluye evidencia de la importación del motor.
 
-El creador ordena publicar toda la versión actual para continuar desde otro PC el2026-11-23. Se sustituye la entrega pública resumida por la copia de desarrollo completa, con restricciones de assets explícitas. [Guía de descarga y comprobación](GITHUB_TRANSFER.md). La publicación no cambia PENDING_APPROVAL ni inicia B1.
+Repositorio completo para abrir `project.godot` en otro PC; [GITHUB_TRANSFER](GITHUB_TRANSFER.md) explica instalación/importación. No hacen falta cachés locales ni Blender para abrirlo. Comprobar disponibilidad real de herramientas antes de declarar ausencias o PASS.
 
-La carpeta original conserva h02-audit sin HEAD e índice histórico. La transferencia se prepara en una copia Git aislada sobre H04 `48f972c6ebeac2a4c7e6ab526e7dead43ad2baba`; desde un clon de main usar `git rev-parse HEAD` como BASE_SHA real. Baseline portable explícita en tools/pipeline/checkout_manifest.json, sin modificar evidencia histórica ni exigir archivos locales excluidos. [Inventario de migración anterior](evidence/pipeline_v2_1/changed_files.json) y [snapshot de entrada](evidence/pipeline_v2_1/before.json) conservan su alcance histórico. No tocar el índice original.
+## Siguiente encargo
 
-## Pendientes que no debe decidir una IA
+Copiar [next_prompt.md](../next_prompt.md) en Claude: B2 = H07/H08/H09, rama nueva desde main actualizado, checkpoints y paquete `validation/B02`. Leer AGENTS/contratos/prompts completos. La creación del texto no ejecuta B2.
 
-- P-015 RESUELTA (D-027): interacción con F; E solo curación.
-- P-016 RESUELTA (D-027): slots libres sin categoría. P-011 (duplicados y slots vacíos) sigue pendiente para B2.
-- P-017: adaptación de remates sin extracción F, disparador/tiempos/protección.
-- Tasas/tiempos provisionales pendientes de playtest; resto de perks/economía/compatibilidad/IA/niveles/retorno entre plantas y cierre MVP sigue DECISIONS. HP ascensor ya resuelto: intacto.
-
-No hace falta resolver pendientes de B2–B8 para revisar la documentación. P-015 ya está resuelta (F), así que la interacción jugable de B1 no queda bloqueada.
-
-## Preparación e instrucciones exactas para Claude B1
-
-**Usar con encargo expreso de B1, en la rama `B1` creada desde el commit base de `main`.** Sustituir BASE_SHA por el SHA real de esa copia (P-015 ya resuelta: interacción F); el SHA H04 público no incluye esta migración.
-
-```text
-Lee íntegramente AGENTS.md desde la raíz y cumple su orden de lectura.
-La migración pipeline v2.1 ha sido validada por mí; autorizo exclusivamente B1 (H05 y H06).
-Base de desarrollo: BASE_SHA (SHA completo real con esta documentación). Inspecciona git status y confirma la base antes de editar.
-Lee docs/DEVELOPMENT_WORKFLOW.md, ROADMAP, DECISIONS, GAME_VISION, MVP_SCOPE, ARCHITECTURE, GAME_DESIGN, HEALTH_ENERGY_CONTRACT, CONTROLS, BALANCE_PROVISIONAL, ART_BIBLE, ASSET_REGISTRY, TEST_STRATEGY, VALIDATION y HANDOFF.
-Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md y el bloque B1 de prompts/BATCH_PROMPTS.md.
-Lee completos prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md y prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md.
-No tienes Godot ni Blender. Prepara código, fixtures y tests; registra solo verificaciones realmente ejecutadas sin motor. Godot/visuales/manuales quedan NOT_RUN.
-H05: movimiento, interacción en F separada de E (D-027) y dash WW/AA/SS/DD.
-H06: salud/daño y regeneración automática tras5 s sin daño a5 HP/s, valores provisionales; contrato de pausa para E futura mediante dobles. No programes energía/E de H08, seis armas H07 ni ultimates H09.
-Reutiliza la referencia y assets experimentales compatibles H04, conservando licencias y límites. Mantén checkpoints H05/H06 y commits separados cuando sea posible.
-Entrega validation/B01/ con TEST_HANDOFF.md, TEST_MANIFEST.json, TEST_RESULTS.md y evidence/, candidatos y paquete C/P según workflow. Tests específicos SB/CT aplicables, regresión y pasos manuales exactos.
-Actualiza documentación de implementación y handoff. No autoapruebes, no fusiones código sin validar a estable ni comiences B2. Codex validará el SHA exacto y yo aprobaré el resultado manual.
-```
-
-El texto «ha sido validada» es condicional para un futuro encargo, **no registra aprobación actual**. Hasta entonces B1 permanece sin iniciar.
+Respetar pendientes P-001/P-005/P-006/P-011/P-017: bindings, duplicados/vacíos, compatibilidad y balance no se deciden por intuición. D-029 (cámara futura de muerte en tercera persona elevada y cuerpo tumbado) queda fuera de B2. D-030 prohíbe esconder penetración cambiando arbitrariamente el encuadre o render del arma; nuevas geometrías/animaciones requieren ampliar la colisión y tests.

@@ -1,13 +1,13 @@
 # ROADMAP — H02–H24 y lotes B0–B8
 
-**2026-11-22 · agrupación solicitada v2.1; migración aprobada por el creador 2026-11-23 (D-028).** No se renumera ni implementa ningún hito. H1–H04 cerrados por el creador; B1 NOT_STARTED, se desarrollará en la rama `B1` con encargo expreso.
+**Actualizado 2026-11-28 · agrupación v2.1.** H1–H04 conservan su aprobación; B1 APPROVED e integrado en el flujo normal por D-031. B2 NOT_STARTED; prompt de encargo preparado en `next_prompt.md`.
 
 ## Lotes y dependencias
 
 | Lote | Hitos | Objetivo | Depende de | Estado lote |
 |---|---|---|---|---|
 | B0 | H03, H04 | Infraestructura y arte | H02 | APPROVED histórico H03/H04 |
-| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | NOT_STARTED |
+| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | APPROVED por el creador; integración F5 verificada 37+38, D-031 |
 | B2 | H07, H08, H09 | Armas, energía y ultimates | B1 | NOT_STARTED |
 | B3 | H10, H11, H12 | Enemigos, percepción y sigilo | B2 | NOT_STARTED |
 | B4 | H13, H14, H15 | Persistencia, firmware y economía | B3 | NOT_STARTED |
@@ -18,6 +18,8 @@
 
 H02 es auditoría previa fuera de lotes. B0 identifica infraestructura ya aprobada, no una nueva aprobación ni un paquete retroactivo. Dentro de cada lote se conserva orden y checkpoint por hito. [Workflow](DEVELOPMENT_WORKFLOW.md) define puertas, solape autorizado, SHA y roles.
 
+D-029 registra para el futuro la cámara de muerte en tercera persona, elevada y alejada, con cuerpo tumbado. Continuidad en H19/H23; no inicia B6/B8 ni amplía la implementación B1.
+
 ## Estado individual y prompts de aceptación
 
 | Hito | Objetivo / prompt | Lote | Estado hito | Dependencia funcional |
@@ -25,8 +27,8 @@ H02 es auditoría previa fuera de lotes. B0 identifica infraestructura ya aproba
 | H02 | [Auditoría H1 y saneamiento documental](../prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md) | Fuera de lotes | APPROVED histórico | H1 |
 | H03 | [Infraestructura de pruebas y balance](../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md) | B0 | APPROVED histórico | H02 |
 | H04 | [Vertical de arte temprano](../prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md) | B0 | APPROVED histórico | H03 |
-| H05 | [Núcleo de jugador, interacción y movimiento](../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md) | B1 | NOT_STARTED | H04 |
-| H06 | [Daño, salud, hitzones y estados de ataque](../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md) | B1 | NOT_STARTED | H05 |
+| H05 | [Núcleo de jugador, interacción y movimiento](../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md) | B1 | APPROVED | H04 |
+| H06 | [Daño, salud, hitzones y estados de ataque](../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md) | B1 | APPROVED | H05 |
 | H07 | [Seis armas y loadout libre](../prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md) | B2 | NOT_STARTED | H06 |
 | H08 | [Energía por bajas y curación manual con E](../prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md) | B2 | NOT_STARTED | H07 |
 | H09 | [Tres ultimates independientes](../prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md) | B2 | NOT_STARTED | H08 |

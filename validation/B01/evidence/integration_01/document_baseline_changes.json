@@ -1,0 +1,171 @@
+[
+  {
+    "path": "AGENTS.md",
+    "old_sha256": "dc6965eb75278fbd605bb89e75560f8c0d435d22f9c2ddd72dfe5e45a8057467",
+    "new_sha256": "2e5f163344847e87f5b5ff0d9a8f9df7027baf2083c16d0afdffbc3b6116b79f"
+  },
+  {
+    "path": "README.md",
+    "old_sha256": "d58d381c3418149236ce4805944ecb5dbdbdb709f8ecd3800aa36b0ad770a17a",
+    "new_sha256": "7d16adb10cbd107bd75501acfc076b7f439e03fe39b9cb570daa0372053ad6be"
+  },
+  {
+    "path": "docs/ARCHITECTURE.md",
+    "old_sha256": "a08e3b0c6af84d461e939e46ae6524ba83d2fc309fda5fc49e547070498a9450",
+    "new_sha256": "3ea061dd3f2288027d7fd6ff0107df06a87e43286bac87d2e186663173152d7d"
+  },
+  {
+    "path": "docs/ART_BIBLE.md",
+    "old_sha256": "cf8e5b701a5ada6c852b29c9fc5cdfbc3725d4d133af47089b635d0d7f5b8414",
+    "new_sha256": "6ee1af8abd5d2e34d33af60686594831a9828fef862b2dc1781c725592d2cbf5"
+  },
+  {
+    "path": "docs/CONTROLS.md",
+    "old_sha256": "b1ee8350e10860bbd08e7174f890b2bd168460dc243867a57d9863f0301fc6d7",
+    "new_sha256": "e66cb5086693d82f7659028fb63be5078c4457ff62df282fb2575495fe6eb23e"
+  },
+  {
+    "path": "docs/DECISIONS.md",
+    "old_sha256": "eb7fef552a9a7a10706f588b0bfbf0132a3423647789eb98dc84c467a4c34b8a",
+    "new_sha256": "117e894e150fd49283bbff20c12348af2eaf1a39abeee96cbcb16f94adf618ab"
+  },
+  {
+    "path": "docs/DEVELOPMENT_WORKFLOW.md",
+    "old_sha256": "1db2e1088fa223c373579359f1f10bc8668b7723ac489d46ad5e7353e66c1591",
+    "new_sha256": "0142f21b5527c4ec1c54bf0e566ff404e1fb43e31937b8851262dbdf8b23e745"
+  },
+  {
+    "path": "docs/GAME_DESIGN.md",
+    "old_sha256": "ba7bed54a887d7d97316a87c9c76d777c977212dd43b72c34c3ae6446465fdc7",
+    "new_sha256": "3a1786def9a6bc2b03d3d4e5522ea6f8d2f06f1e20fbd62bf97e415ae82e9edd"
+  },
+  {
+    "path": "docs/GITHUB_TRANSFER.md",
+    "old_sha256": "e914ca72935b5f2bba80d730b7b699b92358f4d6669351684c0da79d93f35a7d",
+    "new_sha256": "a6f54d1457c6ba4561f0261f824532d0d4b6ccb040a29aeb2e76c899cde16210"
+  },
+  {
+    "path": "docs/HANDOFF.md",
+    "old_sha256": "bd6dd0c748909e7fe1941725ea58a8e66e4f2a1a77cd1ad3f6a99b88d5ad8a91",
+    "new_sha256": "fd9fe39036c8be53d27511115690f4078337e650f67f0215451eb008a280bd83"
+  },
+  {
+    "path": "docs/ROADMAP.md",
+    "old_sha256": "1f2b8475107259fb90d88a5b635658420b8561db5502025b2623e1c4a1a6f541",
+    "new_sha256": "31cb6238eeca4d964be10c0560d16fe4b52f1916fc735fc447cabda2d29298ea"
+  },
+  {
+    "path": "docs/TEST_STRATEGY.md",
+    "old_sha256": "3acafa4d4f92e82582872573aee7f9fdb3a313d53ef171ef11144b98024296b3",
+    "new_sha256": "13b094b46a7630512e7428723177ee83cf355b33d3f069bebb10bf85fb6445b6"
+  },
+  {
+    "path": "docs/VALIDATION.md",
+    "old_sha256": "a899814c62276b8763f36f7634026000649a6e5ea04cddcba1ebac124e76345b",
+    "new_sha256": "04cb1f0ece5f48e44ba3c807d1b8d808812be320bbef3b94201cccad3bf3bee5"
+  },
+  {
+    "path": "prompts/BATCH_PROMPTS.md",
+    "old_sha256": "d78e58560fe398579f97d2cfc935ad2a6367095ecdcd5990e4eeaf60531bc717",
+    "new_sha256": "8ed7e027a198551547b8069e82c8cfd94e1c641d8ab951b0c207a3f6f9d8c28c"
+  },
+  {
+    "path": "prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md",
+    "old_sha256": "d2581c92a32aa3ba7a04f719c4d92d3851f765a8a6d47896f8192c244055363b",
+    "new_sha256": "2d20a7f3776cf80b485d225aba5cde7186d7c624b31c05eacda6b855ddd6dd7b"
+  },
+  {
+    "path": "prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md",
+    "old_sha256": "910181d12acc85c21c8770920e5612d566195236b200404a1f2bb5d1852ed676",
+    "new_sha256": "13596d47c8d8947e30119bca4580126f7b4003280b7f26b512d01d9d54d6867c"
+  },
+  {
+    "path": "prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md",
+    "old_sha256": "ef9224dcc4705a8ef957b10d4bd27b008fc1f0eb6395a3a777dd69961e9ef68d",
+    "new_sha256": "bb2b6cd65f23d242eb5b60bbbc006c5fc31a4d841e1d75fa8f0306c18ad7cf01"
+  },
+  {
+    "path": "prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md",
+    "old_sha256": "af8bcf5891880e96837542712c3846dae2a0a46b90fcb3b8455b06e76d015d76",
+    "new_sha256": "737b3d63cb8cd79c9f1827845a29dc7e6a7766b3d8f9ce1487bc81f0b6a20506"
+  },
+  {
+    "path": "prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md",
+    "old_sha256": "a92ab075a417471a58e365a259d91d47f73a13cfb25558f5a1a63e53ee7f033e",
+    "new_sha256": "13bf06603d2b80c64dad64837f7771f83f4c6daad80cbb30127831973ba70a28"
+  },
+  {
+    "path": "prompts/H19_CONTRATO_YAKUZA_TRES_PLANTAS_ASCENSORES.md",
+    "old_sha256": "c9cde2dc11b34189b9f68b0581102061132b564f5d1656120f0e61a34d736e5b",
+    "new_sha256": "b7464546d222589b10da8d47bde26a2f9e0b7f6f90dc36b6f58ae8ced90225a2"
+  },
+  {
+    "path": "prompts/H23_PULIDO_ARTISTICO_AUDIO_ANIMACION_Y_RENDIMIENT.md",
+    "old_sha256": "8a4d2b86610ac4bb410fe121740f8c648aae61a8cfcaa49be498bbb4ec668710",
+    "new_sha256": "178d605c7d139baafac633eadb2767be8c6db61a07323412f2e2e25b99e0a2c2"
+  },
+  {
+    "path": "prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md",
+    "old_sha256": "fe0486a818fef3c8e21894a2978f0c456a86b4afb849477def734c48724658fd",
+    "new_sha256": "7baeaaebe7247974b37755d77f9423ace55c3b3196eac1bdfce591dd31b0ca07"
+  },
+  {
+    "path": "validation/B01/TEST_HANDOFF.md",
+    "old_sha256": "2029e91c1ca4da5d2db6954f06b378e8f4e2ac6c19f8dcbf7987646b38a04d28",
+    "new_sha256": "3105e0d6267588601dd012df5192857510f1a50a13e0ca1546f1ccd30557db5b"
+  },
+  {
+    "path": "validation/B01/TEST_MANIFEST.json",
+    "old_sha256": "59844ba5beed9d15e389d6db5c623921484c2b11c555eb7f9672b08a257245a0",
+    "new_sha256": "3c62b60e9bc65fb48d05064e11d75938121433ca5f3f77ce94d3d039f7e3de29"
+  },
+  {
+    "path": "validation/B01/TEST_RESULTS.md",
+    "old_sha256": "75582f0e0eeaa0a1b9831c992c7d433a9db94377a798fea282af621ac3804690",
+    "new_sha256": "6f356f643a30814c10f778a969da2017e92629c4e3b08935575bbfcafaa5f27c"
+  },
+  {
+    "path": "next_prompt.md",
+    "new_sha256": "66a0724cb21e38cf3f3f362d4732b3cfd1c54e947688c3561f0b1af2e2169469"
+  },
+  {
+    "path": "manual_tests_B1.md",
+    "new_sha256": "46bdf1084a5666fc105def370cb14cb3b9a38a403b695128ccd9de571144ec67"
+  },
+  {
+    "path": "validation/.gdignore",
+    "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "validation/B01/APPROVAL.md",
+    "new_sha256": "594a2ad5b1878f732dbdfc45e3d9c1ad508c0af4a782a1954742c9035a08b12e"
+  },
+  {
+    "path": "validation/B01/INTEGRATION.md",
+    "new_sha256": "b9079f233b5eeb2d65db715136b5cae73a2072d4ac54b639115bdae807e24136"
+  },
+  {
+    "path": "validation/B01/manual_tests.md",
+    "new_sha256": "e01032fe89a2c6b0953b04ae0291c3630d78b626cf78cae72333e677cd424850"
+  },
+  {
+    "path": "validation/B01/bugs/BUG-B1-01.md",
+    "new_sha256": "7d97ee66653ece9d85840721b2d0de713fac01f164fa275036b5f7f4c44a0cf1"
+  },
+  {
+    "path": "validation/B01/bugs/BUG-B1-02.md",
+    "new_sha256": "0c3f6ae5545ba7a5adc199b5ff7b9dc76c410b251be6bc71b4a35a8a48e0e276"
+  },
+  {
+    "path": "validation/B01/evidence/README.md",
+    "new_sha256": "7d7a1685bd5f5b44acb3f3a3cc58f71e9fcec5644b02e425db1439022d4da3a7"
+  },
+  {
+    "path": "validation/B01/evidence/REPORT_ARCHIVE.json",
+    "new_sha256": "74b5ebdb3c9dbde05d925109276c44b67cdd86ecc5265e29f250b58d70ee4a61"
+  },
+  {
+    "path": "validation/B01/evidence/generated_reports.zip",
+    "new_sha256": "757b0181ffc891d31868d148fd40211f3d3f1a03f3e85b33626b266923a4c7f4"
+  }
+]

@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H06 — Daño, salud, hitzones y estados de ataque
 
-**Revisión pipeline v2.1 · 2026-11-22 · B1 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H05 como checkpoint dentro del mismo lote.
+**Revisión pipeline v2.1 · 2026-11-22 · B1 · APPROVED por el creador (D-031, integración 2026-11-28).** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H05 como checkpoint dentro del mismo lote.
 
 ## Objetivo funcional
 

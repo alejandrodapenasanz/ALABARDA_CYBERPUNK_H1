@@ -1,0 +1,16 @@
+{
+  "label": "integrity",
+  "date": "2026-11-27T16:54:22.402800+01:00",
+  "cwd": "C:\\dev\\ALABARDA_B1_C_1401e05",
+  "argv": [
+    "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "tools/h03/verify_integrity.py"
+  ],
+  "powershell": "& 'C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe' '-X' 'utf8' 'tools/h03/verify_integrity.py'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26300-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

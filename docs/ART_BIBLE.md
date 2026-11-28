@@ -229,3 +229,9 @@ El creador confirma mediante dos capturas que el retro true/false apenas se perc
 Retro corregido: cuantización en 15 pasos, líneas alternas de 0.10 y mezcla regulable 0–1 (0.70 de prueba), apagado por defecto. X alterna; B permite ver izquierda sin efecto y derecha con efecto simultáneamente. No wobble, distorsión ni filtro sobre HUD/fuentes. La intensidad actual también es experimental; no aprobación de perfil final. La comparación anterior inferior a 1/255 medio por canal se conserva como evidencia del problema inicial; las nuevas capturas/pruebas constan en VALIDATION.
 
 Malorian local cargada en perspectiva FPS bajo los permisos del archivo y alcance experimental solicitado; detalle/limitaciones en ASSET_REGISTRY. No se publica el modelo ni se implementa un arma jugable; rig de brazos sigue muestra separada. La revisión humana de esta corrección sigue pendiente.
+
+## Cámara de muerte futura · D-029 · 2026-11-27
+
+Dirección expresa del creador: pasar de primera a tercera persona al morir, alejar la cámara y elevarla un poco para ver el cuerpo del protagonista tumbado. Requiere representación de cuerpo completo y revisión humana de transición, lectura y coherencia del protagonista; no se impone técnica de animación/ragdoll ni duración concreta. Es una petición futura documentada, no un asset producido, una implementación B1 o una aprobación visual. Considerarla al planificar H19/H23 con encargo expreso. [Fuente](../validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md).
+
+Restricción de la corrección B1 D-030: preservar el posicionamiento y el aspecto actuales del arma al resolver la penetración de paredes. No modificar escala/encuadre ni ocultar el mesh como sustituto de colisión. [BUG-B1-02](../validation/B01/bugs/BUG-B1-02.md).

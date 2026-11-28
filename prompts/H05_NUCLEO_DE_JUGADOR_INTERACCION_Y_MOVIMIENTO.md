@@ -2,7 +2,7 @@ Lee primero `AGENTS.md` íntegro desde la raíz y cumple su orden de lectura. De
 
 # H05 — Núcleo de jugador, interacción y movimiento
 
-**Revisión pipeline v2.1 · 2026-11-22 · B1 · NOT_STARTED.** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H04 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
+**Revisión pipeline v2.1 · 2026-11-22 · B1 · APPROVED por el creador (D-031, integración 2026-11-28).** Migración aprobada 2026-11-23 (D-028); no autoriza iniciar/reabrir este hito sin encargo expreso. Dependencia: H04 / lote anterior aprobado antes de integración; solape solo según workflow y autorización.
 
 ## Objetivo funcional
 

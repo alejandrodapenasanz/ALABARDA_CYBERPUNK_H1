@@ -1,0 +1,17 @@
+{
+  "label": "runner",
+  "started_at_utc": "2026-11-27T08:08:39.775177+00:00",
+  "ended_at_utc": "2026-11-27T08:09:21.788186+00:00",
+  "cwd": "C:/dev/ALABARDA_B1_C_94e4880",
+  "argv": [
+    "C:/dev/tools/alabarda-pipeline-v21-venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "tools/b1/run_tests.py",
+    "--godot",
+    "C:/Users/aleja/Downloads/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe",
+    "--output",
+    "C:/dev/ALABARDA_B1_EVIDENCE_20261123/attempt_02"
+  ],
+  "exit_code": 0
+}

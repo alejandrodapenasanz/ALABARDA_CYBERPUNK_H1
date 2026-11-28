@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HealthConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/health_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+max_health = 100.0
+auto_regen_enabled = true
+auto_regen_delay_s = 5.0
+auto_regen_hp_per_s = 5.0

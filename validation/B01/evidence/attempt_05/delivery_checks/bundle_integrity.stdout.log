@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "code_commit": "1401e05269fc4919f3658788e7de48bc5a4aa148",
+  "raw_artifacts_verified": 417,
+  "local_links_verified": 362,
+  "original_attempt_00_preserved": true,
+  "historical_validation_preserved": true,
+  "appearance_sources_unchanged": true,
+  "tests_unchanged_between_red_and_green": true,
+  "red_new_suite": {
+    "tests": 7,
+    "failed_cases": 5,
+    "assertions": 10,
+    "errors": 0,
+    "skipped": 0
+  },
+  "final_junit": [
+    {
+      "path": "evidence/attempt_05/regression/regression/unit_reports/report_1/results.xml",
+      "tests": 8,
+      "failed_cases": 0,
+      "assertions": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "evidence/attempt_05/regression/regression/negative_control_reports/report_1/results.xml",
+      "tests": 1,
+      "failed_cases": 1,
+      "assertions": 1,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "evidence/attempt_05/regression/regression/integration_reports/report_1/results.xml",
+      "tests": 8,
+      "failed_cases": 0,
+      "assertions": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "evidence/attempt_05/regression/integration_reports/report_1/results.xml",
+      "tests": 4,
+      "failed_cases": 0,
+      "assertions": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "evidence/attempt_05/b1_unit_reports/report_1/results.xml",
+      "tests": 37,
+      "failed_cases": 0,
+      "assertions": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "evidence/attempt_05/b1_integration_reports/report_1/results.xml",
+      "tests": 35,
+      "failed_cases": 0,
+      "assertions": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}
