@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "label": "regression",
+      "date": "2026-11-28T10:02:47.182864+01:00",
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/h03/run_tests.py",
+        "--godot",
+        "C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+        "--output",
+        "C:\\dev\\ALABARDA_B1_INTEGRATION_20261127\\post_merge\\regression\\regression"
+      ],
+      "powershell": "& 'C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe' '-X' 'utf8' 'tools/h03/run_tests.py' '--godot' 'C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe' '--output' 'C:\\dev\\ALABARDA_B1_INTEGRATION_20261127\\post_merge\\regression\\regression'",
+      "exit_code": 0,
+      "os": "Windows-11-10.0.26300-SP0",
+      "engine_errors": [],
+      "status": "PASS"
+    },
+    {
+      "label": "integration",
+      "date": "2026-11-28T10:03:01.751265+01:00",
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "argv": [
+        "C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+        "-s",
+        "res://addons/gdUnit4/bin/GdUnitCmdTool.gd",
+        "-a",
+        "res://tests/h04/integration",
+        "--ignoreHeadlessMode",
+        "-rd",
+        "C:\\dev\\ALABARDA_B1_INTEGRATION_20261127\\post_merge\\regression\\integration_reports"
+      ],
+      "powershell": "& 'C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe' '--headless' '--path' 'C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f' '-s' 'res://addons/gdUnit4/bin/GdUnitCmdTool.gd' '-a' 'res://tests/h04/integration' '--ignoreHeadlessMode' '-rd' 'C:\\dev\\ALABARDA_B1_INTEGRATION_20261127\\post_merge\\regression\\integration_reports'",
+      "exit_code": 0,
+      "os": "Windows-11-10.0.26300-SP0",
+      "engine_errors": [],
+      "status": "PASS",
+      "junit": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "names": [
+          "test_blender_glb_dimensions_pivots_uv_and_materials",
+          "test_three_lighting_conditions_restore_approved_profile",
+          "test_kit_reused_and_material_changes_isolated",
+          "test_inspection_is_separate_from_gameplay_and_ui"
+        ]
+      }
+    },
+    {
+      "status": "PASS",
+      "errors": [],
+      "meaning": "GLB and Blender authoring sources match generated manifest"
+    }
+  ],
+  "limitations": [
+    "Human visual acceptance is recorded separately in docs/VALIDATION.md; tests do not grant it",
+    "H1 physical click NOT_RUN in headless",
+    "Windows export NOT_RUN; no export configuration changed"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "label": "portable_checkout",
+  "started_at_utc": "2026-11-28T09:02:12.765449+00:00",
+  "ended_at_utc": "2026-11-28T09:02:15.149549+00:00",
+  "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+  "argv": [
+    "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "tools/pipeline/verify_checkout.py"
+  ],
+  "exit_code": 0
+}

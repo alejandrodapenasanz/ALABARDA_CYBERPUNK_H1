@@ -182,3 +182,8 @@ Runner exit 0, [invocación/fechas](evidence/attempt_05/preflight/runner.json), 
 ## Aprobación e integración posterior
 
 El creador confirmó el fix y aprobó B1: [APPROVAL](APPROVAL.md). Se autoriza integrar como juego normal, preparar B2 y fusionar a main/retirar B1. [Integración `5a622069c4267821ba5e5a16b6404a60ed7ad6a8`](INTEGRATION.md): 37 unitarias, 38 integración y regresiones PASS. Los NOT_RUN manuales del intento 05 quedan como registros anteriores a esa confirmación, sin reescribir ejecuciones pasadas.
+
+
+## Verificación posterior al merge — 2026-11-28
+
+Candidato exacto `be3a94fb9118664ebc95919398a020a968b16074`: importación, 37 unitarias, 38 integración, smoke F5 600 frames, regresión H1/H03/H04 y estático PASS; checks principales exit 0. Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15, Windows 11 Home 10.0.26300. [Comandos/resultados/JUnit](evidence/post_merge/summary.json), [publicación y límites](INTEGRATION.md). Merge subido a main y B1 eliminada local/remota. Ningún intento anterior se reescribe.

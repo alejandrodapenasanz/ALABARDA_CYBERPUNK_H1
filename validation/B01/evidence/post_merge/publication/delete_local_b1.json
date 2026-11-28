@@ -1,0 +1,13 @@
+{
+  "label": "delete_local_b1",
+  "started_at_utc": "2026-11-28T09:03:56.399041+00:00",
+  "ended_at_utc": "2026-11-28T09:03:56.500049+00:00",
+  "cwd": "C:\\dev\\ALABARDA_CYBERPUNK_H1",
+  "argv": [
+    "git",
+    "branch",
+    "-d",
+    "B1"
+  ],
+  "exit_code": 0
+}

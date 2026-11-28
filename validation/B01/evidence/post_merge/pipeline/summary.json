@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "os": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "commands": [
+    {
+      "name": "schema",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/pipeline/validate_manifest.py",
+        "validation/_templates/TEST_MANIFEST.json"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:15.658718+00:00",
+      "elapsed_s": 0.349,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "schema.stdout.log",
+      "stderr": "schema.stderr.log"
+    },
+    {
+      "name": "manifest_tests",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/pipeline/test_manifest.py"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:17.965588+00:00",
+      "elapsed_s": 2.306,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "manifest_tests.stdout.log",
+      "stderr": "manifest_tests.stderr.log"
+    },
+    {
+      "name": "documents",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/pipeline/check_docs.py"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:19.379756+00:00",
+      "elapsed_s": 1.414,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "documents.stdout.log",
+      "stderr": "documents.stderr.log"
+    },
+    {
+      "name": "godot_static",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "tools/pipeline/check_godot_static.py"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:22.581384+00:00",
+      "elapsed_s": 3.201,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "godot_static.stdout.log",
+      "stderr": "godot_static.stderr.log"
+    },
+    {
+      "name": "whitespace",
+      "argv": [
+        "git",
+        "-c",
+        "core.whitespace=cr-at-eol",
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:22.730307+00:00",
+      "elapsed_s": 0.149,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "whitespace.stdout.log",
+      "stderr": "whitespace.stderr.log"
+    },
+    {
+      "name": "python_version",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "--version"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:22.802973+00:00",
+      "elapsed_s": 0.073,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "python_version.stdout.log",
+      "stderr": "python_version.stderr.log"
+    },
+    {
+      "name": "dependencies",
+      "argv": [
+        "C:\\dev\\tools\\alabarda-pipeline-v21-venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "cwd": "C:\\dev\\ALABARDA_MAIN_VERIFY_be3a94f",
+      "timestamp_utc": "2026-11-28T09:02:23.305110+00:00",
+      "elapsed_s": 0.502,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "dependencies.stdout.log",
+      "stderr": "dependencies.stderr.log"
+    }
+  ],
+  "scope": "Documentation/schema/metadata only; no Godot milestone executed",
+  "approval": "PENDING_APPROVAL",
+  "gameplay": "NOT_RUN"
+}

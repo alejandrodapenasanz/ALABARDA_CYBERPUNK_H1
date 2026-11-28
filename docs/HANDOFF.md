@@ -26,3 +26,8 @@ Repositorio completo para abrir `project.godot` en otro PC; [GITHUB_TRANSFER](GI
 Copiar [next_prompt.md](../next_prompt.md) en Claude: B2 = H07/H08/H09, rama nueva desde main actualizado, checkpoints y paquete `validation/B02`. Leer AGENTS/contratos/prompts completos. La creación del texto no ejecuta B2.
 
 Respetar pendientes P-001/P-005/P-006/P-011/P-017: bindings, duplicados/vacíos, compatibilidad y balance no se deciden por intuición. D-029 (cámara futura de muerte en tercera persona elevada y cuerpo tumbado) queda fuera de B2. D-030 prohíbe esconder penetración cambiando arbitrariamente el encuadre o render del arma; nuevas geometrías/animaciones requieren ampliar la colisión y tests.
+
+
+## Publicación terminada
+
+Merge `be3a94fb9118664ebc95919398a020a968b16074` probado en copia limpia y publicado en main: 37 unitarias, 38 integración, arranque normal y regresiones PASS. B1 eliminada local y remotamente después del push; historial conservado en main. [Evidencia posterior a merge](../validation/B01/evidence/post_merge/summary.json). La documentación/evidencia posterior no cambia el runtime probado. El otro PC debe actualizar main y usar su SHA real como base de B2; el directorio principal de Codex ya está en main.

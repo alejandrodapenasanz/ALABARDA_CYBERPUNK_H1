@@ -30,4 +30,12 @@ Comando principal: `python -X utf8 tools/gameplay/run_tests.py --godot <console 
 
 ## Publicación y fusión
 
-Destino confirmado: main. El proyecto completo y next_prompt.md se publicarán junto con la evidencia. La fusión y comprobación del SHA resultante se registran a continuación cuando terminen; todavía no se atribuye una ejecución al commit de merge.
+Merge **`be3a94fb9118664ebc95919398a020a968b16074`**, padres `796255711fd04c4e6a6d061fba718e86db8cf099` y `63f0757`. Se comprobó este SHA exacto en `C:/dev/ALABARDA_MAIN_VERIFY_be3a94f`, limpio antes de importar y tras terminar. El contenido de gameplay coincide con el candidato de integración; la fusión no añadió cambios al juego.
+
+Resultado posterior a merge: **PASS**. Importación exit 0; unitarias 37/37 exit 0; integración 38/38 exit 0 (sin fallos/errores/omitidos); entrada F5 600 frames exit 0; regresiones H1/H03/H04 exit 0. H1 34/0/1 headless, H03 8+8, H04 4; control negativo intencionado exit 100. Estático 45 scripts/12 recursos PASS, con 20 hallazgos aceptados y el aviso legado H04 ya descrito. Esquema, tests de manifest, documentación y transferencia PASS (2.920 archivos/707 enlaces). Mismas versiones reales indicadas arriba.
+
+[Summary](evidence/post_merge/summary.json), [argv/cwd/exit](evidence/post_merge/preflight/runner.json), [manifest --ready](evidence/post_merge/preflight/manifest_ready.stdout.log), [pipeline](evidence/post_merge/pipeline/summary.json), [identidad del candidato](evidence/post_merge/identity.json). La automatización no constituye una nueva revisión visual humana; se conserva la aprobación expresa del creador y su encargo de integración.
+
+`git push origin main` publicó el merge; después `git push origin --delete B1` y `git branch -d B1` retiraron la rama remota y local, todos exit 0. [Evidencia de publicación](evidence/post_merge/publication/remote_refs.stdout.log). El historial de B1 permanece en main. La copia principal de trabajo queda en main. El commit posterior que incorpora esta evidencia solo cambia documentación, evidencia y hashes de esos documentos; no modifica el código probado.
+
+Proyecto completo para otro PC y prompt B2 en `next_prompt.md`. B2 no se ha implementado ni creado en este cierre. Los logs originales conservan saltos de línea emitidos por las herramientas; no se normalizan para satisfacer comprobaciones de whitespace de documentación.

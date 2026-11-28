@@ -1,0 +1,27 @@
+[
+  {
+    "path": "docs/HANDOFF.md",
+    "old_sha256": "fd9fe39036c8be53d27511115690f4078337e650f67f0215451eb008a280bd83",
+    "new_sha256": "4ef373ba6e8933b4ac56c50fe209cb3dcbee1de60a8c8f3719f8c57168160f57"
+  },
+  {
+    "path": "docs/VALIDATION.md",
+    "old_sha256": "04cb1f0ece5f48e44ba3c807d1b8d808812be320bbef3b94201cccad3bf3bee5",
+    "new_sha256": "7f34ba7ce15529214eba1aabe315e28de134081e7786d9609e69f694e1aa7c20"
+  },
+  {
+    "path": "validation/B01/INTEGRATION.md",
+    "old_sha256": "b9079f233b5eeb2d65db715136b5cae73a2072d4ac54b639115bdae807e24136",
+    "new_sha256": "56bd93afdc5ac126f9c33534eef3e47ce4eed205fb4e9ba1630d8ea34fe1491a"
+  },
+  {
+    "path": "validation/B01/TEST_RESULTS.md",
+    "old_sha256": "6f356f643a30814c10f778a969da2017e92629c4e3b08935575bbfcafaa5f27c",
+    "new_sha256": "a31920c321315499ab2393b5938e2397b14631e599c579331293a98cd9759967"
+  },
+  {
+    "path": "validation/B01/evidence/README.md",
+    "old_sha256": "7d7a1685bd5f5b44acb3f3a3cc58f71e9fcec5644b02e425db1439022d4da3a7",
+    "new_sha256": "8bf15dbb23e3427fc73b46d635127f44df80e02f8768485463780cb11e8fa3c3"
+  }
+]
