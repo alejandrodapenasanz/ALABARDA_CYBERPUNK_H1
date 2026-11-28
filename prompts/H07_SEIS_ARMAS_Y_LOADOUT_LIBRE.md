@@ -12,7 +12,7 @@ Katana auto-deflect equipada (limitar a proyectiles compatibles definidos), pist
 
 ## Roles, checkpoint y alcance
 
-Claude implementa solo los hitos del lote autorizado, con revisión y checkpoint por hito (interfaces, archivos, tests, dependencias, bugs y commit separado cuando sea posible). **PC Claude sin Godot ni Blender**: prepara tests/escenas/datos y ejecuta solo verificaciones disponibles sin motor; Godot queda NOT_RUN. No confundir CODE_READY con VALIDATED.
+Claude implementa solo los hitos del lote autorizado, con revisión y checkpoint por hito (interfaces, archivos, tests, dependencias, bugs y commit separado cuando sea posible). **Capacidad del PC Claude**: comprobar Godot/Blender reales. Puede abrir/importar el proyecto y ejecutar tests si dispone del motor; sin Godot ni Blender, preparar tests/escenas/datos y registrar NOT_RUN para lo no ejecutable. No confundir CODE_READY con VALIDATED.
 
 Codex comprueba el SHA exacto y valida importación, tests, regresiones y escenas; usa Blender solo si procede. Corrige fallos pequeños/locales; cambios estructurales vuelven a Claude con BUG_REPORT reproducible. Creador valida manualmente y concede APPROVED. Dentro del lote autorizado puede continuar tras checkpoint; no cerrar ni empezar otro lote por iniciativa propia.
 
@@ -22,7 +22,7 @@ Fuera de alcance: hitos ajenos al lote, reinterpretar propuestas como aprobadas,
 
 - Tests munición de reserva infinita/cargador, recarga parcial, dos cañones con 1 cartucho, slot 3 y duplicados, headshots, auto-deflect condicionado, disparos durante RELOAD bloqueados; smoke de cada arma; regresión H06.
 - Cada caso del paquete: ID, propósito, fixture/datos, precondiciones, comando exacto o pasos numerados, cwd, esperado, PASS/FAIL, timeout, dependencias, entorno y evidencia. No basta enumerar nombres de tests.
-- Claude: revisión estática/documental ejecutada se registra como tal; tests Godot NOT_RUN. Codex: importación headless, suites pertinentes, logs/JUnit y regresiones existentes sobre el commit pedido según TEST_STRATEGY. No atribuir PASS por haber escrito un test.
+- Claude: registrar revisión estática y pruebas de motor reales; sin Godot, esos tests NOT_RUN. Codex: importación headless, suites pertinentes, logs/JUnit y regresiones existentes sobre el commit pedido según TEST_STRATEGY. No atribuir PASS por haber escrito un test.
 - Manual: escena exacta, cómo abrir/ejecutar, controles, estado inicial, pasos, resultado/fallo observable, evidencia y repetición. Gameplay/arte/performance requieren motor/ventana y revisión humana, no solo headless.
 - Reutilizar [casos SB](../docs/HEALTH_ENERGY_TEST_CASES.md) y [CT](../docs/CONTROLS.md) aplicables; otros casos siguen NOT_RUN hasta su hito. Parámetros provisionales configurables, sin convertir tests de hipótesis en aprobación de balance.
 

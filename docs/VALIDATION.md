@@ -1,3 +1,11 @@
+# B1 aprobado e integrado — 2026-11-28
+
+El creador confirmó el arreglo y aprobó B1; [aprobación](../validation/B01/APPROVAL.md), D-031. Integración autorizada como runtime normal, entrada F5, sin implementación B1 paralela. Candidato **`5a622069c4267821ba5e5a16b6404a60ed7ad6a8`** probado en copia limpia: STATIC 45 scripts/12 recursos, IMPORT, 37 unitarias, 38 integración, smoke 600 frames y H1/H03/H04 PASS; todos exit 0. H1 histórico 34 PASS/0 FAIL/1 NOT_RUN headless, H03 8+8, H04 4, negativo esperado exit 100. Godot 4.7.2.stable.official.ed1daf0bf, GdUnit4 6.2.3, Python 3.13.15, Windows 11 Home 10.0.26300.
+
+[Integración y publicación](../validation/B01/INTEGRATION.md), [evidencia](../validation/B01/evidence/integration_01/summary.json). Se conservan comportamiento/aserciones anteriores, se añaden tres casos de entrada F5 y se archivan reportes redundantes con hashes. El encargo B2 está preparado en [next_prompt.md](../next_prompt.md), sin implementarlo aquí. La verificación posterior a merge tendrá su propio SHA y evidencia.
+
+## Historial anterior conservado
+
 # B1 · fix de pared del arma solicitado a Codex · 2026-11-27
 
 **Automáticas PASS sobre `1401e05269fc4919f3658788e7de48bc5a4aa148`; INTEGRATION_READY, retest manual pendiente.** Tras aportar captura y encargar a Codex «solucionalo», se implementó una envolvente de colisión del arma y sus poses, con comprobación del barrido angular. Posición, escala, modelo, materiales y animaciones conservados; escenas y fixture sin cambios.

@@ -2,7 +2,7 @@
 
 - Lote / hitos: B1 / H05-H06. Caso M-02-WALL; restricción del creador D-030.
 - Severidad: **mayor**, colisión/presentación del arma; impide cerrar la revisión manual B1.
-- Estado: **fix técnico PASS; retest visual del creador pendiente**. Fix `1401e05269fc4919f3658788e7de48bc5a4aa148`. Encargo directo posterior del creador a Codex: «El arma sigue traspasando la pared, solucionalo».
+- Estado: **cerrado: fix técnico PASS y confirmado por el creador**. Fix `1401e05269fc4919f3658788e7de48bc5a4aa148`. Encargo directo posterior del creador a Codex: «El arma sigue traspasando la pared, solucionalo».
 - Candidato automático previo: `94e4880b03b60d1517917d11ab98dce786499d69`; paquete inspeccionado: `79d63e3d6b5c0ea87f88dac55e33f11ddef9d7c1`, rama B1. El creador no escribió el SHA de su sesión; se conserva ese límite en el [informe original](../evidence/manual_review_20261127/CREATOR_RESULTS.md).
 - Entorno Codex comprobado: Windows 11 Home 10.0.26300; Godot `4.7.2.stable.official.ed1daf0bf`, GdUnit4 6.2.3, Python 3.13.15. No inferir versiones adicionales de la sesión manual.
 - Escena: `scenes/b1/b1_sandbox.tscn`, F6. Frecuencia exacta no indicada. Tras el informe inicial, el creador aportó una captura en conversación mostrando la penetración y solicitó la corrección directa; no hay archivo de captura local incorporado al paquete. Codex no ejecutó gameplay manual.
@@ -53,3 +53,7 @@ Tests `f9f215b59b99e1d7b967db274db977de5f7727b4`: `tests/b1/integration/weapon_w
 - Después: [intento 05](../evidence/attempt_05/summary.json), runner exit 0. Unitarias 37/37 e integración 35/35, 0 fallos/errores/omitidos; importación, smoke 600 frames, estático y regresión H1/H03/H04 PASS. H1 34 PASS / 0 FAIL / 1 NOT_RUN, negativo GdUnit esperado exit 100. Misma suite, sin relajar aserciones; comparación de tests/visuales en [metadata](../evidence/attempt_05/metadata.json).
 
 El creador debe detener la ejecución previa y volver a F6 para cargar el fix. Repetir M-02 y revisar M-03/M-06 junto a muros/esquinas, disparando/recargando y girando. Validación visual/sensación aún pendiente; no cierre manual ni aprobación de B1 por el PASS automático. D-029 (cámara de muerte futura) sigue fuera del fix.
+
+## Confirmación y cierre
+
+El creador respondió «Perfecto, funciona» y aprobó B1. [Aprobación](../APPROVAL.md). El bloque anterior de pasos pendientes describe la entrega previa; el bug está cerrado. La integración posterior conserva el fix en el jugador compartido y sus siete regresiones. No se altera la petición futura D-029.

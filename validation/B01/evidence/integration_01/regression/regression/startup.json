@@ -1,0 +1,18 @@
+{
+  "label": "startup",
+  "date": "2026-11-28T09:49:26.480931+01:00",
+  "cwd": "C:\\dev\\ALABARDA_INTEGRATION_C_5a62206",
+  "argv": [
+    "C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+    "--headless",
+    "--path",
+    "C:\\dev\\ALABARDA_INTEGRATION_C_5a62206",
+    "--quit-after",
+    "120"
+  ],
+  "powershell": "& 'C:\\Users\\aleja\\Downloads\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe' '--headless' '--path' 'C:\\dev\\ALABARDA_INTEGRATION_C_5a62206' '--quit-after' '120'",
+  "exit_code": 0,
+  "os": "Windows-11-10.0.26300-SP0",
+  "engine_errors": [],
+  "status": "PASS"
+}

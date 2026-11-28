@@ -10,7 +10,7 @@ Estado: APPROVED histórico; no reejecutar ni fabricar paquete. Dependencia: H02
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B0, hitos H03, H04, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B00/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B1. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B0, hitos H03, H04, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B00/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B1. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -21,11 +21,11 @@ Regresiones: H1 y laboratorio H03/H04 cuando estén afectados, más lotes anteri
 
 ## B1 — Jugador, interacción, movimiento, salud y daño
 
-Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Dependencia: B0. Paquete al implementar: `validation/B01/`.
+Estado: APPROVED por el creador; integrado en el juego normal (D-031). El prompt siguiente se conserva como historial, no es un nuevo encargo. Dependencia: B0. Paquete al implementar: `validation/B01/`.
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B1, hitos H05, H06, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B01/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B2. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B1, hitos H05, H06, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B01/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B2. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -40,7 +40,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B2, hitos H07, H08, H09, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B02/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B3. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B2, hitos H07, H08, H09, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B02/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B3. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -56,7 +56,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B3, hitos H10, H11, H12, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B03/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B4. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B3, hitos H10, H11, H12, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B03/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B4. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -72,7 +72,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B4, hitos H13, H14, H15, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B04/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B5. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B4, hitos H13, H14, H15, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B04/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B5. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -88,7 +88,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B5, hitos H16, H17, H18, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B05/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B6. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B5, hitos H16, H17, H18, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B05/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B6. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -104,7 +104,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B6, hitos H19, H20, H21, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B06/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B7. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B6, hitos H19, H20, H21, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B06/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B7. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -120,7 +120,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B7, hitos H22, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B07/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B8. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B7, hitos H22, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B07/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B8. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 
@@ -134,7 +134,7 @@ Estado: NOT_STARTED; requiere aprobación de migración y encargo propio. Depend
 
 Prompt para usar **solo tras autorización**:
 
-> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B8, hitos H23, H24, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. No tienes Godot ni Blender: sus pruebas quedan NOT_RUN. Entrega paquete completo por SHA en validation/B08/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B8. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
+> Lee íntegramente AGENTS.md y su orden de lectura. Aplica prompts/_templates/CLAUDE_IMPLEMENT_BATCH.md al lote B8, hitos H23, H24, con los prompts enlazados debajo. Programa exclusivamente este lote autorizado; conserva checkpoints por hito, interfaces y tests/fixtures. Comprueba las herramientas reales: si falta Godot/Blender, sus pruebas quedan NOT_RUN; si están disponibles, registra solo ejecuciones reales. Entrega paquete completo por SHA en validation/B08/ conforme al workflow, registra pendientes y no autoapruebes ni empieces B8. Codex aplicará CODEX_VALIDATE_BATCH al mismo SHA; el creador aprueba.
 
 Hitos y criterios (fuente única, no duplicada):
 

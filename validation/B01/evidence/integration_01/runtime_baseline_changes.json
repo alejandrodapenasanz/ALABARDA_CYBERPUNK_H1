@@ -1,0 +1,258 @@
+[
+  {
+    "old": "project.godot",
+    "new": "project.godot",
+    "old_sha256": "0e4953331e1bfd5711c1190eb79232c013fe0def586cac56ceae10078828c0d4",
+    "new_sha256": "be0ed83db153080b0520e2d1fb424228b77e859e3dc1a29d8d7444d414b24cf7"
+  },
+  {
+    "old": "scenes/b1/b1_sandbox.tscn",
+    "new": "scenes/main.tscn",
+    "old_sha256": "de76b5df5ea45dcc88d43b44c71b4119041d92c6040818f9558ff74c43bd4c87",
+    "new_sha256": "7070125d56ac79caeebec8b5da25b7129979118a70901464cbfc2b844b873494"
+  },
+  {
+    "old": "scenes/main.tscn",
+    "new": "tests/fixtures/h1/main.tscn",
+    "old_sha256": "5e9773e32417aee918196a439f9de0e1be5c743d0df6fc87c9bf199179e66676",
+    "new_sha256": "9b7b3c3d13b46f89591016c22cbdcd755137a34ddb6031f05e0d9d6cbea3d5b5"
+  },
+  {
+    "old": "scenes/player/b1_player.tscn",
+    "new": "scenes/player/player.tscn",
+    "old_sha256": "3d2f93f730b9c99b65dd384d4dd12a4d85933a4703fba76684ac7f815ea165bd",
+    "new_sha256": "38fa6e95d95cde089110fc3d1f076a0c97a1e678653843acb9e3e0eff1fae6d7"
+  },
+  {
+    "old": "scripts/b1/b1_sandbox.gd",
+    "new": "scripts/main.gd",
+    "old_sha256": "db8df975fbb59188db484f2c9b329fb0c093c6e4735cdfe0db8a22d77f9fd316",
+    "new_sha256": "d979880b7a61d628486d4a6cb0efa6e3ac8cf7e1a07fd39fc0f2dde9dcb70e55"
+  },
+  {
+    "old": "scripts/b1/sandbox_hazards.gd",
+    "new": "scripts/world/environment_hazards.gd",
+    "old_sha256": "28ae7c25eacc05a002cb8e547db041607a0e995476aaf5afbdf810afdf06c263",
+    "new_sha256": "e44b4766ca340e25e62cf13334ba0b15bc6013f3054a71093642ed7603abbd5a"
+  },
+  {
+    "old": "scripts/combat/fixture_weapon.gd",
+    "new": "scripts/combat/hitscan_weapon.gd",
+    "old_sha256": "fd96f3512826f51f5285b61f2ee54702efc2353b3a5f8d46529681e46917c9b7",
+    "new_sha256": "f9c20cb18119d5f9142428b1a71f19a14e7f7f1a55e07f2b130ed917ad3911d0"
+  },
+  {
+    "old": "scripts/enemy.gd",
+    "new": "tests/fixtures/h1/enemy.gd",
+    "old_sha256": "7449634767c738908b33a29edd19785d4ba03de615dcd45073301ddac70bf1db",
+    "new_sha256": "7449634767c738908b33a29edd19785d4ba03de615dcd45073301ddac70bf1db"
+  },
+  {
+    "old": "scripts/enemy.gd.uid",
+    "new": "tests/fixtures/h1/enemy.gd.uid",
+    "old_sha256": "b6d1ef1da8802a0ce6e0dca8fcac6a4e155af07cd1df9111ef33c1d3547efba7",
+    "new_sha256": "b6d1ef1da8802a0ce6e0dca8fcac6a4e155af07cd1df9111ef33c1d3547efba7"
+  },
+  {
+    "old": "scripts/main.gd",
+    "new": "tests/fixtures/h1/main.gd",
+    "old_sha256": "32b40b51f25ae94912c957a850a6e4acbe76b4fd91b66b9b907d048765ae2cd7",
+    "new_sha256": "10a05b5e2604affe62a27e22fa0759339e1e7b50e3f4de1861dff56302f18ee3"
+  },
+  {
+    "old": "scripts/main.gd.uid",
+    "new": "tests/fixtures/h1/main.gd.uid",
+    "old_sha256": "3b84fbb1850f57a9428c7b6db95e6cbc63afa0a0a3801b04941601e4b960b583",
+    "new_sha256": "3b84fbb1850f57a9428c7b6db95e6cbc63afa0a0a3801b04941601e4b960b583"
+  },
+  {
+    "old": "scripts/player.gd",
+    "new": "tests/fixtures/h1/player.gd",
+    "old_sha256": "4a9f9621a70c6938e18526195402903c8d1032db6ba78750bd6e49f01c2e550a",
+    "new_sha256": "4a9f9621a70c6938e18526195402903c8d1032db6ba78750bd6e49f01c2e550a"
+  },
+  {
+    "old": "scripts/player.gd.uid",
+    "new": "tests/fixtures/h1/player.gd.uid",
+    "old_sha256": "e37243119cee811aa19966c3d2b3ea76d2021893329be738821949744e88fcd5",
+    "new_sha256": "e37243119cee811aa19966c3d2b3ea76d2021893329be738821949744e88fcd5"
+  },
+  {
+    "old": "scripts/player/b1_player.gd",
+    "new": "scripts/player/player_controller.gd",
+    "old_sha256": "c936ac2c0f1df13fb49b091a71b710695bc67ea6ebd596c39e4540c3b2e4fa45",
+    "new_sha256": "4a6cab6f4dc9ada47f396a04d2e9709f6a1d692209cd9fa7d3cbda4bd576f374"
+  },
+  {
+    "old": "scripts/player/weapon_wall_guard.gd",
+    "new": "scripts/player/weapon_wall_guard.gd",
+    "old_sha256": "650ab4363719da82bfb8d2567c5766f8ef28a8fc64323adf9deb4f5d8ed7ac84",
+    "new_sha256": "8860c5a77ffb9817ca18005c63144a0183d7e17fb2423fc4ebf9c894cfad39a8"
+  },
+  {
+    "old": "tests/b1/integration/combat_test.gd",
+    "new": "tests/gameplay/integration/combat_test.gd",
+    "old_sha256": "aa40f887823d31ab74d4d36567c72665b0aad69aa178feaf265f0b2268e82a82",
+    "new_sha256": "66ebd756945de7e03bc35e20aaf84ec5a6dc0e3aec14aa11a8437d87846acd90"
+  },
+  {
+    "old": "tests/b1/integration/player_movement_test.gd",
+    "new": "tests/gameplay/integration/player_movement_test.gd",
+    "old_sha256": "5189728e271c81f02f9b9e737bfa01d2d363ed7356ed2149d10951364d5e7eb1",
+    "new_sha256": "8ab09fa95750b07c736116faeca2aa803c4e43444db640ded9a983ee24a27491"
+  },
+  {
+    "old": "tests/b1/integration/weapon_wall_test.gd",
+    "new": "tests/gameplay/integration/weapon_wall_test.gd",
+    "old_sha256": "ce1706fd778d7f9e89eb7321ebee6776c73901d05062d60746e68158b1eb5d49",
+    "new_sha256": "b2b346c4d6d6eca374dea23c08300c344ebdb36f09cfc135e8835df25c4e9bba"
+  },
+  {
+    "old": "tests/b1/support/test_world.gd",
+    "new": "tests/gameplay/support/test_world.gd",
+    "old_sha256": "756aba0a3b031f2dbd9ff2e4e7bc17b0301f8a47431bf73f7b09f629f46ca9a4",
+    "new_sha256": "9852a679c206b52caef885f09869c9aa2f05aedcca1ef3d7523d64b4f88b14ad"
+  },
+  {
+    "old": "tests/b1/unit/dash_and_config_test.gd",
+    "new": "tests/gameplay/unit/dash_and_config_test.gd",
+    "old_sha256": "4403a46550fbf7c3ec629b286c535b0692e25e99af517556f76b79451df8ac21",
+    "new_sha256": "4403a46550fbf7c3ec629b286c535b0692e25e99af517556f76b79451df8ac21"
+  },
+  {
+    "old": "tests/b1/unit/double_tap_test.gd",
+    "new": "tests/gameplay/unit/double_tap_test.gd",
+    "old_sha256": "d06affc1f324665f297222a896c651e0f521bea0d3ff8b9cb74d9f7282206039",
+    "new_sha256": "d06affc1f324665f297222a896c651e0f521bea0d3ff8b9cb74d9f7282206039"
+  },
+  {
+    "old": "tests/b1/unit/health_component_test.gd",
+    "new": "tests/gameplay/unit/health_component_test.gd",
+    "old_sha256": "c699f7710727bbcde5272550c3692a756ba4300bfe38e81574d7114ce44ba7b0",
+    "new_sha256": "c699f7710727bbcde5272550c3692a756ba4300bfe38e81574d7114ce44ba7b0"
+  },
+  {
+    "old": "tests/h02/h1_probe.gd",
+    "new": "tests/h02/h1_probe.gd",
+    "old_sha256": "9cc628fb051d65934904f9ea023fb78959d97852176db7811daef27d2cb8cba3",
+    "new_sha256": "c193c9e14a4ee8244a77c2b58fd101bd1f38e0fbb7fe8e6dbb974b7b65e5742b"
+  },
+  {
+    "old": "tools/b1/run_tests.py",
+    "new": "tools/gameplay/run_tests.py",
+    "old_sha256": "f25ea37adfc0c29cc7556ce06fe8ff649dbff1dc30853c679516fcaca3f82a4f",
+    "new_sha256": "997f181cf1367fea2dc8028ad33dcff6dff25790310df920413fa76457f47cbe"
+  },
+  {
+    "new": "scripts/main.gd.uid",
+    "new_sha256": "59f1c3d412b2e29f838e2602c2d68b0a208fdce759b16bb5a171fb208805e643"
+  },
+  {
+    "new": "scripts/combat/attack_state_machine.gd.uid",
+    "new_sha256": "b0fc348331191a152052b1ecc4c274988120df4f5688ca22fc9b35e9a479d1a0"
+  },
+  {
+    "new": "scripts/combat/damage_info.gd.uid",
+    "new_sha256": "66914096ae47b4cca335b63402068b31971f001a8ea6ea8c7735789d4f8d023e"
+  },
+  {
+    "new": "scripts/combat/damage_projectile.gd.uid",
+    "new_sha256": "09cae68c55f71888fb97422711f32cb9160dfdc4e3bb8249f1fbdd70576a86a2"
+  },
+  {
+    "new": "scripts/combat/health_component.gd.uid",
+    "new_sha256": "a5bf3d2f9c2cf8754cfa56aff3c31a0e705d60d96c0061e051af6517632a81f5"
+  },
+  {
+    "new": "scripts/combat/health_config.gd.uid",
+    "new_sha256": "59ac41bf35aa6e012e1fa3c0ff79f82c7dd6d3af8237a405ab6a7ebac0978b0e"
+  },
+  {
+    "new": "scripts/combat/hitbox.gd.uid",
+    "new_sha256": "aa460888f5da96226a844001f01274edca74ee24bbdfa19a3276be7e09209bb3"
+  },
+  {
+    "new": "scripts/combat/hitscan.gd.uid",
+    "new_sha256": "a0aa608cc2f1a0b75542444ea8e8b3a0cfdf11babfda6161acaa010e18111a2c"
+  },
+  {
+    "new": "scripts/combat/hitscan_weapon.gd.uid",
+    "new_sha256": "90c58f8de9f8cf1a6e080e5ceafbadc8b4e628b9d12f82570d2270f07e7197e6"
+  },
+  {
+    "new": "scripts/combat/target_dummy.gd.uid",
+    "new_sha256": "9e09b3c03b68a845993833b26714f9de5e0add8607793ee139cc32513d217a5f"
+  },
+  {
+    "new": "scripts/core/physics_layers.gd.uid",
+    "new_sha256": "9106703c626fde82e1cfb153966f3312b6cb8528890a163c48a3272e6c04e5bc"
+  },
+  {
+    "new": "scripts/interaction/interactable_switch.gd.uid",
+    "new_sha256": "4e6505c34703176618ab6b5edbb0ea0515d54cf9ece0dc13412eb0905c29d317"
+  },
+  {
+    "new": "scripts/player/dash_controller.gd.uid",
+    "new_sha256": "73bf38bef748503eaf36409869ad3d612f573fd95ae793e1bbc72c74792a56fb"
+  },
+  {
+    "new": "scripts/player/double_tap_detector.gd.uid",
+    "new_sha256": "54afcbb6cb5eb333c5a645359e0a733d0ab6c0df5cd6a7c1663fbb17744fc894"
+  },
+  {
+    "new": "scripts/player/input_actions.gd.uid",
+    "new_sha256": "254bc8a4b536e539bab90ef47292d3edd5ffc79b5973e2febf4d650044bae844"
+  },
+  {
+    "new": "scripts/player/player_controller.gd.uid",
+    "new_sha256": "157884d2d5daa9b0eafb41a0892f5d3aad2ecb40a4f248b40b5d8ca92d0e1edd"
+  },
+  {
+    "new": "scripts/player/player_movement_config.gd.uid",
+    "new_sha256": "024eb34fb5e02c95dfae59e40090ed910c3fdf48fabf4ac58a13395ef3b3b7d6"
+  },
+  {
+    "new": "scripts/player/weapon_wall_guard.gd.uid",
+    "new_sha256": "78f278202148dcb5789fe751f1c6eb5994f80ece41e0a524265c592a4c9bf701"
+  },
+  {
+    "new": "scripts/world/environment_hazards.gd.uid",
+    "new_sha256": "4a0f09ab1ecc28e4ea927bf3ee56f03d155e86abfb3f6edc63626e314cd2b06f"
+  },
+  {
+    "new": "tests/gameplay/integration/combat_test.gd.uid",
+    "new_sha256": "99e8d28ad3e818b66c79354924500439bee6e7f2ff54e43ced9c0f6b83d80e5c"
+  },
+  {
+    "new": "tests/gameplay/integration/main_scene_test.gd",
+    "new_sha256": "a70730c1c6d3e03405f6201f1f15d119bc86b6eeb2e6f5ac65a3c4fd62adc10a"
+  },
+  {
+    "new": "tests/gameplay/integration/main_scene_test.gd.uid",
+    "new_sha256": "fd5dbe9d89d79ceea1f6c112be0ddcfc903c85bcd43cbe815aa82159bcbbfd95"
+  },
+  {
+    "new": "tests/gameplay/integration/player_movement_test.gd.uid",
+    "new_sha256": "67da28ba680f0beb2645d59251eb77af9dc469b361d1e88205f69bbf3401701a"
+  },
+  {
+    "new": "tests/gameplay/integration/weapon_wall_test.gd.uid",
+    "new_sha256": "e11335ffec6c122857a0a5c59e27f54b679bbabd208667d314b85a629365be05"
+  },
+  {
+    "new": "tests/gameplay/support/test_world.gd.uid",
+    "new_sha256": "4678164f33831468952b1914a5087687ab68beb1eb136381583c8757dd25e22f"
+  },
+  {
+    "new": "tests/gameplay/unit/dash_and_config_test.gd.uid",
+    "new_sha256": "76e2b21d0674ad54225a001d8410a0faf0a75d97c6d030b6165e7ff8b53fbada"
+  },
+  {
+    "new": "tests/gameplay/unit/double_tap_test.gd.uid",
+    "new_sha256": "4b983833a0a275a41cd957579498a8e8ee455e88156ec78599ea8e26c1e94829"
+  },
+  {
+    "new": "tests/gameplay/unit/health_component_test.gd.uid",
+    "new_sha256": "a391c77f2595360c4c439677b4f5194fa4e5a3f60ef1a7410c27d0a4f24b05e6"
+  }
+]

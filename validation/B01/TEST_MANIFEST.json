@@ -7,7 +7,7 @@
   "previous_approved_commit": "796255711fd04c4e6a6d061fba718e86db8cf099",
   "branch": "B1",
   "created_at": "2026-11-27T16:58:55+01:00",
-  "state": "INTEGRATION_READY",
+  "state": "APPROVED",
   "environment": {
     "os": "Windows 11 Home 10.0.26300 (PC Codex, intento 05)",
     "godot": "4.7.2.stable.official.ed1daf0bf",

@@ -1,13 +1,13 @@
 # ROADMAP — H02–H24 y lotes B0–B8
 
-**Actualizado 2026-11-27 · agrupación v2.1; migración aprobada 2026-11-23 (D-028).** H1–H04 conservan su cierre histórico. B1 está en INTEGRATION_READY tras fix `1401e05` de BUG-B1-02, encargado directamente a Codex. Automáticas PASS (37 unitarias/35 integración); retest del creador pendiente, conservando posición/aspecto del arma (D-030). No VALIDATED ni APPROVED. B2 no iniciado.
+**Actualizado 2026-11-28 · agrupación v2.1.** H1–H04 conservan su aprobación; B1 APPROVED e integrado en el flujo normal por D-031. B2 NOT_STARTED; prompt de encargo preparado en `next_prompt.md`.
 
 ## Lotes y dependencias
 
 | Lote | Hitos | Objetivo | Depende de | Estado lote |
 |---|---|---|---|---|
 | B0 | H03, H04 | Infraestructura y arte | H02 | APPROVED histórico H03/H04 |
-| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | INTEGRATION_READY (C `1401e05`, automáticas PASS 37+35; fix de M-02 con retest visual pendiente) |
+| B1 | H05, H06 | Jugador, interacción, movimiento, salud y daño | B0 | APPROVED por el creador; integración F5 verificada 37+38, D-031 |
 | B2 | H07, H08, H09 | Armas, energía y ultimates | B1 | NOT_STARTED |
 | B3 | H10, H11, H12 | Enemigos, percepción y sigilo | B2 | NOT_STARTED |
 | B4 | H13, H14, H15 | Persistencia, firmware y economía | B3 | NOT_STARTED |
@@ -27,8 +27,8 @@ D-029 registra para el futuro la cámara de muerte en tercera persona, elevada y
 | H02 | [Auditoría H1 y saneamiento documental](../prompts/H02_AUDITORIA_H1_Y_SANEAMIENTO_DOCUMENTAL.md) | Fuera de lotes | APPROVED histórico | H1 |
 | H03 | [Infraestructura de pruebas y balance](../prompts/H03_INFRAESTRUCTURA_DE_PRUEBAS_Y_BALANCE.md) | B0 | APPROVED histórico | H02 |
 | H04 | [Vertical de arte temprano](../prompts/H04_VERTICAL_DE_ARTE_TEMPRANO.md) | B0 | APPROVED histórico | H03 |
-| H05 | [Núcleo de jugador, interacción y movimiento](../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md) | B1 | CODE_READY | H04 |
-| H06 | [Daño, salud, hitzones y estados de ataque](../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md) | B1 | CODE_READY | H05 |
+| H05 | [Núcleo de jugador, interacción y movimiento](../prompts/H05_NUCLEO_DE_JUGADOR_INTERACCION_Y_MOVIMIENTO.md) | B1 | APPROVED | H04 |
+| H06 | [Daño, salud, hitzones y estados de ataque](../prompts/H06_DANO_SALUD_HITZONES_Y_ESTADOS_DE_ATAQUE.md) | B1 | APPROVED | H05 |
 | H07 | [Seis armas y loadout libre](../prompts/H07_SEIS_ARMAS_Y_LOADOUT_LIBRE.md) | B2 | NOT_STARTED | H06 |
 | H08 | [Energía por bajas y curación manual con E](../prompts/H08_ENERGIA_CURACION_Y_EXTRACCION_CYBORG.md) | B2 | NOT_STARTED | H07 |
 | H09 | [Tres ultimates independientes](../prompts/H09_TRES_ULTIMATES_INDEPENDIENTES.md) | B2 | NOT_STARTED | H08 |

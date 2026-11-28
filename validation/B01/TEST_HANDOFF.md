@@ -1,3 +1,9 @@
+# B1 APPROVED — paquete histórico cerrado
+
+El creador aprobó B1 y el fix de paredes. [Aprobación](APPROVAL.md). El juego actual está integrado en F5: [integración](INTEGRATION.md), [handoff vigente](../../docs/HANDOFF.md).
+
+Los apartados siguientes conservan la descripción del candidato `1401e05` antes de integrar rutas; no son las instrucciones de arranque actuales. Para reproducir exactamente ese paquete, usar su SHA y el paquete histórico `a0c9820`.
+
 # TEST_HANDOFF — B1 (H05, H06)
 
 Documento autónomo para repetir las pruebas y para la revisión del creador. Los IDs coinciden con [TEST_MANIFEST.json](TEST_MANIFEST.json) y [TEST_RESULTS.md](TEST_RESULTS.md). **2026-11-27: automáticas PASS sobre `1401e05` (37 unitarias/35 integración), fix de BUG-B1-02 encargado directamente a Codex. INTEGRATION_READY; retest visual pendiente.** No se declara VALIDATED ni APPROVED. El fallo original de descubrimiento de la suite queda conservado en el intento 01 y [BUG-B1-01](bugs/BUG-B1-01.md).

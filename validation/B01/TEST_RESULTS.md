@@ -178,3 +178,7 @@ Runner exit 0, [invocación/fechas](evidence/attempt_05/preflight/runner.json), 
 ## Veredicto vigente tras el fix
 
 **Automáticas PASS sobre `1401e05269fc4919f3658788e7de48bc5a4aa148`. INTEGRATION_READY; no VALIDATED ni APPROVED.** M-01…M-08 en este candidato: NOT_RUN, «las realiza el creador»; fichas en `evidence/attempt_05/manual/`. Los siete OK y M-02 KO de la revisión anterior conservan su contexto y no se atribuyen a este nuevo SHA. Repetir paredes (M-02) y revisar movimiento/cámara/disparo afectados (M-03/M-06), indicando SHA. La cámara puede limitar su giro junto al muro para que el arma mantenga su posición sin penetrarlo; sensación/aceptación pendientes. Sin merge a main ni inicio de B2.
+
+## Aprobación e integración posterior
+
+El creador confirmó el fix y aprobó B1: [APPROVAL](APPROVAL.md). Se autoriza integrar como juego normal, preparar B2 y fusionar a main/retirar B1. [Integración `5a622069c4267821ba5e5a16b6404a60ed7ad6a8`](INTEGRATION.md): 37 unitarias, 38 integración y regresiones PASS. Los NOT_RUN manuales del intento 05 quedan como registros anteriores a esa confirmación, sin reescribir ejecuciones pasadas.

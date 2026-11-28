@@ -1,6 +1,8 @@
 # ALABARDA STUDIOS — Instrucciones permanentes para Claude y Codex
 
-**Versión 0.6 · pipeline v2.1 · 2026-11-23.** Migración aprobada por el creador (D-027/D-028). La aprobación NO inicia B1 ni ningún lote: cada lote requiere encargo expreso y se desarrolla en su rama (`B1`, `B2`…) desde `main`. H1–H04 conservan sus aprobaciones históricas.
+**Versión 0.7 · pipeline v2.1 · 2026-11-28.** Migración aprobada por el creador (D-027/D-028). La aprobación de la migración no inicia lotes: cada lote requiere encargo expreso y se desarrolla en su rama (`B1`, `B2`…) desde `main`. H1–H04 conservan sus aprobaciones históricas.
+
+**Estado vigente:** B1 (H05/H06) APPROVED por el creador, integrado en el flujo normal (`scenes/main.tscn`, F5). Jugador compartido `PlayerController`; suites `tests/gameplay`, runner `tools/gameplay/run_tests.py`. B2 se encarga mediante `next_prompt.md`, sin ejecutarlo por su mera existencia. D-031 autoriza merge a main y retirada de B1; la rama estable se llama **main**. El código futuro amplía el juego actual, no un runtime paralelo por lote. `validation/B01` conserva el historial, no una segunda implementación.
 
 ## 0. Lectura obligatoria por conversación o lote
 
@@ -20,7 +22,7 @@ Prevalecen las decisiones expresas más recientes del creador y DECISIONS; despu
 
 ## 2. Roles y estados
 
-Claude programa los lotes autorizados, prepara escenas de texto, Resources, tests y documentación. Su PC **no tiene Godot ni Blender**: no valida importación, gameplay, gráficos, animaciones o rendimiento. Ejecuta comprobaciones documentales/lógica externa disponibles, incluido `tools/pipeline/check_godot_static.py` antes de cada checkpoint, y registra resultados reales.
+Claude programa los lotes autorizados, prepara escenas de texto, Resources, tests y documentación. En B1 su PC **no tenía Godot ni Blender**. En cada nuevo entorno comprueba disponibilidad real: si dispone de motor puede abrir el proyecto completo y ejecutar pruebas; si falta, registra NOT_RUN y no certifica importación, gameplay, gráficos, animaciones o rendimiento. Ejecuta comprobaciones documentales/lógica externa disponibles, incluido `tools/pipeline/check_godot_static.py` antes de cada checkpoint, y registra resultados reales.
 
 Codex integra y valida en el PC con Godot/Blender sobre el commit exacto del paquete. Conserva evidencia y hace solo correcciones pequeñas/locales. Devuelve cambios estructurales o grandes a Claude con bugs reproducibles. Blender solo cuando el lote lo exige. El creador valida sensaciones, arte, animación, gunplay, dificultad, legibilidad y UX y concede la aprobación final.
 

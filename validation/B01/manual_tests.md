@@ -1,3 +1,7 @@
+# Guía histórica utilizada para aprobar B1
+
+Aprobación registrada en [APPROVAL](APPROVAL.md). La entrada actual es F5; las rutas F6 B1 de abajo describen el candidato histórico anterior a la integración.
+
 # Pruebas manuales B1 — para el creador
 
 Hazlas **después** de que Codex confirme que las pruebas automáticas pasan.
@@ -9,7 +13,7 @@ Arriba a la izquierda verás la barra de salud y una línea de estado: `ESTADO`,
 
 En cada prueba marca **OK** o **KO**. Si es KO, escribe una línea con lo que pasó.
 
-Revisión recibida el 2026-11-27: siete OK y paredes KO. [Resultados](validation/B01/evidence/manual_review_20261127/CREATOR_RESULTS.md), [BUG-B1-02 abierto](validation/B01/bugs/BUG-B1-02.md). Fix técnico disponible en `1401e05`, con automáticas PASS. Detén la partida anterior y vuelve a ejecutar F6 para cargarlo. Repite paredes y revisa movimiento/cámara/disparo; posición, aspecto y animaciones del arma se conservan.
+Revisión recibida el 2026-11-27: siete OK y paredes KO. [Resultados](evidence/manual_review_20261127/CREATOR_RESULTS.md), [BUG-B1-02 abierto](bugs/BUG-B1-02.md). Fix técnico disponible en `1401e05`, con automáticas PASS. Detén la partida anterior y vuelve a ejecutar F6 para cargarlo. Repite paredes y revisa movimiento/cámara/disparo; posición, aspecto y animaciones del arma se conservan.
 
 ---
 
